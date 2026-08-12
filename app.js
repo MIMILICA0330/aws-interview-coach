@@ -3,6 +3,7 @@
 
   const CUSTOM_KEY = "aws-interview-coach-custom-cards";
   const PROGRESS_KEY = "aws-interview-coach-progress";
+  const SPEECH_KEY = "aws-interview-coach-speech-settings";
   const screens = [...document.querySelectorAll(".screen")];
   const toast = document.getElementById("toast");
   let currentScreen = "home-screen";
@@ -16,6 +17,8 @@
   let recordingTimer = null;
   let recordingStream = null;
   let installPrompt = null;
+  let speechRun = 0;
+  let speechSettings = readSpeechSettings();
 
   const getCustomCards = () => {
     try {
@@ -35,6 +38,60 @@
     window.clearTimeout(showToast.timeout);
     showToast.timeout = window.setTimeout(() => toast.classList.remove("show"), 2400);
   };
+
+  function readSpeechSettings() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(SPEECH_KEY) || "{}");
+      const rate = Number(saved.rate);
+      return { voiceName: typeof saved.voiceName === "string" ? saved.voiceName : "", rate: rate >= 0.65 && rate <= 1.1 ? rate : 0.78 };
+    } catch (_) {
+      return { voiceName: "", rate: 0.78 };
+    }
+  }
+
+  function getEnglishVoices() {
+    if (!("speechSynthesis" in window)) return [];
+    const seen = new Set();
+    return window.speechSynthesis.getVoices().filter((voice) => /^en[-_]/i.test(voice.lang)).filter((voice) => {
+      const key = `${voice.name}|${voice.lang}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+  }
+
+  function voiceScore(voice) {
+    const name = voice.name.toLowerCase();
+    let score = voice.localService ? 20 : 0;
+    if (/en[-_]us/i.test(voice.lang)) score += 8;
+    if (/samantha|ava|alex|daniel|karen|moira|jenny|aria|guy|google us english|google uk english/i.test(name)) score += 12;
+    if (/compact|novelty|whisper|festival/i.test(name)) score -= 8;
+    return score;
+  }
+
+  function chooseEnglishVoice(voices = getEnglishVoices()) {
+    if (speechSettings.voiceName) {
+      const selected = voices.find((voice) => voice.name === speechSettings.voiceName);
+      if (selected) return selected;
+    }
+    return [...voices].sort((a, b) => voiceScore(b) - voiceScore(a))[0] || null;
+  }
+
+  function refreshVoiceOptions() {
+    const select = document.getElementById("voice-select");
+    const status = document.getElementById("voice-status");
+    if (!select) return;
+    const voices = getEnglishVoices();
+    select.innerHTML = `<option value="">自動選択（おすすめ）</option>${voices.map((voice) => `<option value="${escapeHtml(voice.name)}">${escapeHtml(voice.name)} (${escapeHtml(voice.lang)})</option>`).join("")}`;
+    select.value = speechSettings.voiceName;
+    const chosen = chooseEnglishVoice(voices);
+    if (status) status.textContent = chosen ? `使用中: ${chosen.name} (${chosen.lang})` : "端末の英語音声を読み込み中...";
+  }
+
+  function saveSpeechSettings() {
+    localStorage.setItem(SPEECH_KEY, JSON.stringify(speechSettings));
+    refreshVoiceOptions();
+  }
 
   function navigate(screenId, options = {}) {
     currentScreen = screenId;
@@ -98,11 +155,32 @@
 
   function speak(text) {
     if (!("speechSynthesis" in window)) return showToast("このブラウザは音声再生に対応していません");
+    const run = ++speechRun;
     window.speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = "en-US";
-    utterance.rate = 0.88;
-    window.speechSynthesis.speak(utterance);
+    const voice = chooseEnglishVoice();
+    const chunks = String(text).replace(/\s+/g, " ").match(/[^.!?]+[.!?]+|[^.!?]+$/g)?.map((chunk) => chunk.trim()).filter(Boolean) || [String(text)];
+    let index = 0;
+    const playNext = () => {
+      if (run !== speechRun || index >= chunks.length) return;
+      const utterance = new SpeechSynthesisUtterance(chunks[index++]);
+      utterance.voice = voice;
+      utterance.lang = voice?.lang || "en-US";
+      utterance.rate = speechSettings.rate;
+      utterance.pitch = 1;
+      utterance.volume = 1;
+      utterance.onend = () => window.setTimeout(playNext, 90);
+      utterance.onerror = () => { if (run === speechRun) showToast("音声を再生できませんでした"); };
+      window.speechSynthesis.speak(utterance);
+    };
+    playNext();
+  }
+
+  function createAudioButton(label, text) {
+    const button = document.createElement("button");
+    button.className = "audio-button answer-audio";
+    button.innerHTML = `<span>◉</span> ${label}`;
+    button.addEventListener("click", () => speak(text));
+    return button;
   }
 
   function renderPracticeCard() {
@@ -112,6 +190,7 @@
     document.getElementById("progress-fill").style.width = `${((practiceIndex + 1) / practiceCards.length) * 100}%`;
     document.getElementById("practice-card").innerHTML = `<div class="question-label">${escapeHtml(card.category)} · ${escapeHtml(card.lp || "PRACTICE")}</div><h3 class="practice-question">${escapeHtml(card.question)}</h3><button class="audio-button" id="speak-question"><span>◉</span> 質問を英語で聞く</button>${card.answer ? `<div class="answer-box"><h3>YOUR KEY POINTS</h3><p>${escapeHtml(card.answer)}</p></div>` : `<div class="answer-box"><h3>STARで話すメモ</h3>${starMarkup(card) || "<p>回答を自分の言葉で話してみましょう。</p>"}</div>`}`;
     document.getElementById("speak-question").addEventListener("click", () => speak(card.question));
+    if (card.answer) document.querySelector("#practice-card .answer-box")?.append(createAudioButton("模範回答をゆっくり聞く", card.answer));
     appendSavedAudio(document.getElementById("practice-card"), card.id);
   }
 
@@ -139,6 +218,10 @@
     if (!card) return;
     document.getElementById("detail-card").innerHTML = `<div class="card-meta"><span class="tag">${escapeHtml(card.category)}</span><span class="tag lp">${escapeHtml(card.lp || "Personal")}</span></div><h3>${escapeHtml(card.title)}</h3><div class="detail-section"><div class="section-label">QUESTION</div><p class="practice-question" style="font-size:19px;margin:0;color:var(--ink)">${escapeHtml(card.question)}</p><button class="audio-button" id="speak-detail" style="margin-top:14px"><span>◉</span> 質問を英語で聞く</button></div>${card.answer ? `<div class="detail-section"><div class="section-label">ENGLISH ANSWER</div><p>${escapeHtml(card.answer)}</p></div>` : ""}${starMarkup(card) ? `<div class="detail-section"><div class="section-label">STAR NOTES</div>${starMarkup(card)}</div>` : ""}${card.followUps?.length ? `<div class="detail-section"><div class="section-label">FOLLOW-UP QUESTIONS</div><ul class="followup-list">${card.followUps.map((question) => `<li>${escapeHtml(question)}</li>`).join("")}</ul></div>` : ""}<button class="primary-button" id="detail-record-button"><span class="button-icon">●</span>このカードで録音する</button>`;
     document.getElementById("speak-detail").addEventListener("click", () => speak(card.question));
+    if (card.answer) {
+      const answerSection = [...document.querySelectorAll("#detail-card .detail-section")].find((section) => section.querySelector(".section-label")?.textContent === "ENGLISH ANSWER");
+      answerSection?.append(createAudioButton("模範回答をゆっくり聞く", card.answer));
+    }
     document.getElementById("detail-record-button").addEventListener("click", () => openRecorder(card.id));
     appendSavedAudio(document.getElementById("detail-card"), card.id);
     document.getElementById("delete-card-button").style.visibility = getCustomCards().some((item) => item.id === id) ? "visible" : "hidden";
@@ -293,9 +376,12 @@
   document.getElementById("cancel-recording").addEventListener("click", () => stopRecorder(true));
   document.getElementById("stop-recording").addEventListener("click", () => stopRecorder(false));
   document.getElementById("reset-progress-button").addEventListener("click", () => { if (window.confirm("練習履歴をリセットしますか？")) { localStorage.removeItem(PROGRESS_KEY); renderStats(); showToast("練習履歴をリセットしました"); } });
+  document.getElementById("voice-select")?.addEventListener("change", (event) => { speechSettings.voiceName = event.target.value; saveSpeechSettings(); showToast("英語音声を設定しました"); });
+  document.getElementById("speech-rate")?.addEventListener("change", (event) => { speechSettings.rate = Number(event.target.value); saveSpeechSettings(); showToast("再生速度を設定しました"); });
   window.addEventListener("beforeinstallprompt", (event) => { event.preventDefault(); installPrompt = event; document.getElementById("install-button").hidden = false; });
   document.getElementById("install-button").addEventListener("click", async () => { if (!installPrompt) return; installPrompt.prompt(); await installPrompt.userChoice; installPrompt = null; document.getElementById("install-button").hidden = true; });
   if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js").catch(() => {});
+  if ("speechSynthesis" in window) { window.speechSynthesis.addEventListener("voiceschanged", refreshVoiceOptions); refreshVoiceOptions(); }
   renderStats();
   renderLibrary();
 })();
