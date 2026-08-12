@@ -4,6 +4,13 @@
   const CUSTOM_KEY = "aws-interview-coach-custom-cards";
   const PROGRESS_KEY = "aws-interview-coach-progress";
   const SPEECH_KEY = "aws-interview-coach-speech-settings";
+  const SPEED_OPTIONS = [
+    { value: "0.65", label: "0.65x かなりゆっくり" },
+    { value: "0.78", label: "0.78x ゆっくり" },
+    { value: "0.95", label: "0.95x 標準" },
+    { value: "1.10", label: "1.10x やや速い" },
+    { value: "1.25", label: "1.25x 速い" }
+  ];
   const screens = [...document.querySelectorAll(".screen")];
   const toast = document.getElementById("toast");
   let currentScreen = "home-screen";
@@ -19,6 +26,7 @@
   let installPrompt = null;
   let speechRun = 0;
   let speechSettings = readSpeechSettings();
+  let activeSpeechBlock = null;
 
   const getCustomCards = () => {
     try {
@@ -31,6 +39,7 @@
 
   const getCards = () => [...window.DEFAULT_CARDS, ...getCustomCards()];
   const getCard = (id) => getCards().find((card) => card.id === id);
+  const getCardContent = (card) => ({ ...card, ...(window.TRANSLATIONS?.[card.id] || {}) });
   const escapeHtml = (value = "") => String(value).replace(/[&<>'"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" }[char]));
   const showToast = (message) => {
     toast.textContent = message;
@@ -43,7 +52,7 @@
     try {
       const saved = JSON.parse(localStorage.getItem(SPEECH_KEY) || "{}");
       const rate = Number(saved.rate);
-      return { voiceName: typeof saved.voiceName === "string" ? saved.voiceName : "", rate: rate >= 0.65 && rate <= 1.1 ? rate : 0.78 };
+      return { voiceName: typeof saved.voiceName === "string" ? saved.voiceName : "", rate: rate >= 0.65 && rate <= 1.3 ? rate : 0.78 };
     } catch (_) {
       return { voiceName: "", rate: 0.78 };
     }
@@ -84,6 +93,8 @@
     const voices = getEnglishVoices();
     select.innerHTML = `<option value="">自動選択（おすすめ）</option>${voices.map((voice) => `<option value="${escapeHtml(voice.name)}">${escapeHtml(voice.name)} (${escapeHtml(voice.lang)})</option>`).join("")}`;
     select.value = speechSettings.voiceName;
+    const rateSelect = document.getElementById("speech-rate");
+    if (rateSelect) rateSelect.value = nearestSpeedValue(speechSettings.rate);
     const chosen = chooseEnglishVoice(voices);
     if (status) status.textContent = chosen ? `使用中: ${chosen.name} (${chosen.lang})` : "端末の英語音声を読み込み中...";
   }
@@ -93,7 +104,34 @@
     refreshVoiceOptions();
   }
 
+  function nearestSpeedValue(rate) {
+    return SPEED_OPTIONS.reduce((best, option) => Math.abs(Number(option.value) - rate) < Math.abs(Number(best.value) - rate) ? option : best, SPEED_OPTIONS[0]).value;
+  }
+
+  function speedOptionsMarkup() {
+    return SPEED_OPTIONS.map((option) => `<option value="${option.value}">${option.label}</option>`).join("");
+  }
+
+  function updateSpeechControls(block, playing) {
+    if (!block) return;
+    const playButton = block.querySelector(".speech-play-button");
+    const stopButton = block.querySelector(".speech-stop-button");
+    if (playButton) {
+      playButton.classList.toggle("is-playing", playing);
+      playButton.innerHTML = `<span>${playing ? "❚❚" : "◉"}</span> ${playing ? "再生中..." : playButton.dataset.label}`;
+    }
+    if (stopButton) stopButton.disabled = !playing;
+  }
+
+  function stopSpeech() {
+    speechRun += 1;
+    if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+    if (activeSpeechBlock) updateSpeechControls(activeSpeechBlock, false);
+    activeSpeechBlock = null;
+  }
+
   function navigate(screenId, options = {}) {
+    stopSpeech();
     currentScreen = screenId;
     screens.forEach((screen) => screen.classList.toggle("active", screen.id === screenId));
     document.querySelectorAll(".nav-item").forEach((button) => button.classList.toggle("active", button.dataset.go === screenId || (screenId !== "home-screen" && button.dataset.go === "library-screen" && ["detail-screen", "editor-screen"].includes(screenId))));
@@ -153,15 +191,23 @@
     return `<div class="star-grid">${rows.map(([label, value]) => `<div class="star-row"><span class="star-label">${label}</span><p>${escapeHtml(value)}</p></div>`).join("")}</div>`;
   }
 
-  function speak(text) {
+  function speak(text, block = null) {
     if (!("speechSynthesis" in window)) return showToast("このブラウザは音声再生に対応していません");
-    const run = ++speechRun;
-    window.speechSynthesis.cancel();
+    stopSpeech();
+    const run = speechRun;
     const voice = chooseEnglishVoice();
     const chunks = String(text).replace(/\s+/g, " ").match(/[^.!?]+[.!?]+|[^.!?]+$/g)?.map((chunk) => chunk.trim()).filter(Boolean) || [String(text)];
     let index = 0;
+    activeSpeechBlock = block;
+    updateSpeechControls(block, true);
+    const finish = () => {
+      if (run !== speechRun) return;
+      updateSpeechControls(block, false);
+      activeSpeechBlock = null;
+    };
     const playNext = () => {
-      if (run !== speechRun || index >= chunks.length) return;
+      if (run !== speechRun) return;
+      if (index >= chunks.length) return finish();
       const utterance = new SpeechSynthesisUtterance(chunks[index++]);
       utterance.voice = voice;
       utterance.lang = voice?.lang || "en-US";
@@ -169,29 +215,52 @@
       utterance.pitch = 1;
       utterance.volume = 1;
       utterance.onend = () => window.setTimeout(playNext, 90);
-      utterance.onerror = () => { if (run === speechRun) showToast("音声を再生できませんでした"); };
+      utterance.onerror = () => {
+        if (run === speechRun) {
+          finish();
+          showToast("音声を再生できませんでした");
+        }
+      };
       window.speechSynthesis.speak(utterance);
     };
     playNext();
   }
 
-  function createAudioButton(label, text) {
-    const button = document.createElement("button");
-    button.className = "audio-button answer-audio";
-    button.innerHTML = `<span>◉</span> ${label}`;
-    button.addEventListener("click", () => speak(text));
-    return button;
+  function speechBlockMarkup(id, label, translation) {
+    const japanese = translation || "日本語訳が未入力です。カード編集から追加できます。";
+    return `<div class="speech-block" data-speech-block="${escapeHtml(id)}"><div class="speech-row"><button class="audio-button speech-play-button" type="button" data-label="${escapeHtml(label)}"><span>◉</span> ${escapeHtml(label)}</button><button class="speech-stop-button" type="button" disabled>■ 停止</button></div><div class="speech-options"><label class="speech-speed-label">速度<select class="speech-speed-select">${speedOptionsMarkup()}</select></label><button class="translation-button" type="button">日本語訳を表示</button></div><div class="translation-panel" hidden><div class="translation-label">日本語</div><p>${escapeHtml(japanese)}</p></div></div>`;
+  }
+
+  function bindSpeechBlock(block, text) {
+    if (!block) return;
+    const speedSelect = block.querySelector(".speech-speed-select");
+    if (speedSelect) speedSelect.value = nearestSpeedValue(speechSettings.rate);
+    block.querySelector(".speech-play-button")?.addEventListener("click", () => speak(text, block));
+    block.querySelector(".speech-stop-button")?.addEventListener("click", stopSpeech);
+    speedSelect?.addEventListener("change", (event) => {
+      stopSpeech();
+      speechSettings.rate = Number(event.target.value);
+      saveSpeechSettings();
+      showToast("再生速度を設定しました");
+    });
+    block.querySelector(".translation-button")?.addEventListener("click", (event) => {
+      const panel = block.querySelector(".translation-panel");
+      const visible = panel.hidden;
+      panel.hidden = !visible;
+      event.currentTarget.textContent = visible ? "日本語訳を隠す" : "日本語訳を表示";
+    });
   }
 
   function renderPracticeCard() {
-    const card = practiceCards[practiceIndex];
+    const card = getCardContent(practiceCards[practiceIndex]);
     if (!card) return;
     document.getElementById("session-progress").textContent = `${practiceIndex + 1} / ${practiceCards.length}`;
     document.getElementById("progress-fill").style.width = `${((practiceIndex + 1) / practiceCards.length) * 100}%`;
-    document.getElementById("practice-card").innerHTML = `<div class="question-label">${escapeHtml(card.category)} · ${escapeHtml(card.lp || "PRACTICE")}</div><h3 class="practice-question">${escapeHtml(card.question)}</h3><button class="audio-button" id="speak-question"><span>◉</span> 質問を英語で聞く</button>${card.answer ? `<div class="answer-box"><h3>YOUR KEY POINTS</h3><p>${escapeHtml(card.answer)}</p></div>` : `<div class="answer-box"><h3>STARで話すメモ</h3>${starMarkup(card) || "<p>回答を自分の言葉で話してみましょう。</p>"}</div>`}`;
-    document.getElementById("speak-question").addEventListener("click", () => speak(card.question));
-    if (card.answer) document.querySelector("#practice-card .answer-box")?.append(createAudioButton("模範回答をゆっくり聞く", card.answer));
-    appendSavedAudio(document.getElementById("practice-card"), card.id);
+    document.getElementById("practice-card").innerHTML = `<div class="question-label">${escapeHtml(card.category)} · ${escapeHtml(card.lp || "PRACTICE")}</div><h3 class="practice-question">${escapeHtml(card.question)}</h3>${speechBlockMarkup("practice-question", "質問を英語で聞く", card.questionJa)}${card.answer ? `<div class="answer-box"><h3>YOUR KEY POINTS</h3><p>${escapeHtml(card.answer)}</p>${speechBlockMarkup("practice-answer", "模範回答を英語で聞く", card.answerJa)}</div>` : `<div class="answer-box"><h3>STARで話すメモ</h3>${starMarkup(card) || "<p>回答を自分の言葉で話してみましょう。</p>"}</div>`}`;
+    const practiceCard = document.getElementById("practice-card");
+    bindSpeechBlock(practiceCard.querySelector('[data-speech-block="practice-question"]'), card.question);
+    bindSpeechBlock(practiceCard.querySelector('[data-speech-block="practice-answer"]'), card.answer);
+    appendSavedAudio(practiceCard, card.id);
   }
 
   function startPractice(mode) {
@@ -214,14 +283,13 @@
   }
 
   function renderDetail(id) {
-    const card = getCard(id);
-    if (!card) return;
-    document.getElementById("detail-card").innerHTML = `<div class="card-meta"><span class="tag">${escapeHtml(card.category)}</span><span class="tag lp">${escapeHtml(card.lp || "Personal")}</span></div><h3>${escapeHtml(card.title)}</h3><div class="detail-section"><div class="section-label">QUESTION</div><p class="practice-question" style="font-size:19px;margin:0;color:var(--ink)">${escapeHtml(card.question)}</p><button class="audio-button" id="speak-detail" style="margin-top:14px"><span>◉</span> 質問を英語で聞く</button></div>${card.answer ? `<div class="detail-section"><div class="section-label">ENGLISH ANSWER</div><p>${escapeHtml(card.answer)}</p></div>` : ""}${starMarkup(card) ? `<div class="detail-section"><div class="section-label">STAR NOTES</div>${starMarkup(card)}</div>` : ""}${card.followUps?.length ? `<div class="detail-section"><div class="section-label">FOLLOW-UP QUESTIONS</div><ul class="followup-list">${card.followUps.map((question) => `<li>${escapeHtml(question)}</li>`).join("")}</ul></div>` : ""}<button class="primary-button" id="detail-record-button"><span class="button-icon">●</span>このカードで録音する</button>`;
-    document.getElementById("speak-detail").addEventListener("click", () => speak(card.question));
-    if (card.answer) {
-      const answerSection = [...document.querySelectorAll("#detail-card .detail-section")].find((section) => section.querySelector(".section-label")?.textContent === "ENGLISH ANSWER");
-      answerSection?.append(createAudioButton("模範回答をゆっくり聞く", card.answer));
-    }
+    const rawCard = getCard(id);
+    if (!rawCard) return;
+    const card = getCardContent(rawCard);
+    document.getElementById("detail-card").innerHTML = `<div class="card-meta"><span class="tag">${escapeHtml(card.category)}</span><span class="tag lp">${escapeHtml(card.lp || "Personal")}</span></div><h3>${escapeHtml(card.title)}</h3><div class="detail-section"><div class="section-label">QUESTION</div><p class="practice-question" style="font-size:19px;margin:0;color:var(--ink)">${escapeHtml(card.question)}</p>${speechBlockMarkup("detail-question", "質問を英語で聞く", card.questionJa)}</div>${card.answer ? `<div class="detail-section"><div class="section-label">ENGLISH ANSWER</div><p>${escapeHtml(card.answer)}</p>${speechBlockMarkup("detail-answer", "模範回答を英語で聞く", card.answerJa)}</div>` : ""}${starMarkup(card) ? `<div class="detail-section"><div class="section-label">STAR NOTES</div>${starMarkup(card)}</div>` : ""}${card.followUps?.length ? `<div class="detail-section"><div class="section-label">FOLLOW-UP QUESTIONS</div><ul class="followup-list">${card.followUps.map((question) => `<li>${escapeHtml(question)}</li>`).join("")}</ul></div>` : ""}<button class="primary-button" id="detail-record-button"><span class="button-icon">●</span>このカードで録音する</button>`;
+    const detailCard = document.getElementById("detail-card");
+    bindSpeechBlock(detailCard.querySelector('[data-speech-block="detail-question"]'), card.question);
+    bindSpeechBlock(detailCard.querySelector('[data-speech-block="detail-answer"]'), card.answer);
     document.getElementById("detail-record-button").addEventListener("click", () => openRecorder(card.id));
     appendSavedAudio(document.getElementById("detail-card"), card.id);
     document.getElementById("delete-card-button").style.visibility = getCustomCards().some((item) => item.id === id) ? "visible" : "hidden";
@@ -237,7 +305,7 @@
     event.preventDefault();
     const form = event.currentTarget;
     const data = new FormData(form);
-    const card = { id: `custom-${Date.now()}`, title: data.get("title").trim(), question: data.get("question").trim(), category: data.get("category"), lp: data.get("lp").trim() || "Personal", situation: data.get("situation").trim(), task: data.get("task").trim(), action: data.get("action").trim(), result: data.get("result").trim(), answer: data.get("answer").trim(), followUps: data.get("followUps").split("\n").map((line) => line.trim()).filter(Boolean) };
+    const card = { id: `custom-${Date.now()}`, title: data.get("title").trim(), question: data.get("question").trim(), questionJa: data.get("questionJa")?.trim() || "", category: data.get("category"), lp: data.get("lp").trim() || "Personal", situation: data.get("situation").trim(), task: data.get("task").trim(), action: data.get("action").trim(), result: data.get("result").trim(), answer: data.get("answer").trim(), answerJa: data.get("answerJa")?.trim() || "", followUps: data.get("followUps").split("\n").map((line) => line.trim()).filter(Boolean) };
     saveCustomCard(card);
     form.reset();
     renderStats();
@@ -377,7 +445,7 @@
   document.getElementById("stop-recording").addEventListener("click", () => stopRecorder(false));
   document.getElementById("reset-progress-button").addEventListener("click", () => { if (window.confirm("練習履歴をリセットしますか？")) { localStorage.removeItem(PROGRESS_KEY); renderStats(); showToast("練習履歴をリセットしました"); } });
   document.getElementById("voice-select")?.addEventListener("change", (event) => { speechSettings.voiceName = event.target.value; saveSpeechSettings(); showToast("英語音声を設定しました"); });
-  document.getElementById("speech-rate")?.addEventListener("change", (event) => { speechSettings.rate = Number(event.target.value); saveSpeechSettings(); showToast("再生速度を設定しました"); });
+  document.getElementById("speech-rate")?.addEventListener("change", (event) => { stopSpeech(); speechSettings.rate = Number(event.target.value); saveSpeechSettings(); showToast("再生速度を設定しました"); });
   window.addEventListener("beforeinstallprompt", (event) => { event.preventDefault(); installPrompt = event; document.getElementById("install-button").hidden = false; });
   document.getElementById("install-button").addEventListener("click", async () => { if (!installPrompt) return; installPrompt.prompt(); await installPrompt.userChoice; installPrompt = null; document.getElementById("install-button").hidden = true; });
   if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js").catch(() => {});
