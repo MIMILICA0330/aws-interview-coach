@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="description" content="AWSデータセンター・ロジスティクス面接のための英語練習アプリ" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="fixes.css" />
+    <title>AWS Interview Coach</title>
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="brand-mark" aria-hidden="true">AWS</div>
+      <div><p class="eyebrow">LOGISTICS INTERVIEW COACH</p><h1>AWS Interview Coach</h1></div>
+      <button class="icon-button" id="install-button" type="button" hidden aria-label="アプリをインストール">＋</button>
+    </header>
+
+    <main>
+      <section class="screen active" id="home-screen" aria-labelledby="home-title">
+        <div class="hero-card"><div><p class="eyebrow light">TODAY'S PRACTICE</p><h2 id="home-title">短く話して、<br />面接で伝える。</h2><p>通勤中の10分で、英語の質問を聞き、声に出して答えましょう。</p></div><div class="hero-orbit" aria-hidden="true"><span>STAR</span></div></div>
+        <div class="stats-grid" aria-label="練習状況"><div class="stat-card"><span id="streak-count">0</span><small>日連続</small></div><div class="stat-card"><span id="session-count">0</span><small>練習回数</small></div><div class="stat-card"><span id="content-count">0</span><small>カード</small></div></div>
+        <div class="section-heading"><div><p class="eyebrow">QUICK START</p><h3>今日の練習</h3></div><span class="muted">約10分</span></div>
+        <div class="quick-actions"><button class="primary-button" data-go="practice-screen" data-mode="daily"><span class="button-icon">▶</span>今日の練習を始める</button><button class="secondary-button" data-go="library-screen"><span class="button-icon">▤</span>質問カードを見る</button></div>
+        <div class="section-heading"><div><p class="eyebrow">FOCUS</p><h3>伸ばしたい力</h3></div></div>
+        <div class="focus-list"><button class="focus-card" data-go="library-screen" data-filter="All"><span class="focus-icon listening">◖</span><span><strong>Listening</strong><small>質問を聞き取る</small></span><span class="arrow">›</span></button><button class="focus-card" data-go="library-screen" data-filter="All"><span class="focus-icon speaking">◉</span><span><strong>Speaking</strong><small>自分の言葉で答える</small></span><span class="arrow">›</span></button><button class="focus-card" data-go="library-screen" data-filter="STAR"><span class="focus-icon star">★</span><span><strong>STAR</strong><small>回答を整理する</small></span><span class="arrow">›</span></button></div>
+      </section>
+
+      <section class="screen" id="library-screen" aria-labelledby="library-title"><div class="page-title-row"><div><p class="eyebrow">QUESTION LIBRARY</p><h2 id="library-title">質問カード</h2></div><button class="small-button" data-go="editor-screen">＋追加</button></div><p class="intro">AWS Leadership Principlesとデータセンター・ロジスティクスの場面で練習できます。</p><div class="filter-row" id="filter-row" role="tablist" aria-label="質問の絞り込み"><button class="filter-chip selected" data-filter="All" role="tab">すべて</button><button class="filter-chip" data-filter="STAR" role="tab">STAR</button><button class="filter-chip" data-filter="Logistics" role="tab">Logistics</button><button class="filter-chip" data-filter="Basics" role="tab">Basics</button></div><div class="card-list" id="card-list"></div><div class="empty-state" id="library-empty" hidden><span>○</span><h3>まだカードがありません</h3><p>「＋追加」から自分のエピソードを登録できます。</p></div></section>
+
+      <section class="screen" id="practice-screen" aria-labelledby="practice-title"><div class="practice-top"><button class="back-button" data-go="home-screen" aria-label="ホームに戻る">‹</button><div><p class="eyebrow">PRACTICE SESSION</p><h2 id="practice-title">今日の練習</h2></div><span class="session-progress" id="session-progress">1 / 3</span></div><div class="progress-bar"><span id="progress-fill"></span></div><div class="practice-card" id="practice-card"></div><div class="practice-controls"><button class="primary-button" id="start-answer-button"><span class="button-icon">●</span>回答を録音する</button><button class="secondary-button" id="skip-button">次のカードへ <span class="arrow">›</span></button></div><p class="practice-tip"><span>◎</span> まずは完璧な英語より、結論から話すことを意識しましょう。</p></section>
+
+      <section class="screen" id="detail-screen" aria-labelledby="detail-title"><div class="practice-top"><button class="back-button" data-go="library-screen" aria-label="質問一覧に戻る">‹</button><div><p class="eyebrow">QUESTION CARD</p><h2 id="detail-title">練習カード</h2></div><button class="icon-button subtle" id="delete-card-button" type="button" aria-label="カードを削除">⌫</button></div><div class="detail-card" id="detail-card"></div></section>
+
+      <section class="screen" id="editor-screen" aria-labelledby="editor-title"><div class="practice-top"><button class="back-button" data-go="library-screen" aria-label="質問一覧に戻る">‹</button><div><p class="eyebrow">ADD CONTENT</p><h2 id="editor-title">新しいカード</h2></div></div><form class="editor-form" id="editor-form"><label>タイトル <span class="required">必須</span><input name="title" required maxlength="70" placeholder="例：失敗から学んだ経験" /></label><label>質問（英語） <span class="required">必須</span><textarea name="question" required maxlength="240" rows="3" placeholder="Tell me about a time you learned from a failure."></textarea></label><div class="form-grid"><label>カテゴリ<select name="category"><option value="STAR">STAR</option><option value="Logistics">Logistics</option><option value="Basics">Basics</option></select></label><label>関連LP<input name="lp" maxlength="80" placeholder="Ownership, Learn and Be Curious" /></label></div><label>Situation（背景）<textarea name="situation" rows="3" placeholder="どんな状況でしたか？"></textarea></label><label>Task（課題）<textarea name="task" rows="3" placeholder="何を達成する必要がありましたか？"></textarea></label><label>Action（行動）<textarea name="action" rows="4" placeholder="あなたが具体的に何をしましたか？"></textarea></label><label>Result（成果・学び）<textarea name="result" rows="3" placeholder="どんな結果になり、何を学びましたか？"></textarea></label><label>短い英語回答（30〜90秒）<textarea name="answer" rows="6" placeholder="英語回答を入力すると、練習画面で表示できます。"></textarea></label><label>深掘り質問（1行に1つ）<textarea name="followUps" rows="4" placeholder="Why did you choose this approach?&#10;What would you do differently?"></textarea></label><button class="primary-button" type="submit">カードを保存する</button></form></section>
+
+      <section class="screen" id="settings-screen" aria-labelledby="settings-title"><div class="page-title-row"><div><p class="eyebrow">YOUR CONTENT</p><h2 id="settings-title">データ管理</h2></div></div><div class="settings-card"><span class="settings-icon">↕</span><div><h3>コンテンツをバックアップ</h3><p>追加したカードをJSONファイルとして保存・復元できます。</p></div></div><div class="settings-actions"><button class="secondary-button" id="export-button">↓ JSONを書き出す</button><label class="secondary-button file-button">↑ JSONを読み込む<input id="import-input" type="file" accept="application/json" hidden /></label></div><div class="settings-card"><span class="settings-icon">i</span><div><h3>このアプリについて</h3><p>AWSデータセンター・ロジスティクス職の面接準備用。録音データはこの端末のブラウザ内に保存されます。</p></div></div><button class="text-button" id="reset-progress-button">練習履歴をリセット</button></section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="メインナビゲーション"><button class="nav-item active" data-go="home-screen"><span>⌂</span><small>ホーム</small></button><button class="nav-item" data-go="library-screen"><span>▤</span><small>カード</small></button><button class="nav-item" data-go="settings-screen"><span>⚙</span><small>設定</small></button></nav>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <div class="modal-backdrop" id="recording-modal" hidden><div class="recording-modal" role="dialog" aria-modal="true" aria-labelledby="recording-title"><div class="recording-pulse"><span></span></div><p class="eyebrow">YOUR ANSWER</p><h2 id="recording-title">話してみましょう</h2><p id="recording-status">録音準備中...</p><div class="timer" id="recording-timer">00:00</div><div class="recording-actions"><button class="secondary-button" id="cancel-recording">キャンセル</button><button class="primary-button" id="stop-recording">録音を終了</button></div></div></div>
+    <script src="content.js"></script><script src="app.js"></script>
+  </body>
+</html>
