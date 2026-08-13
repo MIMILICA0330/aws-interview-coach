@@ -4,6 +4,7 @@
   const CUSTOM_KEY = "aws-interview-coach-custom-cards";
   const PROGRESS_KEY = "aws-interview-coach-progress";
   const SPEECH_KEY = "aws-interview-coach-speech-settings";
+  const FONT_SIZE_KEY = "aws-interview-coach-font-size";
   const SPEED_OPTIONS = [
     { value: "0.65", label: "0.65x かなりゆっくり" },
     { value: "0.78", label: "0.78x ゆっくり" },
@@ -27,6 +28,7 @@
   let speechRun = 0;
   let speechSettings = readSpeechSettings();
   let activeSpeechBlock = null;
+  let activeSpeechMode = "english";
 
   const getCustomCards = () => {
     try {
@@ -52,10 +54,22 @@
     try {
       const saved = JSON.parse(localStorage.getItem(SPEECH_KEY) || "{}");
       const rate = Number(saved.rate);
-      return { voiceName: typeof saved.voiceName === "string" ? saved.voiceName : "", rate: rate >= 0.65 && rate <= 1.3 ? rate : 0.78 };
+      return { voiceName: typeof saved.voiceName === "string" ? saved.voiceName : "", rate: rate >= 0.65 && rate <= 1.3 ? rate : 0.78, sentencePause: saved.sentencePause === true };
     } catch (_) {
-      return { voiceName: "", rate: 0.78 };
+      return { voiceName: "", rate: 0.78, sentencePause: false };
     }
+  }
+
+  function readFontSize() {
+    const saved = localStorage.getItem(FONT_SIZE_KEY);
+    return ["normal", "large", "xlarge", "xxlarge"].includes(saved) ? saved : "normal";
+  }
+
+  function applyFontSize(size) {
+    const value = ["normal", "large", "xlarge", "xxlarge"].includes(size) ? size : "normal";
+    document.body.dataset.fontSize = value;
+    const select = document.getElementById("font-size");
+    if (select) select.value = value;
   }
 
   function getEnglishVoices() {
@@ -84,6 +98,18 @@
       if (selected) return selected;
     }
     return [...voices].sort((a, b) => voiceScore(b) - voiceScore(a))[0] || null;
+  }
+
+  function getJapaneseVoices() {
+    if (!("speechSynthesis" in window)) return [];
+    return window.speechSynthesis.getVoices().filter((voice) => /^ja[-_]/i.test(voice.lang));
+  }
+
+  function chooseJapaneseVoice(voices = getJapaneseVoices()) {
+    return [...voices].sort((a, b) => {
+      const score = (voice) => (voice.localService ? 20 : 0) + (/ja[-_]jp/i.test(voice.lang) ? 8 : 0) + (/kyoko|otoya|nanami|haruka|google japanese|microsoft/i.test(voice.name.toLowerCase()) ? 10 : 0);
+      return score(b) - score(a);
+    })[0] || null;
   }
 
   function refreshVoiceOptions() {
@@ -115,10 +141,17 @@
   function updateSpeechControls(block, playing) {
     if (!block) return;
     const playButton = block.querySelector(".speech-play-button");
+    const translationPlayButton = block.querySelector(".translation-speak-button");
     const stopButton = block.querySelector(".speech-stop-button");
     if (playButton) {
-      playButton.classList.toggle("is-playing", playing);
-      playButton.innerHTML = `<span>${playing ? "❚❚" : "◉"}</span> ${playing ? "再生中..." : playButton.dataset.label}`;
+      const englishPlaying = playing && activeSpeechMode === "english";
+      playButton.classList.toggle("is-playing", englishPlaying);
+      playButton.innerHTML = `<span>${englishPlaying ? "❚❚" : "◉"}</span> ${englishPlaying ? "再生中..." : playButton.dataset.label}`;
+    }
+    if (translationPlayButton) {
+      const japanesePlaying = playing && activeSpeechMode === "japanese";
+      translationPlayButton.classList.toggle("is-playing", japanesePlaying);
+      translationPlayButton.innerHTML = `<span>${japanesePlaying ? "❚❚" : "◉"}</span> ${japanesePlaying ? "再生中..." : translationPlayButton.dataset.label}`;
     }
     if (stopButton) stopButton.disabled = !playing;
   }
@@ -191,14 +224,23 @@
     return `<div class="star-grid">${rows.map(([label, value]) => `<div class="star-row"><span class="star-label">${label}</span><p>${escapeHtml(value)}</p></div>`).join("")}</div>`;
   }
 
-  function speak(text, block = null) {
+  function splitSpeechChunks(text, language) {
+    const normalized = String(text).replace(/\s+/g, " ").trim();
+    const pattern = language === "japanese" ? /[^。！？!?]+[。！？!?]+|[^。！？!?]+$/g : /[^.!?]+[.!?]+|[^.!?]+$/g;
+    return normalized.match(pattern)?.map((chunk) => chunk.trim()).filter(Boolean) || [normalized];
+  }
+
+  function speak(text, block = null, language = "english") {
     if (!("speechSynthesis" in window)) return showToast("このブラウザは音声再生に対応していません");
+    if (!String(text).trim()) return showToast("音読する文章がありません");
     stopSpeech();
     const run = speechRun;
-    const voice = chooseEnglishVoice();
-    const chunks = String(text).replace(/\s+/g, " ").match(/[^.!?]+[.!?]+|[^.!?]+$/g)?.map((chunk) => chunk.trim()).filter(Boolean) || [String(text)];
+    const isJapanese = language === "japanese";
+    const voice = isJapanese ? chooseJapaneseVoice() : chooseEnglishVoice();
+    const chunks = splitSpeechChunks(text, language);
     let index = 0;
     activeSpeechBlock = block;
+    activeSpeechMode = language;
     updateSpeechControls(block, true);
     const finish = () => {
       if (run !== speechRun) return;
@@ -210,11 +252,12 @@
       if (index >= chunks.length) return finish();
       const utterance = new SpeechSynthesisUtterance(chunks[index++]);
       utterance.voice = voice;
-      utterance.lang = voice?.lang || "en-US";
+      utterance.lang = voice?.lang || (isJapanese ? "ja-JP" : "en-US");
       utterance.rate = speechSettings.rate;
       utterance.pitch = 1;
       utterance.volume = 1;
-      utterance.onend = () => window.setTimeout(playNext, 90);
+      const pause = !isJapanese && speechSettings.sentencePause ? 5000 : 90;
+      utterance.onend = () => window.setTimeout(playNext, pause);
       utterance.onerror = () => {
         if (run === speechRun) {
           finish();
@@ -227,8 +270,9 @@
   }
 
   function speechBlockMarkup(id, label, translation) {
+    const hasTranslation = Boolean(translation);
     const japanese = translation || "日本語訳が未入力です。カード編集から追加できます。";
-    return `<div class="speech-block" data-speech-block="${escapeHtml(id)}"><div class="speech-row"><button class="audio-button speech-play-button" type="button" data-label="${escapeHtml(label)}"><span>◉</span> ${escapeHtml(label)}</button><button class="speech-stop-button" type="button" disabled>■ 停止</button></div><div class="speech-options"><label class="speech-speed-label">速度<select class="speech-speed-select">${speedOptionsMarkup()}</select></label><button class="translation-button" type="button">日本語訳を表示</button></div><div class="translation-panel" hidden><div class="translation-label">日本語</div><p>${escapeHtml(japanese)}</p></div></div>`;
+    return `<div class="speech-block" data-speech-block="${escapeHtml(id)}"><div class="speech-row"><button class="audio-button speech-play-button" type="button" data-label="${escapeHtml(label)}"><span>◉</span> ${escapeHtml(label)}</button><button class="speech-stop-button" type="button" disabled>■ 停止</button></div><div class="speech-options"><label class="speech-speed-label">速度<select class="speech-speed-select">${speedOptionsMarkup()}</select></label><label class="pause-mode-label"><input class="speech-pause-toggle" type="checkbox" ${speechSettings.sentencePause ? "checked" : ""} /> 文ごとに5秒ポーズ</label><button class="translation-button" type="button">日本語訳を表示</button></div><div class="translation-panel" hidden><div class="translation-label">日本語</div><p>${escapeHtml(japanese)}</p><button class="translation-speak-button" type="button" data-label="日本語訳を音読" ${hasTranslation ? "" : "disabled"}><span>◉</span> 日本語訳を音読</button></div></div>`;
   }
 
   function bindSpeechBlock(block, text) {
@@ -236,12 +280,22 @@
     const speedSelect = block.querySelector(".speech-speed-select");
     if (speedSelect) speedSelect.value = nearestSpeedValue(speechSettings.rate);
     block.querySelector(".speech-play-button")?.addEventListener("click", () => speak(text, block));
+    block.querySelector(".translation-speak-button")?.addEventListener("click", () => {
+      const translationText = block.querySelector(".translation-panel p")?.textContent || "";
+      speak(translationText, block, "japanese");
+    });
     block.querySelector(".speech-stop-button")?.addEventListener("click", stopSpeech);
     speedSelect?.addEventListener("change", (event) => {
       stopSpeech();
       speechSettings.rate = Number(event.target.value);
       saveSpeechSettings();
       showToast("再生速度を設定しました");
+    });
+    block.querySelector(".speech-pause-toggle")?.addEventListener("change", (event) => {
+      stopSpeech();
+      speechSettings.sentencePause = event.target.checked;
+      saveSpeechSettings();
+      showToast(event.target.checked ? "文ごと5秒ポーズを設定しました" : "文ごと5秒ポーズを解除しました");
     });
     block.querySelector(".translation-button")?.addEventListener("click", (event) => {
       const panel = block.querySelector(".translation-panel");
@@ -446,9 +500,11 @@
   document.getElementById("reset-progress-button").addEventListener("click", () => { if (window.confirm("練習履歴をリセットしますか？")) { localStorage.removeItem(PROGRESS_KEY); renderStats(); showToast("練習履歴をリセットしました"); } });
   document.getElementById("voice-select")?.addEventListener("change", (event) => { speechSettings.voiceName = event.target.value; saveSpeechSettings(); showToast("英語音声を設定しました"); });
   document.getElementById("speech-rate")?.addEventListener("change", (event) => { stopSpeech(); speechSettings.rate = Number(event.target.value); saveSpeechSettings(); showToast("再生速度を設定しました"); });
+  document.getElementById("font-size")?.addEventListener("change", (event) => { applyFontSize(event.target.value); localStorage.setItem(FONT_SIZE_KEY, event.target.value); showToast("文字サイズを変更しました"); });
   window.addEventListener("beforeinstallprompt", (event) => { event.preventDefault(); installPrompt = event; document.getElementById("install-button").hidden = false; });
   document.getElementById("install-button").addEventListener("click", async () => { if (!installPrompt) return; installPrompt.prompt(); await installPrompt.userChoice; installPrompt = null; document.getElementById("install-button").hidden = true; });
-  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=8").catch(() => {});
+  applyFontSize(readFontSize());
+  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=9").catch(() => {});
   if ("speechSynthesis" in window) { window.speechSynthesis.addEventListener("voiceschanged", refreshVoiceOptions); refreshVoiceOptions(); }
   renderStats();
   renderLibrary();
