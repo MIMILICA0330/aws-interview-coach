@@ -26,9 +26,10 @@
   let recordingStream = null;
   let installPrompt = null;
   let speechRun = 0;
-  let speechSettings = readSpeechSettings();
-  let activeSpeechBlock = null;
-  let activeSpeechMode = "english";
+let speechSettings = readSpeechSettings();
+let activeSpeechBlock = null;
+let activeSpeechMode = "english";
+let speechStartTimer = null;
 
   const getCustomCards = () => {
     try {
@@ -156,11 +157,15 @@
     if (stopButton) stopButton.disabled = !playing;
   }
 
-  function stopSpeech() {
-    speechRun += 1;
-    if ("speechSynthesis" in window) window.speechSynthesis.cancel();
-    if (activeSpeechBlock) updateSpeechControls(activeSpeechBlock, false);
-    activeSpeechBlock = null;
+function stopSpeech() {
+  speechRun += 1;
+  if (speechStartTimer) {
+    window.clearTimeout(speechStartTimer);
+    speechStartTimer = null;
+  }
+  if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+  if (activeSpeechBlock) updateSpeechControls(activeSpeechBlock, false);
+  activeSpeechBlock = null;
   }
 
   function navigate(screenId, options = {}) {
@@ -266,7 +271,14 @@
       };
       window.speechSynthesis.speak(utterance);
     };
-    playNext();
+    // Some browsers clip the beginning when speak() is called immediately
+    // after cancel(). Give the speech engine a moment to become ready.
+    speechStartTimer = window.setTimeout(() => {
+      speechStartTimer = null;
+      if (run !== speechRun) return;
+      if (window.speechSynthesis.paused) window.speechSynthesis.resume();
+      playNext();
+    }, 260);
   }
 
   function speechBlockMarkup(id, label, translation) {
@@ -504,7 +516,7 @@
   window.addEventListener("beforeinstallprompt", (event) => { event.preventDefault(); installPrompt = event; document.getElementById("install-button").hidden = false; });
   document.getElementById("install-button").addEventListener("click", async () => { if (!installPrompt) return; installPrompt.prompt(); await installPrompt.userChoice; installPrompt = null; document.getElementById("install-button").hidden = true; });
   applyFontSize(readFontSize());
-  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=9").catch(() => {});
+  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=13").catch(() => {});
   if ("speechSynthesis" in window) { window.speechSynthesis.addEventListener("voiceschanged", refreshVoiceOptions); refreshVoiceOptions(); }
   renderStats();
   renderLibrary();
