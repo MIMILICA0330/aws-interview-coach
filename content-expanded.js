@@ -42,15 +42,15 @@
   const newFailureCards = [
     {
       id: "split-shipment-timing",
-      title: "分割出荷の判断が遅れ、店頭展開が後ろ倒しになった",
+      title: "分割出荷の判断が遅れ、店頭展開が3週間後ろ倒しになった",
       category: "STAR",
       lp: "Customer Obsession · Ownership",
       question: "Tell me about a time your initial plan did not meet customer needs. What did you change?",
       situation: "2019年、J.LINDEBERGの輸入を商社経由から直接貿易へ切り替えた最初のシーズンに、ポロシャツの約80％を台湾工場から日本へ輸入することになりました。",
       task: "輸入コストを管理しながら、販売計画に合う時期に商品を店頭へ届ける必要がありました。",
-      action: "私はコスト最適化を優先し、全商品の生産完了後に一括出荷する計画を受け入れました。しかし、結果として日本への入荷が店頭展開に対して遅くなりました。次シーズンからは、生産が完了した商品から3回に分けて輸入する方式へ変更し、コスト増は事前に輸入経費計画のバッファとして織り込みました。",
-      result: "多少の輸入コスト増よりも、適切な時期に店頭展開できる価値を優先する運用へ変えました。以後は、物流計画でコストだけでなく販売機会と顧客への提供時期を同時に評価しています。",
-      answer: "In 2019, during the first season after we changed J.LINDEBERG from trading-company imports to direct import, about 80% of the polo shirts were produced in Taiwan. I had to arrange the import from the factory to Japan.\nTo minimize freight and import costs, I accepted a plan to wait until all products were completed and ship them together. That decision was efficient from a cost perspective, but it meant that the goods arrived in Japan too late for the intended in-store launch. I had focused too narrowly on import cost and had not given enough weight to the value of being on the sales floor at the right time.\nFrom the following season, I changed the plan to divide the shipments into three waves and import products as production was completed. This increased some logistics cost, so I built an appropriate buffer into the import-expense plan in advance.\nThe lesson was that supply-chain decisions should not be evaluated only by freight cost. I now balance cost against sales opportunity, customer availability, and the operational impact of late delivery before finalizing an import plan.",
+      action: "私はコスト最適化を優先し、全商品の生産完了後に一括出荷する計画を受け入れました。しかし、結果として日本への入荷が店頭展開に対して約3週間遅くなりました。次シーズンからは、生産が完了した商品から3回に分けて輸入する方式へ変更し、コスト増は事前に輸入経費計画のバッファとして織り込みました。",
+      result: "翌シーズンは正常な店頭展開に間に合い、前シーズンの遅れから約3週間改善しました。多少の輸入コスト増よりも、適切な時期に店頭展開できる価値を優先する運用へ変え、以後はコストだけでなく販売機会と顧客への提供時期を同時に評価しています。",
+      answer: "In 2019, during the first season after we changed J.LINDEBERG from trading-company imports to direct import, about 80% of the polo shirts were produced in Taiwan. I had to arrange the import from the factory to Japan.\nTo minimize freight and import costs, I accepted a plan to wait until all products were completed and ship them together. That decision was efficient from a cost perspective, but the goods arrived in Japan about three weeks too late for the intended in-store launch. I had focused too narrowly on import cost and had not given enough weight to the value of being on the sales floor at the right time.\nFrom the following season, I changed the plan to divide the shipments into three waves and import products as production was completed. This increased some logistics cost, so I built an appropriate buffer into the import-expense plan in advance. The following season, the products arrived in time for the normal in-store launch, improving the schedule by about three weeks.\nThe lesson was that supply-chain decisions should not be evaluated only by freight cost. I now balance cost against sales opportunity, customer availability, and the operational impact of late delivery before finalizing an import plan.",
       followUps: ["How did you decide the number of shipment waves?", "How did you balance the additional freight cost against the sales opportunity?", "What would you monitor before approving a consolidated shipment now?"]
     },
     {
@@ -62,13 +62,13 @@
       situation: "2008年、サムソナイトジャパンで通販カタログ会社へ提案し、伊勢丹向けギフトカタログにスーツケース300本が採用されました。商品の最低生産ロットは2,000本でした。",
       task: "受注分を確実に供給しながら、不要な在庫リスクを発生させない必要がありました。",
       action: "香港のアジア向けディストリビューションセンターに2,000本以上の在庫があったため、私は新規生産や即時の在庫引当をせず、後で日本向けに手配すればよいと判断しました。しかし1週間後には在庫がゼロになっており、新規生産をせざるを得ませんでした。私は、共有在庫を確保済みの在庫と同じように扱ったことが誤りだったと認めました。",
-      result: "2,000本を新規生産した結果、300本の受注後に1,700本の余剰が発生しました。200本しか通常販売できず、残り約1,500本はアウトレット販売となり粗利率を損ないました。以後は、販売時点で在庫の即時確保可否を確認し、長期確保が難しい場合は販売先にも事前説明する運用へ変えました。",
-      answer: "In 2008, while I was at Samsonite Japan, I proposed a suitcase to a mail-order catalog company and won an order for 300 units for an Isetan gift catalog. The product had a minimum production quantity of 2,000 units. At that time, an Asian distribution center in Hong Kong showed more than 2,000 units in stock.\nI made the mistake of treating visible shared inventory as if it were already reserved for Japan. I did not immediately secure the inventory or start new production because I believed I could arrange the Japan allocation later. One week later, the available inventory had dropped to zero, so we had to produce a new lot of 2,000 units.\nAfter fulfilling the 300-unit order, we had 1,700 excess units. Only about 200 could be sold through normal channels, and roughly 1,500 units had to be sold through outlet stores, which damaged the gross margin. I took responsibility because the risk could have been avoided by confirming and securing inventory at the time of sale.\nSince then, I always verify whether stock can be allocated immediately before confirming a sale. If long-term reservation is difficult, I explain that constraint to the customer in advance.",
+      result: "顧客への300本の納品遅延はありませんでしたが、2,000本を新規生産した結果、受注後に1,700本の余剰が発生しました。200本しか通常販売できず、残り約1,500本はアウトレット販売となり粗利率を損ないました。以後は、販売時点で在庫の即時確保可否を確認し、長期確保が難しい場合は販売先にも事前説明する運用へ変えました。",
+      answer: "In 2008, while I was at Samsonite Japan, I proposed a suitcase to a mail-order catalog company and won an order for 300 units for an Isetan gift catalog. The product had a minimum production quantity of 2,000 units. At that time, an Asian distribution center in Hong Kong showed more than 2,000 units in stock.\nI made the mistake of treating visible shared inventory as if it were already reserved for Japan. I did not immediately secure the inventory or start new production because I believed I could arrange the Japan allocation later. One week later, the available inventory had dropped to zero, so we had to produce a new lot of 2,000 units.\nWe fulfilled the 300-unit customer order without a delivery delay, but we then had 1,700 excess units. Only about 200 could be sold through normal channels, and roughly 1,500 units had to be sold through outlet stores, which damaged the gross margin. I took responsibility because the risk could have been avoided by confirming and securing inventory at the time of sale.\nSince then, I always verify whether stock can be allocated immediately before confirming a sale. If long-term reservation is difficult, I explain that constraint to the customer in advance.",
       followUps: ["Why did you not reserve the inventory immediately?", "How would you communicate a stock-allocation risk to a customer?", "What inventory control would prevent this mistake today?"]
     },
     {
       id: "trademark-governance",
-      title: "知的財産チェックの仕組みが不十分だった",
+      title: "知財リスクの予防統制を作れていなかった",
       category: "STAR",
       lp: "Ownership · Earn Trust",
       question: "Tell me about a time you discovered a risk in a product or process too late. How did you respond?",
@@ -87,9 +87,9 @@
       question: "Tell me about a partnership that did not move forward. What did you learn from it?",
       situation: "2017年、私はロサーセンブランドの責任者として、フィレンツェのPitti Uomoに半年ごとに出展し、イタリアのニットメーカーと販売代理店・ライセンス契約に向けた交渉を始めました。",
       task: "海外のパートナーと条件を合意し、ブランドのイタリア展開を開始する必要がありました。",
-      action: "仮契約後、半年間は主にメールで交渉し、対面で会うのは半年に一度の展示会に限られていました。私は自社に有利な契約条件にもこだわり過ぎ、相手が早期に事業を始めるために必要とする柔軟性を十分に確認できていませんでした。最終的に相手は正式契約を見送りました。私は、複雑な海外パートナーシップでは、メール交渉だけでは信頼と相互理解を十分に作れないこと、また最初から条件を最大化するより段階的に始める選択肢も必要だと学びました。",
+      action: "仮契約後、半年間は主にメールで交渉し、対面で会うのは半年に一度の展示会に限られていました。私は自社に有利な契約条件にもこだわり過ぎ、自分が相手の立ち上げ条件を十分に確認できていませんでした。最終的に相手は正式契約を見送りました。私は、複雑な海外パートナーシップでは、メール交渉だけでは信頼と相互理解を十分に作れないこと、また最初から条件を最大化するより段階的に始める選択肢も必要だと学びました。",
       result: "契約は成立しませんでしたが、2022年に台湾とタイの新たな販売代理店ビジネスを始めた際は、より小さな数値計画から段階的に開始する設計を、リーガル担当として支援しました。",
-      answer: "In 2017, as the brand manager for ROSSASSEN, I exhibited at Pitti Uomo in Florence every six months. I began discussions with an Italian knitwear company about a distribution and license agreement. We reached a provisional understanding and continued negotiating.\nMy mistake was relying too heavily on email between the trade shows. We met in person only every six months, even though the partnership required detailed commercial and legal alignment. I also focused too much on securing the most favorable terms for our company and did not sufficiently explore what the partner needed in order to start the business with confidence.\nWe continued discussions after the next exhibition, but the partner ultimately decided not to sign the final agreement. I tried to continue the negotiation by email, but it did not recover. I took this as a failure in how I built the relationship and structured the deal, not simply as the other side changing its mind.\nI learned that complex international partnerships require more face-to-face dialogue and a willingness to start with a smaller, staged plan rather than trying to optimize every contract term at the beginning. In 2022, when supporting new distributor relationships in Taiwan and Thailand, I applied that learning by helping create smaller initial plans that could expand based on results.",
+      answer: "In 2017, as the brand manager for ROSSASSEN, I exhibited at Pitti Uomo in Florence every six months. I began discussions with an Italian knitwear company about a distribution and license agreement. We reached a provisional understanding and continued negotiating.\nMy mistake was relying too heavily on email between the trade shows. We met in person only every six months, even though the partnership required detailed commercial and legal alignment. I also focused too much on securing the most favorable terms for our company and did not sufficiently confirm the conditions the partner needed in order to launch the business.\nWe continued discussions after the next exhibition, but the partner ultimately decided not to sign the final agreement. I tried to continue the negotiation by email, but it did not recover. I took this as a failure in how I built the relationship and structured the deal, not simply as the other side changing its mind.\nI learned that complex international partnerships require more face-to-face dialogue and a willingness to start with a smaller, staged plan rather than trying to optimize every contract term at the beginning. In 2022, when supporting new distributor relationships in Taiwan and Thailand, I applied that learning by helping create smaller initial plans that could expand based on results.",
       followUps: ["What would you have discussed face to face earlier?", "Which contract terms would you make more flexible in a phased launch?", "How did you apply this lesson to Taiwan and Thailand?"]
     }
   ];
@@ -224,11 +224,11 @@
   Object.assign(window.TRANSLATIONS, {
     "split-shipment-timing": {
       questionJa: "最初の計画が顧客のニーズを満たさなかった経験を教えてください。何を変えましたか。",
-      answerJa: "2019年、J.LINDEBERGを商社経由から直接輸入へ切り替えた最初のシーズンに、ポロシャツの約80％を台湾工場から日本へ輸入しました。輸入コストを抑えるため、私は全商品の生産完了を待って一括出荷する計画を受け入れました。しかしコスト面では効率的でも、日本への入荷が店頭展開に対して遅くなってしまいました。私は輸入コストに狭く焦点を当て、適切な時期に店頭へ商品を届ける価値を十分に考慮できていませんでした。次シーズンからは、生産完了品から3回に分けて輸入する方式へ変更し、物流コストの増加は輸入経費計画に事前にバッファとして組み込みました。この経験から、サプライチェーンの判断では運賃だけでなく、販売機会、顧客が商品を入手できる時期、遅延の影響を同時に評価するようにしています。"
+      answerJa: "2019年、J.LINDEBERGを商社経由から直接輸入へ切り替えた最初のシーズンに、ポロシャツの約80％を台湾工場から日本へ輸入しました。輸入コストを抑えるため、私は全商品の生産完了を待って一括出荷する計画を受け入れました。しかしコスト面では効率的でも、日本への入荷が店頭展開に対して約3週間遅くなってしまいました。私は輸入コストに狭く焦点を当て、適切な時期に店頭へ商品を届ける価値を十分に考慮できていませんでした。次シーズンからは、生産完了品から3回に分けて輸入する方式へ変更し、物流コストの増加は輸入経費計画に事前にバッファとして組み込みました。その結果、翌シーズンは正常な店頭展開に間に合い、前シーズンから約3週間改善しました。この経験から、サプライチェーンの判断では運賃だけでなく、販売機会、顧客が商品を入手できる時期、遅延の影響を同時に評価するようにしています。"
     },
     "gift-catalog-inventory": {
       questionJa: "在庫計画で誤りをした経験を教えてください。どのように対処し、何を学びましたか。",
-      answerJa: "2008年、サムソナイトジャパンで通販カタログ会社へ提案し、伊勢丹向けギフトカタログにスーツケース300本が採用されました。商品の最低生産ロットは2,000本でした。当時、香港のアジア向けディストリビューションセンターには2,000本以上の在庫表示がありました。私は共有在庫を日本向けに確保済みの在庫のように扱い、即時の在庫引当や新規生産を行いませんでした。後で日本向けに手配できると考えたのです。しかし1週間後には在庫がゼロとなり、新規に2,000本を生産せざるを得ませんでした。300本を納品した後に1,700本の余剰が生じ、通常販売できたのは約200本、残る約1,500本はアウトレット販売となり粗利を損ねました。私は販売時点で在庫を確保していれば避けられた失敗だと認めました。以後は販売確定前に即時引当の可否を確認し、長期確保が難しい場合は顧客へ事前に説明しています。"
+      answerJa: "2008年、サムソナイトジャパンで通販カタログ会社へ提案し、伊勢丹向けギフトカタログにスーツケース300本が採用されました。商品の最低生産ロットは2,000本でした。当時、香港のアジア向けディストリビューションセンターには2,000本以上の在庫表示がありました。私は共有在庫を日本向けに確保済みの在庫のように扱い、即時の在庫引当や新規生産を行いませんでした。後で日本向けに手配できると考えたのです。しかし1週間後には在庫がゼロとなり、新規に2,000本を生産せざるを得ませんでした。顧客への300本の納品遅延はありませんでしたが、その後に1,700本の余剰が生じ、通常販売できたのは約200本、残る約1,500本はアウトレット販売となり粗利を損ねました。私は販売時点で在庫を確保していれば避けられた失敗だと認めました。以後は販売確定前に即時引当の可否を確認し、長期確保が難しい場合は顧客へ事前に説明しています。"
     },
     "trademark-governance": {
       questionJa: "製品やプロセスのリスクに遅れて気づいた経験を教えてください。どのように対応しましたか。",
@@ -236,7 +236,7 @@
     },
     "italy-agent-negotiation": {
       questionJa: "前に進まなかったパートナーシップについて教えてください。そこから何を学びましたか。",
-      answerJa: "2017年、ロサーセンブランドの責任者として、フィレンツェのPitti Uomoに半年ごとに出展し、イタリアのニットメーカーと販売代理店・ライセンス契約の交渉を始めました。仮契約まで進んだ後、展示会の間は主にメールで交渉し、対面で会うのは半年に一度でした。私は自社に最も有利な条件を確保することに意識を置き過ぎ、相手が安心して事業を始めるために何を必要としているかを十分に確認できていませんでした。最終的に相手は正式契約を見送り、メールでの交渉を続けても回復できませんでした。私は、複雑な海外パートナーシップではメールだけでは信頼と相互理解を十分に作れないこと、最初から条件を最大化するよりも小さく段階的に始める選択肢が必要だと学びました。2022年、台湾とタイの新しい販売代理店ビジネスを始めた際には、より小さな数値計画から始める設計をリーガル担当として支援しました。"
+      answerJa: "2017年、ロサーセンブランドの責任者として、フィレンツェのPitti Uomoに半年ごとに出展し、イタリアのニットメーカーと販売代理店・ライセンス契約の交渉を始めました。仮契約まで進んだ後、展示会の間は主にメールで交渉し、対面で会うのは半年に一度でした。私は自社に最も有利な条件を確保することに意識を置き過ぎ、自分が相手の立ち上げ条件を十分に確認できていませんでした。最終的に相手は正式契約を見送り、メールでの交渉を続けても回復できませんでした。私は、複雑な海外パートナーシップではメールだけでは信頼と相互理解を十分に作れないこと、最初から条件を最大化するよりも小さく段階的に始める選択肢が必要だと学びました。2022年、台湾とタイの新しい販売代理店ビジネスを始めた際には、より小さな数値計画から始める設計をリーガル担当として支援しました。"
     },
     "interviewer-success-criteria": {
       questionJa: "このポジションで、入社後6か月から1年の間に、特に成果を出している方にはどのような共通点がありますか。",
