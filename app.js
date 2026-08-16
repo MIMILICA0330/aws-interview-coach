@@ -26,10 +26,13 @@
   let recordingStream = null;
   let installPrompt = null;
   let speechRun = 0;
-let speechSettings = readSpeechSettings();
-let activeSpeechBlock = null;
-let activeSpeechMode = "english";
-let speechStartTimer = null;
+  let speechSettings = readSpeechSettings();
+  let activeSpeechBlock = null;
+  let activeSpeechMode = "english";
+  let speechStartTimer = null;
+  let activeCloudAudio = null;
+  let activeCloudAudioStop = null;
+  let activeSpeechAbort = null;
 
   const getCustomCards = () => {
     try {
@@ -60,10 +63,19 @@ let speechStartTimer = null;
     try {
       const saved = JSON.parse(localStorage.getItem(SPEECH_KEY) || "{}");
       const rate = Number(saved.rate);
-      return { voiceName: typeof saved.voiceName === "string" ? saved.voiceName : "", japaneseVoiceName: typeof saved.japaneseVoiceName === "string" ? saved.japaneseVoiceName : "", rate: rate >= 0.65 && rate <= 1.3 ? rate : 0.78, sentencePause: saved.sentencePause === true };
+      return { voiceName: typeof saved.voiceName === "string" ? saved.voiceName : "", japaneseVoiceName: typeof saved.japaneseVoiceName === "string" ? saved.japaneseVoiceName : "", rate: rate >= 0.65 && rate <= 1.3 ? rate : 0.78, sentencePause: saved.sentencePause === true, cloudTts: saved.cloudTts !== false };
     } catch (_) {
-      return { voiceName: "", japaneseVoiceName: "", rate: 0.78, sentencePause: false };
+      return { voiceName: "", japaneseVoiceName: "", rate: 0.78, sentencePause: false, cloudTts: true };
     }
+  }
+
+  function cloudTtsEndpoint() {
+    const endpoint = window.TTS_CONFIG?.endpoint;
+    return typeof endpoint === "string" && /^https:\/\//.test(endpoint) ? endpoint.replace(/\/$/, "") : "";
+  }
+
+  function shouldUseCloudTts() {
+    return speechSettings.cloudTts !== false && Boolean(cloudTtsEndpoint());
   }
 
   function readFontSize() {
@@ -147,6 +159,8 @@ let speechStartTimer = null;
     const japaneseSelect = document.getElementById("japanese-voice-select");
     const englishStatus = document.getElementById("voice-status");
     const japaneseStatus = document.getElementById("japanese-voice-status");
+    const cloudStatus = document.getElementById("cloud-voice-status");
+    const cloudToggle = document.getElementById("cloud-tts-toggle");
     if (!englishSelect && !japaneseSelect) return;
     const englishVoices = getEnglishVoices();
     if (englishSelect) {
@@ -162,8 +176,10 @@ let speechStartTimer = null;
     if (rateSelect) rateSelect.value = nearestSpeedValue(speechSettings.rate);
     const chosenEnglish = chooseEnglishVoice(englishVoices);
     const chosenJapanese = chooseJapaneseVoice();
-    if (englishStatus) englishStatus.textContent = chosenEnglish ? `使用中の英語音声: ${chosenEnglish.name} (${chosenEnglish.lang})` : "端末の英語音声を読み込み中...";
-    if (japaneseStatus) japaneseStatus.textContent = chosenJapanese ? `使用中の日本語音声（女性候補）: ${chosenJapanese.name} (${chosenJapanese.lang})` : "女性の日本語音声が見つかりません。端末設定で日本語の女性音声を追加してください。";
+    if (cloudToggle) { cloudToggle.checked = speechSettings.cloudTts !== false; cloudToggle.disabled = !cloudTtsEndpoint(); }
+    if (cloudStatus) cloudStatus.textContent = cloudTtsEndpoint() ? (shouldUseCloudTts() ? "高品質AI音声を使用中（日本語・英語ともにクラウド音声）" : "高品質AI音声はオフです。端末音声を使用します。") : "高品質AI音声を準備中です。現在は端末音声を使用します。";
+    if (englishStatus) englishStatus.textContent = chosenEnglish ? `端末の予備英語音声: ${chosenEnglish.name} (${chosenEnglish.lang})` : "端末の英語音声を読み込み中...";
+    if (japaneseStatus) japaneseStatus.textContent = chosenJapanese ? `端末の予備日本語音声: ${chosenJapanese.name} (${chosenJapanese.lang})` : "女性の日本語音声が見つかりません。端末設定で日本語の女性音声を追加してください。";
   }
 
   function saveSpeechSettings() {
@@ -197,15 +213,25 @@ let speechStartTimer = null;
     if (stopButton) stopButton.disabled = !playing;
   }
 
-function stopSpeech() {
-  speechRun += 1;
-  if (speechStartTimer) {
-    window.clearTimeout(speechStartTimer);
-    speechStartTimer = null;
-  }
-  if ("speechSynthesis" in window) window.speechSynthesis.cancel();
-  if (activeSpeechBlock) updateSpeechControls(activeSpeechBlock, false);
-  activeSpeechBlock = null;
+  function stopSpeech() {
+    speechRun += 1;
+    if (speechStartTimer) {
+      window.clearTimeout(speechStartTimer);
+      speechStartTimer = null;
+    }
+    activeSpeechAbort?.abort();
+    activeSpeechAbort = null;
+    activeCloudAudioStop?.();
+    activeCloudAudioStop = null;
+    if (activeCloudAudio) {
+      activeCloudAudio.pause();
+      activeCloudAudio.removeAttribute("src");
+      activeCloudAudio.load();
+      activeCloudAudio = null;
+    }
+    if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+    if (activeSpeechBlock) updateSpeechControls(activeSpeechBlock, false);
+    activeSpeechBlock = null;
   }
 
   function navigate(screenId, options = {}) {
@@ -275,27 +301,30 @@ function stopSpeech() {
     return normalized.match(pattern)?.map((chunk) => chunk.trim()).filter(Boolean) || [normalized];
   }
 
-  function speak(text, block = null, language = "english") {
-    if (!("speechSynthesis" in window)) return showToast("このブラウザは音声再生に対応していません");
-    if (!String(text).trim()) return showToast("音読する文章がありません");
-    stopSpeech();
-    const run = speechRun;
+  function finishSpeech(run, block) {
+    if (run !== speechRun) return;
+    updateSpeechControls(block, false);
+    activeSpeechBlock = null;
+    activeCloudAudio = null;
+    activeCloudAudioStop = null;
+  }
+
+  function playWithBrowserSpeech(text, block, language, run) {
+    if (!("speechSynthesis" in window)) {
+      finishSpeech(run, block);
+      return showToast("このブラウザは音声再生に対応していません");
+    }
     const isJapanese = language === "japanese";
     const voice = isJapanese ? chooseJapaneseVoice() : chooseEnglishVoice();
-    if (isJapanese && !voice) return showToast("女性の日本語音声が見つかりません。端末設定で追加してください");
+    if (isJapanese && !voice) {
+      finishSpeech(run, block);
+      return showToast("女性の日本語音声が見つかりません。端末設定で追加してください");
+    }
     const chunks = splitSpeechChunks(text, language);
     let index = 0;
-    activeSpeechBlock = block;
-    activeSpeechMode = language;
-    updateSpeechControls(block, true);
-    const finish = () => {
-      if (run !== speechRun) return;
-      updateSpeechControls(block, false);
-      activeSpeechBlock = null;
-    };
     const playNext = () => {
       if (run !== speechRun) return;
-      if (index >= chunks.length) return finish();
+      if (index >= chunks.length) return finishSpeech(run, block);
       const utterance = new SpeechSynthesisUtterance(chunks[index++]);
       utterance.voice = voice;
       utterance.lang = voice?.lang || (isJapanese ? "ja-JP" : "en-US");
@@ -306,7 +335,7 @@ function stopSpeech() {
       utterance.onend = () => window.setTimeout(playNext, pause);
       utterance.onerror = () => {
         if (run === speechRun) {
-          finish();
+          finishSpeech(run, block);
           showToast("音声を再生できませんでした");
         }
       };
@@ -320,6 +349,102 @@ function stopSpeech() {
       if (window.speechSynthesis.paused) window.speechSynthesis.resume();
       playNext();
     }, 260);
+  }
+
+  function cloudChunks(text, language) {
+    const sentences = splitSpeechChunks(text, language);
+    if (!sentences.length) return [];
+    const chunks = [];
+    let current = "";
+    for (const sentence of sentences) {
+      if (current && current.length + sentence.length + 1 > 3400) { chunks.push(current); current = sentence; }
+      else current = `${current}${current ? " " : ""}${sentence}`;
+    }
+    if (current) chunks.push(current);
+    return chunks;
+  }
+
+  async function requestCloudAudio(text, language) {
+    const controller = new AbortController();
+    activeSpeechAbort = controller;
+    const response = await fetch(`${cloudTtsEndpoint()}/tts`, {
+      method: "POST",
+      cache: "no-store",
+      signal: controller.signal,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text, language: language === "japanese" ? "ja" : "en", rate: speechSettings.rate })
+    });
+    if (!response.ok) throw new Error(`TTS ${response.status}`);
+    const audio = await response.blob();
+    if (!audio.size) throw new Error("Empty audio response");
+    return audio;
+  }
+
+  function playCloudAudio(blob, run) {
+    return new Promise((resolve, reject) => {
+      const url = URL.createObjectURL(blob);
+      const audio = new Audio();
+      let settled = false;
+      const cleanup = (error = null) => {
+        if (settled) return;
+        settled = true;
+        URL.revokeObjectURL(url);
+        if (activeCloudAudio === audio) activeCloudAudio = null;
+        if (activeCloudAudioStop === stop) activeCloudAudioStop = null;
+        if (error) reject(error); else resolve();
+      };
+      const stop = () => {
+        audio.pause();
+        audio.removeAttribute("src");
+        audio.load();
+        cleanup();
+      };
+      activeCloudAudio = audio;
+      activeCloudAudioStop = stop;
+      audio.preload = "auto";
+      audio.onended = () => cleanup();
+      audio.onerror = () => cleanup(new Error("Audio playback failed"));
+      audio.oncanplay = () => {
+        if (settled || run !== speechRun) return stop();
+        window.setTimeout(() => {
+          if (settled || run !== speechRun) return stop();
+          audio.play().catch((error) => cleanup(error));
+        }, 80);
+      };
+      audio.src = url;
+      audio.load();
+    });
+  }
+
+  async function playWithCloudSpeech(text, block, language, run) {
+    const isSentenceMode = language === "english" && speechSettings.sentencePause;
+    const chunks = isSentenceMode ? splitSpeechChunks(text, language) : cloudChunks(text, language);
+    for (let index = 0; index < chunks.length; index += 1) {
+      if (run !== speechRun) return;
+      const audio = await requestCloudAudio(chunks[index], language);
+      if (run !== speechRun) return;
+      await playCloudAudio(audio, run);
+      if (run !== speechRun) return;
+      if (isSentenceMode && index < chunks.length - 1) await new Promise((resolve) => window.setTimeout(resolve, 5000));
+    }
+    finishSpeech(run, block);
+  }
+
+  async function speak(text, block = null, language = "english") {
+    if (!String(text).trim()) return showToast("音読する文章がありません");
+    stopSpeech();
+    const run = speechRun;
+    activeSpeechBlock = block;
+    activeSpeechMode = language;
+    updateSpeechControls(block, true);
+    if (!shouldUseCloudTts()) return playWithBrowserSpeech(text, block, language, run);
+    try {
+      await playWithCloudSpeech(text, block, language, run);
+    } catch (error) {
+      if (run !== speechRun || error.name === "AbortError") return;
+      showToast("高品質音声を再生できません。端末音声に切り替えます。");
+      playWithBrowserSpeech(text, block, language, run);
+    }
   }
 
   function speechBlockMarkup(id, label, translation) {
@@ -553,12 +678,13 @@ function stopSpeech() {
   document.getElementById("reset-progress-button").addEventListener("click", () => { if (window.confirm("練習履歴をリセットしますか？")) { localStorage.removeItem(PROGRESS_KEY); renderStats(); showToast("練習履歴をリセットしました"); } });
   document.getElementById("voice-select")?.addEventListener("change", (event) => { speechSettings.voiceName = event.target.value; saveSpeechSettings(); showToast("英語音声を設定しました"); });
   document.getElementById("japanese-voice-select")?.addEventListener("change", (event) => { speechSettings.japaneseVoiceName = event.target.value; saveSpeechSettings(); showToast("女性の日本語音声を設定しました"); });
+  document.getElementById("cloud-tts-toggle")?.addEventListener("change", (event) => { speechSettings.cloudTts = event.target.checked; stopSpeech(); saveSpeechSettings(); showToast(event.target.checked ? "高品質AI音声をオンにしました" : "端末音声に切り替えました"); });
   document.getElementById("speech-rate")?.addEventListener("change", (event) => { stopSpeech(); speechSettings.rate = Number(event.target.value); saveSpeechSettings(); showToast("再生速度を設定しました"); });
   document.getElementById("font-size")?.addEventListener("change", (event) => { applyFontSize(event.target.value); localStorage.setItem(FONT_SIZE_KEY, event.target.value); showToast("文字サイズを変更しました"); });
   window.addEventListener("beforeinstallprompt", (event) => { event.preventDefault(); installPrompt = event; document.getElementById("install-button").hidden = false; });
   document.getElementById("install-button").addEventListener("click", async () => { if (!installPrompt) return; installPrompt.prompt(); await installPrompt.userChoice; installPrompt = null; document.getElementById("install-button").hidden = true; });
   applyFontSize(readFontSize());
-  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=20").catch(() => {});
+  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=21").catch(() => {});
   if ("speechSynthesis" in window) { window.speechSynthesis.addEventListener("voiceschanged", refreshVoiceOptions); refreshVoiceOptions(); }
   renderStats();
   renderLibrary();
