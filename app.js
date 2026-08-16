@@ -40,7 +40,12 @@ let speechStartTimer = null;
     }
   };
 
-  const getCards = () => [...window.DEFAULT_CARDS, ...getCustomCards()];
+  const normalizeCategory = (category) => ({
+    STAR: "成功体験",
+    Logistics: "先方からの質問",
+    Basics: "先方からの質問"
+  }[category] || category || "先方からの質問");
+  const getCards = () => [...window.DEFAULT_CARDS, ...getCustomCards()].map((card) => ({ ...card, category: normalizeCategory(card.category) }));
   const getCard = (id) => getCards().find((card) => card.id === id);
   const getCardContent = (card) => ({ ...card, ...(window.TRANSLATIONS?.[card.id] || {}) });
   const escapeHtml = (value = "") => String(value).replace(/[&<>'"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" }[char]));
@@ -211,7 +216,7 @@ function stopSpeech() {
     document.querySelectorAll(".filter-chip").forEach((chip) => chip.classList.toggle("selected", chip.dataset.filter === filter));
     const list = document.getElementById("card-list");
     const empty = document.getElementById("library-empty");
-    const cards = getCards().filter((card) => filter === "All" || card.category === filter || (filter === "STAR" && card.category === "STAR"));
+    const cards = getCards().filter((card) => filter === "All" || card.category === filter);
     list.innerHTML = cards.map((card) => {
       const hasAnswer = Boolean(card.answer);
       return `<button class="library-card" data-card-id="${escapeHtml(card.id)}"><div class="card-meta"><span class="tag">${escapeHtml(card.category)}</span><span class="tag lp">${escapeHtml(card.lp || "Personal")}</span></div><h3>${escapeHtml(card.title)}</h3><p>${escapeHtml(card.question)}</p><div class="card-footer"><span>${hasAnswer ? "英語回答あり" : "回答を追加できます"}</span><strong>練習する&nbsp;›</strong></div></button>`;
@@ -516,7 +521,7 @@ function stopSpeech() {
   window.addEventListener("beforeinstallprompt", (event) => { event.preventDefault(); installPrompt = event; document.getElementById("install-button").hidden = false; });
   document.getElementById("install-button").addEventListener("click", async () => { if (!installPrompt) return; installPrompt.prompt(); await installPrompt.userChoice; installPrompt = null; document.getElementById("install-button").hidden = true; });
   applyFontSize(readFontSize());
-  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=17").catch(() => {});
+  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=18").catch(() => {});
   if ("speechSynthesis" in window) { window.speechSynthesis.addEventListener("voiceschanged", refreshVoiceOptions); refreshVoiceOptions(); }
   renderStats();
   renderLibrary();

@@ -168,6 +168,40 @@
     if (!knownIds.has(card.id)) window.DEFAULT_CARDS.push(card);
   });
 
+  // 面接の目的別に、カードを一目で探せる5つのタグへ整理する。
+  const categoryById = {
+    intro: "先方からの質問",
+    "why-aws": "志望動機",
+    "cost-rpa": "成功体験",
+    "ec-master": "成功体験",
+    "samsonite-sales": "成功体験",
+    "jl-license": "成功体験",
+    "china-jv": "成功体験",
+    "staff-voice": "成功体験",
+    "grip-file-transfer": "成功体験",
+    "viva-heart-drop-ship": "成功体験",
+    "jl-direct-import": "成功体験",
+    "ec-image-automation": "成功体験",
+    "yolo-pivot": "失敗体験",
+    "order-import-regression": "失敗体験",
+    inventory: "先方からの質問",
+    delay: "先方からの質問",
+    safety: "先方からの質問",
+    "split-shipment-timing": "失敗体験",
+    "gift-catalog-inventory": "失敗体験",
+    "trademark-governance": "失敗体験",
+    "italy-agent-negotiation": "失敗体験",
+    "interviewer-success-criteria": "こちらからの質問",
+    "interviewer-current-challenges": "こちらからの質問",
+    "interviewer-operational-metrics": "こちらからの質問",
+    "interviewer-improvement-process": "こちらからの質問",
+    "interviewer-cross-functional-priorities": "こちらからの質問"
+  };
+
+  window.DEFAULT_CARDS.forEach((card) => {
+    card.category = categoryById[card.id] || "先方からの質問";
+  });
+
   const expandedTranslations = {
     "cost-rpa": "2024年、グリップインターナショナルでは、基幹システムの小さな機能追加やデータ加工も外部ベンダーへ外注していました。軽微な案件でも30万円から200万円の費用がかかり、見積もりとベンダーの予定を待つため、現場への対応も遅れていました。私は、すべての技術的な不確実性が解消するまで待つのは遅すぎると考え、解像度が粗い段階で内製化へ踏み出しました。自らRPAとPower Queryを学び、定型的な入力・データ整形の手順を詳細に洗い出して、再利用できる自動化へ変えました。私自身が実演することで、チームにも実現可能性を示しました。2年間でチームは約150本のRPAと100本以上のPower Queryを作成し、多くの小規模改善とデータ加工を内製化しました。外注依存を減らし、自分の部署と他部署を合わせて約4名分の人件費に相当する削減を実現しました。可逆的で管理可能な最初の一歩であれば、完璧な情報を待つより早く行動する価値があると学びました。",
     "ec-master": "2024年、ECサイト、百貨店、チェーンストア向けの商品マスタを、毎シーズン約50種類の形式で作成していました。社内準備と外注の工程が複雑化し、リードタイムは約1.5か月、外注費は百貨店・チェーンストア向け年間600万円、自社EC向け年間300万円に達していました。私はヒアリングだけでなく、社内担当と外注先の間の全工程に入りました。そこで、担当者が仕様書から採寸・組成を目視で抜き出し、外注先が見やすさのためだけに罫線や網掛けを手作業で加えていることを見つけました。行き先のシステムに必要なのは見栄えではなく構造化されたデータだと判断し、装飾作業を廃止しました。仕様書システムから出力したCSVをPower Queryで各インポート形式へ変換する仕組みを作り、手作業の受け渡しをなくしました。その結果、リードタイムを約1.5か月から約1週間へ短縮し、年間900万円の外注費をゼロにしました。",
