@@ -94,9 +94,77 @@
     }
   ];
 
+  const interviewerQuestionCards = [
+    {
+      id: "interviewer-success-criteria",
+      title: "入社後の成功基準を聞く",
+      category: "Basics",
+      lp: "Questions for Interviewer",
+      question: "What would distinguish an outstanding person in this role during the first six to twelve months?",
+      situation: "最終面接の最後に、入社後の期待値と優先順位を理解するために質問します。",
+      task: "このポジションで早期に価値を出すための、具体的な成功基準を把握します。",
+      action: "役割で優れた成果を出す人の共通点を聞き、回答を自分の経験や入社後の行動計画に結び付けます。",
+      result: "成長意欲だけでなく、入社後に何へ貢献すべきかを理解しようとする姿勢を示せます。",
+      answer: "Thank you. I have a question. What would distinguish an outstanding person in this role during the first six to twelve months?\nI ask because I would like to understand what success looks like in practice and where I should focus my effort so that I can contribute quickly.",
+      followUps: ["Which early achievement would matter most?", "How is feedback usually shared during the first few months?", "What would you want a new team member to learn first?"]
+    },
+    {
+      id: "interviewer-current-challenges",
+      title: "現場の物流課題を聞く",
+      category: "Basics",
+      lp: "Questions for Interviewer",
+      question: "What are the most difficult or recurring logistics challenges the team is working on today?",
+      situation: "最終面接の最後に、チームが実際に直面している課題を理解するために質問します。",
+      task: "入社後に自分の改善経験をどのような課題へ活かせるかを把握します。",
+      action: "繰り返し起きる課題、制約、現在試している対策を聞き、相手の回答を深掘りします。",
+      result: "現場の問題を理解し、改善を通じて貢献したいという姿勢を示せます。",
+      answer: "Thank you. I have a question. What are the most difficult or recurring logistics challenges the team is working on today?\nI ask because I enjoy finding root causes and improving processes, and I would like to understand where my experience could be most useful.",
+      followUps: ["What has made that challenge difficult to solve?", "Which teams are most involved?", "What would a meaningful improvement look like?"]
+    },
+    {
+      id: "interviewer-operational-metrics",
+      title: "重要な運用指標を聞く",
+      category: "Basics",
+      lp: "Questions for Interviewer",
+      question: "What operational metrics are most important for this team, such as inventory accuracy, turnaround time, safety, or quality? How does this role influence them?",
+      situation: "最終面接の最後に、チームが重視する運用指標と自分の役割への期待を理解するために質問します。",
+      task: "安全性・正確性・スピード・品質を、どのように測定し改善しているかを把握します。",
+      action: "最重要KPIと、このポジションが日々の行動を通じてKPIへ与える影響を確認します。",
+      result: "物流オペレーションを測定可能な成果として捉え、データに基づき貢献したい姿勢を示せます。",
+      answer: "Thank you. I have a question. What operational metrics are most important for this team, such as inventory accuracy, turnaround time, safety, or quality? How does this role influence them?\nI ask because, in my past roles, I have tried to balance safety, accuracy, speed, and continuous improvement through measurable results.",
+      followUps: ["Which metric is hardest to improve without affecting another one?", "How often does the team review these metrics?", "What data would this role use most often?"]
+    },
+    {
+      id: "interviewer-improvement-process",
+      title: "業務改善の進め方を聞く",
+      category: "Basics",
+      lp: "Questions for Interviewer",
+      question: "When a team member identifies a process improvement opportunity, how are ideas tested and scaled within the team or across other sites?",
+      situation: "最終面接の最後に、現場の改善提案がどのように検証・展開されるかを理解するために質問します。",
+      task: "自分の自動化や業務改善の経験を、チームの進め方に合わせて活かす方法を把握します。",
+      action: "小さな実験、品質・安全性の確認、標準化、他拠点展開の流れを聞きます。",
+      result: "改善提案を個人の工夫で終わらせず、再現可能な仕組みにしたい姿勢を示せます。",
+      answer: "Thank you. I have a question. When a team member identifies a process improvement opportunity, how are ideas tested and scaled within the team or across other sites?\nI ask because I have experience with process automation and would like to understand how the team turns a local improvement into a reliable standard process.",
+      followUps: ["What evidence is required before an improvement is adopted?", "Who needs to be involved in the review?", "Can you share an example of an improvement that was scaled successfully?"]
+    },
+    {
+      id: "interviewer-cross-functional-priorities",
+      title: "他チームとの優先順位調整を聞く",
+      category: "Basics",
+      lp: "Questions for Interviewer",
+      question: "How does this team work with technicians, facilities, security, and other stakeholders when priorities conflict?",
+      situation: "最終面接の最後に、データセンター物流で必要な多部署連携と意思決定の進め方を理解するために質問します。",
+      task: "安全性、正確性、スピードなどの優先順位が競合する場面での協働方法を把握します。",
+      action: "関係者間の情報共有、エスカレーション、意思決定の基準について質問します。",
+      result: "物流業務が単独では完結しないことを理解し、他チームと信頼関係を築いて貢献したい姿勢を示せます。",
+      answer: "Thank you. I have a question. How does this team work with technicians, facilities, security, and other stakeholders when priorities conflict?\nI ask because many of my past projects required balancing safety, accuracy, speed, and continuous improvement across different teams.",
+      followUps: ["Who makes the final decision when priorities conflict?", "How are urgent issues escalated?", "What helps teams build trust with one another?"]
+    }
+  ];
+
   window.DEFAULT_CARDS = window.DEFAULT_CARDS.map((card) => ({ ...card, ...(expandedAnswers[card.id] || {}) }));
   const knownIds = new Set(window.DEFAULT_CARDS.map((card) => card.id));
-  newFailureCards.forEach((card) => {
+  [...newFailureCards, ...interviewerQuestionCards].forEach((card) => {
     if (!knownIds.has(card.id)) window.DEFAULT_CARDS.push(card);
   });
 
@@ -135,6 +203,26 @@
     "italy-agent-negotiation": {
       questionJa: "前に進まなかったパートナーシップについて教えてください。そこから何を学びましたか。",
       answerJa: "2017年、ロサーセンブランドの責任者として、フィレンツェのPitti Uomoに半年ごとに出展し、イタリアのニットメーカーと販売代理店・ライセンス契約の交渉を始めました。仮契約まで進んだ後、展示会の間は主にメールで交渉し、対面で会うのは半年に一度でした。私は自社に最も有利な条件を確保することに意識を置き過ぎ、相手が安心して事業を始めるために何を必要としているかを十分に確認できていませんでした。最終的に相手は正式契約を見送り、メールでの交渉を続けても回復できませんでした。私は、複雑な海外パートナーシップではメールだけでは信頼と相互理解を十分に作れないこと、最初から条件を最大化するよりも小さく段階的に始める選択肢が必要だと学びました。2022年、台湾とタイの新しい販売代理店ビジネスを始めた際には、より小さな数値計画から始める設計をリーガル担当として支援しました。"
+    },
+    "interviewer-success-criteria": {
+      questionJa: "このポジションで、入社後6か月から1年の間に、特に成果を出している方にはどのような共通点がありますか。",
+      answerJa: "ありがとうございます。質問があります。このポジションで、入社後6か月から1年の間に、特に成果を出している方にはどのような共通点がありますか。実際にどのような状態が成功と見なされるのか、また早く貢献するためにどこへ力を注ぐべきかを理解したいと考えています。"
+    },
+    "interviewer-current-challenges": {
+      questionJa: "現在、チームとして最も難しい、あるいは繰り返し発生しやすい物流上の課題はどのようなことでしょうか。",
+      answerJa: "ありがとうございます。質問があります。現在、チームとして最も難しい、あるいは繰り返し発生しやすい物流上の課題はどのようなことでしょうか。私は根本原因を見つけてプロセスを改善することに関心があるため、自分の経験をどのような領域で最も活かせるかを理解したいと考えています。"
+    },
+    "interviewer-operational-metrics": {
+      questionJa: "このチームでは、在庫精度、対応スピード、安全性、品質などの中で、特に重視している運用指標は何でしょうか。また、このポジションはその指標にどのように貢献しますか。",
+      answerJa: "ありがとうございます。質問があります。このチームでは、在庫精度、対応スピード、安全性、品質などの中で、特に重視している運用指標は何でしょうか。また、このポジションはその指標にどのように貢献しますか。私自身、これまで安全性、正確性、スピード、継続的改善のバランスを、測定可能な成果として追求してきたためです。"
+    },
+    "interviewer-improvement-process": {
+      questionJa: "チームメンバーが業務改善の機会を見つけた場合、改善案はどのように検証され、チーム内や他拠点へ展開されていくのでしょうか。",
+      answerJa: "ありがとうございます。質問があります。チームメンバーが業務改善の機会を見つけた場合、改善案はどのように検証され、チーム内や他拠点へ展開されていくのでしょうか。私には業務自動化の経験があるため、現場での改善をどのように信頼できる標準プロセスへ変えていくのかを理解したいと考えています。"
+    },
+    "interviewer-cross-functional-priorities": {
+      questionJa: "物流チームが、技術者、設備、セキュリティなどの他チームと連携する際、優先順位が競合した場合には、どのように意思決定や調整をされていますか。",
+      answerJa: "ありがとうございます。質問があります。物流チームが、技術者、設備、セキュリティなどの他チームと連携する際、優先順位が競合した場合には、どのように意思決定や調整をされていますか。私自身、これまでのプロジェクトで、安全性、正確性、スピード、継続的改善のバランスを、複数チームと取りながら進めてきたためです。"
     }
   });
 })();
