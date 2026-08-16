@@ -13,26 +13,26 @@
     { value: "1.25", label: "1.25x 速い" }
   ];
   const CLOUD_ENGLISH_VOICES = [
-    { value: "cedar", label: "Cedar（推奨・現在の声）" },
-    { value: "marin", label: "Marin（推奨）" },
-    { value: "alloy", label: "Alloy" },
-    { value: "ash", label: "Ash" },
-    { value: "ballad", label: "Ballad" },
-    { value: "coral", label: "Coral" },
-    { value: "echo", label: "Echo" },
-    { value: "fable", label: "Fable" },
-    { value: "nova", label: "Nova" },
-    { value: "onyx", label: "Onyx" },
-    { value: "sage", label: "Sage" },
-    { value: "shimmer", label: "Shimmer" },
-    { value: "verse", label: "Verse" }
+    { value: "cedar", label: "Cedar（男性寄り／推奨・現在の声）" },
+    { value: "marin", label: "Marin（女性寄り／推奨）" },
+    { value: "alloy", label: "Alloy（中性的）" },
+    { value: "ash", label: "Ash（男性寄り）" },
+    { value: "ballad", label: "Ballad（男性寄り）" },
+    { value: "coral", label: "Coral（女性寄り）" },
+    { value: "echo", label: "Echo（男性寄り）" },
+    { value: "fable", label: "Fable（男性寄り）" },
+    { value: "nova", label: "Nova（女性寄り）" },
+    { value: "onyx", label: "Onyx（男性寄り）" },
+    { value: "sage", label: "Sage（女性寄り）" },
+    { value: "shimmer", label: "Shimmer（女性寄り）" },
+    { value: "verse", label: "Verse（男性寄り）" }
   ];
   const CLOUD_JAPANESE_VOICES = [
-    { value: "marin", label: "Marin（推奨・現在の声）" },
-    { value: "coral", label: "Coral" },
-    { value: "nova", label: "Nova" },
-    { value: "sage", label: "Sage" },
-    { value: "shimmer", label: "Shimmer" }
+    { value: "marin", label: "Marin（女性寄り／推奨・現在の声）" },
+    { value: "coral", label: "Coral（女性寄り）" },
+    { value: "nova", label: "Nova（女性寄り）" },
+    { value: "sage", label: "Sage（女性寄り）" },
+    { value: "shimmer", label: "Shimmer（女性寄り）" }
   ];
   const CLOUD_VOICE_NAMES = new Set(CLOUD_ENGLISH_VOICES.map((voice) => voice.value));
   const screens = [...document.querySelectorAll(".screen")];
@@ -192,6 +192,7 @@
     const cloudToggle = document.getElementById("cloud-tts-toggle");
     const cloudEnglishSelect = document.getElementById("cloud-english-voice");
     const cloudJapaneseSelect = document.getElementById("cloud-japanese-voice");
+    const cloudVoiceHelp = document.querySelector(".cloud-voice-help");
     if (!englishSelect && !japaneseSelect) return;
     const englishVoices = getEnglishVoices();
     if (englishSelect) {
@@ -210,6 +211,7 @@
     if (cloudToggle) { cloudToggle.checked = speechSettings.cloudTts !== false; cloudToggle.disabled = !cloudTtsEndpoint(); }
     if (cloudEnglishSelect) { cloudEnglishSelect.innerHTML = cloudVoiceOptionsMarkup(CLOUD_ENGLISH_VOICES); cloudEnglishSelect.value = speechSettings.cloudEnglishVoice; cloudEnglishSelect.disabled = !cloudTtsEndpoint(); }
     if (cloudJapaneseSelect) { cloudJapaneseSelect.innerHTML = cloudVoiceOptionsMarkup(CLOUD_JAPANESE_VOICES); cloudJapaneseSelect.value = speechSettings.cloudJapaneseVoice; cloudJapaneseSelect.disabled = !cloudTtsEndpoint(); }
+    if (cloudVoiceHelp) cloudVoiceHelp.textContent = "「女性寄り／男性寄り」はAI音声の声質の目安です。AI音声に実在人物・生物学的性別はありません。選んだ後、カードの再生ボタンで聴き比べられます。";
     if (cloudStatus) cloudStatus.textContent = cloudTtsEndpoint() ? (shouldUseCloudTts() ? `高品質AI音声を使用中（英語: ${speechSettings.cloudEnglishVoice} ／ 日本語: ${speechSettings.cloudJapaneseVoice}）` : "高品質AI音声はオフです。端末音声を使用します。") : "高品質AI音声を準備中です。現在は端末音声を使用します。";
     if (englishStatus) englishStatus.textContent = chosenEnglish ? `端末の予備英語音声: ${chosenEnglish.name} (${chosenEnglish.lang})` : "端末の英語音声を読み込み中...";
     if (japaneseStatus) japaneseStatus.textContent = chosenJapanese ? `端末の予備日本語音声: ${chosenJapanese.name} (${chosenJapanese.lang})` : "女性の日本語音声が見つかりません。端末設定で日本語の女性音声を追加してください。";
@@ -719,7 +721,7 @@
   window.addEventListener("beforeinstallprompt", (event) => { event.preventDefault(); installPrompt = event; document.getElementById("install-button").hidden = false; });
   document.getElementById("install-button").addEventListener("click", async () => { if (!installPrompt) return; installPrompt.prompt(); await installPrompt.userChoice; installPrompt = null; document.getElementById("install-button").hidden = true; });
   applyFontSize(readFontSize());
-  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=22").catch(() => {});
+  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=23").catch(() => {});
   if ("speechSynthesis" in window) { window.speechSynthesis.addEventListener("voiceschanged", refreshVoiceOptions); refreshVoiceOptions(); }
   renderStats();
   renderLibrary();
