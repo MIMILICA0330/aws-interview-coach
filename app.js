@@ -12,6 +12,29 @@
     { value: "1.10", label: "1.10x やや速い" },
     { value: "1.25", label: "1.25x 速い" }
   ];
+  const CLOUD_ENGLISH_VOICES = [
+    { value: "cedar", label: "Cedar（推奨・現在の声）" },
+    { value: "marin", label: "Marin（推奨）" },
+    { value: "alloy", label: "Alloy" },
+    { value: "ash", label: "Ash" },
+    { value: "ballad", label: "Ballad" },
+    { value: "coral", label: "Coral" },
+    { value: "echo", label: "Echo" },
+    { value: "fable", label: "Fable" },
+    { value: "nova", label: "Nova" },
+    { value: "onyx", label: "Onyx" },
+    { value: "sage", label: "Sage" },
+    { value: "shimmer", label: "Shimmer" },
+    { value: "verse", label: "Verse" }
+  ];
+  const CLOUD_JAPANESE_VOICES = [
+    { value: "marin", label: "Marin（推奨・現在の声）" },
+    { value: "coral", label: "Coral" },
+    { value: "nova", label: "Nova" },
+    { value: "sage", label: "Sage" },
+    { value: "shimmer", label: "Shimmer" }
+  ];
+  const CLOUD_VOICE_NAMES = new Set(CLOUD_ENGLISH_VOICES.map((voice) => voice.value));
   const screens = [...document.querySelectorAll(".screen")];
   const toast = document.getElementById("toast");
   let currentScreen = "home-screen";
@@ -63,9 +86,11 @@
     try {
       const saved = JSON.parse(localStorage.getItem(SPEECH_KEY) || "{}");
       const rate = Number(saved.rate);
-      return { voiceName: typeof saved.voiceName === "string" ? saved.voiceName : "", japaneseVoiceName: typeof saved.japaneseVoiceName === "string" ? saved.japaneseVoiceName : "", rate: rate >= 0.65 && rate <= 1.3 ? rate : 0.78, sentencePause: saved.sentencePause === true, cloudTts: saved.cloudTts !== false };
+      const cloudEnglishVoice = CLOUD_VOICE_NAMES.has(saved.cloudEnglishVoice) ? saved.cloudEnglishVoice : "cedar";
+      const cloudJapaneseVoice = CLOUD_JAPANESE_VOICES.some((voice) => voice.value === saved.cloudJapaneseVoice) ? saved.cloudJapaneseVoice : "marin";
+      return { voiceName: typeof saved.voiceName === "string" ? saved.voiceName : "", japaneseVoiceName: typeof saved.japaneseVoiceName === "string" ? saved.japaneseVoiceName : "", cloudEnglishVoice, cloudJapaneseVoice, rate: rate >= 0.65 && rate <= 1.3 ? rate : 0.78, sentencePause: saved.sentencePause === true, cloudTts: saved.cloudTts !== false };
     } catch (_) {
-      return { voiceName: "", japaneseVoiceName: "", rate: 0.78, sentencePause: false, cloudTts: true };
+      return { voiceName: "", japaneseVoiceName: "", cloudEnglishVoice: "cedar", cloudJapaneseVoice: "marin", rate: 0.78, sentencePause: false, cloudTts: true };
     }
   }
 
@@ -154,6 +179,10 @@
     return [...candidates].sort((a, b) => japaneseVoiceScore(b) - japaneseVoiceScore(a))[0] || null;
   }
 
+  function cloudVoiceOptionsMarkup(voices) {
+    return voices.map((voice) => `<option value="${voice.value}">${voice.label}</option>`).join("");
+  }
+
   function refreshVoiceOptions() {
     const englishSelect = document.getElementById("voice-select");
     const japaneseSelect = document.getElementById("japanese-voice-select");
@@ -161,6 +190,8 @@
     const japaneseStatus = document.getElementById("japanese-voice-status");
     const cloudStatus = document.getElementById("cloud-voice-status");
     const cloudToggle = document.getElementById("cloud-tts-toggle");
+    const cloudEnglishSelect = document.getElementById("cloud-english-voice");
+    const cloudJapaneseSelect = document.getElementById("cloud-japanese-voice");
     if (!englishSelect && !japaneseSelect) return;
     const englishVoices = getEnglishVoices();
     if (englishSelect) {
@@ -177,7 +208,9 @@
     const chosenEnglish = chooseEnglishVoice(englishVoices);
     const chosenJapanese = chooseJapaneseVoice();
     if (cloudToggle) { cloudToggle.checked = speechSettings.cloudTts !== false; cloudToggle.disabled = !cloudTtsEndpoint(); }
-    if (cloudStatus) cloudStatus.textContent = cloudTtsEndpoint() ? (shouldUseCloudTts() ? "高品質AI音声を使用中（日本語・英語ともにクラウド音声）" : "高品質AI音声はオフです。端末音声を使用します。") : "高品質AI音声を準備中です。現在は端末音声を使用します。";
+    if (cloudEnglishSelect) { cloudEnglishSelect.innerHTML = cloudVoiceOptionsMarkup(CLOUD_ENGLISH_VOICES); cloudEnglishSelect.value = speechSettings.cloudEnglishVoice; cloudEnglishSelect.disabled = !cloudTtsEndpoint(); }
+    if (cloudJapaneseSelect) { cloudJapaneseSelect.innerHTML = cloudVoiceOptionsMarkup(CLOUD_JAPANESE_VOICES); cloudJapaneseSelect.value = speechSettings.cloudJapaneseVoice; cloudJapaneseSelect.disabled = !cloudTtsEndpoint(); }
+    if (cloudStatus) cloudStatus.textContent = cloudTtsEndpoint() ? (shouldUseCloudTts() ? `高品質AI音声を使用中（英語: ${speechSettings.cloudEnglishVoice} ／ 日本語: ${speechSettings.cloudJapaneseVoice}）` : "高品質AI音声はオフです。端末音声を使用します。") : "高品質AI音声を準備中です。現在は端末音声を使用します。";
     if (englishStatus) englishStatus.textContent = chosenEnglish ? `端末の予備英語音声: ${chosenEnglish.name} (${chosenEnglish.lang})` : "端末の英語音声を読み込み中...";
     if (japaneseStatus) japaneseStatus.textContent = chosenJapanese ? `端末の予備日本語音声: ${chosenJapanese.name} (${chosenJapanese.lang})` : "女性の日本語音声が見つかりません。端末設定で日本語の女性音声を追加してください。";
   }
@@ -372,7 +405,7 @@
       cache: "no-store",
       signal: controller.signal,
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text, language: language === "japanese" ? "ja" : "en", rate: speechSettings.rate })
+      body: JSON.stringify({ text, language: language === "japanese" ? "ja" : "en", rate: speechSettings.rate, voice: language === "japanese" ? speechSettings.cloudJapaneseVoice : speechSettings.cloudEnglishVoice })
     });
     if (!response.ok) throw new Error(`TTS ${response.status}`);
     const audio = await response.blob();
@@ -679,12 +712,14 @@
   document.getElementById("voice-select")?.addEventListener("change", (event) => { speechSettings.voiceName = event.target.value; saveSpeechSettings(); showToast("英語音声を設定しました"); });
   document.getElementById("japanese-voice-select")?.addEventListener("change", (event) => { speechSettings.japaneseVoiceName = event.target.value; saveSpeechSettings(); showToast("女性の日本語音声を設定しました"); });
   document.getElementById("cloud-tts-toggle")?.addEventListener("change", (event) => { speechSettings.cloudTts = event.target.checked; stopSpeech(); saveSpeechSettings(); showToast(event.target.checked ? "高品質AI音声をオンにしました" : "端末音声に切り替えました"); });
+  document.getElementById("cloud-english-voice")?.addEventListener("change", (event) => { speechSettings.cloudEnglishVoice = CLOUD_VOICE_NAMES.has(event.target.value) ? event.target.value : "cedar"; stopSpeech(); saveSpeechSettings(); showToast(`高品質の英語音声を ${speechSettings.cloudEnglishVoice} に設定しました`); });
+  document.getElementById("cloud-japanese-voice")?.addEventListener("change", (event) => { speechSettings.cloudJapaneseVoice = CLOUD_JAPANESE_VOICES.some((voice) => voice.value === event.target.value) ? event.target.value : "marin"; stopSpeech(); saveSpeechSettings(); showToast(`高品質の日本語音声を ${speechSettings.cloudJapaneseVoice} に設定しました`); });
   document.getElementById("speech-rate")?.addEventListener("change", (event) => { stopSpeech(); speechSettings.rate = Number(event.target.value); saveSpeechSettings(); showToast("再生速度を設定しました"); });
   document.getElementById("font-size")?.addEventListener("change", (event) => { applyFontSize(event.target.value); localStorage.setItem(FONT_SIZE_KEY, event.target.value); showToast("文字サイズを変更しました"); });
   window.addEventListener("beforeinstallprompt", (event) => { event.preventDefault(); installPrompt = event; document.getElementById("install-button").hidden = false; });
   document.getElementById("install-button").addEventListener("click", async () => { if (!installPrompt) return; installPrompt.prompt(); await installPrompt.userChoice; installPrompt = null; document.getElementById("install-button").hidden = true; });
   applyFontSize(readFontSize());
-  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=21").catch(() => {});
+  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=22").catch(() => {});
   if ("speechSynthesis" in window) { window.speechSynthesis.addEventListener("voiceschanged", refreshVoiceOptions); refreshVoiceOptions(); }
   renderStats();
   renderLibrary();
