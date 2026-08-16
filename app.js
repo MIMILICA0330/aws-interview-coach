@@ -60,9 +60,9 @@ let speechStartTimer = null;
     try {
       const saved = JSON.parse(localStorage.getItem(SPEECH_KEY) || "{}");
       const rate = Number(saved.rate);
-      return { voiceName: typeof saved.voiceName === "string" ? saved.voiceName : "", rate: rate >= 0.65 && rate <= 1.3 ? rate : 0.78, sentencePause: saved.sentencePause === true };
+      return { voiceName: typeof saved.voiceName === "string" ? saved.voiceName : "", japaneseVoiceName: typeof saved.japaneseVoiceName === "string" ? saved.japaneseVoiceName : "", rate: rate >= 0.65 && rate <= 1.3 ? rate : 0.78, sentencePause: saved.sentencePause === true };
     } catch (_) {
-      return { voiceName: "", rate: 0.78, sentencePause: false };
+      return { voiceName: "", japaneseVoiceName: "", rate: 0.78, sentencePause: false };
     }
   }
 
@@ -111,24 +111,59 @@ let speechStartTimer = null;
     return window.speechSynthesis.getVoices().filter((voice) => /^ja[-_]/i.test(voice.lang));
   }
 
+  function isFemaleJapaneseVoice(voice) {
+    return /kyoko|nanami|haruka|sayaka|ayumi|sakura|ichika|hana|mizuki|google japanese|google 日本語|microsoft (haruka|nanami|sayaka|ayumi)/i.test(voice.name);
+  }
+
+  function isLikelyMaleJapaneseVoice(voice) {
+    return /otoya|ichiro|keita|daichi|takumi|\bmale\b|男性/i.test(voice.name);
+  }
+
+  function preferredJapaneseVoices(voices = getJapaneseVoices()) {
+    const femaleVoices = voices.filter(isFemaleJapaneseVoice);
+    if (femaleVoices.length) return femaleVoices;
+    return voices.filter((voice) => !isLikelyMaleJapaneseVoice(voice));
+  }
+
+  function japaneseVoiceScore(voice) {
+    let score = voice.localService ? 20 : 0;
+    if (/ja[-_]jp/i.test(voice.lang)) score += 8;
+    if (isFemaleJapaneseVoice(voice)) score += 100;
+    if (/natural|premium|enhanced/i.test(voice.name)) score += 8;
+    return score;
+  }
+
   function chooseJapaneseVoice(voices = getJapaneseVoices()) {
-    return [...voices].sort((a, b) => {
-      const score = (voice) => (voice.localService ? 20 : 0) + (/ja[-_]jp/i.test(voice.lang) ? 8 : 0) + (/kyoko|otoya|nanami|haruka|google japanese|microsoft/i.test(voice.name.toLowerCase()) ? 10 : 0);
-      return score(b) - score(a);
-    })[0] || null;
+    const candidates = preferredJapaneseVoices(voices);
+    if (speechSettings.japaneseVoiceName) {
+      const selected = candidates.find((voice) => voice.name === speechSettings.japaneseVoiceName);
+      if (selected) return selected;
+    }
+    return [...candidates].sort((a, b) => japaneseVoiceScore(b) - japaneseVoiceScore(a))[0] || null;
   }
 
   function refreshVoiceOptions() {
-    const select = document.getElementById("voice-select");
-    const status = document.getElementById("voice-status");
-    if (!select) return;
-    const voices = getEnglishVoices();
-    select.innerHTML = `<option value="">自動選択（おすすめ）</option>${voices.map((voice) => `<option value="${escapeHtml(voice.name)}">${escapeHtml(voice.name)} (${escapeHtml(voice.lang)})</option>`).join("")}`;
-    select.value = speechSettings.voiceName;
+    const englishSelect = document.getElementById("voice-select");
+    const japaneseSelect = document.getElementById("japanese-voice-select");
+    const englishStatus = document.getElementById("voice-status");
+    const japaneseStatus = document.getElementById("japanese-voice-status");
+    if (!englishSelect && !japaneseSelect) return;
+    const englishVoices = getEnglishVoices();
+    if (englishSelect) {
+      englishSelect.innerHTML = `<option value="">自動選択（おすすめ）</option>${englishVoices.map((voice) => `<option value="${escapeHtml(voice.name)}">${escapeHtml(voice.name)} (${escapeHtml(voice.lang)})</option>`).join("")}`;
+      englishSelect.value = speechSettings.voiceName;
+    }
+    const japaneseVoices = preferredJapaneseVoices();
+    if (japaneseSelect) {
+      japaneseSelect.innerHTML = `<option value="">女性音声を自動選択（おすすめ）</option>${japaneseVoices.map((voice) => `<option value="${escapeHtml(voice.name)}">${escapeHtml(voice.name)} (${escapeHtml(voice.lang)})</option>`).join("")}`;
+      japaneseSelect.value = speechSettings.japaneseVoiceName;
+    }
     const rateSelect = document.getElementById("speech-rate");
     if (rateSelect) rateSelect.value = nearestSpeedValue(speechSettings.rate);
-    const chosen = chooseEnglishVoice(voices);
-    if (status) status.textContent = chosen ? `使用中: ${chosen.name} (${chosen.lang})` : "端末の英語音声を読み込み中...";
+    const chosenEnglish = chooseEnglishVoice(englishVoices);
+    const chosenJapanese = chooseJapaneseVoice();
+    if (englishStatus) englishStatus.textContent = chosenEnglish ? `使用中の英語音声: ${chosenEnglish.name} (${chosenEnglish.lang})` : "端末の英語音声を読み込み中...";
+    if (japaneseStatus) japaneseStatus.textContent = chosenJapanese ? `使用中の日本語音声（女性候補）: ${chosenJapanese.name} (${chosenJapanese.lang})` : "女性の日本語音声が見つかりません。端末設定で日本語の女性音声を追加してください。";
   }
 
   function saveSpeechSettings() {
@@ -247,6 +282,7 @@ function stopSpeech() {
     const run = speechRun;
     const isJapanese = language === "japanese";
     const voice = isJapanese ? chooseJapaneseVoice() : chooseEnglishVoice();
+    if (isJapanese && !voice) return showToast("女性の日本語音声が見つかりません。端末設定で追加してください");
     const chunks = splitSpeechChunks(text, language);
     let index = 0;
     activeSpeechBlock = block;
@@ -516,12 +552,13 @@ function stopSpeech() {
   document.getElementById("stop-recording").addEventListener("click", () => stopRecorder(false));
   document.getElementById("reset-progress-button").addEventListener("click", () => { if (window.confirm("練習履歴をリセットしますか？")) { localStorage.removeItem(PROGRESS_KEY); renderStats(); showToast("練習履歴をリセットしました"); } });
   document.getElementById("voice-select")?.addEventListener("change", (event) => { speechSettings.voiceName = event.target.value; saveSpeechSettings(); showToast("英語音声を設定しました"); });
+  document.getElementById("japanese-voice-select")?.addEventListener("change", (event) => { speechSettings.japaneseVoiceName = event.target.value; saveSpeechSettings(); showToast("女性の日本語音声を設定しました"); });
   document.getElementById("speech-rate")?.addEventListener("change", (event) => { stopSpeech(); speechSettings.rate = Number(event.target.value); saveSpeechSettings(); showToast("再生速度を設定しました"); });
   document.getElementById("font-size")?.addEventListener("change", (event) => { applyFontSize(event.target.value); localStorage.setItem(FONT_SIZE_KEY, event.target.value); showToast("文字サイズを変更しました"); });
   window.addEventListener("beforeinstallprompt", (event) => { event.preventDefault(); installPrompt = event; document.getElementById("install-button").hidden = false; });
   document.getElementById("install-button").addEventListener("click", async () => { if (!installPrompt) return; installPrompt.prompt(); await installPrompt.userChoice; installPrompt = null; document.getElementById("install-button").hidden = true; });
   applyFontSize(readFontSize());
-  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=19").catch(() => {});
+  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=20").catch(() => {});
   if ("speechSynthesis" in window) { window.speechSynthesis.addEventListener("voiceschanged", refreshVoiceOptions); refreshVoiceOptions(); }
   renderStats();
   renderLibrary();
