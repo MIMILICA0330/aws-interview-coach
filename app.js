@@ -13,26 +13,12 @@
     { value: "1.25", label: "1.25x 速い" }
   ];
   const CLOUD_ENGLISH_VOICES = [
-    { value: "cedar", label: "Cedar（男性寄り／推奨・現在の声）" },
-    { value: "marin", label: "Marin（女性寄り／推奨）" },
-    { value: "alloy", label: "Alloy（中性的）" },
-    { value: "ash", label: "Ash（男性寄り）" },
-    { value: "ballad", label: "Ballad（男性寄り）" },
-    { value: "coral", label: "Coral（女性寄り）" },
-    { value: "echo", label: "Echo（男性寄り）" },
-    { value: "fable", label: "Fable（男性寄り）" },
-    { value: "nova", label: "Nova（女性寄り）" },
-    { value: "onyx", label: "Onyx（男性寄り）" },
-    { value: "sage", label: "Sage（女性寄り）" },
-    { value: "shimmer", label: "Shimmer（女性寄り）" },
-    { value: "verse", label: "Verse（男性寄り）" }
+    { value: "marin", label: "女性寄り（Marin）" },
+    { value: "cedar", label: "男性寄り（Cedar）" }
   ];
   const CLOUD_JAPANESE_VOICES = [
-    { value: "marin", label: "Marin（女性寄り／推奨・現在の声）" },
-    { value: "coral", label: "Coral（女性寄り）" },
-    { value: "nova", label: "Nova（女性寄り）" },
-    { value: "sage", label: "Sage（女性寄り）" },
-    { value: "shimmer", label: "Shimmer（女性寄り）" }
+    { value: "marin", label: "女性寄り（Marin）" },
+    { value: "cedar", label: "男性寄り（Cedar）" }
   ];
   const CLOUD_VOICE_NAMES = new Set(CLOUD_ENGLISH_VOICES.map((voice) => voice.value));
   const screens = [...document.querySelectorAll(".screen")];
@@ -103,7 +89,7 @@
   }
 
   function shouldUseCloudTts() {
-    return speechSettings.cloudTts !== false && Boolean(cloudTtsEndpoint());
+    return Boolean(cloudTtsEndpoint());
   }
 
   function readFontSize() {
@@ -211,11 +197,11 @@
     if (rateSelect) rateSelect.value = nearestSpeedValue(speechSettings.rate);
     const chosenEnglish = chooseEnglishVoice(englishVoices);
     const chosenJapanese = chooseJapaneseVoice();
-    if (cloudToggle) { cloudToggle.checked = speechSettings.cloudTts !== false; cloudToggle.disabled = !cloudTtsEndpoint(); }
+    if (cloudToggle) { cloudToggle.checked = true; cloudToggle.disabled = true; }
     if (cloudEnglishSelect) { cloudEnglishSelect.innerHTML = cloudVoiceOptionsMarkup(CLOUD_ENGLISH_VOICES); cloudEnglishSelect.value = speechSettings.cloudEnglishVoice; cloudEnglishSelect.disabled = !cloudTtsEndpoint(); }
     if (cloudJapaneseSelect) { cloudJapaneseSelect.innerHTML = cloudVoiceOptionsMarkup(CLOUD_JAPANESE_VOICES); cloudJapaneseSelect.value = speechSettings.cloudJapaneseVoice; cloudJapaneseSelect.disabled = !cloudTtsEndpoint(); }
-    if (cloudVoiceHelp) cloudVoiceHelp.textContent = "「女性寄り／男性寄り」はAI音声の声質の目安です。AI音声に実在人物・生物学的性別はありません。選んだ後、カードの再生ボタンで聴き比べられます。";
-    if (cloudStatus) cloudStatus.textContent = cloudTtsEndpoint() ? (shouldUseCloudTts() ? `高品質AI音声を使用中（英語: ${speechSettings.cloudEnglishVoice} ／ 日本語: ${speechSettings.cloudJapaneseVoice}）` : "高品質AI音声はオフです。端末音声を使用します。") : "高品質AI音声を準備中です。現在は端末音声を使用します。";
+    if (cloudVoiceHelp) cloudVoiceHelp.textContent = "英語・日本語とも、聞きやすい固定AI音声を女性寄り／男性寄りから選べます。再生時に音声合成APIは呼び出しません。";
+    if (cloudStatus) cloudStatus.textContent = cloudTtsEndpoint() ? `事前収録AI音声を使用（英語: ${speechSettings.cloudEnglishVoice === "marin" ? "女性寄り" : "男性寄り"} ／ 日本語: ${speechSettings.cloudJapaneseVoice === "marin" ? "女性寄り" : "男性寄り"}）` : "固定音声を準備中です。";
     if (englishStatus) englishStatus.textContent = chosenEnglish ? `端末の予備英語音声: ${chosenEnglish.name} (${chosenEnglish.lang})` : "端末の英語音声を読み込み中...";
     if (japaneseStatus) japaneseStatus.textContent = chosenJapanese ? `端末の予備日本語音声: ${chosenJapanese.name} (${chosenJapanese.lang})` : "女性の日本語音声が見つかりません。端末設定で日本語の女性音声を追加してください。";
   }
@@ -447,80 +433,73 @@
     return chunks;
   }
 
-  async function requestCloudAudio(text, language) {
-    const controller = new AbortController();
-    activeSpeechAbort = controller;
-    const response = await fetch(`${cloudTtsEndpoint()}/tts`, {
-      method: "POST",
-      cache: "no-store",
-      signal: controller.signal,
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text, language: language === "japanese" ? "ja" : "en", rate: speechSettings.rate, voice: language === "japanese" ? speechSettings.cloudJapaneseVoice : speechSettings.cloudEnglishVoice })
-    });
-    if (!response.ok) {
-      const payload = await response.json().catch(() => null);
-      const error = new Error(payload?.error || `TTS ${response.status}`);
-      error.status = response.status;
-      throw error;
-    }
-    const audio = await response.blob();
-    if (!audio.size) throw new Error("Empty audio response");
-    return audio;
+  function staticSpeaker(language) {
+    const voice = language === "japanese" ? speechSettings.cloudJapaneseVoice : speechSettings.cloudEnglishVoice;
+    return voice === "marin" ? "female" : "male";
   }
 
-  function playCloudAudioWithWebAudio(blob, run) {
-    return new Promise((resolve, reject) => {
-      const context = getCloudAudioContext();
-      if (!context) return reject(new Error("Web Audio is unavailable"));
-      let source = null;
-      let settled = false;
-      let started = false;
-      let endWatchdog = null;
-      const cleanup = (error = null) => {
-        if (settled) return;
-        settled = true;
-        if (endWatchdog) window.clearTimeout(endWatchdog);
-        if (activeCloudAudioStop === stop) activeCloudAudioStop = null;
-        if (error) reject(error); else resolve();
-      };
-      const stop = () => {
-        if (started) {
-          source.onended = null;
-          try { source.stop(0); } catch (_) { /* already stopped */ }
+  function staticAudioUrl(audioKey, language) {
+    if (!audioKey || !cloudTtsEndpoint()) return "";
+    return `${cloudTtsEndpoint()}/audio/${encodeURIComponent(`${audioKey}-${staticSpeaker(language)}`)}`;
+  }
+
+  function staticAudioDownloadUrls() {
+    return window.DEFAULT_CARDS.flatMap((rawCard) => {
+      const card = getCardContent(rawCard);
+      const urls = [];
+      if (card.question) urls.push(staticAudioUrl(`${card.id}-question`, "english"));
+      if (card.answer) urls.push(staticAudioUrl(`${card.id}-answer`, "english"));
+      if (card.questionJa) urls.push(staticAudioUrl(`${card.id}-questionJa`, "japanese"));
+      if (card.answerJa) urls.push(staticAudioUrl(`${card.id}-answerJa`, "japanese"));
+      return urls.filter(Boolean);
+    });
+  }
+
+  async function downloadStaticAudio() {
+    const button = document.getElementById("download-audio-button");
+    const urls = staticAudioDownloadUrls();
+    if (!urls.length || !("caches" in window)) return showToast("端末への保存に対応していません");
+    stopSpeech();
+    button.disabled = true;
+    let completed = 0;
+    const cache = await caches.open("interview-coach-audio-v1");
+    const worker = async () => {
+      while (urls.length) {
+        const url = urls.shift();
+        try {
+          const cached = await cache.match(url);
+          if (!cached) {
+            const response = await fetch(url, { mode: "cors", cache: "force-cache" });
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            await cache.put(url, response);
+          }
+        } finally {
+          completed += 1;
+          button.textContent = `保存中… ${completed} / ${completed + urls.length}`;
         }
-        cleanup();
-      };
-      const decode = (bytes) => new Promise((resolveDecode, rejectDecode) => context.decodeAudioData(bytes, resolveDecode, rejectDecode));
-      (async () => {
-        if (context.state === "suspended") await context.resume();
-        const buffer = await decode(await blob.arrayBuffer());
-        if (run !== speechRun) return stop();
-        source = context.createBufferSource();
-        source.buffer = buffer;
-        source.connect(context.destination);
-        source.onended = () => cleanup();
-        activeCloudAudioStop = stop;
-        started = true;
-        source.start(0);
-        endWatchdog = window.setTimeout(() => cleanup(new Error("Audio playback timed out")), Math.max(15_000, Math.min(360_000, buffer.duration * 1000 + 12_000)));
-      })().catch((error) => cleanup(error));
-    });
+      }
+    };
+    try {
+      await Promise.all([worker(), worker(), worker()]);
+      button.textContent = "↓ 選択した音声を端末に保存";
+      showToast("選択中の音声を端末に保存しました");
+    } catch (_) {
+      button.textContent = "↓ 選択した音声を端末に保存";
+      showToast("一部を保存できませんでした。通信状態を確認して再度お試しください");
+    } finally {
+      button.disabled = false;
+    }
   }
 
-  function playCloudAudioWithElement(blob, run) {
+  function playStaticAudio(url, run) {
     return new Promise((resolve, reject) => {
-      const url = URL.createObjectURL(blob);
       const audio = new Audio();
       let settled = false;
-      let playRequested = false;
-      let startWatchdog = null;
       let endWatchdog = null;
       const cleanup = (error = null) => {
         if (settled) return;
         settled = true;
-        if (startWatchdog) window.clearTimeout(startWatchdog);
         if (endWatchdog) window.clearTimeout(endWatchdog);
-        URL.revokeObjectURL(url);
         if (activeCloudAudio === audio) activeCloudAudio = null;
         if (activeCloudAudioStop === stop) activeCloudAudioStop = null;
         if (error) reject(error); else resolve();
@@ -537,74 +516,55 @@
       audio.onended = () => cleanup();
       audio.onerror = () => cleanup(new Error("Audio playback failed"));
       audio.onplaying = () => {
-        if (startWatchdog) window.clearTimeout(startWatchdog);
         const duration = Number.isFinite(audio.duration) && audio.duration > 0 ? audio.duration * 1000 : 120_000;
         endWatchdog = window.setTimeout(() => cleanup(new Error("Audio playback timed out")), Math.max(15_000, Math.min(360_000, duration + 12_000)));
       };
-      audio.oncanplay = () => {
-        if (playRequested) return;
-        playRequested = true;
-        if (settled || run !== speechRun) return stop();
-        if (settled || run !== speechRun) return stop();
-        audio.play().catch((error) => cleanup(error));
-      };
       audio.src = url;
-      audio.load();
-      startWatchdog = window.setTimeout(() => cleanup(new Error("Audio start timed out")), 15_000);
+      audio.playbackRate = speechSettings.rate;
+      if (run !== speechRun) return stop();
+      // Calling play directly inside the user's tap is important on iPhone.
+      audio.play().catch((error) => cleanup(error));
     });
   }
 
-  function playCloudAudio(blob, run) {
-    return isIOSDevice() ? playCloudAudioWithWebAudio(blob, run) : playCloudAudioWithElement(blob, run);
-  }
-
-  async function playWithCloudSpeech(text, block, language, run) {
-    const isSentenceMode = language === "english" && speechSettings.sentencePause;
-    const chunks = isSentenceMode ? splitSpeechChunks(text, language) : cloudChunks(text, language);
-    for (let index = 0; index < chunks.length; index += 1) {
-      if (run !== speechRun) return;
-      const audio = await requestCloudAudio(chunks[index], language);
-      if (run !== speechRun) return;
-      await playCloudAudio(audio, run);
-      if (run !== speechRun) return;
-      if (isSentenceMode && index < chunks.length - 1) await new Promise((resolve) => window.setTimeout(resolve, 5000));
-    }
+  async function playWithStoredSpeech(audioKey, block, language, run) {
+    const url = staticAudioUrl(audioKey, language);
+    if (!url) throw new Error("Static audio is not configured");
+    await playStaticAudio(url, run);
     finishSpeech(run, block);
   }
 
-  async function speak(text, block = null, language = "english") {
+  async function speak(text, block = null, language = "english", audioKey = "") {
     if (!String(text).trim()) return showToast("音読する文章がありません");
     stopSpeech();
     const run = speechRun;
     activeSpeechBlock = block;
     activeSpeechMode = language;
     updateSpeechControls(block, true);
-    if (!shouldUseCloudTts()) return playWithBrowserSpeech(text, block, language, run);
-    primeAudioPlayback();
+    if (!audioKey || !shouldUseCloudTts()) return playWithBrowserSpeech(text, block, language, run);
     try {
-      await playWithCloudSpeech(text, block, language, run);
+      await playWithStoredSpeech(audioKey, block, language, run);
     } catch (error) {
       if (run !== speechRun || error.name === "AbortError") return;
-      const detail = error.status ? `（通信エラー ${error.status}）` : "";
-      showToast(`高品質音声を再生できません${detail}。端末音声に切り替えます。`);
+      showToast("保存済み音声を再生できません。端末音声に切り替えます。");
       playWithBrowserSpeech(text, block, language, run);
     }
   }
 
-  function speechBlockMarkup(id, label, translation) {
+  function speechBlockMarkup(id, label, translation, audioKey = "") {
     const hasTranslation = Boolean(translation);
     const japanese = translation || "日本語訳が未入力です。カード編集から追加できます。";
-    return `<div class="speech-block" data-speech-block="${escapeHtml(id)}"><div class="speech-row"><button class="audio-button speech-play-button" type="button" data-label="${escapeHtml(label)}"><span>◉</span> ${escapeHtml(label)}</button><button class="speech-stop-button" type="button" disabled>■ 停止</button></div><div class="speech-options"><label class="speech-speed-label">速度<select class="speech-speed-select">${speedOptionsMarkup()}</select></label><label class="pause-mode-label"><input class="speech-pause-toggle" type="checkbox" ${speechSettings.sentencePause ? "checked" : ""} /> 文ごとに5秒ポーズ</label><button class="translation-button" type="button">日本語訳を表示</button></div><div class="translation-panel" hidden><div class="translation-label">日本語</div><p>${escapeHtml(japanese)}</p><button class="translation-speak-button" type="button" data-label="日本語訳を音読" ${hasTranslation ? "" : "disabled"}><span>◉</span> 日本語訳を音読</button></div></div>`;
+    return `<div class="speech-block" data-speech-block="${escapeHtml(id)}" data-audio-key="${escapeHtml(audioKey)}"><div class="speech-row"><button class="audio-button speech-play-button" type="button" data-label="${escapeHtml(label)}"><span>◉</span> ${escapeHtml(label)}</button><button class="speech-stop-button" type="button" disabled>■ 停止</button></div><div class="speech-options"><label class="speech-speed-label">速度<select class="speech-speed-select">${speedOptionsMarkup()}</select></label><label class="pause-mode-label"><input class="speech-pause-toggle" type="checkbox" ${speechSettings.sentencePause ? "checked" : ""} /> 文ごとに5秒ポーズ</label><button class="translation-button" type="button">日本語訳を表示</button></div><div class="translation-panel" hidden><div class="translation-label">日本語</div><p>${escapeHtml(japanese)}</p><button class="translation-speak-button" type="button" data-label="日本語訳を音読" ${hasTranslation ? "" : "disabled"}><span>◉</span> 日本語訳を音読</button></div></div>`;
   }
 
-  function bindSpeechBlock(block, text) {
+  function bindSpeechBlock(block, text, audioKey = "") {
     if (!block) return;
     const speedSelect = block.querySelector(".speech-speed-select");
     if (speedSelect) speedSelect.value = nearestSpeedValue(speechSettings.rate);
-    block.querySelector(".speech-play-button")?.addEventListener("click", () => speak(text, block));
+    block.querySelector(".speech-play-button")?.addEventListener("click", () => speak(text, block, "english", audioKey));
     block.querySelector(".translation-speak-button")?.addEventListener("click", () => {
       const translationText = block.querySelector(".translation-panel p")?.textContent || "";
-      speak(translationText, block, "japanese");
+      speak(translationText, block, "japanese", audioKey ? `${audioKey}Ja` : "");
     });
     block.querySelector(".speech-stop-button")?.addEventListener("click", stopSpeech);
     speedSelect?.addEventListener("change", (event) => {
@@ -632,10 +592,13 @@
     if (!card) return;
     document.getElementById("session-progress").textContent = `${practiceIndex + 1} / ${practiceCards.length}`;
     document.getElementById("progress-fill").style.width = `${((practiceIndex + 1) / practiceCards.length) * 100}%`;
-    document.getElementById("practice-card").innerHTML = `<div class="question-label">${escapeHtml(card.category)} · ${escapeHtml(card.lp || "PRACTICE")}</div><h3 class="practice-question">${escapeHtml(card.question)}</h3>${speechBlockMarkup("practice-question", "質問を英語で聞く", card.questionJa)}${card.answer ? `<div class="answer-box"><h3>YOUR KEY POINTS</h3><p>${escapeHtml(card.answer)}</p>${speechBlockMarkup("practice-answer", "模範回答を英語で聞く", card.answerJa)}</div>` : `<div class="answer-box"><h3>STARで話すメモ</h3>${starMarkup(card) || "<p>回答を自分の言葉で話してみましょう。</p>"}</div>`}`;
+    const isDefault = window.DEFAULT_CARDS.some((item) => item.id === card.id);
+    const questionAudioKey = isDefault ? `${card.id}-question` : "";
+    const answerAudioKey = isDefault ? `${card.id}-answer` : "";
+    document.getElementById("practice-card").innerHTML = `<div class="question-label">${escapeHtml(card.category)} · ${escapeHtml(card.lp || "PRACTICE")}</div><h3 class="practice-question">${escapeHtml(card.question)}</h3>${speechBlockMarkup("practice-question", "質問を英語で聞く", card.questionJa, questionAudioKey)}${card.answer ? `<div class="answer-box"><h3>YOUR KEY POINTS</h3><p>${escapeHtml(card.answer)}</p>${speechBlockMarkup("practice-answer", "模範回答を英語で聞く", card.answerJa, answerAudioKey)}</div>` : `<div class="answer-box"><h3>STARで話すメモ</h3>${starMarkup(card) || "<p>回答を自分の言葉で話してみましょう。</p>"}</div>`}`;
     const practiceCard = document.getElementById("practice-card");
-    bindSpeechBlock(practiceCard.querySelector('[data-speech-block="practice-question"]'), card.question);
-    bindSpeechBlock(practiceCard.querySelector('[data-speech-block="practice-answer"]'), card.answer);
+    bindSpeechBlock(practiceCard.querySelector('[data-speech-block="practice-question"]'), card.question, questionAudioKey);
+    bindSpeechBlock(practiceCard.querySelector('[data-speech-block="practice-answer"]'), card.answer, answerAudioKey);
     appendSavedAudio(practiceCard, card.id);
   }
 
@@ -662,10 +625,13 @@
     const rawCard = getCard(id);
     if (!rawCard) return;
     const card = getCardContent(rawCard);
-    document.getElementById("detail-card").innerHTML = `<div class="card-meta"><span class="tag">${escapeHtml(card.category)}</span><span class="tag lp">${escapeHtml(card.lp || "Personal")}</span></div><h3>${escapeHtml(card.title)}</h3><div class="detail-section"><div class="section-label">QUESTION</div><p class="practice-question" style="font-size:19px;margin:0;color:var(--ink)">${escapeHtml(card.question)}</p>${speechBlockMarkup("detail-question", "質問を英語で聞く", card.questionJa)}</div>${card.answer ? `<div class="detail-section"><div class="section-label">ENGLISH ANSWER</div><p>${escapeHtml(card.answer)}</p>${speechBlockMarkup("detail-answer", "模範回答を英語で聞く", card.answerJa)}</div>` : ""}${starMarkup(card) ? `<div class="detail-section"><div class="section-label">STAR NOTES</div>${starMarkup(card)}</div>` : ""}${card.followUps?.length ? `<div class="detail-section"><div class="section-label">FOLLOW-UP QUESTIONS</div><ul class="followup-list">${card.followUps.map((question) => `<li>${escapeHtml(question)}</li>`).join("")}</ul></div>` : ""}<button class="primary-button" id="detail-record-button"><span class="button-icon">●</span>このカードで録音する</button>`;
+    const isDefault = window.DEFAULT_CARDS.some((item) => item.id === card.id);
+    const questionAudioKey = isDefault ? `${card.id}-question` : "";
+    const answerAudioKey = isDefault ? `${card.id}-answer` : "";
+    document.getElementById("detail-card").innerHTML = `<div class="card-meta"><span class="tag">${escapeHtml(card.category)}</span><span class="tag lp">${escapeHtml(card.lp || "Personal")}</span></div><h3>${escapeHtml(card.title)}</h3><div class="detail-section"><div class="section-label">QUESTION</div><p class="practice-question" style="font-size:19px;margin:0;color:var(--ink)">${escapeHtml(card.question)}</p>${speechBlockMarkup("detail-question", "質問を英語で聞く", card.questionJa, questionAudioKey)}</div>${card.answer ? `<div class="detail-section"><div class="section-label">ENGLISH ANSWER</div><p>${escapeHtml(card.answer)}</p>${speechBlockMarkup("detail-answer", "模範回答を英語で聞く", card.answerJa, answerAudioKey)}</div>` : ""}${starMarkup(card) ? `<div class="detail-section"><div class="section-label">STAR NOTES</div>${starMarkup(card)}</div>` : ""}${card.followUps?.length ? `<div class="detail-section"><div class="section-label">FOLLOW-UP QUESTIONS</div><ul class="followup-list">${card.followUps.map((question) => `<li>${escapeHtml(question)}</li>`).join("")}</ul></div>` : ""}<button class="primary-button" id="detail-record-button"><span class="button-icon">●</span>このカードで録音する</button>`;
     const detailCard = document.getElementById("detail-card");
-    bindSpeechBlock(detailCard.querySelector('[data-speech-block="detail-question"]'), card.question);
-    bindSpeechBlock(detailCard.querySelector('[data-speech-block="detail-answer"]'), card.answer);
+    bindSpeechBlock(detailCard.querySelector('[data-speech-block="detail-question"]'), card.question, questionAudioKey);
+    bindSpeechBlock(detailCard.querySelector('[data-speech-block="detail-answer"]'), card.answer, answerAudioKey);
     document.getElementById("detail-record-button").addEventListener("click", () => openRecorder(card.id));
     appendSavedAudio(document.getElementById("detail-card"), card.id);
     document.getElementById("delete-card-button").style.visibility = getCustomCards().some((item) => item.id === id) ? "visible" : "hidden";
@@ -823,14 +789,15 @@
   document.getElementById("voice-select")?.addEventListener("change", (event) => { speechSettings.voiceName = event.target.value; saveSpeechSettings(); showToast("英語音声を設定しました"); });
   document.getElementById("japanese-voice-select")?.addEventListener("change", (event) => { speechSettings.japaneseVoiceName = event.target.value; saveSpeechSettings(); showToast("女性の日本語音声を設定しました"); });
   document.getElementById("cloud-tts-toggle")?.addEventListener("change", (event) => { speechSettings.cloudTts = event.target.checked; stopSpeech(); saveSpeechSettings(); showToast(event.target.checked ? "高品質AI音声をオンにしました" : "端末音声に切り替えました"); });
-  document.getElementById("cloud-english-voice")?.addEventListener("change", (event) => { speechSettings.cloudEnglishVoice = CLOUD_VOICE_NAMES.has(event.target.value) ? event.target.value : "cedar"; stopSpeech(); saveSpeechSettings(); showToast(`高品質の英語音声を ${speechSettings.cloudEnglishVoice} に設定しました`); });
-  document.getElementById("cloud-japanese-voice")?.addEventListener("change", (event) => { speechSettings.cloudJapaneseVoice = CLOUD_JAPANESE_VOICES.some((voice) => voice.value === event.target.value) ? event.target.value : "marin"; stopSpeech(); saveSpeechSettings(); showToast(`高品質の日本語音声を ${speechSettings.cloudJapaneseVoice} に設定しました`); });
+  document.getElementById("cloud-english-voice")?.addEventListener("change", (event) => { speechSettings.cloudEnglishVoice = CLOUD_VOICE_NAMES.has(event.target.value) ? event.target.value : "cedar"; stopSpeech(); saveSpeechSettings(); showToast(`英語を${speechSettings.cloudEnglishVoice === "marin" ? "女性寄り" : "男性寄り"}の固定音声に設定しました`); });
+  document.getElementById("cloud-japanese-voice")?.addEventListener("change", (event) => { speechSettings.cloudJapaneseVoice = CLOUD_JAPANESE_VOICES.some((voice) => voice.value === event.target.value) ? event.target.value : "marin"; stopSpeech(); saveSpeechSettings(); showToast(`日本語を${speechSettings.cloudJapaneseVoice === "marin" ? "女性寄り" : "男性寄り"}の固定音声に設定しました`); });
+  document.getElementById("download-audio-button")?.addEventListener("click", downloadStaticAudio);
   document.getElementById("speech-rate")?.addEventListener("change", (event) => { stopSpeech(); speechSettings.rate = Number(event.target.value); saveSpeechSettings(); showToast("再生速度を設定しました"); });
   document.getElementById("font-size")?.addEventListener("change", (event) => { applyFontSize(event.target.value); localStorage.setItem(FONT_SIZE_KEY, event.target.value); showToast("文字サイズを変更しました"); });
   window.addEventListener("beforeinstallprompt", (event) => { event.preventDefault(); installPrompt = event; document.getElementById("install-button").hidden = false; });
   document.getElementById("install-button").addEventListener("click", async () => { if (!installPrompt) return; installPrompt.prompt(); await installPrompt.userChoice; installPrompt = null; document.getElementById("install-button").hidden = true; });
   applyFontSize(readFontSize());
-  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=25").catch(() => {});
+  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=static1").catch(() => {});
   if ("speechSynthesis" in window) { window.speechSynthesis.addEventListener("voiceschanged", refreshVoiceOptions); refreshVoiceOptions(); }
   renderStats();
   renderLibrary();
