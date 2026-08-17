@@ -57,6 +57,7 @@
   let activeCloudAudioStop = null;
   let activeSpeechAbort = null;
   let speechWatchdog = null;
+  let cloudAudioContext = null;
   const SILENT_AUDIO = "data:audio/wav;base64,UklGRnQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YVAAAACAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA==";
 
   const getCustomCards = () => {
@@ -257,9 +258,21 @@
     }
   }
 
+  function isIOSDevice() {
+    return /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  }
+
+  function getCloudAudioContext() {
+    const Context = window.AudioContext || window.webkitAudioContext;
+    if (!Context) return null;
+    if (!cloudAudioContext) cloudAudioContext = new Context();
+    return cloudAudioContext;
+  }
+
   function primeAudioPlayback() {
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-    if (!isIOS) return;
+    if (!isIOSDevice()) return;
+    const context = getCloudAudioContext();
+    context?.resume?.().catch(() => {});
     const primer = new Audio(SILENT_AUDIO);
     primer.muted = true;
     const start = primer.play();
@@ -444,13 +457,57 @@
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text, language: language === "japanese" ? "ja" : "en", rate: speechSettings.rate, voice: language === "japanese" ? speechSettings.cloudJapaneseVoice : speechSettings.cloudEnglishVoice })
     });
-    if (!response.ok) throw new Error(`TTS ${response.status}`);
+    if (!response.ok) {
+      const payload = await response.json().catch(() => null);
+      const error = new Error(payload?.error || `TTS ${response.status}`);
+      error.status = response.status;
+      throw error;
+    }
     const audio = await response.blob();
     if (!audio.size) throw new Error("Empty audio response");
     return audio;
   }
 
-  function playCloudAudio(blob, run) {
+  function playCloudAudioWithWebAudio(blob, run) {
+    return new Promise((resolve, reject) => {
+      const context = getCloudAudioContext();
+      if (!context) return reject(new Error("Web Audio is unavailable"));
+      let source = null;
+      let settled = false;
+      let started = false;
+      let endWatchdog = null;
+      const cleanup = (error = null) => {
+        if (settled) return;
+        settled = true;
+        if (endWatchdog) window.clearTimeout(endWatchdog);
+        if (activeCloudAudioStop === stop) activeCloudAudioStop = null;
+        if (error) reject(error); else resolve();
+      };
+      const stop = () => {
+        if (started) {
+          source.onended = null;
+          try { source.stop(0); } catch (_) { /* already stopped */ }
+        }
+        cleanup();
+      };
+      const decode = (bytes) => new Promise((resolveDecode, rejectDecode) => context.decodeAudioData(bytes, resolveDecode, rejectDecode));
+      (async () => {
+        if (context.state === "suspended") await context.resume();
+        const buffer = await decode(await blob.arrayBuffer());
+        if (run !== speechRun) return stop();
+        source = context.createBufferSource();
+        source.buffer = buffer;
+        source.connect(context.destination);
+        source.onended = () => cleanup();
+        activeCloudAudioStop = stop;
+        started = true;
+        source.start(0);
+        endWatchdog = window.setTimeout(() => cleanup(new Error("Audio playback timed out")), Math.max(15_000, Math.min(360_000, buffer.duration * 1000 + 12_000)));
+      })().catch((error) => cleanup(error));
+    });
+  }
+
+  function playCloudAudioWithElement(blob, run) {
     return new Promise((resolve, reject) => {
       const url = URL.createObjectURL(blob);
       const audio = new Audio();
@@ -497,6 +554,10 @@
     });
   }
 
+  function playCloudAudio(blob, run) {
+    return isIOSDevice() ? playCloudAudioWithWebAudio(blob, run) : playCloudAudioWithElement(blob, run);
+  }
+
   async function playWithCloudSpeech(text, block, language, run) {
     const isSentenceMode = language === "english" && speechSettings.sentencePause;
     const chunks = isSentenceMode ? splitSpeechChunks(text, language) : cloudChunks(text, language);
@@ -524,7 +585,8 @@
       await playWithCloudSpeech(text, block, language, run);
     } catch (error) {
       if (run !== speechRun || error.name === "AbortError") return;
-      showToast("高品質音声を再生できません。端末音声に切り替えます。");
+      const detail = error.status ? `（通信エラー ${error.status}）` : "";
+      showToast(`高品質音声を再生できません${detail}。端末音声に切り替えます。`);
       playWithBrowserSpeech(text, block, language, run);
     }
   }
@@ -768,7 +830,7 @@
   window.addEventListener("beforeinstallprompt", (event) => { event.preventDefault(); installPrompt = event; document.getElementById("install-button").hidden = false; });
   document.getElementById("install-button").addEventListener("click", async () => { if (!installPrompt) return; installPrompt.prompt(); await installPrompt.userChoice; installPrompt = null; document.getElementById("install-button").hidden = true; });
   applyFontSize(readFontSize());
-  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=24").catch(() => {});
+  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=25").catch(() => {});
   if ("speechSynthesis" in window) { window.speechSynthesis.addEventListener("voiceschanged", refreshVoiceOptions); refreshVoiceOptions(); }
   renderStats();
   renderLibrary();
