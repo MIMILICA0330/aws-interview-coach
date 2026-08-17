@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-17T21:24:04.540Z",
+  "generatedAt": "2026-08-17T21:40:37.768Z",
   "entries": {
     "intro-question-female": {
       "input": "Tell me about yourself and your professional background.",
@@ -38,7 +38,28 @@
       "voice": "marin"
     },
     "intro-answer-sentence-0-female": {
-      "input": "I have over 30 years of experience in retail operations, logistics, business planning, and process improvement. Earlier in my career, I managed an in-house warehouse with about 20 team members, including staffing, inventory checks, and delivery deadlines. More recently, I have led process improvement using RPA, Power Query, Python, and AI. I am interested in AWS because I want to apply my operational experience and continuous-improvement mindset to a mission-critical data center environment.",
+      "input": "I have over 30 years of experience in retail operations, logistics, business planning, and process improvement.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "intro-answer-sentence-1-female": {
+      "input": "Earlier in my career, I managed an in-house warehouse with about 20 team members, including staffing, inventory checks, and delivery deadlines.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "intro-answer-sentence-2-female": {
+      "input": "More recently, I have led process improvement using RPA, Power Query, Python, and AI.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "intro-answer-sentence-3-female": {
+      "input": "I am interested in AWS because I want to apply my operational experience and continuous-improvement mindset to a mission-critical data center environment.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
@@ -52,7 +73,28 @@
       "voice": "cedar"
     },
     "intro-answer-sentence-0-male": {
-      "input": "I have over 30 years of experience in retail operations, logistics, business planning, and process improvement. Earlier in my career, I managed an in-house warehouse with about 20 team members, including staffing, inventory checks, and delivery deadlines. More recently, I have led process improvement using RPA, Power Query, Python, and AI. I am interested in AWS because I want to apply my operational experience and continuous-improvement mindset to a mission-critical data center environment.",
+      "input": "I have over 30 years of experience in retail operations, logistics, business planning, and process improvement.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "intro-answer-sentence-1-male": {
+      "input": "Earlier in my career, I managed an in-house warehouse with about 20 team members, including staffing, inventory checks, and delivery deadlines.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "intro-answer-sentence-2-male": {
+      "input": "More recently, I have led process improvement using RPA, Power Query, Python, and AI.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "intro-answer-sentence-3-male": {
+      "input": "I am interested in AWS because I want to apply my operational experience and continuous-improvement mindset to a mission-critical data center environment.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
@@ -126,7 +168,35 @@
       "voice": "marin"
     },
     "why-aws-answer-sentence-0-female": {
-      "input": "I am interested in AWS because data center logistics directly supports the reliability of services used by millions of customers. My experience includes warehouse operations, inventory optimization, cross-border logistics, and process automation. I believe the priorities in this role—safety, accuracy, speed, and continuous improvement—match the way I have worked throughout my career. At this stage of my career, I would like to apply and further develop the experience, knowledge, and hands-on problem-solving ability I have built over the years in a global, high-standard operation. By contributing to AWS, I want to challenge myself at a new level while continuing to deliver reliable results for customers.",
+      "input": "I am interested in AWS because data center logistics directly supports the reliability of services used by millions of customers.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "why-aws-answer-sentence-1-female": {
+      "input": "My experience includes warehouse operations, inventory optimization, cross-border logistics, and process automation.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "why-aws-answer-sentence-2-female": {
+      "input": "I believe the priorities in this role—safety, accuracy, speed, and continuous improvement—match the way I have worked throughout my career.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "why-aws-answer-sentence-3-female": {
+      "input": "At this stage of my career, I would like to apply and further develop the experience, knowledge, and hands-on problem-solving ability I have built over the years in a global, high-standard operation.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "why-aws-answer-sentence-4-female": {
+      "input": "By contributing to AWS, I want to challenge myself at a new level while continuing to deliver reliable results for customers.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
@@ -140,7 +210,35 @@
       "voice": "cedar"
     },
     "why-aws-answer-sentence-0-male": {
-      "input": "I am interested in AWS because data center logistics directly supports the reliability of services used by millions of customers. My experience includes warehouse operations, inventory optimization, cross-border logistics, and process automation. I believe the priorities in this role—safety, accuracy, speed, and continuous improvement—match the way I have worked throughout my career. At this stage of my career, I would like to apply and further develop the experience, knowledge, and hands-on problem-solving ability I have built over the years in a global, high-standard operation. By contributing to AWS, I want to challenge myself at a new level while continuing to deliver reliable results for customers.",
+      "input": "I am interested in AWS because data center logistics directly supports the reliability of services used by millions of customers.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "why-aws-answer-sentence-1-male": {
+      "input": "My experience includes warehouse operations, inventory optimization, cross-border logistics, and process automation.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "why-aws-answer-sentence-2-male": {
+      "input": "I believe the priorities in this role—safety, accuracy, speed, and continuous improvement—match the way I have worked throughout my career.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "why-aws-answer-sentence-3-male": {
+      "input": "At this stage of my career, I would like to apply and further develop the experience, knowledge, and hands-on problem-solving ability I have built over the years in a global, high-standard operation.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "why-aws-answer-sentence-4-male": {
+      "input": "By contributing to AWS, I want to challenge myself at a new level while continuing to deliver reliable results for customers.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
@@ -214,7 +312,77 @@
       "voice": "marin"
     },
     "cost-rpa-answer-sentence-0-female": {
-      "input": "In 2024, at Grip International, minor system changes and data-processing work were outsourced to external vendors. Even a small request cost between 300,000 and 2 million yen, and the accumulated cost was becoming a financial burden. The business also had to wait for estimates and vendor schedules before receiving simple changes. I decided that waiting until every technical question was answered would be too slow. As the leader, I made the decision to bring suitable work in-house while the technical picture was still incomplete. I learned RPA and Power Query myself, mapped repetitive data-entry and formatting steps in detail, and began turning them into reusable automated processes. I also demonstrated the new approach directly so that the team could see it was practical. Over two years, the team created about 150 RPA programs and more than 100 Power Query processes. We brought many small system-related improvements and data transformations in-house, reduced dependence on vendors, and removed work equivalent to about four employees across my section and other sections. The experience taught me that a reversible, well-controlled first step can be better than waiting for perfect information. I still define the scope and risks carefully, but I now move early when the cost of delay is greater than the risk of learning through action.",
+      "input": "In 2024, at Grip International, minor system changes and data-processing work were outsourced to external vendors.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "cost-rpa-answer-sentence-1-female": {
+      "input": "Even a small request cost between 300,000 and 2 million yen, and the accumulated cost was becoming a financial burden.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "cost-rpa-answer-sentence-2-female": {
+      "input": "The business also had to wait for estimates and vendor schedules before receiving simple changes.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "cost-rpa-answer-sentence-3-female": {
+      "input": "I decided that waiting until every technical question was answered would be too slow.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "cost-rpa-answer-sentence-4-female": {
+      "input": "As the leader, I made the decision to bring suitable work in-house while the technical picture was still incomplete.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "cost-rpa-answer-sentence-5-female": {
+      "input": "I learned RPA and Power Query myself, mapped repetitive data-entry and formatting steps in detail, and began turning them into reusable automated processes.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "cost-rpa-answer-sentence-6-female": {
+      "input": "I also demonstrated the new approach directly so that the team could see it was practical.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "cost-rpa-answer-sentence-7-female": {
+      "input": "Over two years, the team created about 150 RPA programs and more than 100 Power Query processes.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "cost-rpa-answer-sentence-8-female": {
+      "input": "We brought many small system-related improvements and data transformations in-house, reduced dependence on vendors, and removed work equivalent to about four employees across my section and other sections.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "cost-rpa-answer-sentence-9-female": {
+      "input": "The experience taught me that a reversible, well-controlled first step can be better than waiting for perfect information.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "cost-rpa-answer-sentence-10-female": {
+      "input": "I still define the scope and risks carefully, but I now move early when the cost of delay is greater than the risk of learning through action.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
@@ -228,7 +396,77 @@
       "voice": "cedar"
     },
     "cost-rpa-answer-sentence-0-male": {
-      "input": "In 2024, at Grip International, minor system changes and data-processing work were outsourced to external vendors. Even a small request cost between 300,000 and 2 million yen, and the accumulated cost was becoming a financial burden. The business also had to wait for estimates and vendor schedules before receiving simple changes. I decided that waiting until every technical question was answered would be too slow. As the leader, I made the decision to bring suitable work in-house while the technical picture was still incomplete. I learned RPA and Power Query myself, mapped repetitive data-entry and formatting steps in detail, and began turning them into reusable automated processes. I also demonstrated the new approach directly so that the team could see it was practical. Over two years, the team created about 150 RPA programs and more than 100 Power Query processes. We brought many small system-related improvements and data transformations in-house, reduced dependence on vendors, and removed work equivalent to about four employees across my section and other sections. The experience taught me that a reversible, well-controlled first step can be better than waiting for perfect information. I still define the scope and risks carefully, but I now move early when the cost of delay is greater than the risk of learning through action.",
+      "input": "In 2024, at Grip International, minor system changes and data-processing work were outsourced to external vendors.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "cost-rpa-answer-sentence-1-male": {
+      "input": "Even a small request cost between 300,000 and 2 million yen, and the accumulated cost was becoming a financial burden.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "cost-rpa-answer-sentence-2-male": {
+      "input": "The business also had to wait for estimates and vendor schedules before receiving simple changes.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "cost-rpa-answer-sentence-3-male": {
+      "input": "I decided that waiting until every technical question was answered would be too slow.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "cost-rpa-answer-sentence-4-male": {
+      "input": "As the leader, I made the decision to bring suitable work in-house while the technical picture was still incomplete.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "cost-rpa-answer-sentence-5-male": {
+      "input": "I learned RPA and Power Query myself, mapped repetitive data-entry and formatting steps in detail, and began turning them into reusable automated processes.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "cost-rpa-answer-sentence-6-male": {
+      "input": "I also demonstrated the new approach directly so that the team could see it was practical.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "cost-rpa-answer-sentence-7-male": {
+      "input": "Over two years, the team created about 150 RPA programs and more than 100 Power Query processes.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "cost-rpa-answer-sentence-8-male": {
+      "input": "We brought many small system-related improvements and data transformations in-house, reduced dependence on vendors, and removed work equivalent to about four employees across my section and other sections.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "cost-rpa-answer-sentence-9-male": {
+      "input": "The experience taught me that a reversible, well-controlled first step can be better than waiting for perfect information.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "cost-rpa-answer-sentence-10-male": {
+      "input": "I still define the scope and risks carefully, but I now move early when the cost of delay is greater than the risk of learning through action.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
@@ -302,7 +540,63 @@
       "voice": "marin"
     },
     "ec-master-answer-sentence-0-female": {
-      "input": "In 2024, we had to prepare product-master data for our EC site, department stores, and chain stores in about 50 different formats every season. The internal preparation and outsourcing process had become complicated, so lead times were about one and a half months and annual outsourcing costs reached 6 million yen for department stores and chain stores and 3 million yen for our EC site. Rather than only asking people where the bottleneck was, I joined the actual workflow and traced every step between the internal team and the outsourcing company. I found that staff were visually extracting size and material information from product specifications, while the vendor was manually adding borders, shading, and other formatting simply to make the spreadsheet look presentable. Those steps did not add value to the destination systems, which only required structured data. I removed the manual decoration work and built a Power Query process that converted raw CSV data from the specification system directly into the required import formats. This replaced the manual handoff and allowed the work to be completed internally. As a result, we reduced the lead time from about one and a half months to about one week, eliminated the manual formatting work, and reduced 9 million yen in annual outsourcing costs to zero. The key lesson was to distinguish between information the system truly needs and work that only exists because an old process has become habitual.",
+      "input": "In 2024, we had to prepare product-master data for our EC site, department stores, and chain stores in about 50 different formats every season.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-master-answer-sentence-1-female": {
+      "input": "The internal preparation and outsourcing process had become complicated, so lead times were about one and a half months and annual outsourcing costs reached 6 million yen for department stores and chain stores and 3 million yen for our EC site.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-master-answer-sentence-2-female": {
+      "input": "Rather than only asking people where the bottleneck was, I joined the actual workflow and traced every step between the internal team and the outsourcing company.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-master-answer-sentence-3-female": {
+      "input": "I found that staff were visually extracting size and material information from product specifications, while the vendor was manually adding borders, shading, and other formatting simply to make the spreadsheet look presentable.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-master-answer-sentence-4-female": {
+      "input": "Those steps did not add value to the destination systems, which only required structured data.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-master-answer-sentence-5-female": {
+      "input": "I removed the manual decoration work and built a Power Query process that converted raw CSV data from the specification system directly into the required import formats.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-master-answer-sentence-6-female": {
+      "input": "This replaced the manual handoff and allowed the work to be completed internally.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-master-answer-sentence-7-female": {
+      "input": "As a result, we reduced the lead time from about one and a half months to about one week, eliminated the manual formatting work, and reduced 9 million yen in annual outsourcing costs to zero.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-master-answer-sentence-8-female": {
+      "input": "The key lesson was to distinguish between information the system truly needs and work that only exists because an old process has become habitual.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
@@ -316,7 +610,63 @@
       "voice": "cedar"
     },
     "ec-master-answer-sentence-0-male": {
-      "input": "In 2024, we had to prepare product-master data for our EC site, department stores, and chain stores in about 50 different formats every season. The internal preparation and outsourcing process had become complicated, so lead times were about one and a half months and annual outsourcing costs reached 6 million yen for department stores and chain stores and 3 million yen for our EC site. Rather than only asking people where the bottleneck was, I joined the actual workflow and traced every step between the internal team and the outsourcing company. I found that staff were visually extracting size and material information from product specifications, while the vendor was manually adding borders, shading, and other formatting simply to make the spreadsheet look presentable. Those steps did not add value to the destination systems, which only required structured data. I removed the manual decoration work and built a Power Query process that converted raw CSV data from the specification system directly into the required import formats. This replaced the manual handoff and allowed the work to be completed internally. As a result, we reduced the lead time from about one and a half months to about one week, eliminated the manual formatting work, and reduced 9 million yen in annual outsourcing costs to zero. The key lesson was to distinguish between information the system truly needs and work that only exists because an old process has become habitual.",
+      "input": "In 2024, we had to prepare product-master data for our EC site, department stores, and chain stores in about 50 different formats every season.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-master-answer-sentence-1-male": {
+      "input": "The internal preparation and outsourcing process had become complicated, so lead times were about one and a half months and annual outsourcing costs reached 6 million yen for department stores and chain stores and 3 million yen for our EC site.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-master-answer-sentence-2-male": {
+      "input": "Rather than only asking people where the bottleneck was, I joined the actual workflow and traced every step between the internal team and the outsourcing company.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-master-answer-sentence-3-male": {
+      "input": "I found that staff were visually extracting size and material information from product specifications, while the vendor was manually adding borders, shading, and other formatting simply to make the spreadsheet look presentable.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-master-answer-sentence-4-male": {
+      "input": "Those steps did not add value to the destination systems, which only required structured data.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-master-answer-sentence-5-male": {
+      "input": "I removed the manual decoration work and built a Power Query process that converted raw CSV data from the specification system directly into the required import formats.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-master-answer-sentence-6-male": {
+      "input": "This replaced the manual handoff and allowed the work to be completed internally.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-master-answer-sentence-7-male": {
+      "input": "As a result, we reduced the lead time from about one and a half months to about one week, eliminated the manual formatting work, and reduced 9 million yen in annual outsourcing costs to zero.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-master-answer-sentence-8-male": {
+      "input": "The key lesson was to distinguish between information the system truly needs and work that only exists because an old process has become habitual.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
@@ -390,7 +740,84 @@
       "voice": "marin"
     },
     "samsonite-sales-answer-sentence-0-female": {
-      "input": "In August 2009, at Samsonite Japan, I was assigned to Itochu Retail Link, a distributor serving major chains including JAL, JTB, Hands, and Loft. Its sales organization was weak, and monthly sales were only about 2. 5 million yen. I was asked either to rebuild the sales operation or develop direct relationships with the chains. I concluded that the distributor model should remain because it reduced inventory risk, but its sales activity had to change. I minimized time in the office, increased contact with head-office buyers and store staff, and worked on the shop floor myself to build POS sales results. I expected the sales team to follow the same customer-facing approach. At Loft, I focused first on the fourth-ranked Ikebukuro store. I visited twice a week and sold on the floor one weekend each month. The store moved to third place and sometimes second place, which gained the attention of the head-office buyer. I then proposed an event, secured free prizes through a direct tie-up with the New York City Tourism Authority, and launched the promotion in about 30 key Loft stores. Monthly sales grew to 10 million yen in December 2009, 15 million yen in February 2010, and more than 30 million yen in September 2010—over ten times the starting level in about one year. The distributor relationship became strong enough that Samsonite continued to send secondees there afterward.",
+      "input": "In August 2009, at Samsonite Japan, I was assigned to Itochu Retail Link, a distributor serving major chains including JAL, JTB, Hands, and Loft.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "samsonite-sales-answer-sentence-1-female": {
+      "input": "Its sales organization was weak, and monthly sales were only about 2. 5 million yen.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "samsonite-sales-answer-sentence-2-female": {
+      "input": "I was asked either to rebuild the sales operation or develop direct relationships with the chains.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "samsonite-sales-answer-sentence-3-female": {
+      "input": "I concluded that the distributor model should remain because it reduced inventory risk, but its sales activity had to change.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "samsonite-sales-answer-sentence-4-female": {
+      "input": "I minimized time in the office, increased contact with head-office buyers and store staff, and worked on the shop floor myself to build POS sales results.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "samsonite-sales-answer-sentence-5-female": {
+      "input": "I expected the sales team to follow the same customer-facing approach.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "samsonite-sales-answer-sentence-6-female": {
+      "input": "At Loft, I focused first on the fourth-ranked Ikebukuro store.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "samsonite-sales-answer-sentence-7-female": {
+      "input": "I visited twice a week and sold on the floor one weekend each month.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "samsonite-sales-answer-sentence-8-female": {
+      "input": "The store moved to third place and sometimes second place, which gained the attention of the head-office buyer.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "samsonite-sales-answer-sentence-9-female": {
+      "input": "I then proposed an event, secured free prizes through a direct tie-up with the New York City Tourism Authority, and launched the promotion in about 30 key Loft stores.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "samsonite-sales-answer-sentence-10-female": {
+      "input": "Monthly sales grew to 10 million yen in December 2009, 15 million yen in February 2010, and more than 30 million yen in September 2010—over ten times the starting level in about one year.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "samsonite-sales-answer-sentence-11-female": {
+      "input": "The distributor relationship became strong enough that Samsonite continued to send secondees there afterward.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
@@ -404,7 +831,84 @@
       "voice": "cedar"
     },
     "samsonite-sales-answer-sentence-0-male": {
-      "input": "In August 2009, at Samsonite Japan, I was assigned to Itochu Retail Link, a distributor serving major chains including JAL, JTB, Hands, and Loft. Its sales organization was weak, and monthly sales were only about 2. 5 million yen. I was asked either to rebuild the sales operation or develop direct relationships with the chains. I concluded that the distributor model should remain because it reduced inventory risk, but its sales activity had to change. I minimized time in the office, increased contact with head-office buyers and store staff, and worked on the shop floor myself to build POS sales results. I expected the sales team to follow the same customer-facing approach. At Loft, I focused first on the fourth-ranked Ikebukuro store. I visited twice a week and sold on the floor one weekend each month. The store moved to third place and sometimes second place, which gained the attention of the head-office buyer. I then proposed an event, secured free prizes through a direct tie-up with the New York City Tourism Authority, and launched the promotion in about 30 key Loft stores. Monthly sales grew to 10 million yen in December 2009, 15 million yen in February 2010, and more than 30 million yen in September 2010—over ten times the starting level in about one year. The distributor relationship became strong enough that Samsonite continued to send secondees there afterward.",
+      "input": "In August 2009, at Samsonite Japan, I was assigned to Itochu Retail Link, a distributor serving major chains including JAL, JTB, Hands, and Loft.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "samsonite-sales-answer-sentence-1-male": {
+      "input": "Its sales organization was weak, and monthly sales were only about 2. 5 million yen.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "samsonite-sales-answer-sentence-2-male": {
+      "input": "I was asked either to rebuild the sales operation or develop direct relationships with the chains.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "samsonite-sales-answer-sentence-3-male": {
+      "input": "I concluded that the distributor model should remain because it reduced inventory risk, but its sales activity had to change.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "samsonite-sales-answer-sentence-4-male": {
+      "input": "I minimized time in the office, increased contact with head-office buyers and store staff, and worked on the shop floor myself to build POS sales results.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "samsonite-sales-answer-sentence-5-male": {
+      "input": "I expected the sales team to follow the same customer-facing approach.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "samsonite-sales-answer-sentence-6-male": {
+      "input": "At Loft, I focused first on the fourth-ranked Ikebukuro store.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "samsonite-sales-answer-sentence-7-male": {
+      "input": "I visited twice a week and sold on the floor one weekend each month.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "samsonite-sales-answer-sentence-8-male": {
+      "input": "The store moved to third place and sometimes second place, which gained the attention of the head-office buyer.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "samsonite-sales-answer-sentence-9-male": {
+      "input": "I then proposed an event, secured free prizes through a direct tie-up with the New York City Tourism Authority, and launched the promotion in about 30 key Loft stores.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "samsonite-sales-answer-sentence-10-male": {
+      "input": "Monthly sales grew to 10 million yen in December 2009, 15 million yen in February 2010, and more than 30 million yen in September 2010—over ten times the starting level in about one year.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "samsonite-sales-answer-sentence-11-male": {
+      "input": "The distributor relationship became strong enough that Samsonite continued to send secondees there afterward.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
@@ -478,7 +982,98 @@
       "voice": "marin"
     },
     "jl-license-answer-sentence-0-female": {
-      "input": "Around 2015, I was responsible for the Swedish brand J. LINDEBERG in Japan. The global assortment did not fully match local customer needs: there were few bags and no caddie bags, Scandinavian apparel sizing was often too long for Japanese customers, and winter golf wear was limited because winter golf was not common in Sweden. I proposed a Japan-developed licensed range as a new business. I needed approval from the Stockholm team and had to launch the range without adding internal headcount. I traveled to Stockholm with design proposals, material samples, and a sales forecast. I explained the gaps in the assortment and showed that the plan could maintain the existing purchase volume while creating royalty income for the global brand. Because I was not fluent in English, I prepared the presentation and anticipated questions in English in advance. After receiving broad approval, I initially acted as the designer myself. I built cooperation with trading companies and two key factories, including support for specification sheets, and arranged direct sourcing routes for branded zippers and buttons. I used the annual sales plan to show partners the growth potential and gain their commitment. The first year focused on accessories and generated about 50 million yen in annual retail sales. After adding apparel in the second year, the line reached about 50 styles and 110 million yen. In the third year, development was transferred to an internal design team and annual retail sales grew to about 150 million yen.",
+      "input": "Around 2015, I was responsible for the Swedish brand J.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "jl-license-answer-sentence-1-female": {
+      "input": "LINDEBERG in Japan.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "jl-license-answer-sentence-2-female": {
+      "input": "The global assortment did not fully match local customer needs: there were few bags and no caddie bags, Scandinavian apparel sizing was often too long for Japanese customers, and winter golf wear was limited because winter golf was not common in Sweden.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "jl-license-answer-sentence-3-female": {
+      "input": "I proposed a Japan-developed licensed range as a new business.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "jl-license-answer-sentence-4-female": {
+      "input": "I needed approval from the Stockholm team and had to launch the range without adding internal headcount.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "jl-license-answer-sentence-5-female": {
+      "input": "I traveled to Stockholm with design proposals, material samples, and a sales forecast.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "jl-license-answer-sentence-6-female": {
+      "input": "I explained the gaps in the assortment and showed that the plan could maintain the existing purchase volume while creating royalty income for the global brand.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "jl-license-answer-sentence-7-female": {
+      "input": "Because I was not fluent in English, I prepared the presentation and anticipated questions in English in advance.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "jl-license-answer-sentence-8-female": {
+      "input": "After receiving broad approval, I initially acted as the designer myself.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "jl-license-answer-sentence-9-female": {
+      "input": "I built cooperation with trading companies and two key factories, including support for specification sheets, and arranged direct sourcing routes for branded zippers and buttons.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "jl-license-answer-sentence-10-female": {
+      "input": "I used the annual sales plan to show partners the growth potential and gain their commitment.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "jl-license-answer-sentence-11-female": {
+      "input": "The first year focused on accessories and generated about 50 million yen in annual retail sales.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "jl-license-answer-sentence-12-female": {
+      "input": "After adding apparel in the second year, the line reached about 50 styles and 110 million yen.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "jl-license-answer-sentence-13-female": {
+      "input": "In the third year, development was transferred to an internal design team and annual retail sales grew to about 150 million yen.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
@@ -492,7 +1087,98 @@
       "voice": "cedar"
     },
     "jl-license-answer-sentence-0-male": {
-      "input": "Around 2015, I was responsible for the Swedish brand J. LINDEBERG in Japan. The global assortment did not fully match local customer needs: there were few bags and no caddie bags, Scandinavian apparel sizing was often too long for Japanese customers, and winter golf wear was limited because winter golf was not common in Sweden. I proposed a Japan-developed licensed range as a new business. I needed approval from the Stockholm team and had to launch the range without adding internal headcount. I traveled to Stockholm with design proposals, material samples, and a sales forecast. I explained the gaps in the assortment and showed that the plan could maintain the existing purchase volume while creating royalty income for the global brand. Because I was not fluent in English, I prepared the presentation and anticipated questions in English in advance. After receiving broad approval, I initially acted as the designer myself. I built cooperation with trading companies and two key factories, including support for specification sheets, and arranged direct sourcing routes for branded zippers and buttons. I used the annual sales plan to show partners the growth potential and gain their commitment. The first year focused on accessories and generated about 50 million yen in annual retail sales. After adding apparel in the second year, the line reached about 50 styles and 110 million yen. In the third year, development was transferred to an internal design team and annual retail sales grew to about 150 million yen.",
+      "input": "Around 2015, I was responsible for the Swedish brand J.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "jl-license-answer-sentence-1-male": {
+      "input": "LINDEBERG in Japan.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "jl-license-answer-sentence-2-male": {
+      "input": "The global assortment did not fully match local customer needs: there were few bags and no caddie bags, Scandinavian apparel sizing was often too long for Japanese customers, and winter golf wear was limited because winter golf was not common in Sweden.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "jl-license-answer-sentence-3-male": {
+      "input": "I proposed a Japan-developed licensed range as a new business.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "jl-license-answer-sentence-4-male": {
+      "input": "I needed approval from the Stockholm team and had to launch the range without adding internal headcount.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "jl-license-answer-sentence-5-male": {
+      "input": "I traveled to Stockholm with design proposals, material samples, and a sales forecast.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "jl-license-answer-sentence-6-male": {
+      "input": "I explained the gaps in the assortment and showed that the plan could maintain the existing purchase volume while creating royalty income for the global brand.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "jl-license-answer-sentence-7-male": {
+      "input": "Because I was not fluent in English, I prepared the presentation and anticipated questions in English in advance.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "jl-license-answer-sentence-8-male": {
+      "input": "After receiving broad approval, I initially acted as the designer myself.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "jl-license-answer-sentence-9-male": {
+      "input": "I built cooperation with trading companies and two key factories, including support for specification sheets, and arranged direct sourcing routes for branded zippers and buttons.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "jl-license-answer-sentence-10-male": {
+      "input": "I used the annual sales plan to show partners the growth potential and gain their commitment.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "jl-license-answer-sentence-11-male": {
+      "input": "The first year focused on accessories and generated about 50 million yen in annual retail sales.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "jl-license-answer-sentence-12-male": {
+      "input": "After adding apparel in the second year, the line reached about 50 styles and 110 million yen.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "jl-license-answer-sentence-13-male": {
+      "input": "In the third year, development was transferred to an internal design team and annual retail sales grew to about 150 million yen.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
@@ -566,7 +1252,84 @@
       "voice": "marin"
     },
     "china-jv-answer-sentence-0-female": {
-      "input": "Around 2011, Itochu proposed a three-company joint venture to sell our brands in China. I was appointed as the business lead, responsible for completing the contracts and creating the sales plan. The project involved conflicting interests: our company wanted to protect exports from Japan, while the local market needed a practical mix of imported products and locally licensed townwear because golf was still developing in China. The usual law firm could not represent us because it also advised Itochu. Itochu prepared the English drafts, but I translated nearly 100 pages in about one week, including the investment agreement, the new company’s articles of association, the distributor agreement, and the license agreement. I then reviewed the translation with an independent attorney. Itochu’s team later asked to use my Japanese translation as well. To protect our export business, I negotiated annual minimum-purchase amounts in the distributor agreement. At the same time, I accepted a practical balance of imported and licensed products so that the overall business could succeed in China. We completed the agreements in about six months. Starting with Shanghai, Hangzhou, and Shenzhen, the business expanded to about 50 stores in roughly two years and reached monthly sales of approximately 50 million yen. The experience taught me that international negotiations succeed when legal detail, commercial protection, and local market reality are addressed together.",
+      "input": "Around 2011, Itochu proposed a three-company joint venture to sell our brands in China.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "china-jv-answer-sentence-1-female": {
+      "input": "I was appointed as the business lead, responsible for completing the contracts and creating the sales plan.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "china-jv-answer-sentence-2-female": {
+      "input": "The project involved conflicting interests: our company wanted to protect exports from Japan, while the local market needed a practical mix of imported products and locally licensed townwear because golf was still developing in China.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "china-jv-answer-sentence-3-female": {
+      "input": "The usual law firm could not represent us because it also advised Itochu.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "china-jv-answer-sentence-4-female": {
+      "input": "Itochu prepared the English drafts, but I translated nearly 100 pages in about one week, including the investment agreement, the new company’s articles of association, the distributor agreement, and the license agreement.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "china-jv-answer-sentence-5-female": {
+      "input": "I then reviewed the translation with an independent attorney.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "china-jv-answer-sentence-6-female": {
+      "input": "Itochu’s team later asked to use my Japanese translation as well.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "china-jv-answer-sentence-7-female": {
+      "input": "To protect our export business, I negotiated annual minimum-purchase amounts in the distributor agreement.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "china-jv-answer-sentence-8-female": {
+      "input": "At the same time, I accepted a practical balance of imported and licensed products so that the overall business could succeed in China.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "china-jv-answer-sentence-9-female": {
+      "input": "We completed the agreements in about six months.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "china-jv-answer-sentence-10-female": {
+      "input": "Starting with Shanghai, Hangzhou, and Shenzhen, the business expanded to about 50 stores in roughly two years and reached monthly sales of approximately 50 million yen.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "china-jv-answer-sentence-11-female": {
+      "input": "The experience taught me that international negotiations succeed when legal detail, commercial protection, and local market reality are addressed together.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
@@ -580,7 +1343,84 @@
       "voice": "cedar"
     },
     "china-jv-answer-sentence-0-male": {
-      "input": "Around 2011, Itochu proposed a three-company joint venture to sell our brands in China. I was appointed as the business lead, responsible for completing the contracts and creating the sales plan. The project involved conflicting interests: our company wanted to protect exports from Japan, while the local market needed a practical mix of imported products and locally licensed townwear because golf was still developing in China. The usual law firm could not represent us because it also advised Itochu. Itochu prepared the English drafts, but I translated nearly 100 pages in about one week, including the investment agreement, the new company’s articles of association, the distributor agreement, and the license agreement. I then reviewed the translation with an independent attorney. Itochu’s team later asked to use my Japanese translation as well. To protect our export business, I negotiated annual minimum-purchase amounts in the distributor agreement. At the same time, I accepted a practical balance of imported and licensed products so that the overall business could succeed in China. We completed the agreements in about six months. Starting with Shanghai, Hangzhou, and Shenzhen, the business expanded to about 50 stores in roughly two years and reached monthly sales of approximately 50 million yen. The experience taught me that international negotiations succeed when legal detail, commercial protection, and local market reality are addressed together.",
+      "input": "Around 2011, Itochu proposed a three-company joint venture to sell our brands in China.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "china-jv-answer-sentence-1-male": {
+      "input": "I was appointed as the business lead, responsible for completing the contracts and creating the sales plan.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "china-jv-answer-sentence-2-male": {
+      "input": "The project involved conflicting interests: our company wanted to protect exports from Japan, while the local market needed a practical mix of imported products and locally licensed townwear because golf was still developing in China.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "china-jv-answer-sentence-3-male": {
+      "input": "The usual law firm could not represent us because it also advised Itochu.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "china-jv-answer-sentence-4-male": {
+      "input": "Itochu prepared the English drafts, but I translated nearly 100 pages in about one week, including the investment agreement, the new company’s articles of association, the distributor agreement, and the license agreement.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "china-jv-answer-sentence-5-male": {
+      "input": "I then reviewed the translation with an independent attorney.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "china-jv-answer-sentence-6-male": {
+      "input": "Itochu’s team later asked to use my Japanese translation as well.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "china-jv-answer-sentence-7-male": {
+      "input": "To protect our export business, I negotiated annual minimum-purchase amounts in the distributor agreement.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "china-jv-answer-sentence-8-male": {
+      "input": "At the same time, I accepted a practical balance of imported and licensed products so that the overall business could succeed in China.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "china-jv-answer-sentence-9-male": {
+      "input": "We completed the agreements in about six months.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "china-jv-answer-sentence-10-male": {
+      "input": "Starting with Shanghai, Hangzhou, and Shenzhen, the business expanded to about 50 stores in roughly two years and reached monthly sales of approximately 50 million yen.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "china-jv-answer-sentence-11-male": {
+      "input": "The experience taught me that international negotiations succeed when legal detail, commercial protection, and local market reality are addressed together.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
@@ -654,7 +1494,98 @@
       "voice": "marin"
     },
     "staff-voice-answer-sentence-0-female": {
-      "input": "In May 2026, the EC team asked to add recommendations from store staff to product pages. The challenge was that many store staff were more comfortable with smartphones than PCs, while the EC-cart system required the head office to upload structured data from a PC. Because I also supported some directly operated stores, I understood the daily workflow and practical constraints of store staff. I decided that the collection side had to be smartphone-first. I built a Google Apps Script web application that collected comments in Google Sheets and images in Google Drive. My previous independent app-development experience, including an app that passed Google’s review and was listed on the Google Workspace Marketplace, helped me make that decision with confidence. I designed the front end for both usability and expression. I added a VOICE ID profile parameter so each staff member’s character could be reflected in the recommendation, enabled voice input for quick first drafts, and implemented an AI feature that refined a rough memo through the selected VOICE ID profile. I then designed the back-end process around the EC system’s requirements. The comments and staff names had to be wrapped in specified HTML, so I created an automated CSV output. Store-worn images also had to be renamed and resized to the required specifications, so I built Python scripts to process the files automatically. Within about two weeks, I completed the front-end app, the CSV-generation process, and the image-renaming and resizing scripts. The EC team’s manual effort was almost zero, and the intended comments and images could be implemented smoothly on the product pages. The project showed how important it is to design around the actual user environment rather than asking users to adapt to a system.",
+      "input": "In May 2026, the EC team asked to add recommendations from store staff to product pages.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "staff-voice-answer-sentence-1-female": {
+      "input": "The challenge was that many store staff were more comfortable with smartphones than PCs, while the EC-cart system required the head office to upload structured data from a PC.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "staff-voice-answer-sentence-2-female": {
+      "input": "Because I also supported some directly operated stores, I understood the daily workflow and practical constraints of store staff.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "staff-voice-answer-sentence-3-female": {
+      "input": "I decided that the collection side had to be smartphone-first.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "staff-voice-answer-sentence-4-female": {
+      "input": "I built a Google Apps Script web application that collected comments in Google Sheets and images in Google Drive.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "staff-voice-answer-sentence-5-female": {
+      "input": "My previous independent app-development experience, including an app that passed Google’s review and was listed on the Google Workspace Marketplace, helped me make that decision with confidence.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "staff-voice-answer-sentence-6-female": {
+      "input": "I designed the front end for both usability and expression.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "staff-voice-answer-sentence-7-female": {
+      "input": "I added a VOICE ID profile parameter so each staff member’s character could be reflected in the recommendation, enabled voice input for quick first drafts, and implemented an AI feature that refined a rough memo through the selected VOICE ID profile.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "staff-voice-answer-sentence-8-female": {
+      "input": "I then designed the back-end process around the EC system’s requirements.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "staff-voice-answer-sentence-9-female": {
+      "input": "The comments and staff names had to be wrapped in specified HTML, so I created an automated CSV output.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "staff-voice-answer-sentence-10-female": {
+      "input": "Store-worn images also had to be renamed and resized to the required specifications, so I built Python scripts to process the files automatically.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "staff-voice-answer-sentence-11-female": {
+      "input": "Within about two weeks, I completed the front-end app, the CSV-generation process, and the image-renaming and resizing scripts.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "staff-voice-answer-sentence-12-female": {
+      "input": "The EC team’s manual effort was almost zero, and the intended comments and images could be implemented smoothly on the product pages.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "staff-voice-answer-sentence-13-female": {
+      "input": "The project showed how important it is to design around the actual user environment rather than asking users to adapt to a system.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
@@ -668,7 +1599,98 @@
       "voice": "cedar"
     },
     "staff-voice-answer-sentence-0-male": {
-      "input": "In May 2026, the EC team asked to add recommendations from store staff to product pages. The challenge was that many store staff were more comfortable with smartphones than PCs, while the EC-cart system required the head office to upload structured data from a PC. Because I also supported some directly operated stores, I understood the daily workflow and practical constraints of store staff. I decided that the collection side had to be smartphone-first. I built a Google Apps Script web application that collected comments in Google Sheets and images in Google Drive. My previous independent app-development experience, including an app that passed Google’s review and was listed on the Google Workspace Marketplace, helped me make that decision with confidence. I designed the front end for both usability and expression. I added a VOICE ID profile parameter so each staff member’s character could be reflected in the recommendation, enabled voice input for quick first drafts, and implemented an AI feature that refined a rough memo through the selected VOICE ID profile. I then designed the back-end process around the EC system’s requirements. The comments and staff names had to be wrapped in specified HTML, so I created an automated CSV output. Store-worn images also had to be renamed and resized to the required specifications, so I built Python scripts to process the files automatically. Within about two weeks, I completed the front-end app, the CSV-generation process, and the image-renaming and resizing scripts. The EC team’s manual effort was almost zero, and the intended comments and images could be implemented smoothly on the product pages. The project showed how important it is to design around the actual user environment rather than asking users to adapt to a system.",
+      "input": "In May 2026, the EC team asked to add recommendations from store staff to product pages.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "staff-voice-answer-sentence-1-male": {
+      "input": "The challenge was that many store staff were more comfortable with smartphones than PCs, while the EC-cart system required the head office to upload structured data from a PC.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "staff-voice-answer-sentence-2-male": {
+      "input": "Because I also supported some directly operated stores, I understood the daily workflow and practical constraints of store staff.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "staff-voice-answer-sentence-3-male": {
+      "input": "I decided that the collection side had to be smartphone-first.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "staff-voice-answer-sentence-4-male": {
+      "input": "I built a Google Apps Script web application that collected comments in Google Sheets and images in Google Drive.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "staff-voice-answer-sentence-5-male": {
+      "input": "My previous independent app-development experience, including an app that passed Google’s review and was listed on the Google Workspace Marketplace, helped me make that decision with confidence.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "staff-voice-answer-sentence-6-male": {
+      "input": "I designed the front end for both usability and expression.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "staff-voice-answer-sentence-7-male": {
+      "input": "I added a VOICE ID profile parameter so each staff member’s character could be reflected in the recommendation, enabled voice input for quick first drafts, and implemented an AI feature that refined a rough memo through the selected VOICE ID profile.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "staff-voice-answer-sentence-8-male": {
+      "input": "I then designed the back-end process around the EC system’s requirements.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "staff-voice-answer-sentence-9-male": {
+      "input": "The comments and staff names had to be wrapped in specified HTML, so I created an automated CSV output.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "staff-voice-answer-sentence-10-male": {
+      "input": "Store-worn images also had to be renamed and resized to the required specifications, so I built Python scripts to process the files automatically.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "staff-voice-answer-sentence-11-male": {
+      "input": "Within about two weeks, I completed the front-end app, the CSV-generation process, and the image-renaming and resizing scripts.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "staff-voice-answer-sentence-12-male": {
+      "input": "The EC team’s manual effort was almost zero, and the intended comments and images could be implemented smoothly on the product pages.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "staff-voice-answer-sentence-13-male": {
+      "input": "The project showed how important it is to design around the actual user environment rather than asking users to adapt to a system.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
@@ -742,7 +1764,77 @@
       "voice": "marin"
     },
     "grip-file-transfer-answer-sentence-0-female": {
-      "input": "In June 2026, our company cancelled a paid large-file transfer service to reduce costs. After that, employees were using email attachments or free external services individually. This created security concerns, and recipients often faced advertisements and pop-ups. I needed to create a secure and easy-to-use alternative without adding a new paid service. While researching options, I learned that SharePoint could serve as an organization-wide storage base and that Azure could support a simple portal application. Because the company already used Microsoft accounts officially, this was a good fit for both administration and user trust. I designed a portal with drag-and-drop uploads, download links that automatically expired after a set period, and password or no-password options based on file importance. I also aimed to reproduce the familiar usability of commercial transfer services. To make the waiting experience more approachable, I added a footprint-themed upload indicator inspired by one of our key brand characters. SharePoint and Azure were new infrastructure for me, but I learned them and released the tool in about one month. Employees actively adopted it, improving security, recipient confidence, and convenience while keeping costs under control.",
+      "input": "In June 2026, our company cancelled a paid large-file transfer service to reduce costs.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "grip-file-transfer-answer-sentence-1-female": {
+      "input": "After that, employees were using email attachments or free external services individually.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "grip-file-transfer-answer-sentence-2-female": {
+      "input": "This created security concerns, and recipients often faced advertisements and pop-ups.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "grip-file-transfer-answer-sentence-3-female": {
+      "input": "I needed to create a secure and easy-to-use alternative without adding a new paid service.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "grip-file-transfer-answer-sentence-4-female": {
+      "input": "While researching options, I learned that SharePoint could serve as an organization-wide storage base and that Azure could support a simple portal application.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "grip-file-transfer-answer-sentence-5-female": {
+      "input": "Because the company already used Microsoft accounts officially, this was a good fit for both administration and user trust.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "grip-file-transfer-answer-sentence-6-female": {
+      "input": "I designed a portal with drag-and-drop uploads, download links that automatically expired after a set period, and password or no-password options based on file importance.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "grip-file-transfer-answer-sentence-7-female": {
+      "input": "I also aimed to reproduce the familiar usability of commercial transfer services.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "grip-file-transfer-answer-sentence-8-female": {
+      "input": "To make the waiting experience more approachable, I added a footprint-themed upload indicator inspired by one of our key brand characters.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "grip-file-transfer-answer-sentence-9-female": {
+      "input": "SharePoint and Azure were new infrastructure for me, but I learned them and released the tool in about one month.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "grip-file-transfer-answer-sentence-10-female": {
+      "input": "Employees actively adopted it, improving security, recipient confidence, and convenience while keeping costs under control.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
@@ -756,7 +1848,77 @@
       "voice": "cedar"
     },
     "grip-file-transfer-answer-sentence-0-male": {
-      "input": "In June 2026, our company cancelled a paid large-file transfer service to reduce costs. After that, employees were using email attachments or free external services individually. This created security concerns, and recipients often faced advertisements and pop-ups. I needed to create a secure and easy-to-use alternative without adding a new paid service. While researching options, I learned that SharePoint could serve as an organization-wide storage base and that Azure could support a simple portal application. Because the company already used Microsoft accounts officially, this was a good fit for both administration and user trust. I designed a portal with drag-and-drop uploads, download links that automatically expired after a set period, and password or no-password options based on file importance. I also aimed to reproduce the familiar usability of commercial transfer services. To make the waiting experience more approachable, I added a footprint-themed upload indicator inspired by one of our key brand characters. SharePoint and Azure were new infrastructure for me, but I learned them and released the tool in about one month. Employees actively adopted it, improving security, recipient confidence, and convenience while keeping costs under control.",
+      "input": "In June 2026, our company cancelled a paid large-file transfer service to reduce costs.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "grip-file-transfer-answer-sentence-1-male": {
+      "input": "After that, employees were using email attachments or free external services individually.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "grip-file-transfer-answer-sentence-2-male": {
+      "input": "This created security concerns, and recipients often faced advertisements and pop-ups.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "grip-file-transfer-answer-sentence-3-male": {
+      "input": "I needed to create a secure and easy-to-use alternative without adding a new paid service.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "grip-file-transfer-answer-sentence-4-male": {
+      "input": "While researching options, I learned that SharePoint could serve as an organization-wide storage base and that Azure could support a simple portal application.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "grip-file-transfer-answer-sentence-5-male": {
+      "input": "Because the company already used Microsoft accounts officially, this was a good fit for both administration and user trust.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "grip-file-transfer-answer-sentence-6-male": {
+      "input": "I designed a portal with drag-and-drop uploads, download links that automatically expired after a set period, and password or no-password options based on file importance.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "grip-file-transfer-answer-sentence-7-male": {
+      "input": "I also aimed to reproduce the familiar usability of commercial transfer services.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "grip-file-transfer-answer-sentence-8-male": {
+      "input": "To make the waiting experience more approachable, I added a footprint-themed upload indicator inspired by one of our key brand characters.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "grip-file-transfer-answer-sentence-9-male": {
+      "input": "SharePoint and Azure were new infrastructure for me, but I learned them and released the tool in about one month.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "grip-file-transfer-answer-sentence-10-male": {
+      "input": "Employees actively adopted it, improving security, recipient confidence, and convenience while keeping costs under control.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
@@ -830,7 +1992,91 @@
       "voice": "marin"
     },
     "viva-heart-drop-ship-answer-sentence-0-female": {
-      "input": "Around 2016, we exported VIVA HEART products to a distributor in Korea. The distributor asked whether we could ship directly from factories in China and Vietnam to Korea because trade agreements had reduced the tariff rate to zero. Previously, goods were imported through Japan, which added duty and freight. The challenge was coordinating many parties. The trading companies handled the imports, factories had to issue certificates of origin, and the forwarder had to change the invoice flow. Some Chinese regions required government authorization before a factory could issue a certificate of origin. Our company had never used drop-shipping before, so we had to turn a theoretical possibility into an operating process. I worked repeatedly with an international forwarder that had offices in China, Vietnam, Japan, and Korea. We clarified the procedures, the required documents, and the factory-by-factory issues, then created a practical manual. I used the same manual to implement the process with two additional trading companies. As a result, about 90% of Korean exports shifted to direct shipments from China or Vietnam. We met the distributor’s request and avoided costs that would have occurred through Japan. The saving was about 6% of annual Korean sales of 65 million yen, or approximately 4 million yen per year.",
+      "input": "Around 2016, we exported VIVA HEART products to a distributor in Korea.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "viva-heart-drop-ship-answer-sentence-1-female": {
+      "input": "The distributor asked whether we could ship directly from factories in China and Vietnam to Korea because trade agreements had reduced the tariff rate to zero.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "viva-heart-drop-ship-answer-sentence-2-female": {
+      "input": "Previously, goods were imported through Japan, which added duty and freight.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "viva-heart-drop-ship-answer-sentence-3-female": {
+      "input": "The challenge was coordinating many parties.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "viva-heart-drop-ship-answer-sentence-4-female": {
+      "input": "The trading companies handled the imports, factories had to issue certificates of origin, and the forwarder had to change the invoice flow.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "viva-heart-drop-ship-answer-sentence-5-female": {
+      "input": "Some Chinese regions required government authorization before a factory could issue a certificate of origin.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "viva-heart-drop-ship-answer-sentence-6-female": {
+      "input": "Our company had never used drop-shipping before, so we had to turn a theoretical possibility into an operating process.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "viva-heart-drop-ship-answer-sentence-7-female": {
+      "input": "I worked repeatedly with an international forwarder that had offices in China, Vietnam, Japan, and Korea.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "viva-heart-drop-ship-answer-sentence-8-female": {
+      "input": "We clarified the procedures, the required documents, and the factory-by-factory issues, then created a practical manual.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "viva-heart-drop-ship-answer-sentence-9-female": {
+      "input": "I used the same manual to implement the process with two additional trading companies.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "viva-heart-drop-ship-answer-sentence-10-female": {
+      "input": "As a result, about 90% of Korean exports shifted to direct shipments from China or Vietnam.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "viva-heart-drop-ship-answer-sentence-11-female": {
+      "input": "We met the distributor’s request and avoided costs that would have occurred through Japan.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "viva-heart-drop-ship-answer-sentence-12-female": {
+      "input": "The saving was about 6% of annual Korean sales of 65 million yen, or approximately 4 million yen per year.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
@@ -844,7 +2090,91 @@
       "voice": "cedar"
     },
     "viva-heart-drop-ship-answer-sentence-0-male": {
-      "input": "Around 2016, we exported VIVA HEART products to a distributor in Korea. The distributor asked whether we could ship directly from factories in China and Vietnam to Korea because trade agreements had reduced the tariff rate to zero. Previously, goods were imported through Japan, which added duty and freight. The challenge was coordinating many parties. The trading companies handled the imports, factories had to issue certificates of origin, and the forwarder had to change the invoice flow. Some Chinese regions required government authorization before a factory could issue a certificate of origin. Our company had never used drop-shipping before, so we had to turn a theoretical possibility into an operating process. I worked repeatedly with an international forwarder that had offices in China, Vietnam, Japan, and Korea. We clarified the procedures, the required documents, and the factory-by-factory issues, then created a practical manual. I used the same manual to implement the process with two additional trading companies. As a result, about 90% of Korean exports shifted to direct shipments from China or Vietnam. We met the distributor’s request and avoided costs that would have occurred through Japan. The saving was about 6% of annual Korean sales of 65 million yen, or approximately 4 million yen per year.",
+      "input": "Around 2016, we exported VIVA HEART products to a distributor in Korea.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "viva-heart-drop-ship-answer-sentence-1-male": {
+      "input": "The distributor asked whether we could ship directly from factories in China and Vietnam to Korea because trade agreements had reduced the tariff rate to zero.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "viva-heart-drop-ship-answer-sentence-2-male": {
+      "input": "Previously, goods were imported through Japan, which added duty and freight.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "viva-heart-drop-ship-answer-sentence-3-male": {
+      "input": "The challenge was coordinating many parties.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "viva-heart-drop-ship-answer-sentence-4-male": {
+      "input": "The trading companies handled the imports, factories had to issue certificates of origin, and the forwarder had to change the invoice flow.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "viva-heart-drop-ship-answer-sentence-5-male": {
+      "input": "Some Chinese regions required government authorization before a factory could issue a certificate of origin.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "viva-heart-drop-ship-answer-sentence-6-male": {
+      "input": "Our company had never used drop-shipping before, so we had to turn a theoretical possibility into an operating process.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "viva-heart-drop-ship-answer-sentence-7-male": {
+      "input": "I worked repeatedly with an international forwarder that had offices in China, Vietnam, Japan, and Korea.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "viva-heart-drop-ship-answer-sentence-8-male": {
+      "input": "We clarified the procedures, the required documents, and the factory-by-factory issues, then created a practical manual.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "viva-heart-drop-ship-answer-sentence-9-male": {
+      "input": "I used the same manual to implement the process with two additional trading companies.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "viva-heart-drop-ship-answer-sentence-10-male": {
+      "input": "As a result, about 90% of Korean exports shifted to direct shipments from China or Vietnam.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "viva-heart-drop-ship-answer-sentence-11-male": {
+      "input": "We met the distributor’s request and avoided costs that would have occurred through Japan.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "viva-heart-drop-ship-answer-sentence-12-male": {
+      "input": "The saving was about 6% of annual Korean sales of 65 million yen, or approximately 4 million yen per year.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
@@ -918,7 +2248,91 @@
       "voice": "marin"
     },
     "jl-direct-import-answer-sentence-0-female": {
-      "input": "In 2019, J. LINDEBERG was imported through a trading company. The brand was shifting from department stores toward sports chains, which required a lower price point and higher sales volume. To support that strategy, we needed to reduce purchasing costs by moving to direct import from the global brand. I began by breaking down the annual purchasing cost by component, setting a reduction target, and revising the price and marketing plan. I negotiated new contract terms with J. LINDEBERG for four months. The annual FOB import value was about 1. 1 million euros, and the trading company’s margin, excluding duty and freight, was about 15%, so there was a clear business case for the change. Operationally, we could use our existing drop-shipping knowledge, but we still had to coordinate foreign-exchange booking with the previous trading company and establish the relationship with a new forwarder. Another challenge was capability: nobody in the company had both business-level English and import experience. I selected a new graduate recruiter who could communicate in English, trained her through one full season, and handled documents, ocean-freight booking, and domestic delivery together. After about two months of preparation, we switched to direct import. The change reduced annual costs by approximately 22 million yen and made the lower-price strategy and wider sports-chain distribution viable.",
+      "input": "In 2019, J.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "jl-direct-import-answer-sentence-1-female": {
+      "input": "LINDEBERG was imported through a trading company.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "jl-direct-import-answer-sentence-2-female": {
+      "input": "The brand was shifting from department stores toward sports chains, which required a lower price point and higher sales volume.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "jl-direct-import-answer-sentence-3-female": {
+      "input": "To support that strategy, we needed to reduce purchasing costs by moving to direct import from the global brand.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "jl-direct-import-answer-sentence-4-female": {
+      "input": "I began by breaking down the annual purchasing cost by component, setting a reduction target, and revising the price and marketing plan.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "jl-direct-import-answer-sentence-5-female": {
+      "input": "I negotiated new contract terms with J.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "jl-direct-import-answer-sentence-6-female": {
+      "input": "LINDEBERG for four months.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "jl-direct-import-answer-sentence-7-female": {
+      "input": "The annual FOB import value was about 1. 1 million euros, and the trading company’s margin, excluding duty and freight, was about 15%, so there was a clear business case for the change.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "jl-direct-import-answer-sentence-8-female": {
+      "input": "Operationally, we could use our existing drop-shipping knowledge, but we still had to coordinate foreign-exchange booking with the previous trading company and establish the relationship with a new forwarder.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "jl-direct-import-answer-sentence-9-female": {
+      "input": "Another challenge was capability: nobody in the company had both business-level English and import experience.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "jl-direct-import-answer-sentence-10-female": {
+      "input": "I selected a new graduate recruiter who could communicate in English, trained her through one full season, and handled documents, ocean-freight booking, and domestic delivery together.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "jl-direct-import-answer-sentence-11-female": {
+      "input": "After about two months of preparation, we switched to direct import.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "jl-direct-import-answer-sentence-12-female": {
+      "input": "The change reduced annual costs by approximately 22 million yen and made the lower-price strategy and wider sports-chain distribution viable.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
@@ -932,7 +2346,91 @@
       "voice": "cedar"
     },
     "jl-direct-import-answer-sentence-0-male": {
-      "input": "In 2019, J. LINDEBERG was imported through a trading company. The brand was shifting from department stores toward sports chains, which required a lower price point and higher sales volume. To support that strategy, we needed to reduce purchasing costs by moving to direct import from the global brand. I began by breaking down the annual purchasing cost by component, setting a reduction target, and revising the price and marketing plan. I negotiated new contract terms with J. LINDEBERG for four months. The annual FOB import value was about 1. 1 million euros, and the trading company’s margin, excluding duty and freight, was about 15%, so there was a clear business case for the change. Operationally, we could use our existing drop-shipping knowledge, but we still had to coordinate foreign-exchange booking with the previous trading company and establish the relationship with a new forwarder. Another challenge was capability: nobody in the company had both business-level English and import experience. I selected a new graduate recruiter who could communicate in English, trained her through one full season, and handled documents, ocean-freight booking, and domestic delivery together. After about two months of preparation, we switched to direct import. The change reduced annual costs by approximately 22 million yen and made the lower-price strategy and wider sports-chain distribution viable.",
+      "input": "In 2019, J.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "jl-direct-import-answer-sentence-1-male": {
+      "input": "LINDEBERG was imported through a trading company.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "jl-direct-import-answer-sentence-2-male": {
+      "input": "The brand was shifting from department stores toward sports chains, which required a lower price point and higher sales volume.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "jl-direct-import-answer-sentence-3-male": {
+      "input": "To support that strategy, we needed to reduce purchasing costs by moving to direct import from the global brand.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "jl-direct-import-answer-sentence-4-male": {
+      "input": "I began by breaking down the annual purchasing cost by component, setting a reduction target, and revising the price and marketing plan.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "jl-direct-import-answer-sentence-5-male": {
+      "input": "I negotiated new contract terms with J.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "jl-direct-import-answer-sentence-6-male": {
+      "input": "LINDEBERG for four months.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "jl-direct-import-answer-sentence-7-male": {
+      "input": "The annual FOB import value was about 1. 1 million euros, and the trading company’s margin, excluding duty and freight, was about 15%, so there was a clear business case for the change.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "jl-direct-import-answer-sentence-8-male": {
+      "input": "Operationally, we could use our existing drop-shipping knowledge, but we still had to coordinate foreign-exchange booking with the previous trading company and establish the relationship with a new forwarder.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "jl-direct-import-answer-sentence-9-male": {
+      "input": "Another challenge was capability: nobody in the company had both business-level English and import experience.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "jl-direct-import-answer-sentence-10-male": {
+      "input": "I selected a new graduate recruiter who could communicate in English, trained her through one full season, and handled documents, ocean-freight booking, and domestic delivery together.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "jl-direct-import-answer-sentence-11-male": {
+      "input": "After about two months of preparation, we switched to direct import.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "jl-direct-import-answer-sentence-12-male": {
+      "input": "The change reduced annual costs by approximately 22 million yen and made the lower-price strategy and wider sports-chain distribution viable.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
@@ -1006,14 +2504,84 @@
       "voice": "marin"
     },
     "ec-image-automation-answer-sentence-0-female": {
-      "input": "In 2026, the EC team was spending a large amount of time preparing product images for the website. When a team member took leave, the team asked whether we could reduce the back-office work so they could focus on promotions. Although I understood the overall workflow, I did not know every operational detail, so I decided to transfer the work to my department before trying to automate it. Once I took it over, I found more manual work and inconsistency than expected. The workflow was not standardized, and file-naming rules were too unstable for reliable automation. I first rebuilt the rules with the EC team, then created scripts for each stage and scheduled batch processing to run every night. The most difficult part was imported-brand images. We needed to distinguish product-only images, model-worn images, and front-facing images suitable for the main product page, then rename them accurately. I first tried YOLO and tuned it about 50 times, but the accuracy did not exceed 85%.",
+      "input": "In 2026, the EC team was spending a large amount of time preparing product images for the website.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
       "voice": "marin"
     },
     "ec-image-automation-answer-sentence-1-female": {
-      "input": "I changed to Gemini’s multimodal API, tuned it about 30 times, and reached 99% accuracy. I automated four stages: importing and correcting imported images, processing domestic photography, placing filenames in the EC-cart master data, and synchronizing files to public storage for wholesalers. Work that had taken one person about one month can now be completed in roughly two hours.",
+      "input": "When a team member took leave, the team asked whether we could reduce the back-office work so they could focus on promotions.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-image-automation-answer-sentence-2-female": {
+      "input": "Although I understood the overall workflow, I did not know every operational detail, so I decided to transfer the work to my department before trying to automate it.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-image-automation-answer-sentence-3-female": {
+      "input": "Once I took it over, I found more manual work and inconsistency than expected.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-image-automation-answer-sentence-4-female": {
+      "input": "The workflow was not standardized, and file-naming rules were too unstable for reliable automation.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-image-automation-answer-sentence-5-female": {
+      "input": "I first rebuilt the rules with the EC team, then created scripts for each stage and scheduled batch processing to run every night.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-image-automation-answer-sentence-6-female": {
+      "input": "The most difficult part was imported-brand images.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-image-automation-answer-sentence-7-female": {
+      "input": "We needed to distinguish product-only images, model-worn images, and front-facing images suitable for the main product page, then rename them accurately.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-image-automation-answer-sentence-8-female": {
+      "input": "I first tried YOLO and tuned it about 50 times, but the accuracy did not exceed 85%.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-image-automation-answer-sentence-9-female": {
+      "input": "I changed to Gemini’s multimodal API, tuned it about 30 times, and reached 99% accuracy.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-image-automation-answer-sentence-10-female": {
+      "input": "I automated four stages: importing and correcting imported images, processing domestic photography, placing filenames in the EC-cart master data, and synchronizing files to public storage for wholesalers.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-image-automation-answer-sentence-11-female": {
+      "input": "Work that had taken one person about one month can now be completed in roughly two hours.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
@@ -1027,14 +2595,84 @@
       "voice": "cedar"
     },
     "ec-image-automation-answer-sentence-0-male": {
-      "input": "In 2026, the EC team was spending a large amount of time preparing product images for the website. When a team member took leave, the team asked whether we could reduce the back-office work so they could focus on promotions. Although I understood the overall workflow, I did not know every operational detail, so I decided to transfer the work to my department before trying to automate it. Once I took it over, I found more manual work and inconsistency than expected. The workflow was not standardized, and file-naming rules were too unstable for reliable automation. I first rebuilt the rules with the EC team, then created scripts for each stage and scheduled batch processing to run every night. The most difficult part was imported-brand images. We needed to distinguish product-only images, model-worn images, and front-facing images suitable for the main product page, then rename them accurately. I first tried YOLO and tuned it about 50 times, but the accuracy did not exceed 85%.",
+      "input": "In 2026, the EC team was spending a large amount of time preparing product images for the website.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
       "voice": "cedar"
     },
     "ec-image-automation-answer-sentence-1-male": {
-      "input": "I changed to Gemini’s multimodal API, tuned it about 30 times, and reached 99% accuracy. I automated four stages: importing and correcting imported images, processing domestic photography, placing filenames in the EC-cart master data, and synchronizing files to public storage for wholesalers. Work that had taken one person about one month can now be completed in roughly two hours.",
+      "input": "When a team member took leave, the team asked whether we could reduce the back-office work so they could focus on promotions.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-image-automation-answer-sentence-2-male": {
+      "input": "Although I understood the overall workflow, I did not know every operational detail, so I decided to transfer the work to my department before trying to automate it.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-image-automation-answer-sentence-3-male": {
+      "input": "Once I took it over, I found more manual work and inconsistency than expected.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-image-automation-answer-sentence-4-male": {
+      "input": "The workflow was not standardized, and file-naming rules were too unstable for reliable automation.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-image-automation-answer-sentence-5-male": {
+      "input": "I first rebuilt the rules with the EC team, then created scripts for each stage and scheduled batch processing to run every night.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-image-automation-answer-sentence-6-male": {
+      "input": "The most difficult part was imported-brand images.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-image-automation-answer-sentence-7-male": {
+      "input": "We needed to distinguish product-only images, model-worn images, and front-facing images suitable for the main product page, then rename them accurately.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-image-automation-answer-sentence-8-male": {
+      "input": "I first tried YOLO and tuned it about 50 times, but the accuracy did not exceed 85%.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-image-automation-answer-sentence-9-male": {
+      "input": "I changed to Gemini’s multimodal API, tuned it about 30 times, and reached 99% accuracy.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-image-automation-answer-sentence-10-male": {
+      "input": "I automated four stages: importing and correcting imported images, processing domestic photography, placing filenames in the EC-cart master data, and synchronizing files to public storage for wholesalers.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-image-automation-answer-sentence-11-male": {
+      "input": "Work that had taken one person about one month can now be completed in roughly two hours.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
@@ -1080,7 +2718,14 @@
       "voice": "marin"
     },
     "yolo-pivot-question-sentence-0-female": {
-      "input": "Tell me about a time an approach you chose did not work as expected. What did you do and learn?",
+      "input": "Tell me about a time an approach you chose did not work as expected.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "yolo-pivot-question-sentence-1-female": {
+      "input": "What did you do and learn?",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
@@ -1094,7 +2739,14 @@
       "voice": "cedar"
     },
     "yolo-pivot-question-sentence-0-male": {
-      "input": "Tell me about a time an approach you chose did not work as expected. What did you do and learn?",
+      "input": "Tell me about a time an approach you chose did not work as expected.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "yolo-pivot-question-sentence-1-male": {
+      "input": "What did you do and learn?",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
@@ -1108,14 +2760,77 @@
       "voice": "marin"
     },
     "yolo-pivot-answer-sentence-0-female": {
-      "input": "In 2026, I was improving the process for organizing imported-brand images for our e-commerce site. Each season, we received about 20,000 images, and people had to visually classify them as product-only or model-worn images before renaming the files. I chose YOLO because it is a well-known image-recognition model. My mistake was that I did not set a required accuracy level or a clear point for changing approaches. I spent about one week and roughly 50 tuning iterations, but the accuracy stopped at 85%.",
+      "input": "In 2026, I was improving the process for organizing imported-brand images for our e-commerce site.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
       "voice": "marin"
     },
     "yolo-pivot-answer-sentence-1-female": {
-      "input": "I continued too long because I assumed YOLO had to be the right solution. Everything remained in testing, so no incorrectly classified images were published. Once I recognized the limit of the approach, I switched to a multimodal AI model. After about 30 further tuning iterations, I achieved 99% accuracy and could move the process safely into production. I learned to define success metrics, representative test data, a time limit, and an exit criterion before starting a technical evaluation. I now use those criteria for new automation projects.",
+      "input": "Each season, we received about 20,000 images, and people had to visually classify them as product-only or model-worn images before renaming the files.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "yolo-pivot-answer-sentence-2-female": {
+      "input": "I chose YOLO because it is a well-known image-recognition model.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "yolo-pivot-answer-sentence-3-female": {
+      "input": "My mistake was that I did not set a required accuracy level or a clear point for changing approaches.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "yolo-pivot-answer-sentence-4-female": {
+      "input": "I spent about one week and roughly 50 tuning iterations, but the accuracy stopped at 85%.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "yolo-pivot-answer-sentence-5-female": {
+      "input": "I continued too long because I assumed YOLO had to be the right solution.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "yolo-pivot-answer-sentence-6-female": {
+      "input": "Everything remained in testing, so no incorrectly classified images were published.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "yolo-pivot-answer-sentence-7-female": {
+      "input": "Once I recognized the limit of the approach, I switched to a multimodal AI model.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "yolo-pivot-answer-sentence-8-female": {
+      "input": "After about 30 further tuning iterations, I achieved 99% accuracy and could move the process safely into production.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "yolo-pivot-answer-sentence-9-female": {
+      "input": "I learned to define success metrics, representative test data, a time limit, and an exit criterion before starting a technical evaluation.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "yolo-pivot-answer-sentence-10-female": {
+      "input": "I now use those criteria for new automation projects.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
@@ -1129,14 +2844,77 @@
       "voice": "cedar"
     },
     "yolo-pivot-answer-sentence-0-male": {
-      "input": "In 2026, I was improving the process for organizing imported-brand images for our e-commerce site. Each season, we received about 20,000 images, and people had to visually classify them as product-only or model-worn images before renaming the files. I chose YOLO because it is a well-known image-recognition model. My mistake was that I did not set a required accuracy level or a clear point for changing approaches. I spent about one week and roughly 50 tuning iterations, but the accuracy stopped at 85%.",
+      "input": "In 2026, I was improving the process for organizing imported-brand images for our e-commerce site.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
       "voice": "cedar"
     },
     "yolo-pivot-answer-sentence-1-male": {
-      "input": "I continued too long because I assumed YOLO had to be the right solution. Everything remained in testing, so no incorrectly classified images were published. Once I recognized the limit of the approach, I switched to a multimodal AI model. After about 30 further tuning iterations, I achieved 99% accuracy and could move the process safely into production. I learned to define success metrics, representative test data, a time limit, and an exit criterion before starting a technical evaluation. I now use those criteria for new automation projects.",
+      "input": "Each season, we received about 20,000 images, and people had to visually classify them as product-only or model-worn images before renaming the files.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "yolo-pivot-answer-sentence-2-male": {
+      "input": "I chose YOLO because it is a well-known image-recognition model.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "yolo-pivot-answer-sentence-3-male": {
+      "input": "My mistake was that I did not set a required accuracy level or a clear point for changing approaches.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "yolo-pivot-answer-sentence-4-male": {
+      "input": "I spent about one week and roughly 50 tuning iterations, but the accuracy stopped at 85%.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "yolo-pivot-answer-sentence-5-male": {
+      "input": "I continued too long because I assumed YOLO had to be the right solution.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "yolo-pivot-answer-sentence-6-male": {
+      "input": "Everything remained in testing, so no incorrectly classified images were published.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "yolo-pivot-answer-sentence-7-male": {
+      "input": "Once I recognized the limit of the approach, I switched to a multimodal AI model.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "yolo-pivot-answer-sentence-8-male": {
+      "input": "After about 30 further tuning iterations, I achieved 99% accuracy and could move the process safely into production.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "yolo-pivot-answer-sentence-9-male": {
+      "input": "I learned to define success metrics, representative test data, a time limit, and an exit criterion before starting a technical evaluation.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "yolo-pivot-answer-sentence-10-male": {
+      "input": "I now use those criteria for new automation projects.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
@@ -1182,7 +2960,14 @@
       "voice": "marin"
     },
     "order-import-regression-question-sentence-0-female": {
-      "input": "Tell me about a time you discovered that your requirements or testing were incomplete. How did you fix the issue and prevent it from happening again?",
+      "input": "Tell me about a time you discovered that your requirements or testing were incomplete.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "order-import-regression-question-sentence-1-female": {
+      "input": "How did you fix the issue and prevent it from happening again?",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
@@ -1196,7 +2981,14 @@
       "voice": "cedar"
     },
     "order-import-regression-question-sentence-0-male": {
-      "input": "Tell me about a time you discovered that your requirements or testing were incomplete. How did you fix the issue and prevent it from happening again?",
+      "input": "Tell me about a time you discovered that your requirements or testing were incomplete.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "order-import-regression-question-sentence-1-male": {
+      "input": "How did you fix the issue and prevent it from happening again?",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
@@ -1210,7 +3002,77 @@
       "voice": "marin"
     },
     "order-import-regression-answer-sentence-0-female": {
-      "input": "In 2022, I worked with an external vendor on an enhancement for a custom sales-management system that used exhibition-order data. The new function itself passed testing and was launched successfully. However, I assumed that the existing order-import function was already stable, so I did not perform enough regression testing on the related process. I later found that when there was an additional order on the same day with the same details but a different order number, the existing logic did not use the order number as a unique identifier. As a result, the later row could overwrite the earlier one. I took responsibility for the gap in the requirements and testing. To prevent omissions, I added a pre-import check using Power Query. Before uploading the CSV, it detects duplicate records when the order number is excluded. If it finds a duplicate, the data is adjusted in the order system so it can be correctly distinguished, then it is exported and uploaded again. This control prevents missing imports. Since then, I have made a point of checking not only new functionality but also related existing functionality whenever feasible.",
+      "input": "In 2022, I worked with an external vendor on an enhancement for a custom sales-management system that used exhibition-order data.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "order-import-regression-answer-sentence-1-female": {
+      "input": "The new function itself passed testing and was launched successfully.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "order-import-regression-answer-sentence-2-female": {
+      "input": "However, I assumed that the existing order-import function was already stable, so I did not perform enough regression testing on the related process.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "order-import-regression-answer-sentence-3-female": {
+      "input": "I later found that when there was an additional order on the same day with the same details but a different order number, the existing logic did not use the order number as a unique identifier.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "order-import-regression-answer-sentence-4-female": {
+      "input": "As a result, the later row could overwrite the earlier one.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "order-import-regression-answer-sentence-5-female": {
+      "input": "I took responsibility for the gap in the requirements and testing.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "order-import-regression-answer-sentence-6-female": {
+      "input": "To prevent omissions, I added a pre-import check using Power Query.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "order-import-regression-answer-sentence-7-female": {
+      "input": "Before uploading the CSV, it detects duplicate records when the order number is excluded.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "order-import-regression-answer-sentence-8-female": {
+      "input": "If it finds a duplicate, the data is adjusted in the order system so it can be correctly distinguished, then it is exported and uploaded again.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "order-import-regression-answer-sentence-9-female": {
+      "input": "This control prevents missing imports.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "order-import-regression-answer-sentence-10-female": {
+      "input": "Since then, I have made a point of checking not only new functionality but also related existing functionality whenever feasible.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
@@ -1224,7 +3086,77 @@
       "voice": "cedar"
     },
     "order-import-regression-answer-sentence-0-male": {
-      "input": "In 2022, I worked with an external vendor on an enhancement for a custom sales-management system that used exhibition-order data. The new function itself passed testing and was launched successfully. However, I assumed that the existing order-import function was already stable, so I did not perform enough regression testing on the related process. I later found that when there was an additional order on the same day with the same details but a different order number, the existing logic did not use the order number as a unique identifier. As a result, the later row could overwrite the earlier one. I took responsibility for the gap in the requirements and testing. To prevent omissions, I added a pre-import check using Power Query. Before uploading the CSV, it detects duplicate records when the order number is excluded. If it finds a duplicate, the data is adjusted in the order system so it can be correctly distinguished, then it is exported and uploaded again. This control prevents missing imports. Since then, I have made a point of checking not only new functionality but also related existing functionality whenever feasible.",
+      "input": "In 2022, I worked with an external vendor on an enhancement for a custom sales-management system that used exhibition-order data.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "order-import-regression-answer-sentence-1-male": {
+      "input": "The new function itself passed testing and was launched successfully.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "order-import-regression-answer-sentence-2-male": {
+      "input": "However, I assumed that the existing order-import function was already stable, so I did not perform enough regression testing on the related process.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "order-import-regression-answer-sentence-3-male": {
+      "input": "I later found that when there was an additional order on the same day with the same details but a different order number, the existing logic did not use the order number as a unique identifier.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "order-import-regression-answer-sentence-4-male": {
+      "input": "As a result, the later row could overwrite the earlier one.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "order-import-regression-answer-sentence-5-male": {
+      "input": "I took responsibility for the gap in the requirements and testing.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "order-import-regression-answer-sentence-6-male": {
+      "input": "To prevent omissions, I added a pre-import check using Power Query.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "order-import-regression-answer-sentence-7-male": {
+      "input": "Before uploading the CSV, it detects duplicate records when the order number is excluded.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "order-import-regression-answer-sentence-8-male": {
+      "input": "If it finds a duplicate, the data is adjusted in the order system so it can be correctly distinguished, then it is exported and uploaded again.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "order-import-regression-answer-sentence-9-male": {
+      "input": "This control prevents missing imports.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "order-import-regression-answer-sentence-10-male": {
+      "input": "Since then, I have made a point of checking not only new functionality but also related existing functionality whenever feasible.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
@@ -1298,7 +3230,35 @@
       "voice": "marin"
     },
     "inventory-answer-sentence-0-female": {
-      "input": "First, I would make sure the discrepancy is recorded and that any affected movement is controlled. Then I would check the transaction history, location, recent receiving and shipping records, and recount the physical inventory with a colleague. I would compare the facts with the warehouse and system records to identify the root cause, such as a missed scan, a wrong location, or a quantity error. After correcting the inventory, I would document the cause and introduce a preventive measure, such as a scanning step or a second-person verification. My priorities would be accuracy, safety, and preventing recurrence.",
+      "input": "First, I would make sure the discrepancy is recorded and that any affected movement is controlled.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "inventory-answer-sentence-1-female": {
+      "input": "Then I would check the transaction history, location, recent receiving and shipping records, and recount the physical inventory with a colleague.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "inventory-answer-sentence-2-female": {
+      "input": "I would compare the facts with the warehouse and system records to identify the root cause, such as a missed scan, a wrong location, or a quantity error.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "inventory-answer-sentence-3-female": {
+      "input": "After correcting the inventory, I would document the cause and introduce a preventive measure, such as a scanning step or a second-person verification.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "inventory-answer-sentence-4-female": {
+      "input": "My priorities would be accuracy, safety, and preventing recurrence.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
@@ -1312,7 +3272,35 @@
       "voice": "cedar"
     },
     "inventory-answer-sentence-0-male": {
-      "input": "First, I would make sure the discrepancy is recorded and that any affected movement is controlled. Then I would check the transaction history, location, recent receiving and shipping records, and recount the physical inventory with a colleague. I would compare the facts with the warehouse and system records to identify the root cause, such as a missed scan, a wrong location, or a quantity error. After correcting the inventory, I would document the cause and introduce a preventive measure, such as a scanning step or a second-person verification. My priorities would be accuracy, safety, and preventing recurrence.",
+      "input": "First, I would make sure the discrepancy is recorded and that any affected movement is controlled.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "inventory-answer-sentence-1-male": {
+      "input": "Then I would check the transaction history, location, recent receiving and shipping records, and recount the physical inventory with a colleague.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "inventory-answer-sentence-2-male": {
+      "input": "I would compare the facts with the warehouse and system records to identify the root cause, such as a missed scan, a wrong location, or a quantity error.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "inventory-answer-sentence-3-male": {
+      "input": "After correcting the inventory, I would document the cause and introduce a preventive measure, such as a scanning step or a second-person verification.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "inventory-answer-sentence-4-male": {
+      "input": "My priorities would be accuracy, safety, and preventing recurrence.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
@@ -1386,7 +3374,35 @@
       "voice": "marin"
     },
     "delay-answer-sentence-0-female": {
-      "input": "I would first confirm the facts: the shipment status, the reason for the delay, the new estimated arrival time, and the items affected. Then I would communicate the situation quickly to the sending site, receiving site, transportation partner, and relevant stakeholders. I would look for safe alternatives, such as another carrier, a different route, or a transfer from available inventory. I would keep a clear record of decisions and provide regular updates until the shipment is received and verified. Afterward, I would review the root cause and prevent a repeat issue.",
+      "input": "I would first confirm the facts: the shipment status, the reason for the delay, the new estimated arrival time, and the items affected.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "delay-answer-sentence-1-female": {
+      "input": "Then I would communicate the situation quickly to the sending site, receiving site, transportation partner, and relevant stakeholders.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "delay-answer-sentence-2-female": {
+      "input": "I would look for safe alternatives, such as another carrier, a different route, or a transfer from available inventory.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "delay-answer-sentence-3-female": {
+      "input": "I would keep a clear record of decisions and provide regular updates until the shipment is received and verified.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "delay-answer-sentence-4-female": {
+      "input": "Afterward, I would review the root cause and prevent a repeat issue.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
@@ -1400,7 +3416,35 @@
       "voice": "cedar"
     },
     "delay-answer-sentence-0-male": {
-      "input": "I would first confirm the facts: the shipment status, the reason for the delay, the new estimated arrival time, and the items affected. Then I would communicate the situation quickly to the sending site, receiving site, transportation partner, and relevant stakeholders. I would look for safe alternatives, such as another carrier, a different route, or a transfer from available inventory. I would keep a clear record of decisions and provide regular updates until the shipment is received and verified. Afterward, I would review the root cause and prevent a repeat issue.",
+      "input": "I would first confirm the facts: the shipment status, the reason for the delay, the new estimated arrival time, and the items affected.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "delay-answer-sentence-1-male": {
+      "input": "Then I would communicate the situation quickly to the sending site, receiving site, transportation partner, and relevant stakeholders.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "delay-answer-sentence-2-male": {
+      "input": "I would look for safe alternatives, such as another carrier, a different route, or a transfer from available inventory.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "delay-answer-sentence-3-male": {
+      "input": "I would keep a clear record of decisions and provide regular updates until the shipment is received and verified.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "delay-answer-sentence-4-male": {
+      "input": "Afterward, I would review the root cause and prevent a repeat issue.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
@@ -1474,7 +3518,35 @@
       "voice": "marin"
     },
     "safety-answer-sentence-0-female": {
-      "input": "Safety and security come first. I would never take an unsafe shortcut to save time or cost. Next, I would clarify the urgency and business impact, break the work into standard steps, and prioritize the tasks based on risk and customer impact. If the workload or weight required support, I would ask a teammate and use the required PPE and equipment. By following a standard process and measuring accuracy, lead time, and rework, I can improve efficiency without compromising safety.",
+      "input": "Safety and security come first.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "safety-answer-sentence-1-female": {
+      "input": "I would never take an unsafe shortcut to save time or cost.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "safety-answer-sentence-2-female": {
+      "input": "Next, I would clarify the urgency and business impact, break the work into standard steps, and prioritize the tasks based on risk and customer impact.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "safety-answer-sentence-3-female": {
+      "input": "If the workload or weight required support, I would ask a teammate and use the required PPE and equipment.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "safety-answer-sentence-4-female": {
+      "input": "By following a standard process and measuring accuracy, lead time, and rework, I can improve efficiency without compromising safety.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
@@ -1488,7 +3560,35 @@
       "voice": "cedar"
     },
     "safety-answer-sentence-0-male": {
-      "input": "Safety and security come first. I would never take an unsafe shortcut to save time or cost. Next, I would clarify the urgency and business impact, break the work into standard steps, and prioritize the tasks based on risk and customer impact. If the workload or weight required support, I would ask a teammate and use the required PPE and equipment. By following a standard process and measuring accuracy, lead time, and rework, I can improve efficiency without compromising safety.",
+      "input": "Safety and security come first.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "safety-answer-sentence-1-male": {
+      "input": "I would never take an unsafe shortcut to save time or cost.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "safety-answer-sentence-2-male": {
+      "input": "Next, I would clarify the urgency and business impact, break the work into standard steps, and prioritize the tasks based on risk and customer impact.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "safety-answer-sentence-3-male": {
+      "input": "If the workload or weight required support, I would ask a teammate and use the required PPE and equipment.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "safety-answer-sentence-4-male": {
+      "input": "By following a standard process and measuring accuracy, lead time, and rework, I can improve efficiency without compromising safety.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
@@ -1534,7 +3634,14 @@
       "voice": "marin"
     },
     "split-shipment-timing-question-sentence-0-female": {
-      "input": "Tell me about a time your initial plan did not meet customer needs. What did you change?",
+      "input": "Tell me about a time your initial plan did not meet customer needs.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "split-shipment-timing-question-sentence-1-female": {
+      "input": "What did you change?",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
@@ -1548,7 +3655,14 @@
       "voice": "cedar"
     },
     "split-shipment-timing-question-sentence-0-male": {
-      "input": "Tell me about a time your initial plan did not meet customer needs. What did you change?",
+      "input": "Tell me about a time your initial plan did not meet customer needs.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "split-shipment-timing-question-sentence-1-male": {
+      "input": "What did you change?",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
@@ -1562,7 +3676,77 @@
       "voice": "marin"
     },
     "split-shipment-timing-answer-sentence-0-female": {
-      "input": "In 2019, during the first season after we changed J. LINDEBERG from trading-company imports to direct import, about 80% of the polo shirts were produced in Taiwan. I had to arrange the import from the factory to Japan. To minimize freight and import costs, I accepted a plan to wait until all products were completed and ship them together. That decision was efficient from a cost perspective, but the goods arrived in Japan about three weeks too late for the intended in-store launch. I had focused too narrowly on import cost and had not given enough weight to the value of being on the sales floor at the right time. From the following season, I changed the plan to divide the shipments into three waves and import products as production was completed. This increased some logistics cost, so I built an appropriate buffer into the import-expense plan in advance. The following season, the products arrived in time for the normal in-store launch, improving the schedule by about three weeks. The lesson was that supply-chain decisions should not be evaluated only by freight cost. I now balance cost against sales opportunity, customer availability, and the operational impact of late delivery before finalizing an import plan.",
+      "input": "In 2019, during the first season after we changed J.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "split-shipment-timing-answer-sentence-1-female": {
+      "input": "LINDEBERG from trading-company imports to direct import, about 80% of the polo shirts were produced in Taiwan.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "split-shipment-timing-answer-sentence-2-female": {
+      "input": "I had to arrange the import from the factory to Japan.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "split-shipment-timing-answer-sentence-3-female": {
+      "input": "To minimize freight and import costs, I accepted a plan to wait until all products were completed and ship them together.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "split-shipment-timing-answer-sentence-4-female": {
+      "input": "That decision was efficient from a cost perspective, but the goods arrived in Japan about three weeks too late for the intended in-store launch.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "split-shipment-timing-answer-sentence-5-female": {
+      "input": "I had focused too narrowly on import cost and had not given enough weight to the value of being on the sales floor at the right time.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "split-shipment-timing-answer-sentence-6-female": {
+      "input": "From the following season, I changed the plan to divide the shipments into three waves and import products as production was completed.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "split-shipment-timing-answer-sentence-7-female": {
+      "input": "This increased some logistics cost, so I built an appropriate buffer into the import-expense plan in advance.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "split-shipment-timing-answer-sentence-8-female": {
+      "input": "The following season, the products arrived in time for the normal in-store launch, improving the schedule by about three weeks.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "split-shipment-timing-answer-sentence-9-female": {
+      "input": "The lesson was that supply-chain decisions should not be evaluated only by freight cost.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "split-shipment-timing-answer-sentence-10-female": {
+      "input": "I now balance cost against sales opportunity, customer availability, and the operational impact of late delivery before finalizing an import plan.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
@@ -1576,7 +3760,77 @@
       "voice": "cedar"
     },
     "split-shipment-timing-answer-sentence-0-male": {
-      "input": "In 2019, during the first season after we changed J. LINDEBERG from trading-company imports to direct import, about 80% of the polo shirts were produced in Taiwan. I had to arrange the import from the factory to Japan. To minimize freight and import costs, I accepted a plan to wait until all products were completed and ship them together. That decision was efficient from a cost perspective, but the goods arrived in Japan about three weeks too late for the intended in-store launch. I had focused too narrowly on import cost and had not given enough weight to the value of being on the sales floor at the right time. From the following season, I changed the plan to divide the shipments into three waves and import products as production was completed. This increased some logistics cost, so I built an appropriate buffer into the import-expense plan in advance. The following season, the products arrived in time for the normal in-store launch, improving the schedule by about three weeks. The lesson was that supply-chain decisions should not be evaluated only by freight cost. I now balance cost against sales opportunity, customer availability, and the operational impact of late delivery before finalizing an import plan.",
+      "input": "In 2019, during the first season after we changed J.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "split-shipment-timing-answer-sentence-1-male": {
+      "input": "LINDEBERG from trading-company imports to direct import, about 80% of the polo shirts were produced in Taiwan.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "split-shipment-timing-answer-sentence-2-male": {
+      "input": "I had to arrange the import from the factory to Japan.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "split-shipment-timing-answer-sentence-3-male": {
+      "input": "To minimize freight and import costs, I accepted a plan to wait until all products were completed and ship them together.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "split-shipment-timing-answer-sentence-4-male": {
+      "input": "That decision was efficient from a cost perspective, but the goods arrived in Japan about three weeks too late for the intended in-store launch.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "split-shipment-timing-answer-sentence-5-male": {
+      "input": "I had focused too narrowly on import cost and had not given enough weight to the value of being on the sales floor at the right time.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "split-shipment-timing-answer-sentence-6-male": {
+      "input": "From the following season, I changed the plan to divide the shipments into three waves and import products as production was completed.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "split-shipment-timing-answer-sentence-7-male": {
+      "input": "This increased some logistics cost, so I built an appropriate buffer into the import-expense plan in advance.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "split-shipment-timing-answer-sentence-8-male": {
+      "input": "The following season, the products arrived in time for the normal in-store launch, improving the schedule by about three weeks.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "split-shipment-timing-answer-sentence-9-male": {
+      "input": "The lesson was that supply-chain decisions should not be evaluated only by freight cost.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "split-shipment-timing-answer-sentence-10-male": {
+      "input": "I now balance cost against sales opportunity, customer availability, and the operational impact of late delivery before finalizing an import plan.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
@@ -1622,7 +3876,14 @@
       "voice": "marin"
     },
     "gift-catalog-inventory-question-sentence-0-female": {
-      "input": "Tell me about a time you made an inventory-planning mistake. What did you do and learn?",
+      "input": "Tell me about a time you made an inventory-planning mistake.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "gift-catalog-inventory-question-sentence-1-female": {
+      "input": "What did you do and learn?",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
@@ -1636,7 +3897,14 @@
       "voice": "cedar"
     },
     "gift-catalog-inventory-question-sentence-0-male": {
-      "input": "Tell me about a time you made an inventory-planning mistake. What did you do and learn?",
+      "input": "Tell me about a time you made an inventory-planning mistake.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "gift-catalog-inventory-question-sentence-1-male": {
+      "input": "What did you do and learn?",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
@@ -1650,7 +3918,77 @@
       "voice": "marin"
     },
     "gift-catalog-inventory-answer-sentence-0-female": {
-      "input": "In 2008, while I was at Samsonite Japan, I proposed a suitcase to a mail-order catalog company and won an order for 300 units for an Isetan gift catalog. The product had a minimum production quantity of 2,000 units. At that time, an Asian distribution center in Hong Kong showed more than 2,000 units in stock. I made the mistake of treating visible shared inventory as if it were already reserved for Japan. I did not immediately secure the inventory or start new production because I believed I could arrange the Japan allocation later. One week later, the available inventory had dropped to zero, so we had to produce a new lot of 2,000 units. We fulfilled the 300-unit customer order without a delivery delay, but we then had 1,700 excess units. Only about 200 could be sold through normal channels, and roughly 1,500 units had to be sold through outlet stores, which damaged the gross margin. I took responsibility because the risk could have been avoided by confirming and securing inventory at the time of sale. Since then, I always verify whether stock can be allocated immediately before confirming a sale. If long-term reservation is difficult, I explain that constraint to the customer in advance.",
+      "input": "In 2008, while I was at Samsonite Japan, I proposed a suitcase to a mail-order catalog company and won an order for 300 units for an Isetan gift catalog.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "gift-catalog-inventory-answer-sentence-1-female": {
+      "input": "The product had a minimum production quantity of 2,000 units.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "gift-catalog-inventory-answer-sentence-2-female": {
+      "input": "At that time, an Asian distribution center in Hong Kong showed more than 2,000 units in stock.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "gift-catalog-inventory-answer-sentence-3-female": {
+      "input": "I made the mistake of treating visible shared inventory as if it were already reserved for Japan.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "gift-catalog-inventory-answer-sentence-4-female": {
+      "input": "I did not immediately secure the inventory or start new production because I believed I could arrange the Japan allocation later.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "gift-catalog-inventory-answer-sentence-5-female": {
+      "input": "One week later, the available inventory had dropped to zero, so we had to produce a new lot of 2,000 units.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "gift-catalog-inventory-answer-sentence-6-female": {
+      "input": "We fulfilled the 300-unit customer order without a delivery delay, but we then had 1,700 excess units.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "gift-catalog-inventory-answer-sentence-7-female": {
+      "input": "Only about 200 could be sold through normal channels, and roughly 1,500 units had to be sold through outlet stores, which damaged the gross margin.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "gift-catalog-inventory-answer-sentence-8-female": {
+      "input": "I took responsibility because the risk could have been avoided by confirming and securing inventory at the time of sale.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "gift-catalog-inventory-answer-sentence-9-female": {
+      "input": "Since then, I always verify whether stock can be allocated immediately before confirming a sale.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "gift-catalog-inventory-answer-sentence-10-female": {
+      "input": "If long-term reservation is difficult, I explain that constraint to the customer in advance.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
@@ -1664,7 +4002,77 @@
       "voice": "cedar"
     },
     "gift-catalog-inventory-answer-sentence-0-male": {
-      "input": "In 2008, while I was at Samsonite Japan, I proposed a suitcase to a mail-order catalog company and won an order for 300 units for an Isetan gift catalog. The product had a minimum production quantity of 2,000 units. At that time, an Asian distribution center in Hong Kong showed more than 2,000 units in stock. I made the mistake of treating visible shared inventory as if it were already reserved for Japan. I did not immediately secure the inventory or start new production because I believed I could arrange the Japan allocation later. One week later, the available inventory had dropped to zero, so we had to produce a new lot of 2,000 units. We fulfilled the 300-unit customer order without a delivery delay, but we then had 1,700 excess units. Only about 200 could be sold through normal channels, and roughly 1,500 units had to be sold through outlet stores, which damaged the gross margin. I took responsibility because the risk could have been avoided by confirming and securing inventory at the time of sale. Since then, I always verify whether stock can be allocated immediately before confirming a sale. If long-term reservation is difficult, I explain that constraint to the customer in advance.",
+      "input": "In 2008, while I was at Samsonite Japan, I proposed a suitcase to a mail-order catalog company and won an order for 300 units for an Isetan gift catalog.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "gift-catalog-inventory-answer-sentence-1-male": {
+      "input": "The product had a minimum production quantity of 2,000 units.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "gift-catalog-inventory-answer-sentence-2-male": {
+      "input": "At that time, an Asian distribution center in Hong Kong showed more than 2,000 units in stock.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "gift-catalog-inventory-answer-sentence-3-male": {
+      "input": "I made the mistake of treating visible shared inventory as if it were already reserved for Japan.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "gift-catalog-inventory-answer-sentence-4-male": {
+      "input": "I did not immediately secure the inventory or start new production because I believed I could arrange the Japan allocation later.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "gift-catalog-inventory-answer-sentence-5-male": {
+      "input": "One week later, the available inventory had dropped to zero, so we had to produce a new lot of 2,000 units.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "gift-catalog-inventory-answer-sentence-6-male": {
+      "input": "We fulfilled the 300-unit customer order without a delivery delay, but we then had 1,700 excess units.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "gift-catalog-inventory-answer-sentence-7-male": {
+      "input": "Only about 200 could be sold through normal channels, and roughly 1,500 units had to be sold through outlet stores, which damaged the gross margin.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "gift-catalog-inventory-answer-sentence-8-male": {
+      "input": "I took responsibility because the risk could have been avoided by confirming and securing inventory at the time of sale.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "gift-catalog-inventory-answer-sentence-9-male": {
+      "input": "Since then, I always verify whether stock can be allocated immediately before confirming a sale.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "gift-catalog-inventory-answer-sentence-10-male": {
+      "input": "If long-term reservation is difficult, I explain that constraint to the customer in advance.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
@@ -1710,7 +4118,14 @@
       "voice": "marin"
     },
     "trademark-governance-question-sentence-0-female": {
-      "input": "Tell me about a time you discovered a risk in a product or process too late. How did you respond?",
+      "input": "Tell me about a time you discovered a risk in a product or process too late.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "trademark-governance-question-sentence-1-female": {
+      "input": "How did you respond?",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
@@ -1724,7 +4139,14 @@
       "voice": "cedar"
     },
     "trademark-governance-question-sentence-0-male": {
-      "input": "Tell me about a time you discovered a risk in a product or process too late. How did you respond?",
+      "input": "Tell me about a time you discovered a risk in a product or process too late.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "trademark-governance-question-sentence-1-male": {
+      "input": "How did you respond?",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
@@ -1738,7 +4160,77 @@
       "voice": "marin"
     },
     "trademark-governance-answer-sentence-0-female": {
-      "input": "In 2016, our company received a formal notice from a third party claiming that a product from one of our brands infringed its graphic trademark. The product had been sold several years earlier, and the designer involved had already left the company. After confirming the facts, I learned that the designer had used the other company’s product as a reference when creating the design. I was also responsible for legal matters at the time, and I recognized that I had not built a proactive process to review intellectual-property risks across all product plans. We had also not kept a shared record of design-related legal consultations. I worked with our outside counsel to resolve the matter, including a compensation payment. More importantly, I changed the process afterward. I began providing regular information to planning teams across all brands about trademark and copyright risks. I also created a shared record of individual consultations and decisions so that knowledge would remain available even when team members changed. The lesson was that legal responsibility cannot depend on individual memory or on whether a particular designer is still with the company. I learned to build simple, repeatable controls before a problem occurs.",
+      "input": "In 2016, our company received a formal notice from a third party claiming that a product from one of our brands infringed its graphic trademark.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "trademark-governance-answer-sentence-1-female": {
+      "input": "The product had been sold several years earlier, and the designer involved had already left the company.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "trademark-governance-answer-sentence-2-female": {
+      "input": "After confirming the facts, I learned that the designer had used the other company’s product as a reference when creating the design.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "trademark-governance-answer-sentence-3-female": {
+      "input": "I was also responsible for legal matters at the time, and I recognized that I had not built a proactive process to review intellectual-property risks across all product plans.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "trademark-governance-answer-sentence-4-female": {
+      "input": "We had also not kept a shared record of design-related legal consultations.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "trademark-governance-answer-sentence-5-female": {
+      "input": "I worked with our outside counsel to resolve the matter, including a compensation payment.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "trademark-governance-answer-sentence-6-female": {
+      "input": "More importantly, I changed the process afterward.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "trademark-governance-answer-sentence-7-female": {
+      "input": "I began providing regular information to planning teams across all brands about trademark and copyright risks.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "trademark-governance-answer-sentence-8-female": {
+      "input": "I also created a shared record of individual consultations and decisions so that knowledge would remain available even when team members changed.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "trademark-governance-answer-sentence-9-female": {
+      "input": "The lesson was that legal responsibility cannot depend on individual memory or on whether a particular designer is still with the company.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "trademark-governance-answer-sentence-10-female": {
+      "input": "I learned to build simple, repeatable controls before a problem occurs.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
@@ -1752,7 +4244,77 @@
       "voice": "cedar"
     },
     "trademark-governance-answer-sentence-0-male": {
-      "input": "In 2016, our company received a formal notice from a third party claiming that a product from one of our brands infringed its graphic trademark. The product had been sold several years earlier, and the designer involved had already left the company. After confirming the facts, I learned that the designer had used the other company’s product as a reference when creating the design. I was also responsible for legal matters at the time, and I recognized that I had not built a proactive process to review intellectual-property risks across all product plans. We had also not kept a shared record of design-related legal consultations. I worked with our outside counsel to resolve the matter, including a compensation payment. More importantly, I changed the process afterward. I began providing regular information to planning teams across all brands about trademark and copyright risks. I also created a shared record of individual consultations and decisions so that knowledge would remain available even when team members changed. The lesson was that legal responsibility cannot depend on individual memory or on whether a particular designer is still with the company. I learned to build simple, repeatable controls before a problem occurs.",
+      "input": "In 2016, our company received a formal notice from a third party claiming that a product from one of our brands infringed its graphic trademark.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "trademark-governance-answer-sentence-1-male": {
+      "input": "The product had been sold several years earlier, and the designer involved had already left the company.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "trademark-governance-answer-sentence-2-male": {
+      "input": "After confirming the facts, I learned that the designer had used the other company’s product as a reference when creating the design.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "trademark-governance-answer-sentence-3-male": {
+      "input": "I was also responsible for legal matters at the time, and I recognized that I had not built a proactive process to review intellectual-property risks across all product plans.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "trademark-governance-answer-sentence-4-male": {
+      "input": "We had also not kept a shared record of design-related legal consultations.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "trademark-governance-answer-sentence-5-male": {
+      "input": "I worked with our outside counsel to resolve the matter, including a compensation payment.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "trademark-governance-answer-sentence-6-male": {
+      "input": "More importantly, I changed the process afterward.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "trademark-governance-answer-sentence-7-male": {
+      "input": "I began providing regular information to planning teams across all brands about trademark and copyright risks.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "trademark-governance-answer-sentence-8-male": {
+      "input": "I also created a shared record of individual consultations and decisions so that knowledge would remain available even when team members changed.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "trademark-governance-answer-sentence-9-male": {
+      "input": "The lesson was that legal responsibility cannot depend on individual memory or on whether a particular designer is still with the company.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "trademark-governance-answer-sentence-10-male": {
+      "input": "I learned to build simple, repeatable controls before a problem occurs.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
@@ -1798,7 +4360,14 @@
       "voice": "marin"
     },
     "italy-agent-negotiation-question-sentence-0-female": {
-      "input": "Tell me about a partnership that did not move forward. What did you learn from it?",
+      "input": "Tell me about a partnership that did not move forward.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "italy-agent-negotiation-question-sentence-1-female": {
+      "input": "What did you learn from it?",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
@@ -1812,7 +4381,14 @@
       "voice": "cedar"
     },
     "italy-agent-negotiation-question-sentence-0-male": {
-      "input": "Tell me about a partnership that did not move forward. What did you learn from it?",
+      "input": "Tell me about a partnership that did not move forward.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "italy-agent-negotiation-question-sentence-1-male": {
+      "input": "What did you learn from it?",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
@@ -1826,7 +4402,77 @@
       "voice": "marin"
     },
     "italy-agent-negotiation-answer-sentence-0-female": {
-      "input": "In 2017, as the brand manager for ROSSASSEN, I exhibited at Pitti Uomo in Florence every six months. I began discussions with an Italian knitwear company about a distribution and license agreement. We reached a provisional understanding and continued negotiating. My mistake was relying too heavily on email between the trade shows. We met in person only every six months, even though the partnership required detailed commercial and legal alignment. I also focused too much on securing the most favorable terms for our company and did not sufficiently confirm the conditions the partner needed in order to launch the business. We continued discussions after the next exhibition, but the partner ultimately decided not to sign the final agreement. I tried to continue the negotiation by email, but it did not recover. I took this as a failure in how I built the relationship and structured the deal, not simply as the other side changing its mind. I learned that complex international partnerships require more face-to-face dialogue and a willingness to start with a smaller, staged plan rather than trying to optimize every contract term at the beginning. In 2022, when supporting new distributor relationships in Taiwan and Thailand, I applied that learning by helping create smaller initial plans that could expand based on results.",
+      "input": "In 2017, as the brand manager for ROSSASSEN, I exhibited at Pitti Uomo in Florence every six months.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "italy-agent-negotiation-answer-sentence-1-female": {
+      "input": "I began discussions with an Italian knitwear company about a distribution and license agreement.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "italy-agent-negotiation-answer-sentence-2-female": {
+      "input": "We reached a provisional understanding and continued negotiating.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "italy-agent-negotiation-answer-sentence-3-female": {
+      "input": "My mistake was relying too heavily on email between the trade shows.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "italy-agent-negotiation-answer-sentence-4-female": {
+      "input": "We met in person only every six months, even though the partnership required detailed commercial and legal alignment.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "italy-agent-negotiation-answer-sentence-5-female": {
+      "input": "I also focused too much on securing the most favorable terms for our company and did not sufficiently confirm the conditions the partner needed in order to launch the business.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "italy-agent-negotiation-answer-sentence-6-female": {
+      "input": "We continued discussions after the next exhibition, but the partner ultimately decided not to sign the final agreement.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "italy-agent-negotiation-answer-sentence-7-female": {
+      "input": "I tried to continue the negotiation by email, but it did not recover.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "italy-agent-negotiation-answer-sentence-8-female": {
+      "input": "I took this as a failure in how I built the relationship and structured the deal, not simply as the other side changing its mind.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "italy-agent-negotiation-answer-sentence-9-female": {
+      "input": "I learned that complex international partnerships require more face-to-face dialogue and a willingness to start with a smaller, staged plan rather than trying to optimize every contract term at the beginning.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "italy-agent-negotiation-answer-sentence-10-female": {
+      "input": "In 2022, when supporting new distributor relationships in Taiwan and Thailand, I applied that learning by helping create smaller initial plans that could expand based on results.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
@@ -1840,7 +4486,77 @@
       "voice": "cedar"
     },
     "italy-agent-negotiation-answer-sentence-0-male": {
-      "input": "In 2017, as the brand manager for ROSSASSEN, I exhibited at Pitti Uomo in Florence every six months. I began discussions with an Italian knitwear company about a distribution and license agreement. We reached a provisional understanding and continued negotiating. My mistake was relying too heavily on email between the trade shows. We met in person only every six months, even though the partnership required detailed commercial and legal alignment. I also focused too much on securing the most favorable terms for our company and did not sufficiently confirm the conditions the partner needed in order to launch the business. We continued discussions after the next exhibition, but the partner ultimately decided not to sign the final agreement. I tried to continue the negotiation by email, but it did not recover. I took this as a failure in how I built the relationship and structured the deal, not simply as the other side changing its mind. I learned that complex international partnerships require more face-to-face dialogue and a willingness to start with a smaller, staged plan rather than trying to optimize every contract term at the beginning. In 2022, when supporting new distributor relationships in Taiwan and Thailand, I applied that learning by helping create smaller initial plans that could expand based on results.",
+      "input": "In 2017, as the brand manager for ROSSASSEN, I exhibited at Pitti Uomo in Florence every six months.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "italy-agent-negotiation-answer-sentence-1-male": {
+      "input": "I began discussions with an Italian knitwear company about a distribution and license agreement.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "italy-agent-negotiation-answer-sentence-2-male": {
+      "input": "We reached a provisional understanding and continued negotiating.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "italy-agent-negotiation-answer-sentence-3-male": {
+      "input": "My mistake was relying too heavily on email between the trade shows.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "italy-agent-negotiation-answer-sentence-4-male": {
+      "input": "We met in person only every six months, even though the partnership required detailed commercial and legal alignment.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "italy-agent-negotiation-answer-sentence-5-male": {
+      "input": "I also focused too much on securing the most favorable terms for our company and did not sufficiently confirm the conditions the partner needed in order to launch the business.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "italy-agent-negotiation-answer-sentence-6-male": {
+      "input": "We continued discussions after the next exhibition, but the partner ultimately decided not to sign the final agreement.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "italy-agent-negotiation-answer-sentence-7-male": {
+      "input": "I tried to continue the negotiation by email, but it did not recover.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "italy-agent-negotiation-answer-sentence-8-male": {
+      "input": "I took this as a failure in how I built the relationship and structured the deal, not simply as the other side changing its mind.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "italy-agent-negotiation-answer-sentence-9-male": {
+      "input": "I learned that complex international partnerships require more face-to-face dialogue and a willingness to start with a smaller, staged plan rather than trying to optimize every contract term at the beginning.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "italy-agent-negotiation-answer-sentence-10-male": {
+      "input": "In 2022, when supporting new distributor relationships in Taiwan and Thailand, I applied that learning by helping create smaller initial plans that could expand based on results.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
@@ -1914,13 +4630,27 @@
       "voice": "marin"
     },
     "interviewer-success-criteria-answer-sentence-0-female": {
-      "input": "Thank you. I have a question. What would distinguish an outstanding person in this role during the first six to twelve months?",
+      "input": "Thank you.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
       "voice": "marin"
     },
     "interviewer-success-criteria-answer-sentence-1-female": {
+      "input": "I have a question.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "interviewer-success-criteria-answer-sentence-2-female": {
+      "input": "What would distinguish an outstanding person in this role during the first six to twelve months?",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "interviewer-success-criteria-answer-sentence-3-female": {
       "input": "I ask because I would like to understand what success looks like in practice and where I should focus my effort so that I can contribute quickly.",
       "language": "en",
       "speaker": "female",
@@ -1935,13 +4665,27 @@
       "voice": "cedar"
     },
     "interviewer-success-criteria-answer-sentence-0-male": {
-      "input": "Thank you. I have a question. What would distinguish an outstanding person in this role during the first six to twelve months?",
+      "input": "Thank you.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
       "voice": "cedar"
     },
     "interviewer-success-criteria-answer-sentence-1-male": {
+      "input": "I have a question.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "interviewer-success-criteria-answer-sentence-2-male": {
+      "input": "What would distinguish an outstanding person in this role during the first six to twelve months?",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "interviewer-success-criteria-answer-sentence-3-male": {
       "input": "I ask because I would like to understand what success looks like in practice and where I should focus my effort so that I can contribute quickly.",
       "language": "en",
       "speaker": "male",
@@ -2016,13 +4760,27 @@
       "voice": "marin"
     },
     "interviewer-current-challenges-answer-sentence-0-female": {
-      "input": "Thank you. I have a question. What are the most difficult or recurring logistics challenges the team is working on today?",
+      "input": "Thank you.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
       "voice": "marin"
     },
     "interviewer-current-challenges-answer-sentence-1-female": {
+      "input": "I have a question.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "interviewer-current-challenges-answer-sentence-2-female": {
+      "input": "What are the most difficult or recurring logistics challenges the team is working on today?",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "interviewer-current-challenges-answer-sentence-3-female": {
       "input": "I ask because I enjoy finding root causes and improving processes, and I would like to understand where my experience could be most useful.",
       "language": "en",
       "speaker": "female",
@@ -2037,13 +4795,27 @@
       "voice": "cedar"
     },
     "interviewer-current-challenges-answer-sentence-0-male": {
-      "input": "Thank you. I have a question. What are the most difficult or recurring logistics challenges the team is working on today?",
+      "input": "Thank you.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
       "voice": "cedar"
     },
     "interviewer-current-challenges-answer-sentence-1-male": {
+      "input": "I have a question.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "interviewer-current-challenges-answer-sentence-2-male": {
+      "input": "What are the most difficult or recurring logistics challenges the team is working on today?",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "interviewer-current-challenges-answer-sentence-3-male": {
       "input": "I ask because I enjoy finding root causes and improving processes, and I would like to understand where my experience could be most useful.",
       "language": "en",
       "speaker": "male",
@@ -2132,20 +4904,34 @@
       "voice": "marin"
     },
     "interviewer-operational-metrics-answer-sentence-0-female": {
-      "input": "Thank you. I have a question. What operational metrics are most important for this team, such as inventory accuracy, turnaround time, safety, or quality?",
+      "input": "Thank you.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
       "voice": "marin"
     },
     "interviewer-operational-metrics-answer-sentence-1-female": {
-      "input": "How does this role influence them?",
+      "input": "I have a question.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
       "voice": "marin"
     },
     "interviewer-operational-metrics-answer-sentence-2-female": {
+      "input": "What operational metrics are most important for this team, such as inventory accuracy, turnaround time, safety, or quality?",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "interviewer-operational-metrics-answer-sentence-3-female": {
+      "input": "How does this role influence them?",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "interviewer-operational-metrics-answer-sentence-4-female": {
       "input": "I ask because, in my past roles, I have tried to balance safety, accuracy, speed, and continuous improvement through measurable results.",
       "language": "en",
       "speaker": "female",
@@ -2160,20 +4946,34 @@
       "voice": "cedar"
     },
     "interviewer-operational-metrics-answer-sentence-0-male": {
-      "input": "Thank you. I have a question. What operational metrics are most important for this team, such as inventory accuracy, turnaround time, safety, or quality?",
+      "input": "Thank you.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
       "voice": "cedar"
     },
     "interviewer-operational-metrics-answer-sentence-1-male": {
-      "input": "How does this role influence them?",
+      "input": "I have a question.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
       "voice": "cedar"
     },
     "interviewer-operational-metrics-answer-sentence-2-male": {
+      "input": "What operational metrics are most important for this team, such as inventory accuracy, turnaround time, safety, or quality?",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "interviewer-operational-metrics-answer-sentence-3-male": {
+      "input": "How does this role influence them?",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "interviewer-operational-metrics-answer-sentence-4-male": {
       "input": "I ask because, in my past roles, I have tried to balance safety, accuracy, speed, and continuous improvement through measurable results.",
       "language": "en",
       "speaker": "male",
@@ -2248,13 +5048,27 @@
       "voice": "marin"
     },
     "interviewer-improvement-process-answer-sentence-0-female": {
-      "input": "Thank you. I have a question. When a team member identifies a process improvement opportunity, how are ideas tested and scaled within the team or across other sites?",
+      "input": "Thank you.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
       "voice": "marin"
     },
     "interviewer-improvement-process-answer-sentence-1-female": {
+      "input": "I have a question.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "interviewer-improvement-process-answer-sentence-2-female": {
+      "input": "When a team member identifies a process improvement opportunity, how are ideas tested and scaled within the team or across other sites?",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "interviewer-improvement-process-answer-sentence-3-female": {
       "input": "I ask because I have experience with process automation and would like to understand how the team turns a local improvement into a reliable standard process.",
       "language": "en",
       "speaker": "female",
@@ -2269,13 +5083,27 @@
       "voice": "cedar"
     },
     "interviewer-improvement-process-answer-sentence-0-male": {
-      "input": "Thank you. I have a question. When a team member identifies a process improvement opportunity, how are ideas tested and scaled within the team or across other sites?",
+      "input": "Thank you.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
       "voice": "cedar"
     },
     "interviewer-improvement-process-answer-sentence-1-male": {
+      "input": "I have a question.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "interviewer-improvement-process-answer-sentence-2-male": {
+      "input": "When a team member identifies a process improvement opportunity, how are ideas tested and scaled within the team or across other sites?",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "interviewer-improvement-process-answer-sentence-3-male": {
       "input": "I ask because I have experience with process automation and would like to understand how the team turns a local improvement into a reliable standard process.",
       "language": "en",
       "speaker": "male",
@@ -2350,13 +5178,27 @@
       "voice": "marin"
     },
     "interviewer-cross-functional-priorities-answer-sentence-0-female": {
-      "input": "Thank you. I have a question. How does this team work with technicians, facilities, security, and other stakeholders when priorities conflict?",
+      "input": "Thank you.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
       "voice": "marin"
     },
     "interviewer-cross-functional-priorities-answer-sentence-1-female": {
+      "input": "I have a question.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "interviewer-cross-functional-priorities-answer-sentence-2-female": {
+      "input": "How does this team work with technicians, facilities, security, and other stakeholders when priorities conflict?",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "interviewer-cross-functional-priorities-answer-sentence-3-female": {
       "input": "I ask because many of my past projects required balancing safety, accuracy, speed, and continuous improvement across different teams.",
       "language": "en",
       "speaker": "female",
@@ -2371,13 +5213,27 @@
       "voice": "cedar"
     },
     "interviewer-cross-functional-priorities-answer-sentence-0-male": {
-      "input": "Thank you. I have a question. How does this team work with technicians, facilities, security, and other stakeholders when priorities conflict?",
+      "input": "Thank you.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
       "voice": "cedar"
     },
     "interviewer-cross-functional-priorities-answer-sentence-1-male": {
+      "input": "I have a question.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "interviewer-cross-functional-priorities-answer-sentence-2-male": {
+      "input": "How does this team work with technicians, facilities, security, and other stakeholders when priorities conflict?",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "interviewer-cross-functional-priorities-answer-sentence-3-male": {
       "input": "I ask because many of my past projects required balancing safety, accuracy, speed, and continuous improvement across different teams.",
       "language": "en",
       "speaker": "male",
