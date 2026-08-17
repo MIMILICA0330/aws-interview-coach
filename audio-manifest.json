@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-17T13:38:11.956Z",
+  "generatedAt": "2026-08-17T13:56:52.368Z",
   "entries": {
     "intro-question-female": {
       "input": "Tell me about yourself and your professional background.",
@@ -797,14 +797,14 @@
       "voice": "cedar"
     },
     "order-import-regression-answer-female": {
-      "input": "In 2022, I worked with an external vendor on an enhancement for a custom sales-management system that used exhibition-order data. The new function itself passed testing and was launched successfully.\nHowever, I assumed that the existing order-import function was already stable, so I did not perform enough regression testing on the related process. I later found that when there was an additional order on the same day with the same details but a different order number, the existing logic did not use the order number as a unique identifier. As a result, the later row could overwrite the earlier one.\nI took responsibility for the gap in the requirements and testing. To prevent omissions, I added a pre-import check using Power Query. Before uploading the CSV, it detects duplicate records when the order number is excluded. If it finds a duplicate, the data is adjusted in the order system so it can be correctly distinguished, then it is exported and uploaded again.\nThis control prevents missing imports. I also changed my approach to requirements and testing: I now make the unique key, new-versus-update behavior, duplicate handling, and the impact on related existing functions mandatory checks.",
+      "input": "In 2022, I worked with an external vendor on an enhancement for a custom sales-management system that used exhibition-order data. The new function itself passed testing and was launched successfully.\nHowever, I assumed that the existing order-import function was already stable, so I did not perform enough regression testing on the related process. I later found that when there was an additional order on the same day with the same details but a different order number, the existing logic did not use the order number as a unique identifier. As a result, the later row could overwrite the earlier one.\nI took responsibility for the gap in the requirements and testing. To prevent omissions, I added a pre-import check using Power Query. Before uploading the CSV, it detects duplicate records when the order number is excluded. If it finds a duplicate, the data is adjusted in the order system so it can be correctly distinguished, then it is exported and uploaded again.\nThis control prevents missing imports. Since then, I have made a point of checking not only new functionality but also related existing functionality whenever feasible.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
       "voice": "marin"
     },
     "order-import-regression-answer-male": {
-      "input": "In 2022, I worked with an external vendor on an enhancement for a custom sales-management system that used exhibition-order data. The new function itself passed testing and was launched successfully.\nHowever, I assumed that the existing order-import function was already stable, so I did not perform enough regression testing on the related process. I later found that when there was an additional order on the same day with the same details but a different order number, the existing logic did not use the order number as a unique identifier. As a result, the later row could overwrite the earlier one.\nI took responsibility for the gap in the requirements and testing. To prevent omissions, I added a pre-import check using Power Query. Before uploading the CSV, it detects duplicate records when the order number is excluded. If it finds a duplicate, the data is adjusted in the order system so it can be correctly distinguished, then it is exported and uploaded again.\nThis control prevents missing imports. I also changed my approach to requirements and testing: I now make the unique key, new-versus-update behavior, duplicate handling, and the impact on related existing functions mandatory checks.",
+      "input": "In 2022, I worked with an external vendor on an enhancement for a custom sales-management system that used exhibition-order data. The new function itself passed testing and was launched successfully.\nHowever, I assumed that the existing order-import function was already stable, so I did not perform enough regression testing on the related process. I later found that when there was an additional order on the same day with the same details but a different order number, the existing logic did not use the order number as a unique identifier. As a result, the later row could overwrite the earlier one.\nI took responsibility for the gap in the requirements and testing. To prevent omissions, I added a pre-import check using Power Query. Before uploading the CSV, it detects duplicate records when the order number is excluded. If it finds a duplicate, the data is adjusted in the order system so it can be correctly distinguished, then it is exported and uploaded again.\nThis control prevents missing imports. Since then, I have made a point of checking not only new functionality but also related existing functionality whenever feasible.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
@@ -827,7 +827,7 @@
       "googleVoice": "ja-JP-Chirp3-HD-Achird"
     },
     "order-import-regression-answerJa-female": {
-      "input": "2022年、展示会受注データを活用する販売管理システムの機能拡張を外部ベンダーと進めました。新機能自体は検証を終えてローンチしましたが、既存の受注取込機能は安定していると考え、関連する回帰テストを十分に行いませんでした。その後、同日に同一内容の追加受注があり、受注番号だけが異なる場合、既存ロジックでは受注番号を一意の識別要素として扱っていないため、後から取り込んだデータが先のデータを上書きする可能性があると分かりました。私は要件とテストの不足を認め、CSVを直接取り込む前に、Power Queryで受注番号を除いた重複データを検知する工程を追加しました。重複があれば受注システム側でデータを正しく区別できるよう調整し、再出力・取込を行う運用です。この事前チェックで取込漏れを防げるようになりました。以後は、一意キー、新規追加・更新・重複時の動き、関連する既存機能への影響を必須の確認・テスト項目にしています。",
+      "input": "2022年、展示会受注データを活用する販売管理システムの機能拡張を外部ベンダーと進めました。新機能自体は検証を終えてローンチしましたが、既存の受注取込機能は安定していると考え、関連する回帰テストを十分に行いませんでした。その後、同日に同一内容の追加受注があり、受注番号だけが異なる場合、既存ロジックでは受注番号を一意の識別要素として扱っていないため、後から取り込んだデータが先のデータを上書きする可能性があると分かりました。私は要件とテストの不足を認め、CSVを直接取り込む前に、Power Queryで受注番号を除いた重複データを検知する工程を追加しました。重複があれば受注システム側でデータを正しく区別できるよう調整し、再出力・取込を行う運用です。この事前チェックで取込漏れを防げるようになりました。以後は、新機能だけでなく、関連する既存機能もできるだけ確認するようにしています。",
       "language": "ja",
       "speaker": "female",
       "provider": "google",
@@ -835,7 +835,7 @@
       "googleVoice": "ja-JP-Chirp3-HD-Achernar"
     },
     "order-import-regression-answerJa-male": {
-      "input": "2022年、展示会受注データを活用する販売管理システムの機能拡張を外部ベンダーと進めました。新機能自体は検証を終えてローンチしましたが、既存の受注取込機能は安定していると考え、関連する回帰テストを十分に行いませんでした。その後、同日に同一内容の追加受注があり、受注番号だけが異なる場合、既存ロジックでは受注番号を一意の識別要素として扱っていないため、後から取り込んだデータが先のデータを上書きする可能性があると分かりました。私は要件とテストの不足を認め、CSVを直接取り込む前に、Power Queryで受注番号を除いた重複データを検知する工程を追加しました。重複があれば受注システム側でデータを正しく区別できるよう調整し、再出力・取込を行う運用です。この事前チェックで取込漏れを防げるようになりました。以後は、一意キー、新規追加・更新・重複時の動き、関連する既存機能への影響を必須の確認・テスト項目にしています。",
+      "input": "2022年、展示会受注データを活用する販売管理システムの機能拡張を外部ベンダーと進めました。新機能自体は検証を終えてローンチしましたが、既存の受注取込機能は安定していると考え、関連する回帰テストを十分に行いませんでした。その後、同日に同一内容の追加受注があり、受注番号だけが異なる場合、既存ロジックでは受注番号を一意の識別要素として扱っていないため、後から取り込んだデータが先のデータを上書きする可能性があると分かりました。私は要件とテストの不足を認め、CSVを直接取り込む前に、Power Queryで受注番号を除いた重複データを検知する工程を追加しました。重複があれば受注システム側でデータを正しく区別できるよう調整し、再出力・取込を行う運用です。この事前チェックで取込漏れを防げるようになりました。以後は、新機能だけでなく、関連する既存機能もできるだけ確認するようにしています。",
       "language": "ja",
       "speaker": "male",
       "provider": "google",
