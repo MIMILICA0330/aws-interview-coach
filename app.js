@@ -354,8 +354,19 @@
 
   function splitSpeechChunks(text, language) {
     const normalized = String(text).replace(/\s+/g, " ").trim();
-    const pattern = language === "japanese" ? /[^。！？!?]+[。！？!?]+|[^。！？!?]+$/g : /[^.!?]+[.!?]+|[^.!?]+$/g;
-    return normalized.match(pattern)?.map((chunk) => chunk.trim()).filter(Boolean) || [normalized];
+    if (language === "japanese") return normalized.match(/[^。！？!?]+[。！？!?]+|[^。！？!?]+$/g)?.map((chunk) => chunk.trim()).filter(Boolean) || [normalized];
+    const fragments = normalized.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [];
+    const sentences = [];
+    for (const raw of fragments) {
+      const fragment = raw.trim();
+      if (!fragment) continue;
+      const previous = sentences[sentences.length - 1] || "";
+      const continuesAbbreviation = /(?:\b(?:Mr|Mrs|Ms|Dr|Prof|Inc|Ltd|Co|vs|etc|e\.g|i\.e)|(?:[A-Z]\.)+)$/i.test(previous);
+      const continuesDecimal = /\d\.$/.test(previous) && /^\d/.test(fragment);
+      if (previous && (continuesAbbreviation || continuesDecimal)) sentences[sentences.length - 1] = `${previous} ${fragment}`;
+      else sentences.push(fragment);
+    }
+    return sentences.length ? sentences : [normalized];
   }
 
   function finishSpeech(run, block) {
@@ -449,10 +460,12 @@
       const urls = [];
       if (card.question) urls.push(staticAudioUrl(`${card.id}-question`, "english"));
       if (card.answer) urls.push(staticAudioUrl(`${card.id}-answer`, "english"));
+      if (card.question) splitSpeechChunks(card.question, "english").forEach((_, index) => urls.push(staticAudioUrl(`${card.id}-question-sentence-${index}`, "english")));
+      if (card.answer) splitSpeechChunks(card.answer, "english").forEach((_, index) => urls.push(staticAudioUrl(`${card.id}-answer-sentence-${index}`, "english")));
       if (card.questionJa) urls.push(staticAudioUrl(`${card.id}-questionJa`, "japanese"));
       if (card.answerJa) urls.push(staticAudioUrl(`${card.id}-answerJa`, "japanese"));
       return urls.filter(Boolean);
-    });
+    }).filter((url, index, urls) => urls.indexOf(url) === index);
   }
 
   async function downloadStaticAudio() {
@@ -491,7 +504,7 @@
     }
   }
 
-  function playStaticAudio(url, run) {
+  function playStaticAudio(url, run, preservePitch = false) {
     return new Promise((resolve, reject) => {
       const audio = new Audio();
       let settled = false;
@@ -516,8 +529,8 @@
       const selectedRate = speechSettings.rate;
       audio.defaultPlaybackRate = selectedRate;
       audio.playbackRate = selectedRate;
-      audio.preservesPitch = false;
-      audio.webkitPreservesPitch = false;
+      audio.preservesPitch = preservePitch;
+      audio.webkitPreservesPitch = preservePitch;
       audio.onloadedmetadata = () => {
         audio.defaultPlaybackRate = selectedRate;
         audio.playbackRate = selectedRate;
@@ -535,10 +548,34 @@
     });
   }
 
-  async function playWithStoredSpeech(audioKey, block, language, run) {
+  function waitForSentencePause(run, milliseconds) {
+    return new Promise((resolve) => {
+      const timer = window.setTimeout(() => {
+        if (activeSpeechAbort?.timer === timer) activeSpeechAbort = null;
+        resolve();
+      }, milliseconds);
+      activeSpeechAbort = { timer, abort: () => { window.clearTimeout(timer); resolve(); } };
+    });
+  }
+
+  async function playStaticAudioSequence(urls, run) {
+    for (let index = 0; index < urls.length; index += 1) {
+      if (run !== speechRun) return;
+      await playStaticAudio(urls[index], run, true);
+      if (run !== speechRun || index === urls.length - 1) return;
+      await waitForSentencePause(run, 5000);
+    }
+  }
+
+  async function playWithStoredSpeech(text, audioKey, block, language, run) {
     const url = staticAudioUrl(audioKey, language);
     if (!url) throw new Error("Static audio is not configured");
-    await playStaticAudio(url, run);
+    if (language === "english" && speechSettings.sentencePause) {
+      const sentenceUrls = splitSpeechChunks(text, "english").map((_, index) => staticAudioUrl(`${audioKey}-sentence-${index}`, "english"));
+      await playStaticAudioSequence(sentenceUrls, run);
+    } else {
+      await playStaticAudio(url, run, language === "english");
+    }
     finishSpeech(run, block);
   }
 
@@ -551,7 +588,8 @@
     updateSpeechControls(block, true);
     if (!audioKey || !shouldUseCloudTts()) return playWithBrowserSpeech(text, block, language, run);
     try {
-      await playWithStoredSpeech(audioKey, block, language, run);
+      primeAudioPlayback();
+      await playWithStoredSpeech(text, audioKey, block, language, run);
     } catch (error) {
       if (run !== speechRun || error.name === "AbortError") return;
       showToast("保存済み音声を再生できません。端末音声に切り替えます。");
@@ -805,7 +843,7 @@
   window.addEventListener("beforeinstallprompt", (event) => { event.preventDefault(); installPrompt = event; document.getElementById("install-button").hidden = false; });
   document.getElementById("install-button").addEventListener("click", async () => { if (!installPrompt) return; installPrompt.prompt(); await installPrompt.userChoice; installPrompt = null; document.getElementById("install-button").hidden = true; });
   applyFontSize(readFontSize());
-  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=static2").catch(() => {});
+  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=static6").catch(() => {});
   if ("speechSynthesis" in window) { window.speechSynthesis.addEventListener("voiceschanged", refreshVoiceOptions); refreshVoiceOptions(); }
   renderStats();
   renderLibrary();
