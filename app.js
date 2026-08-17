@@ -361,7 +361,7 @@
       const fragment = raw.trim();
       if (!fragment) continue;
       const previous = sentences[sentences.length - 1] || "";
-      const continuesAbbreviation = /(?:\b(?:Mr|Mrs|Ms|Dr|Prof|Inc|Ltd|Co|vs|etc|e\.g|i\.e)|(?:[A-Z]\.)+)$/i.test(previous);
+      const continuesAbbreviation = /\b(?:Mr|Mrs|Ms|Dr|Prof|Inc|Ltd|Co|vs|etc|e\.g|i\.e)$/i.test(previous) || /(?:[A-Z]\.){2,}$/.test(previous);
       const continuesDecimal = /\d\.$/.test(previous) && /^\d/.test(fragment);
       if (previous && (continuesAbbreviation || continuesDecimal)) sentences[sentences.length - 1] = `${previous} ${fragment}`;
       else sentences.push(fragment);
