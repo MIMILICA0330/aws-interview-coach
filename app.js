@@ -56,6 +56,8 @@
   let activeCloudAudio = null;
   let activeCloudAudioStop = null;
   let activeSpeechAbort = null;
+  let speechWatchdog = null;
+  const SILENT_AUDIO = "data:audio/wav;base64,UklGRnQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YVAAAACAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA==";
 
   const getCustomCards = () => {
     try {
@@ -248,8 +250,29 @@
     if (stopButton) stopButton.disabled = !playing;
   }
 
+  function clearSpeechWatchdog() {
+    if (speechWatchdog) {
+      window.clearTimeout(speechWatchdog);
+      speechWatchdog = null;
+    }
+  }
+
+  function primeAudioPlayback() {
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    if (!isIOS) return;
+    const primer = new Audio(SILENT_AUDIO);
+    primer.muted = true;
+    const start = primer.play();
+    if (!start?.then) return;
+    start.then(() => {
+      primer.pause();
+      primer.removeAttribute("src");
+    }).catch(() => {});
+  }
+
   function stopSpeech() {
     speechRun += 1;
+    clearSpeechWatchdog();
     if (speechStartTimer) {
       window.clearTimeout(speechStartTimer);
       speechStartTimer = null;
@@ -338,6 +361,7 @@
 
   function finishSpeech(run, block) {
     if (run !== speechRun) return;
+    clearSpeechWatchdog();
     updateSpeechControls(block, false);
     activeSpeechBlock = null;
     activeCloudAudio = null;
@@ -367,7 +391,18 @@
       utterance.pitch = 1;
       utterance.volume = 1;
       const pause = !isJapanese && speechSettings.sentencePause ? 5000 : 90;
-      utterance.onend = () => window.setTimeout(playNext, pause);
+      clearSpeechWatchdog();
+      const estimatedDuration = Math.max(12_000, Math.min(180_000, Math.ceil((chunks[index - 1].length / Math.max(speechSettings.rate, 0.65)) * (isJapanese ? 220 : 130) + pause + 8_000)));
+      speechWatchdog = window.setTimeout(() => {
+        if (run !== speechRun) return;
+        window.speechSynthesis.cancel();
+        finishSpeech(run, block);
+        showToast("端末音声が停止したため、再生を終了しました。もう一度再生できます。");
+      }, estimatedDuration);
+      utterance.onend = () => {
+        clearSpeechWatchdog();
+        window.setTimeout(playNext, pause);
+      };
       utterance.onerror = () => {
         if (run === speechRun) {
           finishSpeech(run, block);
@@ -420,9 +455,14 @@
       const url = URL.createObjectURL(blob);
       const audio = new Audio();
       let settled = false;
+      let playRequested = false;
+      let startWatchdog = null;
+      let endWatchdog = null;
       const cleanup = (error = null) => {
         if (settled) return;
         settled = true;
+        if (startWatchdog) window.clearTimeout(startWatchdog);
+        if (endWatchdog) window.clearTimeout(endWatchdog);
         URL.revokeObjectURL(url);
         if (activeCloudAudio === audio) activeCloudAudio = null;
         if (activeCloudAudioStop === stop) activeCloudAudioStop = null;
@@ -439,15 +479,21 @@
       audio.preload = "auto";
       audio.onended = () => cleanup();
       audio.onerror = () => cleanup(new Error("Audio playback failed"));
+      audio.onplaying = () => {
+        if (startWatchdog) window.clearTimeout(startWatchdog);
+        const duration = Number.isFinite(audio.duration) && audio.duration > 0 ? audio.duration * 1000 : 120_000;
+        endWatchdog = window.setTimeout(() => cleanup(new Error("Audio playback timed out")), Math.max(15_000, Math.min(360_000, duration + 12_000)));
+      };
       audio.oncanplay = () => {
+        if (playRequested) return;
+        playRequested = true;
         if (settled || run !== speechRun) return stop();
-        window.setTimeout(() => {
-          if (settled || run !== speechRun) return stop();
-          audio.play().catch((error) => cleanup(error));
-        }, 80);
+        if (settled || run !== speechRun) return stop();
+        audio.play().catch((error) => cleanup(error));
       };
       audio.src = url;
       audio.load();
+      startWatchdog = window.setTimeout(() => cleanup(new Error("Audio start timed out")), 15_000);
     });
   }
 
@@ -473,6 +519,7 @@
     activeSpeechMode = language;
     updateSpeechControls(block, true);
     if (!shouldUseCloudTts()) return playWithBrowserSpeech(text, block, language, run);
+    primeAudioPlayback();
     try {
       await playWithCloudSpeech(text, block, language, run);
     } catch (error) {
@@ -721,7 +768,7 @@
   window.addEventListener("beforeinstallprompt", (event) => { event.preventDefault(); installPrompt = event; document.getElementById("install-button").hidden = false; });
   document.getElementById("install-button").addEventListener("click", async () => { if (!installPrompt) return; installPrompt.prompt(); await installPrompt.userChoice; installPrompt = null; document.getElementById("install-button").hidden = true; });
   applyFontSize(readFontSize());
-  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=23").catch(() => {});
+  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=24").catch(() => {});
   if ("speechSynthesis" in window) { window.speechSynthesis.addEventListener("voiceschanged", refreshVoiceOptions); refreshVoiceOptions(); }
   renderStats();
   renderLibrary();
