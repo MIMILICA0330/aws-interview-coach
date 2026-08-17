@@ -89,7 +89,7 @@
   }
 
   function shouldUseCloudTts() {
-    return Boolean(cloudTtsEndpoint());
+    return Boolean(cloudTtsEndpoint() && window.TTS_CONFIG?.staticAudioReady === true);
   }
 
   function readFontSize() {
@@ -201,7 +201,7 @@
     if (cloudEnglishSelect) { cloudEnglishSelect.innerHTML = cloudVoiceOptionsMarkup(CLOUD_ENGLISH_VOICES); cloudEnglishSelect.value = speechSettings.cloudEnglishVoice; cloudEnglishSelect.disabled = !cloudTtsEndpoint(); }
     if (cloudJapaneseSelect) { cloudJapaneseSelect.innerHTML = cloudVoiceOptionsMarkup(CLOUD_JAPANESE_VOICES); cloudJapaneseSelect.value = speechSettings.cloudJapaneseVoice; cloudJapaneseSelect.disabled = !cloudTtsEndpoint(); }
     if (cloudVoiceHelp) cloudVoiceHelp.textContent = "英語・日本語とも、聞きやすい固定AI音声を女性寄り／男性寄りから選べます。再生時に音声合成APIは呼び出しません。";
-    if (cloudStatus) cloudStatus.textContent = cloudTtsEndpoint() ? `事前収録AI音声を使用（英語: ${speechSettings.cloudEnglishVoice === "marin" ? "女性寄り" : "男性寄り"} ／ 日本語: ${speechSettings.cloudJapaneseVoice === "marin" ? "女性寄り" : "男性寄り"}）` : "固定音声を準備中です。";
+    if (cloudStatus) cloudStatus.textContent = shouldUseCloudTts() ? `事前収録AI音声を使用（英語: ${speechSettings.cloudEnglishVoice === "marin" ? "女性寄り" : "男性寄り"} ／ 日本語: ${speechSettings.cloudJapaneseVoice === "marin" ? "女性寄り" : "男性寄り"}）` : "固定AI音声を準備中です。現在は端末の予備音声を使用します。";
     if (englishStatus) englishStatus.textContent = chosenEnglish ? `端末の予備英語音声: ${chosenEnglish.name} (${chosenEnglish.lang})` : "端末の英語音声を読み込み中...";
     if (japaneseStatus) japaneseStatus.textContent = chosenJapanese ? `端末の予備日本語音声: ${chosenJapanese.name} (${chosenJapanese.lang})` : "女性の日本語音声が見つかりません。端末設定で日本語の女性音声を追加してください。";
   }
@@ -513,6 +513,15 @@
       activeCloudAudio = audio;
       activeCloudAudioStop = stop;
       audio.preload = "auto";
+      const selectedRate = speechSettings.rate;
+      audio.defaultPlaybackRate = selectedRate;
+      audio.playbackRate = selectedRate;
+      audio.preservesPitch = false;
+      audio.webkitPreservesPitch = false;
+      audio.onloadedmetadata = () => {
+        audio.defaultPlaybackRate = selectedRate;
+        audio.playbackRate = selectedRate;
+      };
       audio.onended = () => cleanup();
       audio.onerror = () => cleanup(new Error("Audio playback failed"));
       audio.onplaying = () => {
@@ -520,7 +529,6 @@
         endWatchdog = window.setTimeout(() => cleanup(new Error("Audio playback timed out")), Math.max(15_000, Math.min(360_000, duration + 12_000)));
       };
       audio.src = url;
-      audio.playbackRate = speechSettings.rate;
       if (run !== speechRun) return stop();
       // Calling play directly inside the user's tap is important on iPhone.
       audio.play().catch((error) => cleanup(error));
