@@ -64,12 +64,13 @@
   const getCard = (id) => getCards().find((card) => card.id === id);
   const getCardContent = (card) => ({ ...card, ...(window.TRANSLATIONS?.[card.id] || {}) });
   const escapeHtml = (value = "") => String(value).replace(/[&<>'"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" }[char]));
-  const keyPhraseTerms = ["Google Workspace Marketplace", "Google Apps Script", "Power Query", "As a result", "I took responsibility", "I was responsible for", "The experience taught me", "The key lesson was", "I changed the plan", "I worked with", "I decided that", "I identified", "I concluded", "I created", "I developed", "I designed", "I implemented", "I organized", "I negotiated", "I automated", "I eliminated", "I reduced", "I reviewed", "I completed", "I decided", "I found that", "My task was", "The challenge was"].sort((a, b) => b.length - a.length);
-  const keyTechTerms = ["SharePoint", "Azure", "Python", "RPA", "VBA", "LLM", "AI"];
+  const keyPhraseTerms = [
+    "a repeatable operating model", "a repeatable foundation", "a human review step", "high-density stacked storage", "the data showed a clear opportunity", "was becoming a serious financial issue", "was asked to take over", "full-width or half-width characters", "automatically transformed", "consumer-focused descriptions", "customer-specific order forms", "without sacrificing", "eliminating copy-and-paste work", "the following season", "to limit risk", "to maintain each brand's tone", "to protect customer trust", "to build a repeatable", "to make sure that", "to prevent", "to maintain", "to minimize", "to protect", "to improve", "rather than", "instead of", "not only", "but also", "in order to", "so that", "based on", "as a result", "at the same time", "in advance", "in detail", "even though", "while", "without", "including", "afterward", "was responsible for", "was able to", "was required to", "was expected to", "was becoming", "I learned that", "I found that", "I concluded that", "I made sure to", "I made a point of", "strong-selling", "slow-moving", "customer-facing", "hands-on", "in-house", "on the shop floor", "root cause", "trade-off", "follow-up", "step by step"
+  ].sort((a, b) => b.length - a.length);
   const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const keyPhrasePattern = new RegExp(`(${keyPhraseTerms.map(escapeRegExp).join("|")}|\\b(?:${keyTechTerms.map(escapeRegExp).join("|")})\\b|\\b\\d+(?:,\\d{3})*(?:\\.\\d+)?(?:%| million yen| yen| styles| units| stores| hours| days| weeks| months| years| points| tsubo)\\b)`, "gi");
+  const keyPhrasePattern = new RegExp(`(${keyPhraseTerms.map(escapeRegExp).join("|")})`, "gi");
   const highlightEnglish = (value = "") => escapeHtml(value).replace(keyPhrasePattern, '<strong class="key-phrase">$1</strong>');
-  const keyPhraseLegendMarkup = '<p class="key-phrase-legend"><span>●</span> 赤太字は、面接で組み立ての軸にする重要フレーズです。</p>';
+  const keyPhraseLegendMarkup = '<p class="key-phrase-legend"><span>●</span> 赤太字は、英語でまとまりとして覚えたい表現です。</p>';
   const showToast = (message) => {
     toast.textContent = message;
     toast.classList.add("show");
@@ -849,7 +850,7 @@
   window.addEventListener("beforeinstallprompt", (event) => { event.preventDefault(); installPrompt = event; document.getElementById("install-button").hidden = false; });
   document.getElementById("install-button").addEventListener("click", async () => { if (!installPrompt) return; installPrompt.prompt(); await installPrompt.userChoice; installPrompt = null; document.getElementById("install-button").hidden = true; });
   applyFontSize(readFontSize());
-  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=static10").catch(() => {});
+  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=static11").catch(() => {});
   if ("speechSynthesis" in window) { window.speechSynthesis.addEventListener("voiceschanged", refreshVoiceOptions); refreshVoiceOptions(); }
   renderStats();
   renderLibrary();
