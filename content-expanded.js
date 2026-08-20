@@ -162,9 +162,71 @@
     }
   ];
 
-  window.DEFAULT_CARDS = window.DEFAULT_CARDS.map((card) => ({ ...card, ...(expandedAnswers[card.id] || {}) }));
+  const newSuccessCards = [
+    {
+      id: "chain-order-list",
+      title: "緊急の発注書作成を自動化し、展示会初日に間に合わせた",
+      category: "成功体験",
+      lp: "Ownership · Bias for Action · Invent and Simplify",
+      question: "Tell me about a time you delivered a critical task after a key person became unavailable.",
+      questionJa: "重要な担当者が急に不在となった中で、期限のある業務をやり切った経験を教えてください。",
+      situation: "2025年8月、大手チェーン店グループ向けの専用発注書を作成していた担当者が急遽長期入院となり、展示会の1週間前に私のチームへ業務移管の依頼がありました。",
+      task: "3法人分の先方指定フォーマットを展示会初日までに完成させると同時に、次回以降も再現できる仕組みを作る必要がありました。",
+      action: "電話で約10分の引継ぎを受けた後、各法人が必要とするアイテム、カラー、サイズ、掛け率、部門、カテゴリーなど7〜10種類のマスタを整理しました。自社データとの対比表を作り、Power Queryで展示会システム出力から各法人用データへ自動整形する仕組みを構築しました。禁則文字や半角・全角の修正にはVBAも併用し、AIをOCR的に使って品番からアイテム分類を補助する手順も作りました。",
+      result: "週末の対応も含めた3日間で、Power Query、VBA、AIのルーティンを完成させ、展示会初日に3法人分の専用発注書をすべて提出できました。その後、手順書も整備し、他の担当者でも再現できる運用にしました。",
+      answer: "In August 2025, the employee responsible for preparing customer-specific order forms for a major chain-store group was suddenly hospitalized for a long period. One week before an exhibition, my team was asked to take over the work. We had only about ten minutes of handover by phone, but we had to complete the required forms for three customer organizations by the first day of the exhibition.\nI decided not only to complete the urgent work, but also to build a repeatable foundation for the next exhibition. I organized the seven to ten master-data tables required by each customer, including item, color, size, margin, department, and category tables. I then created mapping tables to connect them with our internal data and built Power Query processes that automatically transformed data exported from the exhibition system into each customer format. I also used VBA to correct prohibited characters and full-width or half-width characters, and built a small AI-assisted routine to support item classification from product numbers.\nIncluding weekend work, I completed the Power Query processes, VBA macros, and AI routine in three days. All three customer-specific order forms were ready on the first day of the exhibition. Afterward, I documented the process so that other team members could reproduce it.",
+      answerJa: "2025年8月、大手チェーン店グループ向けの専用発注書を作成していた担当者が、長期入院のため急遽不在になりました。展示会の1週間前に私のチームへ業務移管の依頼があり、電話で約10分の引継ぎを受けただけで、展示会初日までに3法人分の帳票を完成させる必要がありました。\n私は、目の前の緊急対応だけでなく、次回以降も再現できる仕組みを作ることにしました。アイテム、カラー、サイズ、掛け率、部門、カテゴリーなど、各法人が必要とする7〜10種類のマスタを整理し、自社データとの対比表を作成しました。展示会システムから出力されるデータを、Power Queryで各法人のフォーマットへ自動整形する仕組みを構築しました。さらに、禁則文字や半角・全角の修正にはVBAを使い、品番からアイテム分類を補助するAI活用の手順も作りました。\n週末の対応を含めて3日間で、Power Query、VBA、AIのルーティンを完成させ、展示会初日に3法人分の専用発注書をすべて提出できました。その後は手順書を整備し、他の担当者でも再現できる運用にしました。"
+    },
+    {
+      id: "outlet-growth",
+      title: "アウトレット店の立ち上げと在庫・価格運用の改革",
+      category: "成功体験",
+      lp: "Customer Obsession · Dive Deep · Deliver Results",
+      question: "Tell me about a time you used data to improve profitability and sales performance.",
+      questionJa: "データを使って収益性と売上を改善した経験を教えてください。",
+      situation: "2023年4月、神戸三田アウトレット店を新規オープンし、2店舗の運営を担当しました。他販路へ一括売却する在庫の販売NETは28%だった一方、自社アウトレットでは43%でした。",
+      task: "高換金なアウトレットへ売れ筋を適切に振り向けながら、他販路の販売機会を失わず、価格・販促も含めた再現可能な運用を作る必要がありました。",
+      action: "システムにアウトレット専用保管コードを作り、他販路への在庫自動流出を防止しました。直近6か月の品番・カラー別売上と消化率を基に売れ筋を選定し、次年度同シーズンの同店販売計画の50%を上限として確保量を管理しました。平均OFF率を週次で検証し、段階的な値引き、まとめ買い割引、目玉品の臨時投入を組み合わせて、粗利と売上の両立を図りました。",
+      result: "販売NETを28%から43%へ15ポイント改善し、店舗売上は初年度4,580万円、2年目5,840万円、3年目6,520万円へと3年連続で伸長しました。",
+      answer: "In April 2023, I opened the Kobe Sanda outlet store and later managed two outlet stores. The data showed a clear opportunity: inventory sold in bulk through other channels recovered only 28% of the original retail price on average, while our own outlet stores recovered 43%.\nMy task was to direct the right inventory to the outlet without sacrificing sales opportunities in other channels, and to build a repeatable operating model for inventory, pricing, and promotions. I created a dedicated outlet storage code in the system to prevent automatic allocation to other channels. Using the previous six months of sales and sell-through data by style and color, I selected strong-selling products. To limit risk, I capped the reserved quantity at 50% of the following year's sales plan for the same store and season.\nI also reviewed the average discount rate weekly, used gradual markdown rules to protect customer trust, planned bundle promotions, and introduced temporary featured products whenever sales were behind plan. As a result, the recovery rate improved by 15 points, from 28% to 43%. Store sales grew from 45.8 million yen in the first year to 58.4 million in the second and 65.2 million in the third.",
+      answerJa: "2023年4月、神戸三田アウトレット店を新規オープンし、その後は2店舗の運営を担当しました。データを見ると、他販路で在庫を一括売却した場合の販売NETは平均28%でしたが、自社アウトレットでは43%でした。\nそこで私は、他販路の販売機会を失わずに、売れ筋在庫を高換金なアウトレットへ適切に振り向け、在庫・価格・販促を再現可能な運用にすることを課題にしました。システムにアウトレット専用保管コードを作り、他販路への在庫自動流出を防ぎました。直近6か月の品番・カラー別売上と消化率を基に売れ筋を選定し、確保量は翌年度の同シーズン・同店の販売計画の50%を上限として管理しました。\n平均OFF率を毎週確認し、顧客の信頼を守る段階的な値引き、まとめ買い割引、売上が計画を下回った際の目玉品投入を組み合わせました。その結果、販売NETを28%から43%へ15ポイント改善しました。店舗売上も初年度4,580万円、2年目5,840万円、3年目6,520万円と3年連続で伸ばすことができました。"
+    },
+    {
+      id: "logistics-cost-reduction",
+      title: "物流センターの保管・出荷改革で年間453万円を削減",
+      category: "成功体験",
+      lp: "Frugality · Dive Deep · Invent and Simplify",
+      question: "Tell me about a time you reduced logistics costs while protecting product quality and service.",
+      questionJa: "商品品質とサービスを守りながら、物流コストを削減した経験を教えてください。",
+      situation: "2021年5月、コロナ禍の百貨店休業の影響で物流センター在庫は前々年比123%、約89,000点まで増加し、保管・作業コストが経営を圧迫していました。",
+      task: "商品品質を維持したまま、保管スペースと作業コストを迅速に下げる必要がありました。",
+      action: "物流センターと現場精査を行い、仕様書を全点確認した上で、3,700点のうち品質リスクがある6品番300点だけをハンガー保管に残し、残りを畳み保管へ切り替えました。滞留在庫約38,000点はSKUごとに2〜3枚だけ通常棚に残し、残りを高積み保管へ移行しました。百貨店向け別付け値札を廃止し、ファミリーセール出荷の約60%をセンター経由から店舗直送へ切り替えました。",
+      result: "保管スペースを450坪から360坪へ20%圧縮し、保管料350万円、値札作業費55万円、配送費48万円、合計年間453万円を削減しました。加えて、ハンガー資材費も年間28万円削減しました。",
+      answer: "In May 2021, the COVID-related closure of department stores caused inventory at our logistics center to increase to about 89,000 units, or 123% of the level two years earlier. Storage and handling costs were becoming a serious financial issue.\nI worked with the logistics-center team to examine storage conditions and shipping flows in detail. First, I found that folded storage was 2.5 times more space-efficient than hanger storage. I reviewed the specifications for all 3,700 applicable units and kept only six styles, or 300 units, on hangers because of wrinkle risk. The remaining 3,400 units moved to folded storage. For roughly 38,000 slow-moving units, we kept only two or three pieces per SKU on normal shelves and moved the rest to high-density stacked storage.\nI also eliminated separate price-tag attachment work for department-store shipments after arranging for our own JAN code to be accepted at the retailer's register. Finally, I shifted about 60% of family-sale shipments from the center to direct delivery from our stores. These changes reduced storage space from 450 to 360 tsubo, a 20% reduction, and cut annual storage, tagging, and delivery costs by 4.53 million yen. We also saved 280,000 yen a year in hanger materials.",
+      answerJa: "2021年5月、コロナ禍による百貨店休業の影響で、物流センター在庫は前々年比123%、約89,000点まで増加しました。保管料と作業コストが経営を圧迫していました。\n私は物流センターのチームと保管条件と出荷フローを詳しく見直しました。畳み保管はハンガー保管の2.5倍、効率的にスペースを使えることが分かりました。対象3,700点の仕様書を全点確認し、しわリスクのある6品番300点だけをハンガー保管に残し、残り3,400点を畳み保管に切り替えました。さらに、滞留在庫約38,000点はSKUごとに2〜3点だけ通常棚に残し、残りを高積み保管へ移しました。\n百貨店向けの別付け値札は、自社JANコードを先方レジで使えるように調整した上で廃止しました。加えて、ファミリーセール出荷の約60%をセンター経由から店舗直送へ切り替えました。これにより保管スペースを450坪から360坪へ20%削減し、保管料・値札作業費・配送費を合わせて年間453万円削減しました。ハンガー資材費も年間28万円削減できました。"
+    },
+    {
+      id: "ec-description-automation",
+      title: "EC商品説明をAIで標準化し、工数を80%削減",
+      category: "成功体験",
+      lp: "Customer Obsession · Invent and Simplify",
+      question: "Tell me about a time you improved content quality and efficiency at the same time.",
+      questionJa: "コンテンツの品質と業務効率を同時に改善した経験を教えてください。",
+      situation: "デザイナーがシーズン直前にEC用商品説明を作成していましたが、展示会後に業務が分断され、バイヤー向けの専門用語中心で消費者目線になりきれていない課題がありました。",
+      task: "デザイナーの負担を抑えながら、シーズン約800品番のEC商品説明を、消費者目線かつブランドのトーンで高品質・迅速に作成する必要がありました。",
+      action: "入力項目を開発ストーリー、デザイン特徴、おすすめコーデなどに構造化しました。Excel内でLLM関数を使える環境を整え、チャット画面へのコピー＆ペーストを排除しました。ブランドのメタデータをプロンプトに埋め込み、MOD・CHOOSE関数で文末やキーワードを動的に変化させ、単調なAI表現を抑えました。最後に人の目による検証工程を置きました。",
+      result: "1シーズン約200時間かかっていた作業を約40時間へ削減し、約160時間、80%の工数削減を達成しました。約800品番への展開を数日で完了できる体制を作りました。",
+      answer: "Our designers used to write EC product descriptions shortly before each season. Because the work was separated from the exhibition period, the descriptions often relied on buyer-oriented technical terms and did not always speak to consumers. We needed to create high-quality, consumer-focused descriptions for about 800 styles each season without increasing the designers' workload.\nI restructured the input sheet into fields such as development story, design features, and recommended coordination. I then built an Excel environment where LLM functions could generate descriptions directly, eliminating copy-and-paste work in a chat interface. To maintain each brand's tone, I embedded brand metadata in the prompts. I also used Excel MOD and CHOOSE functions to rotate sentence endings and key phrases so the output would not sound repetitive. Finally, I kept a human review step.\nThe process reduced work from about 200 hours per season to about 40 hours, saving roughly 160 hours, or 80%. We could complete descriptions for about 800 styles in only a few days while improving consistency and consumer relevance.",
+      answerJa: "従来はデザイナーがシーズン直前にEC商品説明を作成していましたが、展示会後に業務が分断されるため、文章がバイヤー向けの専門用語中心になり、消費者目線が十分ではないことがありました。デザイナーの負担を増やさずに、約800品番の高品質で消費者向けの商品説明を作る必要がありました。\nそこで、入力シートを開発ストーリー、デザイン特徴、おすすめコーディネートなどの項目に構造化しました。Excel内でLLM関数を直接使える環境を作り、チャット画面へのコピー＆ペースト作業をなくしました。各ブランドのトーンを保つため、プロンプトにブランドのメタデータを埋め込みました。さらにMOD・CHOOSE関数で文末やキーワードを動的に変え、表現が単調にならないようにしました。最後に人の目による確認工程を残しました。\nその結果、1シーズン約200時間かかっていた作業を約40時間へ削減し、約160時間、80%の工数削減を達成しました。約800品番の商品説明を数日で完成させながら、表現の一貫性と消費者への分かりやすさも高めました。"
+    }
+  ];
+
+  const removedSuccessIds = new Set(["samsonite-sales", "china-jv", "viva-heart-drop-ship"]);
+  window.DEFAULT_CARDS = window.DEFAULT_CARDS
+    .filter((card) => !removedSuccessIds.has(card.id))
+    .map((card) => ({ ...card, ...(expandedAnswers[card.id] || {}) }));
   const knownIds = new Set(window.DEFAULT_CARDS.map((card) => card.id));
-  [...newFailureCards, ...interviewerQuestionCards].forEach((card) => {
+  [...newSuccessCards, ...newFailureCards, ...interviewerQuestionCards].forEach((card) => {
     if (!knownIds.has(card.id)) window.DEFAULT_CARDS.push(card);
   });
 
@@ -174,14 +236,15 @@
     "why-aws": "志望動機",
     "cost-rpa": "成功体験",
     "ec-master": "成功体験",
-    "samsonite-sales": "成功体験",
     "jl-license": "成功体験",
-    "china-jv": "成功体験",
     "staff-voice": "成功体験",
     "grip-file-transfer": "成功体験",
-    "viva-heart-drop-ship": "成功体験",
     "jl-direct-import": "成功体験",
     "ec-image-automation": "成功体験",
+    "chain-order-list": "成功体験",
+    "outlet-growth": "成功体験",
+    "logistics-cost-reduction": "成功体験",
+    "ec-description-automation": "成功体験",
     "yolo-pivot": "失敗体験",
     "order-import-regression": "失敗体験",
     inventory: "先方からの質問",
