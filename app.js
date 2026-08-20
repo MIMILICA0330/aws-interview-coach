@@ -67,10 +67,14 @@
   const keyPhraseTerms = [
     "a repeatable operating model", "a repeatable foundation", "a human review step", "high-density stacked storage", "the data showed a clear opportunity", "was becoming a serious financial issue", "was asked to take over", "full-width or half-width characters", "automatically transformed", "consumer-focused descriptions", "customer-specific order forms", "without sacrificing", "eliminating copy-and-paste work", "the following season", "to limit risk", "to maintain each brand's tone", "to protect customer trust", "to build a repeatable", "to make sure that", "to prevent", "to maintain", "to minimize", "to protect", "to improve", "rather than", "instead of", "not only", "but also", "in order to", "so that", "based on", "as a result", "at the same time", "in advance", "in detail", "even though", "while", "without", "including", "afterward", "was responsible for", "was able to", "was required to", "was expected to", "was becoming", "I learned that", "I found that", "I concluded that", "I made sure to", "I made a point of", "strong-selling", "slow-moving", "customer-facing", "hands-on", "in-house", "on the shop floor", "root cause", "trade-off", "follow-up", "step by step"
   ].sort((a, b) => b.length - a.length);
+  const lpPhraseTerms = [
+    "a reversible, well-controlled first step", "waiting for perfect information", "reduced dependence on vendors", "without adding internal headcount", "the actual user environment", "protecting product quality and service", "a practical operating process", "a reliable standard process", "a customer-facing approach", "the root cause", "took responsibility", "took ownership", "earned their trust", "customer trust", "human review", "continuous improvement", "manual handoff", "manual formatting work", "manual effort", "costs under control", "operational impact", "sales opportunity", "measurable results", "quality and service", "in-house", "hands-on"
+  ];
+  const lpKeywordTerms = ["repeatable", "reusable", "automated", "scalable", "stakeholders", "accuracy", "quality", "safety", "ownership"];
   const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const keyPhrasePattern = new RegExp(`(${keyPhraseTerms.map(escapeRegExp).join("|")})`, "gi");
+  const keyPhrasePattern = new RegExp(`(${[...keyPhraseTerms, ...lpPhraseTerms].sort((a, b) => b.length - a.length).map(escapeRegExp).join("|")}|\\b(?:${lpKeywordTerms.map(escapeRegExp).join("|")})\\b)`, "gi");
   const highlightEnglish = (value = "") => escapeHtml(value).replace(keyPhrasePattern, '<strong class="key-phrase">$1</strong>');
-  const keyPhraseLegendMarkup = '<p class="key-phrase-legend"><span>●</span> 赤太字は、英語でまとまりとして覚えたい表現です。</p>';
+  const keyPhraseLegendMarkup = '<p class="key-phrase-legend"><span>●</span> 赤太字は、英語で覚えたい表現とLPにつながる表現です。</p>';
   const showToast = (message) => {
     toast.textContent = message;
     toast.classList.add("show");
@@ -850,7 +854,7 @@
   window.addEventListener("beforeinstallprompt", (event) => { event.preventDefault(); installPrompt = event; document.getElementById("install-button").hidden = false; });
   document.getElementById("install-button").addEventListener("click", async () => { if (!installPrompt) return; installPrompt.prompt(); await installPrompt.userChoice; installPrompt = null; document.getElementById("install-button").hidden = true; });
   applyFontSize(readFontSize());
-  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=static11").catch(() => {});
+  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=static12").catch(() => {});
   if ("speechSynthesis" in window) { window.speechSynthesis.addEventListener("voiceschanged", refreshVoiceOptions); refreshVoiceOptions(); }
   renderStats();
   renderLibrary();
