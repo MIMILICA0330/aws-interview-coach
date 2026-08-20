@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-17T21:40:37.768Z",
+  "generatedAt": "2026-08-20T14:36:45.441Z",
   "entries": {
     "intro-question-female": {
       "input": "Tell me about yourself and your professional background.",
@@ -704,248 +704,6 @@
       "voice": "cedar",
       "googleVoice": "ja-JP-Chirp3-HD-Achird"
     },
-    "samsonite-sales-question-female": {
-      "input": "Tell me about a time you built a strong business relationship and delivered exceptional results.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "samsonite-sales-question-sentence-0-female": {
-      "input": "Tell me about a time you built a strong business relationship and delivered exceptional results.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "samsonite-sales-question-male": {
-      "input": "Tell me about a time you built a strong business relationship and delivered exceptional results.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "samsonite-sales-question-sentence-0-male": {
-      "input": "Tell me about a time you built a strong business relationship and delivered exceptional results.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "samsonite-sales-answer-female": {
-      "input": "In August 2009, at Samsonite Japan, I was assigned to Itochu Retail Link, a distributor serving major chains including JAL, JTB, Hands, and Loft. Its sales organization was weak, and monthly sales were only about 2.5 million yen. I was asked either to rebuild the sales operation or develop direct relationships with the chains.\nI concluded that the distributor model should remain because it reduced inventory risk, but its sales activity had to change. I minimized time in the office, increased contact with head-office buyers and store staff, and worked on the shop floor myself to build POS sales results. I expected the sales team to follow the same customer-facing approach.\nAt Loft, I focused first on the fourth-ranked Ikebukuro store. I visited twice a week and sold on the floor one weekend each month. The store moved to third place and sometimes second place, which gained the attention of the head-office buyer. I then proposed an event, secured free prizes through a direct tie-up with the New York City Tourism Authority, and launched the promotion in about 30 key Loft stores.\nMonthly sales grew to 10 million yen in December 2009, 15 million yen in February 2010, and more than 30 million yen in September 2010—over ten times the starting level in about one year. The distributor relationship became strong enough that Samsonite continued to send secondees there afterward.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "samsonite-sales-answer-sentence-0-female": {
-      "input": "In August 2009, at Samsonite Japan, I was assigned to Itochu Retail Link, a distributor serving major chains including JAL, JTB, Hands, and Loft.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "samsonite-sales-answer-sentence-1-female": {
-      "input": "Its sales organization was weak, and monthly sales were only about 2. 5 million yen.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "samsonite-sales-answer-sentence-2-female": {
-      "input": "I was asked either to rebuild the sales operation or develop direct relationships with the chains.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "samsonite-sales-answer-sentence-3-female": {
-      "input": "I concluded that the distributor model should remain because it reduced inventory risk, but its sales activity had to change.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "samsonite-sales-answer-sentence-4-female": {
-      "input": "I minimized time in the office, increased contact with head-office buyers and store staff, and worked on the shop floor myself to build POS sales results.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "samsonite-sales-answer-sentence-5-female": {
-      "input": "I expected the sales team to follow the same customer-facing approach.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "samsonite-sales-answer-sentence-6-female": {
-      "input": "At Loft, I focused first on the fourth-ranked Ikebukuro store.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "samsonite-sales-answer-sentence-7-female": {
-      "input": "I visited twice a week and sold on the floor one weekend each month.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "samsonite-sales-answer-sentence-8-female": {
-      "input": "The store moved to third place and sometimes second place, which gained the attention of the head-office buyer.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "samsonite-sales-answer-sentence-9-female": {
-      "input": "I then proposed an event, secured free prizes through a direct tie-up with the New York City Tourism Authority, and launched the promotion in about 30 key Loft stores.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "samsonite-sales-answer-sentence-10-female": {
-      "input": "Monthly sales grew to 10 million yen in December 2009, 15 million yen in February 2010, and more than 30 million yen in September 2010—over ten times the starting level in about one year.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "samsonite-sales-answer-sentence-11-female": {
-      "input": "The distributor relationship became strong enough that Samsonite continued to send secondees there afterward.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "samsonite-sales-answer-male": {
-      "input": "In August 2009, at Samsonite Japan, I was assigned to Itochu Retail Link, a distributor serving major chains including JAL, JTB, Hands, and Loft. Its sales organization was weak, and monthly sales were only about 2.5 million yen. I was asked either to rebuild the sales operation or develop direct relationships with the chains.\nI concluded that the distributor model should remain because it reduced inventory risk, but its sales activity had to change. I minimized time in the office, increased contact with head-office buyers and store staff, and worked on the shop floor myself to build POS sales results. I expected the sales team to follow the same customer-facing approach.\nAt Loft, I focused first on the fourth-ranked Ikebukuro store. I visited twice a week and sold on the floor one weekend each month. The store moved to third place and sometimes second place, which gained the attention of the head-office buyer. I then proposed an event, secured free prizes through a direct tie-up with the New York City Tourism Authority, and launched the promotion in about 30 key Loft stores.\nMonthly sales grew to 10 million yen in December 2009, 15 million yen in February 2010, and more than 30 million yen in September 2010—over ten times the starting level in about one year. The distributor relationship became strong enough that Samsonite continued to send secondees there afterward.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "samsonite-sales-answer-sentence-0-male": {
-      "input": "In August 2009, at Samsonite Japan, I was assigned to Itochu Retail Link, a distributor serving major chains including JAL, JTB, Hands, and Loft.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "samsonite-sales-answer-sentence-1-male": {
-      "input": "Its sales organization was weak, and monthly sales were only about 2. 5 million yen.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "samsonite-sales-answer-sentence-2-male": {
-      "input": "I was asked either to rebuild the sales operation or develop direct relationships with the chains.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "samsonite-sales-answer-sentence-3-male": {
-      "input": "I concluded that the distributor model should remain because it reduced inventory risk, but its sales activity had to change.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "samsonite-sales-answer-sentence-4-male": {
-      "input": "I minimized time in the office, increased contact with head-office buyers and store staff, and worked on the shop floor myself to build POS sales results.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "samsonite-sales-answer-sentence-5-male": {
-      "input": "I expected the sales team to follow the same customer-facing approach.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "samsonite-sales-answer-sentence-6-male": {
-      "input": "At Loft, I focused first on the fourth-ranked Ikebukuro store.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "samsonite-sales-answer-sentence-7-male": {
-      "input": "I visited twice a week and sold on the floor one weekend each month.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "samsonite-sales-answer-sentence-8-male": {
-      "input": "The store moved to third place and sometimes second place, which gained the attention of the head-office buyer.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "samsonite-sales-answer-sentence-9-male": {
-      "input": "I then proposed an event, secured free prizes through a direct tie-up with the New York City Tourism Authority, and launched the promotion in about 30 key Loft stores.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "samsonite-sales-answer-sentence-10-male": {
-      "input": "Monthly sales grew to 10 million yen in December 2009, 15 million yen in February 2010, and more than 30 million yen in September 2010—over ten times the starting level in about one year.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "samsonite-sales-answer-sentence-11-male": {
-      "input": "The distributor relationship became strong enough that Samsonite continued to send secondees there afterward.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "samsonite-sales-questionJa-female": {
-      "input": "強い取引関係を築き、大きな成果を上げた経験を教えてください。",
-      "language": "ja",
-      "speaker": "female",
-      "provider": "google",
-      "voice": "marin",
-      "googleVoice": "ja-JP-Chirp3-HD-Achernar"
-    },
-    "samsonite-sales-questionJa-male": {
-      "input": "強い取引関係を築き、大きな成果を上げた経験を教えてください。",
-      "language": "ja",
-      "speaker": "male",
-      "provider": "google",
-      "voice": "cedar",
-      "googleVoice": "ja-JP-Chirp3-HD-Achird"
-    },
-    "samsonite-sales-answerJa-female": {
-      "input": "2009年8月、サムソナイトジャパンで伊藤忠リテイルリンクを担当しました。同社はJAL、JTB、ハンズ、ロフトなどに商品を流通させるディストリビューターでしたが、営業体制が弱く月商は約250万円でした。私は在庫リスクを抑えるためディストリビューター制は維持しつつ、営業活動を変えることにしました。社内にいる時間を減らし、本部バイヤーや店舗担当者との接点を増やし、自ら店頭販売も行ってPOS実績を作りました。ロフトでは売上4番手の池袋店に絞り、週2回の訪問と月1回の週末販売を実施しました。池袋店が3番手、時には2番手まで上がると本部バイヤーの注目も高まりました。私はニューヨーク市観光局へ直接提案して無償賞品を確保し、主要約30店舗でイベントを実施しました。月商は2009年12月に1,000万円、2010年2月に1,500万円、同年9月には3,000万円超へ伸び、約1年で開始時の10倍超になりました。",
-      "language": "ja",
-      "speaker": "female",
-      "provider": "google",
-      "voice": "marin",
-      "googleVoice": "ja-JP-Chirp3-HD-Achernar"
-    },
-    "samsonite-sales-answerJa-male": {
-      "input": "2009年8月、サムソナイトジャパンで伊藤忠リテイルリンクを担当しました。同社はJAL、JTB、ハンズ、ロフトなどに商品を流通させるディストリビューターでしたが、営業体制が弱く月商は約250万円でした。私は在庫リスクを抑えるためディストリビューター制は維持しつつ、営業活動を変えることにしました。社内にいる時間を減らし、本部バイヤーや店舗担当者との接点を増やし、自ら店頭販売も行ってPOS実績を作りました。ロフトでは売上4番手の池袋店に絞り、週2回の訪問と月1回の週末販売を実施しました。池袋店が3番手、時には2番手まで上がると本部バイヤーの注目も高まりました。私はニューヨーク市観光局へ直接提案して無償賞品を確保し、主要約30店舗でイベントを実施しました。月商は2009年12月に1,000万円、2010年2月に1,500万円、同年9月には3,000万円超へ伸び、約1年で開始時の10倍超になりました。",
-      "language": "ja",
-      "speaker": "male",
-      "provider": "google",
-      "voice": "cedar",
-      "googleVoice": "ja-JP-Chirp3-HD-Achird"
-    },
     "jl-license-question-female": {
       "input": "Tell me about a time you launched a new product or business by balancing global and local market needs.",
       "language": "en",
@@ -1210,248 +968,6 @@
     },
     "jl-license-answerJa-male": {
       "input": "2015年頃、J.LINDEBERGの日本におけるブランド責任者として、本国の商品構成と日本市場のずれに対応しました。本国にはバッグやキャディーバッグが少なく、北欧サイズのウェアは日本人には長く、冬物ゴルフウェアも限られていました。私は日本向けライセンス商品の新規事業を提案し、ストックホルムでデザイン案、素材サンプル、売上試算を使って本国コレクションの空白を説明しました。既存の買付額を維持しつつ本国にもロイヤリティ収入が入ることを示し、承認を得ました。英語が流暢ではなかったため、資料と想定問答を英語で徹底的に準備しました。社内では選任デザイナーを増やさず、当初は私がデザインも兼任し、商社と主要2工場の協力、仕様書作成の体制、ロゴ入りファスナー・ボタンの直接調達ルートを整えました。初年度は雑貨で年間上代約5,000万円、2年目はウェアを加えて約50品番・1億1,000万円、3年目には社内デザインチームへ移管し1億5,000万円まで拡大しました。",
-      "language": "ja",
-      "speaker": "male",
-      "provider": "google",
-      "voice": "cedar",
-      "googleVoice": "ja-JP-Chirp3-HD-Achird"
-    },
-    "china-jv-question-female": {
-      "input": "Tell me about a time you managed a complex international project with conflicting interests.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "china-jv-question-sentence-0-female": {
-      "input": "Tell me about a time you managed a complex international project with conflicting interests.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "china-jv-question-male": {
-      "input": "Tell me about a time you managed a complex international project with conflicting interests.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "china-jv-question-sentence-0-male": {
-      "input": "Tell me about a time you managed a complex international project with conflicting interests.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "china-jv-answer-female": {
-      "input": "Around 2011, Itochu proposed a three-company joint venture to sell our brands in China. I was appointed as the business lead, responsible for completing the contracts and creating the sales plan. The project involved conflicting interests: our company wanted to protect exports from Japan, while the local market needed a practical mix of imported products and locally licensed townwear because golf was still developing in China.\nThe usual law firm could not represent us because it also advised Itochu. Itochu prepared the English drafts, but I translated nearly 100 pages in about one week, including the investment agreement, the new company’s articles of association, the distributor agreement, and the license agreement. I then reviewed the translation with an independent attorney. Itochu’s team later asked to use my Japanese translation as well.\nTo protect our export business, I negotiated annual minimum-purchase amounts in the distributor agreement. At the same time, I accepted a practical balance of imported and licensed products so that the overall business could succeed in China.\nWe completed the agreements in about six months. Starting with Shanghai, Hangzhou, and Shenzhen, the business expanded to about 50 stores in roughly two years and reached monthly sales of approximately 50 million yen. The experience taught me that international negotiations succeed when legal detail, commercial protection, and local market reality are addressed together.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "china-jv-answer-sentence-0-female": {
-      "input": "Around 2011, Itochu proposed a three-company joint venture to sell our brands in China.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "china-jv-answer-sentence-1-female": {
-      "input": "I was appointed as the business lead, responsible for completing the contracts and creating the sales plan.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "china-jv-answer-sentence-2-female": {
-      "input": "The project involved conflicting interests: our company wanted to protect exports from Japan, while the local market needed a practical mix of imported products and locally licensed townwear because golf was still developing in China.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "china-jv-answer-sentence-3-female": {
-      "input": "The usual law firm could not represent us because it also advised Itochu.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "china-jv-answer-sentence-4-female": {
-      "input": "Itochu prepared the English drafts, but I translated nearly 100 pages in about one week, including the investment agreement, the new company’s articles of association, the distributor agreement, and the license agreement.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "china-jv-answer-sentence-5-female": {
-      "input": "I then reviewed the translation with an independent attorney.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "china-jv-answer-sentence-6-female": {
-      "input": "Itochu’s team later asked to use my Japanese translation as well.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "china-jv-answer-sentence-7-female": {
-      "input": "To protect our export business, I negotiated annual minimum-purchase amounts in the distributor agreement.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "china-jv-answer-sentence-8-female": {
-      "input": "At the same time, I accepted a practical balance of imported and licensed products so that the overall business could succeed in China.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "china-jv-answer-sentence-9-female": {
-      "input": "We completed the agreements in about six months.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "china-jv-answer-sentence-10-female": {
-      "input": "Starting with Shanghai, Hangzhou, and Shenzhen, the business expanded to about 50 stores in roughly two years and reached monthly sales of approximately 50 million yen.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "china-jv-answer-sentence-11-female": {
-      "input": "The experience taught me that international negotiations succeed when legal detail, commercial protection, and local market reality are addressed together.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "china-jv-answer-male": {
-      "input": "Around 2011, Itochu proposed a three-company joint venture to sell our brands in China. I was appointed as the business lead, responsible for completing the contracts and creating the sales plan. The project involved conflicting interests: our company wanted to protect exports from Japan, while the local market needed a practical mix of imported products and locally licensed townwear because golf was still developing in China.\nThe usual law firm could not represent us because it also advised Itochu. Itochu prepared the English drafts, but I translated nearly 100 pages in about one week, including the investment agreement, the new company’s articles of association, the distributor agreement, and the license agreement. I then reviewed the translation with an independent attorney. Itochu’s team later asked to use my Japanese translation as well.\nTo protect our export business, I negotiated annual minimum-purchase amounts in the distributor agreement. At the same time, I accepted a practical balance of imported and licensed products so that the overall business could succeed in China.\nWe completed the agreements in about six months. Starting with Shanghai, Hangzhou, and Shenzhen, the business expanded to about 50 stores in roughly two years and reached monthly sales of approximately 50 million yen. The experience taught me that international negotiations succeed when legal detail, commercial protection, and local market reality are addressed together.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "china-jv-answer-sentence-0-male": {
-      "input": "Around 2011, Itochu proposed a three-company joint venture to sell our brands in China.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "china-jv-answer-sentence-1-male": {
-      "input": "I was appointed as the business lead, responsible for completing the contracts and creating the sales plan.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "china-jv-answer-sentence-2-male": {
-      "input": "The project involved conflicting interests: our company wanted to protect exports from Japan, while the local market needed a practical mix of imported products and locally licensed townwear because golf was still developing in China.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "china-jv-answer-sentence-3-male": {
-      "input": "The usual law firm could not represent us because it also advised Itochu.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "china-jv-answer-sentence-4-male": {
-      "input": "Itochu prepared the English drafts, but I translated nearly 100 pages in about one week, including the investment agreement, the new company’s articles of association, the distributor agreement, and the license agreement.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "china-jv-answer-sentence-5-male": {
-      "input": "I then reviewed the translation with an independent attorney.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "china-jv-answer-sentence-6-male": {
-      "input": "Itochu’s team later asked to use my Japanese translation as well.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "china-jv-answer-sentence-7-male": {
-      "input": "To protect our export business, I negotiated annual minimum-purchase amounts in the distributor agreement.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "china-jv-answer-sentence-8-male": {
-      "input": "At the same time, I accepted a practical balance of imported and licensed products so that the overall business could succeed in China.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "china-jv-answer-sentence-9-male": {
-      "input": "We completed the agreements in about six months.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "china-jv-answer-sentence-10-male": {
-      "input": "Starting with Shanghai, Hangzhou, and Shenzhen, the business expanded to about 50 stores in roughly two years and reached monthly sales of approximately 50 million yen.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "china-jv-answer-sentence-11-male": {
-      "input": "The experience taught me that international negotiations succeed when legal detail, commercial protection, and local market reality are addressed together.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "china-jv-questionJa-female": {
-      "input": "利害が対立する複雑な国際プロジェクトを運営した経験を教えてください。",
-      "language": "ja",
-      "speaker": "female",
-      "provider": "google",
-      "voice": "marin",
-      "googleVoice": "ja-JP-Chirp3-HD-Achernar"
-    },
-    "china-jv-questionJa-male": {
-      "input": "利害が対立する複雑な国際プロジェクトを運営した経験を教えてください。",
-      "language": "ja",
-      "speaker": "male",
-      "provider": "google",
-      "voice": "cedar",
-      "googleVoice": "ja-JP-Chirp3-HD-Achird"
-    },
-    "china-jv-answerJa-female": {
-      "input": "2011年頃、伊藤忠商事の提案により中国で自社ブランドを販売する3社合弁会社を立ち上げ、私は事業責任者として契約締結と販売計画を担当しました。自社は日本からの輸出を守りたく、一方で中国市場ではゴルフがまだ発展途上のため現地ライセンスのタウンウェアも必要でした。加えて、通常の顧問法律事務所は伊藤忠商事も顧客だったため利用できませんでした。伊藤忠商事作成の英文ドラフトをもとに、出資契約、定款、販売代理店契約、ライセンス契約など約100ページを約1週間で翻訳し、独立した弁護士と精査しました。販売代理店契約には年度ごとの最低購入金額を入れ、自社の輸出売上を確保しながら、輸入品と現地ライセンス品の現実的な構成を合意しました。約半年で契約を締結し、上海、杭州、深圳から展開して約2年で50店舗、月商約5,000万円まで拡大しました。",
-      "language": "ja",
-      "speaker": "female",
-      "provider": "google",
-      "voice": "marin",
-      "googleVoice": "ja-JP-Chirp3-HD-Achernar"
-    },
-    "china-jv-answerJa-male": {
-      "input": "2011年頃、伊藤忠商事の提案により中国で自社ブランドを販売する3社合弁会社を立ち上げ、私は事業責任者として契約締結と販売計画を担当しました。自社は日本からの輸出を守りたく、一方で中国市場ではゴルフがまだ発展途上のため現地ライセンスのタウンウェアも必要でした。加えて、通常の顧問法律事務所は伊藤忠商事も顧客だったため利用できませんでした。伊藤忠商事作成の英文ドラフトをもとに、出資契約、定款、販売代理店契約、ライセンス契約など約100ページを約1週間で翻訳し、独立した弁護士と精査しました。販売代理店契約には年度ごとの最低購入金額を入れ、自社の輸出売上を確保しながら、輸入品と現地ライセンス品の現実的な構成を合意しました。約半年で契約を締結し、上海、杭州、深圳から展開して約2年で50店舗、月商約5,000万円まで拡大しました。",
       "language": "ja",
       "speaker": "male",
       "provider": "google",
@@ -1950,262 +1466,6 @@
     },
     "grip-file-transfer-answerJa-male": {
       "input": "2026年6月、有料の大容量ファイル転送サービスを解約した結果、社員がメール添付や無料サービスを個別に使う状態になりました。情報流出の懸念に加え、受取側には広告やポップアップの不便さがありました。私は新たな有料サービスを導入せず、安全で使いやすい代替手段を作る必要があると考えました。調査を通じ、組織で共通利用できるSharePointと、ポータル型アプリを動かせるAzureを採用しました。既存のMicrosoftアカウントと親和性が高く、受取側にもSharePointと表示される安心感があると考えました。ドラッグ＆ドロップ、期限後のダウンロードリンク自動無効化、重要度に応じたパスワード有無を実装し、既存サービスに近い使い勝手を再現しました。SharePointとAzureは初めてでしたが約1か月でリリースし、社員に積極的に利用されています。",
-      "language": "ja",
-      "speaker": "male",
-      "provider": "google",
-      "voice": "cedar",
-      "googleVoice": "ja-JP-Chirp3-HD-Achird"
-    },
-    "viva-heart-drop-ship-question-female": {
-      "input": "Tell me about a time you solved a complex international logistics problem.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "viva-heart-drop-ship-question-sentence-0-female": {
-      "input": "Tell me about a time you solved a complex international logistics problem.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "viva-heart-drop-ship-question-male": {
-      "input": "Tell me about a time you solved a complex international logistics problem.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "viva-heart-drop-ship-question-sentence-0-male": {
-      "input": "Tell me about a time you solved a complex international logistics problem.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "viva-heart-drop-ship-answer-female": {
-      "input": "Around 2016, we exported VIVA HEART products to a distributor in Korea. The distributor asked whether we could ship directly from factories in China and Vietnam to Korea because trade agreements had reduced the tariff rate to zero. Previously, goods were imported through Japan, which added duty and freight.\nThe challenge was coordinating many parties. The trading companies handled the imports, factories had to issue certificates of origin, and the forwarder had to change the invoice flow. Some Chinese regions required government authorization before a factory could issue a certificate of origin. Our company had never used drop-shipping before, so we had to turn a theoretical possibility into an operating process.\nI worked repeatedly with an international forwarder that had offices in China, Vietnam, Japan, and Korea. We clarified the procedures, the required documents, and the factory-by-factory issues, then created a practical manual. I used the same manual to implement the process with two additional trading companies.\nAs a result, about 90% of Korean exports shifted to direct shipments from China or Vietnam. We met the distributor’s request and avoided costs that would have occurred through Japan. The saving was about 6% of annual Korean sales of 65 million yen, or approximately 4 million yen per year.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "viva-heart-drop-ship-answer-sentence-0-female": {
-      "input": "Around 2016, we exported VIVA HEART products to a distributor in Korea.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "viva-heart-drop-ship-answer-sentence-1-female": {
-      "input": "The distributor asked whether we could ship directly from factories in China and Vietnam to Korea because trade agreements had reduced the tariff rate to zero.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "viva-heart-drop-ship-answer-sentence-2-female": {
-      "input": "Previously, goods were imported through Japan, which added duty and freight.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "viva-heart-drop-ship-answer-sentence-3-female": {
-      "input": "The challenge was coordinating many parties.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "viva-heart-drop-ship-answer-sentence-4-female": {
-      "input": "The trading companies handled the imports, factories had to issue certificates of origin, and the forwarder had to change the invoice flow.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "viva-heart-drop-ship-answer-sentence-5-female": {
-      "input": "Some Chinese regions required government authorization before a factory could issue a certificate of origin.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "viva-heart-drop-ship-answer-sentence-6-female": {
-      "input": "Our company had never used drop-shipping before, so we had to turn a theoretical possibility into an operating process.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "viva-heart-drop-ship-answer-sentence-7-female": {
-      "input": "I worked repeatedly with an international forwarder that had offices in China, Vietnam, Japan, and Korea.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "viva-heart-drop-ship-answer-sentence-8-female": {
-      "input": "We clarified the procedures, the required documents, and the factory-by-factory issues, then created a practical manual.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "viva-heart-drop-ship-answer-sentence-9-female": {
-      "input": "I used the same manual to implement the process with two additional trading companies.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "viva-heart-drop-ship-answer-sentence-10-female": {
-      "input": "As a result, about 90% of Korean exports shifted to direct shipments from China or Vietnam.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "viva-heart-drop-ship-answer-sentence-11-female": {
-      "input": "We met the distributor’s request and avoided costs that would have occurred through Japan.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "viva-heart-drop-ship-answer-sentence-12-female": {
-      "input": "The saving was about 6% of annual Korean sales of 65 million yen, or approximately 4 million yen per year.",
-      "language": "en",
-      "speaker": "female",
-      "provider": "openai",
-      "voice": "marin"
-    },
-    "viva-heart-drop-ship-answer-male": {
-      "input": "Around 2016, we exported VIVA HEART products to a distributor in Korea. The distributor asked whether we could ship directly from factories in China and Vietnam to Korea because trade agreements had reduced the tariff rate to zero. Previously, goods were imported through Japan, which added duty and freight.\nThe challenge was coordinating many parties. The trading companies handled the imports, factories had to issue certificates of origin, and the forwarder had to change the invoice flow. Some Chinese regions required government authorization before a factory could issue a certificate of origin. Our company had never used drop-shipping before, so we had to turn a theoretical possibility into an operating process.\nI worked repeatedly with an international forwarder that had offices in China, Vietnam, Japan, and Korea. We clarified the procedures, the required documents, and the factory-by-factory issues, then created a practical manual. I used the same manual to implement the process with two additional trading companies.\nAs a result, about 90% of Korean exports shifted to direct shipments from China or Vietnam. We met the distributor’s request and avoided costs that would have occurred through Japan. The saving was about 6% of annual Korean sales of 65 million yen, or approximately 4 million yen per year.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "viva-heart-drop-ship-answer-sentence-0-male": {
-      "input": "Around 2016, we exported VIVA HEART products to a distributor in Korea.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "viva-heart-drop-ship-answer-sentence-1-male": {
-      "input": "The distributor asked whether we could ship directly from factories in China and Vietnam to Korea because trade agreements had reduced the tariff rate to zero.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "viva-heart-drop-ship-answer-sentence-2-male": {
-      "input": "Previously, goods were imported through Japan, which added duty and freight.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "viva-heart-drop-ship-answer-sentence-3-male": {
-      "input": "The challenge was coordinating many parties.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "viva-heart-drop-ship-answer-sentence-4-male": {
-      "input": "The trading companies handled the imports, factories had to issue certificates of origin, and the forwarder had to change the invoice flow.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "viva-heart-drop-ship-answer-sentence-5-male": {
-      "input": "Some Chinese regions required government authorization before a factory could issue a certificate of origin.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "viva-heart-drop-ship-answer-sentence-6-male": {
-      "input": "Our company had never used drop-shipping before, so we had to turn a theoretical possibility into an operating process.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "viva-heart-drop-ship-answer-sentence-7-male": {
-      "input": "I worked repeatedly with an international forwarder that had offices in China, Vietnam, Japan, and Korea.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "viva-heart-drop-ship-answer-sentence-8-male": {
-      "input": "We clarified the procedures, the required documents, and the factory-by-factory issues, then created a practical manual.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "viva-heart-drop-ship-answer-sentence-9-male": {
-      "input": "I used the same manual to implement the process with two additional trading companies.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "viva-heart-drop-ship-answer-sentence-10-male": {
-      "input": "As a result, about 90% of Korean exports shifted to direct shipments from China or Vietnam.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "viva-heart-drop-ship-answer-sentence-11-male": {
-      "input": "We met the distributor’s request and avoided costs that would have occurred through Japan.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "viva-heart-drop-ship-answer-sentence-12-male": {
-      "input": "The saving was about 6% of annual Korean sales of 65 million yen, or approximately 4 million yen per year.",
-      "language": "en",
-      "speaker": "male",
-      "provider": "openai",
-      "voice": "cedar"
-    },
-    "viva-heart-drop-ship-questionJa-female": {
-      "input": "複雑な国際物流の問題を解決した経験を教えてください。",
-      "language": "ja",
-      "speaker": "female",
-      "provider": "google",
-      "voice": "marin",
-      "googleVoice": "ja-JP-Chirp3-HD-Achernar"
-    },
-    "viva-heart-drop-ship-questionJa-male": {
-      "input": "複雑な国際物流の問題を解決した経験を教えてください。",
-      "language": "ja",
-      "speaker": "male",
-      "provider": "google",
-      "voice": "cedar",
-      "googleVoice": "ja-JP-Chirp3-HD-Achird"
-    },
-    "viva-heart-drop-ship-answerJa-female": {
-      "input": "2016年頃、韓国の販売代理店から、中国・ベトナムの生産地から韓国へ直接輸出してほしいという要望を受けました。貿易協定により関税率がゼロになったためです。しかし、商社、工場、フォワーダーの協力とインボイス変更が必要で、原産地証明も工場ごとに対応する必要がありました。中国の一部地域では証明書発行に政府許可が必要でした。社内に前例がなかったため、中国・ベトナム・日本・韓国に拠点を持つ国際フォワーダーと何度も打合せを行い、手続きと工場別の課題を整理してマニュアル化しました。そのマニュアルを使い、2社目・3社目の商社へも展開しました。韓国向け輸出の約90％を中国・ベトナムからの直接輸出へ切り替え、年間販売額約6,500万円の約6％、年間約400万円のコスト削減を実現しました。",
-      "language": "ja",
-      "speaker": "female",
-      "provider": "google",
-      "voice": "marin",
-      "googleVoice": "ja-JP-Chirp3-HD-Achernar"
-    },
-    "viva-heart-drop-ship-answerJa-male": {
-      "input": "2016年頃、韓国の販売代理店から、中国・ベトナムの生産地から韓国へ直接輸出してほしいという要望を受けました。貿易協定により関税率がゼロになったためです。しかし、商社、工場、フォワーダーの協力とインボイス変更が必要で、原産地証明も工場ごとに対応する必要がありました。中国の一部地域では証明書発行に政府許可が必要でした。社内に前例がなかったため、中国・ベトナム・日本・韓国に拠点を持つ国際フォワーダーと何度も打合せを行い、手続きと工場別の課題を整理してマニュアル化しました。そのマニュアルを使い、2社目・3社目の商社へも展開しました。韓国向け輸出の約90％を中国・ベトナムからの直接輸出へ切り替え、年間販売額約6,500万円の約6％、年間約400万円のコスト削減を実現しました。",
       "language": "ja",
       "speaker": "male",
       "provider": "google",
@@ -3620,6 +2880,862 @@
     },
     "safety-answerJa-male": {
       "input": "安全性とセキュリティを最優先します。時間やコストを削減するために、安全でない近道を選ぶことはありません。次に、緊急度と事業への影響を明確にし、作業を標準手順に分解して、リスクと顧客影響に基づいて優先順位を付けます。作業量や重量に応じて同僚の支援を依頼し、必要なPPEと設備を使います。標準手順に従い、正確性、リードタイム、手戻りを測定することで、安全性を損なわずに効率を高めます。",
+      "language": "ja",
+      "speaker": "male",
+      "provider": "google",
+      "voice": "cedar",
+      "googleVoice": "ja-JP-Chirp3-HD-Achird"
+    },
+    "chain-order-list-question-female": {
+      "input": "Tell me about a time you delivered a critical task after a key person became unavailable.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "chain-order-list-question-sentence-0-female": {
+      "input": "Tell me about a time you delivered a critical task after a key person became unavailable.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "chain-order-list-question-male": {
+      "input": "Tell me about a time you delivered a critical task after a key person became unavailable.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "chain-order-list-question-sentence-0-male": {
+      "input": "Tell me about a time you delivered a critical task after a key person became unavailable.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "chain-order-list-answer-female": {
+      "input": "In August 2025, the employee responsible for preparing customer-specific order forms for a major chain-store group was suddenly hospitalized for a long period. One week before an exhibition, my team was asked to take over the work. We had only about ten minutes of handover by phone, but we had to complete the required forms for three customer organizations by the first day of the exhibition.\nI decided not only to complete the urgent work, but also to build a repeatable foundation for the next exhibition. I organized the seven to ten master-data tables required by each customer, including item, color, size, margin, department, and category tables. I then created mapping tables to connect them with our internal data and built Power Query processes that automatically transformed data exported from the exhibition system into each customer format. I also used VBA to correct prohibited characters and full-width or half-width characters, and built a small AI-assisted routine to support item classification from product numbers.\nIncluding weekend work, I completed the Power Query processes, VBA macros, and AI routine in three days. All three customer-specific order forms were ready on the first day of the exhibition. Afterward, I documented the process so that other team members could reproduce it.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "chain-order-list-answer-sentence-0-female": {
+      "input": "In August 2025, the employee responsible for preparing customer-specific order forms for a major chain-store group was suddenly hospitalized for a long period.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "chain-order-list-answer-sentence-1-female": {
+      "input": "One week before an exhibition, my team was asked to take over the work.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "chain-order-list-answer-sentence-2-female": {
+      "input": "We had only about ten minutes of handover by phone, but we had to complete the required forms for three customer organizations by the first day of the exhibition.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "chain-order-list-answer-sentence-3-female": {
+      "input": "I decided not only to complete the urgent work, but also to build a repeatable foundation for the next exhibition.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "chain-order-list-answer-sentence-4-female": {
+      "input": "I organized the seven to ten master-data tables required by each customer, including item, color, size, margin, department, and category tables.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "chain-order-list-answer-sentence-5-female": {
+      "input": "I then created mapping tables to connect them with our internal data and built Power Query processes that automatically transformed data exported from the exhibition system into each customer format.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "chain-order-list-answer-sentence-6-female": {
+      "input": "I also used VBA to correct prohibited characters and full-width or half-width characters, and built a small AI-assisted routine to support item classification from product numbers.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "chain-order-list-answer-sentence-7-female": {
+      "input": "Including weekend work, I completed the Power Query processes, VBA macros, and AI routine in three days.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "chain-order-list-answer-sentence-8-female": {
+      "input": "All three customer-specific order forms were ready on the first day of the exhibition.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "chain-order-list-answer-sentence-9-female": {
+      "input": "Afterward, I documented the process so that other team members could reproduce it.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "chain-order-list-answer-male": {
+      "input": "In August 2025, the employee responsible for preparing customer-specific order forms for a major chain-store group was suddenly hospitalized for a long period. One week before an exhibition, my team was asked to take over the work. We had only about ten minutes of handover by phone, but we had to complete the required forms for three customer organizations by the first day of the exhibition.\nI decided not only to complete the urgent work, but also to build a repeatable foundation for the next exhibition. I organized the seven to ten master-data tables required by each customer, including item, color, size, margin, department, and category tables. I then created mapping tables to connect them with our internal data and built Power Query processes that automatically transformed data exported from the exhibition system into each customer format. I also used VBA to correct prohibited characters and full-width or half-width characters, and built a small AI-assisted routine to support item classification from product numbers.\nIncluding weekend work, I completed the Power Query processes, VBA macros, and AI routine in three days. All three customer-specific order forms were ready on the first day of the exhibition. Afterward, I documented the process so that other team members could reproduce it.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "chain-order-list-answer-sentence-0-male": {
+      "input": "In August 2025, the employee responsible for preparing customer-specific order forms for a major chain-store group was suddenly hospitalized for a long period.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "chain-order-list-answer-sentence-1-male": {
+      "input": "One week before an exhibition, my team was asked to take over the work.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "chain-order-list-answer-sentence-2-male": {
+      "input": "We had only about ten minutes of handover by phone, but we had to complete the required forms for three customer organizations by the first day of the exhibition.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "chain-order-list-answer-sentence-3-male": {
+      "input": "I decided not only to complete the urgent work, but also to build a repeatable foundation for the next exhibition.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "chain-order-list-answer-sentence-4-male": {
+      "input": "I organized the seven to ten master-data tables required by each customer, including item, color, size, margin, department, and category tables.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "chain-order-list-answer-sentence-5-male": {
+      "input": "I then created mapping tables to connect them with our internal data and built Power Query processes that automatically transformed data exported from the exhibition system into each customer format.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "chain-order-list-answer-sentence-6-male": {
+      "input": "I also used VBA to correct prohibited characters and full-width or half-width characters, and built a small AI-assisted routine to support item classification from product numbers.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "chain-order-list-answer-sentence-7-male": {
+      "input": "Including weekend work, I completed the Power Query processes, VBA macros, and AI routine in three days.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "chain-order-list-answer-sentence-8-male": {
+      "input": "All three customer-specific order forms were ready on the first day of the exhibition.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "chain-order-list-answer-sentence-9-male": {
+      "input": "Afterward, I documented the process so that other team members could reproduce it.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "chain-order-list-questionJa-female": {
+      "input": "重要な担当者が急に不在となった中で、期限のある業務をやり切った経験を教えてください。",
+      "language": "ja",
+      "speaker": "female",
+      "provider": "google",
+      "voice": "marin",
+      "googleVoice": "ja-JP-Chirp3-HD-Achernar"
+    },
+    "chain-order-list-questionJa-male": {
+      "input": "重要な担当者が急に不在となった中で、期限のある業務をやり切った経験を教えてください。",
+      "language": "ja",
+      "speaker": "male",
+      "provider": "google",
+      "voice": "cedar",
+      "googleVoice": "ja-JP-Chirp3-HD-Achird"
+    },
+    "chain-order-list-answerJa-female": {
+      "input": "2025年8月、大手チェーン店グループ向けの専用発注書を作成していた担当者が、長期入院のため急遽不在になりました。展示会の1週間前に私のチームへ業務移管の依頼があり、電話で約10分の引継ぎを受けただけで、展示会初日までに3法人分の帳票を完成させる必要がありました。\n私は、目の前の緊急対応だけでなく、次回以降も再現できる仕組みを作ることにしました。アイテム、カラー、サイズ、掛け率、部門、カテゴリーなど、各法人が必要とする7〜10種類のマスタを整理し、自社データとの対比表を作成しました。展示会システムから出力されるデータを、Power Queryで各法人のフォーマットへ自動整形する仕組みを構築しました。さらに、禁則文字や半角・全角の修正にはVBAを使い、品番からアイテム分類を補助するAI活用の手順も作りました。\n週末の対応を含めて3日間で、Power Query、VBA、AIのルーティンを完成させ、展示会初日に3法人分の専用発注書をすべて提出できました。その後は手順書を整備し、他の担当者でも再現できる運用にしました。",
+      "language": "ja",
+      "speaker": "female",
+      "provider": "google",
+      "voice": "marin",
+      "googleVoice": "ja-JP-Chirp3-HD-Achernar"
+    },
+    "chain-order-list-answerJa-male": {
+      "input": "2025年8月、大手チェーン店グループ向けの専用発注書を作成していた担当者が、長期入院のため急遽不在になりました。展示会の1週間前に私のチームへ業務移管の依頼があり、電話で約10分の引継ぎを受けただけで、展示会初日までに3法人分の帳票を完成させる必要がありました。\n私は、目の前の緊急対応だけでなく、次回以降も再現できる仕組みを作ることにしました。アイテム、カラー、サイズ、掛け率、部門、カテゴリーなど、各法人が必要とする7〜10種類のマスタを整理し、自社データとの対比表を作成しました。展示会システムから出力されるデータを、Power Queryで各法人のフォーマットへ自動整形する仕組みを構築しました。さらに、禁則文字や半角・全角の修正にはVBAを使い、品番からアイテム分類を補助するAI活用の手順も作りました。\n週末の対応を含めて3日間で、Power Query、VBA、AIのルーティンを完成させ、展示会初日に3法人分の専用発注書をすべて提出できました。その後は手順書を整備し、他の担当者でも再現できる運用にしました。",
+      "language": "ja",
+      "speaker": "male",
+      "provider": "google",
+      "voice": "cedar",
+      "googleVoice": "ja-JP-Chirp3-HD-Achird"
+    },
+    "outlet-growth-question-female": {
+      "input": "Tell me about a time you used data to improve profitability and sales performance.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "outlet-growth-question-sentence-0-female": {
+      "input": "Tell me about a time you used data to improve profitability and sales performance.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "outlet-growth-question-male": {
+      "input": "Tell me about a time you used data to improve profitability and sales performance.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "outlet-growth-question-sentence-0-male": {
+      "input": "Tell me about a time you used data to improve profitability and sales performance.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "outlet-growth-answer-female": {
+      "input": "In April 2023, I opened the Kobe Sanda outlet store and later managed two outlet stores. The data showed a clear opportunity: inventory sold in bulk through other channels recovered only 28% of the original retail price on average, while our own outlet stores recovered 43%.\nMy task was to direct the right inventory to the outlet without sacrificing sales opportunities in other channels, and to build a repeatable operating model for inventory, pricing, and promotions. I created a dedicated outlet storage code in the system to prevent automatic allocation to other channels. Using the previous six months of sales and sell-through data by style and color, I selected strong-selling products. To limit risk, I capped the reserved quantity at 50% of the following year's sales plan for the same store and season.\nI also reviewed the average discount rate weekly, used gradual markdown rules to protect customer trust, planned bundle promotions, and introduced temporary featured products whenever sales were behind plan. As a result, the recovery rate improved by 15 points, from 28% to 43%. Store sales grew from 45.8 million yen in the first year to 58.4 million in the second and 65.2 million in the third.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "outlet-growth-answer-sentence-0-female": {
+      "input": "In April 2023, I opened the Kobe Sanda outlet store and later managed two outlet stores.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "outlet-growth-answer-sentence-1-female": {
+      "input": "The data showed a clear opportunity: inventory sold in bulk through other channels recovered only 28% of the original retail price on average, while our own outlet stores recovered 43%.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "outlet-growth-answer-sentence-2-female": {
+      "input": "My task was to direct the right inventory to the outlet without sacrificing sales opportunities in other channels, and to build a repeatable operating model for inventory, pricing, and promotions.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "outlet-growth-answer-sentence-3-female": {
+      "input": "I created a dedicated outlet storage code in the system to prevent automatic allocation to other channels.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "outlet-growth-answer-sentence-4-female": {
+      "input": "Using the previous six months of sales and sell-through data by style and color, I selected strong-selling products.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "outlet-growth-answer-sentence-5-female": {
+      "input": "To limit risk, I capped the reserved quantity at 50% of the following year's sales plan for the same store and season.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "outlet-growth-answer-sentence-6-female": {
+      "input": "I also reviewed the average discount rate weekly, used gradual markdown rules to protect customer trust, planned bundle promotions, and introduced temporary featured products whenever sales were behind plan.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "outlet-growth-answer-sentence-7-female": {
+      "input": "As a result, the recovery rate improved by 15 points, from 28% to 43%.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "outlet-growth-answer-sentence-8-female": {
+      "input": "Store sales grew from 45. 8 million yen in the first year to 58. 4 million in the second and 65. 2 million in the third.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "outlet-growth-answer-male": {
+      "input": "In April 2023, I opened the Kobe Sanda outlet store and later managed two outlet stores. The data showed a clear opportunity: inventory sold in bulk through other channels recovered only 28% of the original retail price on average, while our own outlet stores recovered 43%.\nMy task was to direct the right inventory to the outlet without sacrificing sales opportunities in other channels, and to build a repeatable operating model for inventory, pricing, and promotions. I created a dedicated outlet storage code in the system to prevent automatic allocation to other channels. Using the previous six months of sales and sell-through data by style and color, I selected strong-selling products. To limit risk, I capped the reserved quantity at 50% of the following year's sales plan for the same store and season.\nI also reviewed the average discount rate weekly, used gradual markdown rules to protect customer trust, planned bundle promotions, and introduced temporary featured products whenever sales were behind plan. As a result, the recovery rate improved by 15 points, from 28% to 43%. Store sales grew from 45.8 million yen in the first year to 58.4 million in the second and 65.2 million in the third.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "outlet-growth-answer-sentence-0-male": {
+      "input": "In April 2023, I opened the Kobe Sanda outlet store and later managed two outlet stores.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "outlet-growth-answer-sentence-1-male": {
+      "input": "The data showed a clear opportunity: inventory sold in bulk through other channels recovered only 28% of the original retail price on average, while our own outlet stores recovered 43%.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "outlet-growth-answer-sentence-2-male": {
+      "input": "My task was to direct the right inventory to the outlet without sacrificing sales opportunities in other channels, and to build a repeatable operating model for inventory, pricing, and promotions.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "outlet-growth-answer-sentence-3-male": {
+      "input": "I created a dedicated outlet storage code in the system to prevent automatic allocation to other channels.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "outlet-growth-answer-sentence-4-male": {
+      "input": "Using the previous six months of sales and sell-through data by style and color, I selected strong-selling products.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "outlet-growth-answer-sentence-5-male": {
+      "input": "To limit risk, I capped the reserved quantity at 50% of the following year's sales plan for the same store and season.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "outlet-growth-answer-sentence-6-male": {
+      "input": "I also reviewed the average discount rate weekly, used gradual markdown rules to protect customer trust, planned bundle promotions, and introduced temporary featured products whenever sales were behind plan.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "outlet-growth-answer-sentence-7-male": {
+      "input": "As a result, the recovery rate improved by 15 points, from 28% to 43%.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "outlet-growth-answer-sentence-8-male": {
+      "input": "Store sales grew from 45. 8 million yen in the first year to 58. 4 million in the second and 65. 2 million in the third.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "outlet-growth-questionJa-female": {
+      "input": "データを使って収益性と売上を改善した経験を教えてください。",
+      "language": "ja",
+      "speaker": "female",
+      "provider": "google",
+      "voice": "marin",
+      "googleVoice": "ja-JP-Chirp3-HD-Achernar"
+    },
+    "outlet-growth-questionJa-male": {
+      "input": "データを使って収益性と売上を改善した経験を教えてください。",
+      "language": "ja",
+      "speaker": "male",
+      "provider": "google",
+      "voice": "cedar",
+      "googleVoice": "ja-JP-Chirp3-HD-Achird"
+    },
+    "outlet-growth-answerJa-female": {
+      "input": "2023年4月、神戸三田アウトレット店を新規オープンし、その後は2店舗の運営を担当しました。データを見ると、他販路で在庫を一括売却した場合の販売NETは平均28%でしたが、自社アウトレットでは43%でした。\nそこで私は、他販路の販売機会を失わずに、売れ筋在庫を高換金なアウトレットへ適切に振り向け、在庫・価格・販促を再現可能な運用にすることを課題にしました。システムにアウトレット専用保管コードを作り、他販路への在庫自動流出を防ぎました。直近6か月の品番・カラー別売上と消化率を基に売れ筋を選定し、確保量は翌年度の同シーズン・同店の販売計画の50%を上限として管理しました。\n平均OFF率を毎週確認し、顧客の信頼を守る段階的な値引き、まとめ買い割引、売上が計画を下回った際の目玉品投入を組み合わせました。その結果、販売NETを28%から43%へ15ポイント改善しました。店舗売上も初年度4,580万円、2年目5,840万円、3年目6,520万円と3年連続で伸ばすことができました。",
+      "language": "ja",
+      "speaker": "female",
+      "provider": "google",
+      "voice": "marin",
+      "googleVoice": "ja-JP-Chirp3-HD-Achernar"
+    },
+    "outlet-growth-answerJa-male": {
+      "input": "2023年4月、神戸三田アウトレット店を新規オープンし、その後は2店舗の運営を担当しました。データを見ると、他販路で在庫を一括売却した場合の販売NETは平均28%でしたが、自社アウトレットでは43%でした。\nそこで私は、他販路の販売機会を失わずに、売れ筋在庫を高換金なアウトレットへ適切に振り向け、在庫・価格・販促を再現可能な運用にすることを課題にしました。システムにアウトレット専用保管コードを作り、他販路への在庫自動流出を防ぎました。直近6か月の品番・カラー別売上と消化率を基に売れ筋を選定し、確保量は翌年度の同シーズン・同店の販売計画の50%を上限として管理しました。\n平均OFF率を毎週確認し、顧客の信頼を守る段階的な値引き、まとめ買い割引、売上が計画を下回った際の目玉品投入を組み合わせました。その結果、販売NETを28%から43%へ15ポイント改善しました。店舗売上も初年度4,580万円、2年目5,840万円、3年目6,520万円と3年連続で伸ばすことができました。",
+      "language": "ja",
+      "speaker": "male",
+      "provider": "google",
+      "voice": "cedar",
+      "googleVoice": "ja-JP-Chirp3-HD-Achird"
+    },
+    "logistics-cost-reduction-question-female": {
+      "input": "Tell me about a time you reduced logistics costs while protecting product quality and service.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "logistics-cost-reduction-question-sentence-0-female": {
+      "input": "Tell me about a time you reduced logistics costs while protecting product quality and service.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "logistics-cost-reduction-question-male": {
+      "input": "Tell me about a time you reduced logistics costs while protecting product quality and service.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "logistics-cost-reduction-question-sentence-0-male": {
+      "input": "Tell me about a time you reduced logistics costs while protecting product quality and service.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "logistics-cost-reduction-answer-female": {
+      "input": "In May 2021, the COVID-related closure of department stores caused inventory at our logistics center to increase to about 89,000 units, or 123% of the level two years earlier. Storage and handling costs were becoming a serious financial issue.\nI worked with the logistics-center team to examine storage conditions and shipping flows in detail. First, I found that folded storage was 2.5 times more space-efficient than hanger storage. I reviewed the specifications for all 3,700 applicable units and kept only six styles, or 300 units, on hangers because of wrinkle risk. The remaining 3,400 units moved to folded storage. For roughly 38,000 slow-moving units, we kept only two or three pieces per SKU on normal shelves and moved the rest to high-density stacked storage.\nI also eliminated separate price-tag attachment work for department-store shipments after arranging for our own JAN code to be accepted at the retailer's register. Finally, I shifted about 60% of family-sale shipments from the center to direct delivery from our stores. These changes reduced storage space from 450 to 360 tsubo, a 20% reduction, and cut annual storage, tagging, and delivery costs by 4.53 million yen. We also saved 280,000 yen a year in hanger materials.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "logistics-cost-reduction-answer-sentence-0-female": {
+      "input": "In May 2021, the COVID-related closure of department stores caused inventory at our logistics center to increase to about 89,000 units, or 123% of the level two years earlier.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "logistics-cost-reduction-answer-sentence-1-female": {
+      "input": "Storage and handling costs were becoming a serious financial issue.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "logistics-cost-reduction-answer-sentence-2-female": {
+      "input": "I worked with the logistics-center team to examine storage conditions and shipping flows in detail.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "logistics-cost-reduction-answer-sentence-3-female": {
+      "input": "First, I found that folded storage was 2. 5 times more space-efficient than hanger storage.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "logistics-cost-reduction-answer-sentence-4-female": {
+      "input": "I reviewed the specifications for all 3,700 applicable units and kept only six styles, or 300 units, on hangers because of wrinkle risk.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "logistics-cost-reduction-answer-sentence-5-female": {
+      "input": "The remaining 3,400 units moved to folded storage.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "logistics-cost-reduction-answer-sentence-6-female": {
+      "input": "For roughly 38,000 slow-moving units, we kept only two or three pieces per SKU on normal shelves and moved the rest to high-density stacked storage.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "logistics-cost-reduction-answer-sentence-7-female": {
+      "input": "I also eliminated separate price-tag attachment work for department-store shipments after arranging for our own JAN code to be accepted at the retailer's register.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "logistics-cost-reduction-answer-sentence-8-female": {
+      "input": "Finally, I shifted about 60% of family-sale shipments from the center to direct delivery from our stores.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "logistics-cost-reduction-answer-sentence-9-female": {
+      "input": "These changes reduced storage space from 450 to 360 tsubo, a 20% reduction, and cut annual storage, tagging, and delivery costs by 4. 53 million yen.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "logistics-cost-reduction-answer-sentence-10-female": {
+      "input": "We also saved 280,000 yen a year in hanger materials.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "logistics-cost-reduction-answer-male": {
+      "input": "In May 2021, the COVID-related closure of department stores caused inventory at our logistics center to increase to about 89,000 units, or 123% of the level two years earlier. Storage and handling costs were becoming a serious financial issue.\nI worked with the logistics-center team to examine storage conditions and shipping flows in detail. First, I found that folded storage was 2.5 times more space-efficient than hanger storage. I reviewed the specifications for all 3,700 applicable units and kept only six styles, or 300 units, on hangers because of wrinkle risk. The remaining 3,400 units moved to folded storage. For roughly 38,000 slow-moving units, we kept only two or three pieces per SKU on normal shelves and moved the rest to high-density stacked storage.\nI also eliminated separate price-tag attachment work for department-store shipments after arranging for our own JAN code to be accepted at the retailer's register. Finally, I shifted about 60% of family-sale shipments from the center to direct delivery from our stores. These changes reduced storage space from 450 to 360 tsubo, a 20% reduction, and cut annual storage, tagging, and delivery costs by 4.53 million yen. We also saved 280,000 yen a year in hanger materials.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "logistics-cost-reduction-answer-sentence-0-male": {
+      "input": "In May 2021, the COVID-related closure of department stores caused inventory at our logistics center to increase to about 89,000 units, or 123% of the level two years earlier.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "logistics-cost-reduction-answer-sentence-1-male": {
+      "input": "Storage and handling costs were becoming a serious financial issue.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "logistics-cost-reduction-answer-sentence-2-male": {
+      "input": "I worked with the logistics-center team to examine storage conditions and shipping flows in detail.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "logistics-cost-reduction-answer-sentence-3-male": {
+      "input": "First, I found that folded storage was 2. 5 times more space-efficient than hanger storage.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "logistics-cost-reduction-answer-sentence-4-male": {
+      "input": "I reviewed the specifications for all 3,700 applicable units and kept only six styles, or 300 units, on hangers because of wrinkle risk.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "logistics-cost-reduction-answer-sentence-5-male": {
+      "input": "The remaining 3,400 units moved to folded storage.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "logistics-cost-reduction-answer-sentence-6-male": {
+      "input": "For roughly 38,000 slow-moving units, we kept only two or three pieces per SKU on normal shelves and moved the rest to high-density stacked storage.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "logistics-cost-reduction-answer-sentence-7-male": {
+      "input": "I also eliminated separate price-tag attachment work for department-store shipments after arranging for our own JAN code to be accepted at the retailer's register.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "logistics-cost-reduction-answer-sentence-8-male": {
+      "input": "Finally, I shifted about 60% of family-sale shipments from the center to direct delivery from our stores.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "logistics-cost-reduction-answer-sentence-9-male": {
+      "input": "These changes reduced storage space from 450 to 360 tsubo, a 20% reduction, and cut annual storage, tagging, and delivery costs by 4. 53 million yen.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "logistics-cost-reduction-answer-sentence-10-male": {
+      "input": "We also saved 280,000 yen a year in hanger materials.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "logistics-cost-reduction-questionJa-female": {
+      "input": "商品品質とサービスを守りながら、物流コストを削減した経験を教えてください。",
+      "language": "ja",
+      "speaker": "female",
+      "provider": "google",
+      "voice": "marin",
+      "googleVoice": "ja-JP-Chirp3-HD-Achernar"
+    },
+    "logistics-cost-reduction-questionJa-male": {
+      "input": "商品品質とサービスを守りながら、物流コストを削減した経験を教えてください。",
+      "language": "ja",
+      "speaker": "male",
+      "provider": "google",
+      "voice": "cedar",
+      "googleVoice": "ja-JP-Chirp3-HD-Achird"
+    },
+    "logistics-cost-reduction-answerJa-female": {
+      "input": "2021年5月、コロナ禍による百貨店休業の影響で、物流センター在庫は前々年比123%、約89,000点まで増加しました。保管料と作業コストが経営を圧迫していました。\n私は物流センターのチームと保管条件と出荷フローを詳しく見直しました。畳み保管はハンガー保管の2.5倍、効率的にスペースを使えることが分かりました。対象3,700点の仕様書を全点確認し、しわリスクのある6品番300点だけをハンガー保管に残し、残り3,400点を畳み保管に切り替えました。さらに、滞留在庫約38,000点はSKUごとに2〜3点だけ通常棚に残し、残りを高積み保管へ移しました。\n百貨店向けの別付け値札は、自社JANコードを先方レジで使えるように調整した上で廃止しました。加えて、ファミリーセール出荷の約60%をセンター経由から店舗直送へ切り替えました。これにより保管スペースを450坪から360坪へ20%削減し、保管料・値札作業費・配送費を合わせて年間453万円削減しました。ハンガー資材費も年間28万円削減できました。",
+      "language": "ja",
+      "speaker": "female",
+      "provider": "google",
+      "voice": "marin",
+      "googleVoice": "ja-JP-Chirp3-HD-Achernar"
+    },
+    "logistics-cost-reduction-answerJa-male": {
+      "input": "2021年5月、コロナ禍による百貨店休業の影響で、物流センター在庫は前々年比123%、約89,000点まで増加しました。保管料と作業コストが経営を圧迫していました。\n私は物流センターのチームと保管条件と出荷フローを詳しく見直しました。畳み保管はハンガー保管の2.5倍、効率的にスペースを使えることが分かりました。対象3,700点の仕様書を全点確認し、しわリスクのある6品番300点だけをハンガー保管に残し、残り3,400点を畳み保管に切り替えました。さらに、滞留在庫約38,000点はSKUごとに2〜3点だけ通常棚に残し、残りを高積み保管へ移しました。\n百貨店向けの別付け値札は、自社JANコードを先方レジで使えるように調整した上で廃止しました。加えて、ファミリーセール出荷の約60%をセンター経由から店舗直送へ切り替えました。これにより保管スペースを450坪から360坪へ20%削減し、保管料・値札作業費・配送費を合わせて年間453万円削減しました。ハンガー資材費も年間28万円削減できました。",
+      "language": "ja",
+      "speaker": "male",
+      "provider": "google",
+      "voice": "cedar",
+      "googleVoice": "ja-JP-Chirp3-HD-Achird"
+    },
+    "ec-description-automation-question-female": {
+      "input": "Tell me about a time you improved content quality and efficiency at the same time.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-description-automation-question-sentence-0-female": {
+      "input": "Tell me about a time you improved content quality and efficiency at the same time.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-description-automation-question-male": {
+      "input": "Tell me about a time you improved content quality and efficiency at the same time.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-description-automation-question-sentence-0-male": {
+      "input": "Tell me about a time you improved content quality and efficiency at the same time.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-description-automation-answer-female": {
+      "input": "Our designers used to write EC product descriptions shortly before each season. Because the work was separated from the exhibition period, the descriptions often relied on buyer-oriented technical terms and did not always speak to consumers. We needed to create high-quality, consumer-focused descriptions for about 800 styles each season without increasing the designers' workload.\nI restructured the input sheet into fields such as development story, design features, and recommended coordination. I then built an Excel environment where LLM functions could generate descriptions directly, eliminating copy-and-paste work in a chat interface. To maintain each brand's tone, I embedded brand metadata in the prompts. I also used Excel MOD and CHOOSE functions to rotate sentence endings and key phrases so the output would not sound repetitive. Finally, I kept a human review step.\nThe process reduced work from about 200 hours per season to about 40 hours, saving roughly 160 hours, or 80%. We could complete descriptions for about 800 styles in only a few days while improving consistency and consumer relevance.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-description-automation-answer-sentence-0-female": {
+      "input": "Our designers used to write EC product descriptions shortly before each season.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-description-automation-answer-sentence-1-female": {
+      "input": "Because the work was separated from the exhibition period, the descriptions often relied on buyer-oriented technical terms and did not always speak to consumers.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-description-automation-answer-sentence-2-female": {
+      "input": "We needed to create high-quality, consumer-focused descriptions for about 800 styles each season without increasing the designers' workload.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-description-automation-answer-sentence-3-female": {
+      "input": "I restructured the input sheet into fields such as development story, design features, and recommended coordination.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-description-automation-answer-sentence-4-female": {
+      "input": "I then built an Excel environment where LLM functions could generate descriptions directly, eliminating copy-and-paste work in a chat interface.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-description-automation-answer-sentence-5-female": {
+      "input": "To maintain each brand's tone, I embedded brand metadata in the prompts.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-description-automation-answer-sentence-6-female": {
+      "input": "I also used Excel MOD and CHOOSE functions to rotate sentence endings and key phrases so the output would not sound repetitive.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-description-automation-answer-sentence-7-female": {
+      "input": "Finally, I kept a human review step.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-description-automation-answer-sentence-8-female": {
+      "input": "The process reduced work from about 200 hours per season to about 40 hours, saving roughly 160 hours, or 80%.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-description-automation-answer-sentence-9-female": {
+      "input": "We could complete descriptions for about 800 styles in only a few days while improving consistency and consumer relevance.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "ec-description-automation-answer-male": {
+      "input": "Our designers used to write EC product descriptions shortly before each season. Because the work was separated from the exhibition period, the descriptions often relied on buyer-oriented technical terms and did not always speak to consumers. We needed to create high-quality, consumer-focused descriptions for about 800 styles each season without increasing the designers' workload.\nI restructured the input sheet into fields such as development story, design features, and recommended coordination. I then built an Excel environment where LLM functions could generate descriptions directly, eliminating copy-and-paste work in a chat interface. To maintain each brand's tone, I embedded brand metadata in the prompts. I also used Excel MOD and CHOOSE functions to rotate sentence endings and key phrases so the output would not sound repetitive. Finally, I kept a human review step.\nThe process reduced work from about 200 hours per season to about 40 hours, saving roughly 160 hours, or 80%. We could complete descriptions for about 800 styles in only a few days while improving consistency and consumer relevance.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-description-automation-answer-sentence-0-male": {
+      "input": "Our designers used to write EC product descriptions shortly before each season.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-description-automation-answer-sentence-1-male": {
+      "input": "Because the work was separated from the exhibition period, the descriptions often relied on buyer-oriented technical terms and did not always speak to consumers.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-description-automation-answer-sentence-2-male": {
+      "input": "We needed to create high-quality, consumer-focused descriptions for about 800 styles each season without increasing the designers' workload.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-description-automation-answer-sentence-3-male": {
+      "input": "I restructured the input sheet into fields such as development story, design features, and recommended coordination.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-description-automation-answer-sentence-4-male": {
+      "input": "I then built an Excel environment where LLM functions could generate descriptions directly, eliminating copy-and-paste work in a chat interface.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-description-automation-answer-sentence-5-male": {
+      "input": "To maintain each brand's tone, I embedded brand metadata in the prompts.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-description-automation-answer-sentence-6-male": {
+      "input": "I also used Excel MOD and CHOOSE functions to rotate sentence endings and key phrases so the output would not sound repetitive.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-description-automation-answer-sentence-7-male": {
+      "input": "Finally, I kept a human review step.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-description-automation-answer-sentence-8-male": {
+      "input": "The process reduced work from about 200 hours per season to about 40 hours, saving roughly 160 hours, or 80%.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-description-automation-answer-sentence-9-male": {
+      "input": "We could complete descriptions for about 800 styles in only a few days while improving consistency and consumer relevance.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
+    },
+    "ec-description-automation-questionJa-female": {
+      "input": "コンテンツの品質と業務効率を同時に改善した経験を教えてください。",
+      "language": "ja",
+      "speaker": "female",
+      "provider": "google",
+      "voice": "marin",
+      "googleVoice": "ja-JP-Chirp3-HD-Achernar"
+    },
+    "ec-description-automation-questionJa-male": {
+      "input": "コンテンツの品質と業務効率を同時に改善した経験を教えてください。",
+      "language": "ja",
+      "speaker": "male",
+      "provider": "google",
+      "voice": "cedar",
+      "googleVoice": "ja-JP-Chirp3-HD-Achird"
+    },
+    "ec-description-automation-answerJa-female": {
+      "input": "従来はデザイナーがシーズン直前にEC商品説明を作成していましたが、展示会後に業務が分断されるため、文章がバイヤー向けの専門用語中心になり、消費者目線が十分ではないことがありました。デザイナーの負担を増やさずに、約800品番の高品質で消費者向けの商品説明を作る必要がありました。\nそこで、入力シートを開発ストーリー、デザイン特徴、おすすめコーディネートなどの項目に構造化しました。Excel内でLLM関数を直接使える環境を作り、チャット画面へのコピー＆ペースト作業をなくしました。各ブランドのトーンを保つため、プロンプトにブランドのメタデータを埋め込みました。さらにMOD・CHOOSE関数で文末やキーワードを動的に変え、表現が単調にならないようにしました。最後に人の目による確認工程を残しました。\nその結果、1シーズン約200時間かかっていた作業を約40時間へ削減し、約160時間、80%の工数削減を達成しました。約800品番の商品説明を数日で完成させながら、表現の一貫性と消費者への分かりやすさも高めました。",
+      "language": "ja",
+      "speaker": "female",
+      "provider": "google",
+      "voice": "marin",
+      "googleVoice": "ja-JP-Chirp3-HD-Achernar"
+    },
+    "ec-description-automation-answerJa-male": {
+      "input": "従来はデザイナーがシーズン直前にEC商品説明を作成していましたが、展示会後に業務が分断されるため、文章がバイヤー向けの専門用語中心になり、消費者目線が十分ではないことがありました。デザイナーの負担を増やさずに、約800品番の高品質で消費者向けの商品説明を作る必要がありました。\nそこで、入力シートを開発ストーリー、デザイン特徴、おすすめコーディネートなどの項目に構造化しました。Excel内でLLM関数を直接使える環境を作り、チャット画面へのコピー＆ペースト作業をなくしました。各ブランドのトーンを保つため、プロンプトにブランドのメタデータを埋め込みました。さらにMOD・CHOOSE関数で文末やキーワードを動的に変え、表現が単調にならないようにしました。最後に人の目による確認工程を残しました。\nその結果、1シーズン約200時間かかっていた作業を約40時間へ削減し、約160時間、80%の工数削減を達成しました。約800品番の商品説明を数日で完成させながら、表現の一貫性と消費者への分かりやすさも高めました。",
       "language": "ja",
       "speaker": "male",
       "provider": "google",
