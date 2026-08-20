@@ -64,6 +64,11 @@
   const getCard = (id) => getCards().find((card) => card.id === id);
   const getCardContent = (card) => ({ ...card, ...(window.TRANSLATIONS?.[card.id] || {}) });
   const escapeHtml = (value = "") => String(value).replace(/[&<>'"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" }[char]));
+  const keyPhraseTerms = ["Google Workspace Marketplace", "Google Apps Script", "Power Query", "As a result", "I took responsibility", "I was responsible for", "The experience taught me", "The key lesson was", "I changed the plan", "I worked with", "I decided that", "I identified", "I concluded", "I created", "I developed", "I designed", "I implemented", "I organized", "I negotiated", "I automated", "I eliminated", "I reduced", "I reviewed", "I completed", "I decided", "I found that", "My task was", "The challenge was", "SharePoint", "Azure", "Python", "RPA", "VBA", "LLM", "AI"].sort((a, b) => b.length - a.length);
+  const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const keyPhrasePattern = new RegExp(`(${keyPhraseTerms.map(escapeRegExp).join("|")}|\\b\\d+(?:,\\d{3})*(?:\\.\\d+)?(?:%| million yen| yen| styles| units| stores| hours| days| weeks| months| years| points| tsubo)\\b)`, "gi");
+  const highlightEnglish = (value = "") => escapeHtml(value).replace(keyPhrasePattern, '<strong class="key-phrase">$1</strong>');
+  const keyPhraseLegendMarkup = '<p class="key-phrase-legend"><span>●</span> 赤太字は、面接で組み立ての軸にする重要フレーズです。</p>';
   const showToast = (message) => {
     toast.textContent = message;
     toast.classList.add("show");
@@ -641,7 +646,7 @@
     const isDefault = window.DEFAULT_CARDS.some((item) => item.id === card.id);
     const questionAudioKey = isDefault ? `${card.id}-question` : "";
     const answerAudioKey = isDefault ? `${card.id}-answer` : "";
-    document.getElementById("practice-card").innerHTML = `<div class="question-label">${escapeHtml(card.category)} · ${escapeHtml(card.lp || "PRACTICE")}</div><h3 class="practice-question">${escapeHtml(card.question)}</h3>${speechBlockMarkup("practice-question", "質問を英語で聞く", card.questionJa, questionAudioKey)}${card.answer ? `<div class="answer-box"><h3>YOUR KEY POINTS</h3><p>${escapeHtml(card.answer)}</p>${speechBlockMarkup("practice-answer", "模範回答を英語で聞く", card.answerJa, answerAudioKey)}</div>` : `<div class="answer-box"><h3>STARで話すメモ</h3>${starMarkup(card) || "<p>回答を自分の言葉で話してみましょう。</p>"}</div>`}`;
+    document.getElementById("practice-card").innerHTML = `<div class="question-label">${escapeHtml(card.category)} · ${escapeHtml(card.lp || "PRACTICE")}</div><h3 class="practice-question">${escapeHtml(card.question)}</h3>${speechBlockMarkup("practice-question", "質問を英語で聞く", card.questionJa, questionAudioKey)}${card.answer ? `<div class="answer-box"><h3>YOUR KEY POINTS</h3>${keyPhraseLegendMarkup}<p>${highlightEnglish(card.answer)}</p>${speechBlockMarkup("practice-answer", "模範回答を英語で聞く", card.answerJa, answerAudioKey)}</div>` : `<div class="answer-box"><h3>STARで話すメモ</h3>${starMarkup(card) || "<p>回答を自分の言葉で話してみましょう。</p>"}</div>`}`;
     const practiceCard = document.getElementById("practice-card");
     bindSpeechBlock(practiceCard.querySelector('[data-speech-block="practice-question"]'), card.question, questionAudioKey);
     bindSpeechBlock(practiceCard.querySelector('[data-speech-block="practice-answer"]'), card.answer, answerAudioKey);
@@ -674,7 +679,7 @@
     const isDefault = window.DEFAULT_CARDS.some((item) => item.id === card.id);
     const questionAudioKey = isDefault ? `${card.id}-question` : "";
     const answerAudioKey = isDefault ? `${card.id}-answer` : "";
-    document.getElementById("detail-card").innerHTML = `<div class="card-meta"><span class="tag">${escapeHtml(card.category)}</span><span class="tag lp">${escapeHtml(card.lp || "Personal")}</span></div><h3>${escapeHtml(card.title)}</h3><div class="detail-section"><div class="section-label">QUESTION</div><p class="practice-question" style="font-size:19px;margin:0;color:var(--ink)">${escapeHtml(card.question)}</p>${speechBlockMarkup("detail-question", "質問を英語で聞く", card.questionJa, questionAudioKey)}</div>${card.answer ? `<div class="detail-section"><div class="section-label">ENGLISH ANSWER</div><p>${escapeHtml(card.answer)}</p>${speechBlockMarkup("detail-answer", "模範回答を英語で聞く", card.answerJa, answerAudioKey)}</div>` : ""}${starMarkup(card) ? `<div class="detail-section"><div class="section-label">STAR NOTES</div>${starMarkup(card)}</div>` : ""}${card.followUps?.length ? `<div class="detail-section"><div class="section-label">FOLLOW-UP QUESTIONS</div><ul class="followup-list">${card.followUps.map((question) => `<li>${escapeHtml(question)}</li>`).join("")}</ul></div>` : ""}<button class="primary-button" id="detail-record-button"><span class="button-icon">●</span>このカードで録音する</button>`;
+    document.getElementById("detail-card").innerHTML = `<div class="card-meta"><span class="tag">${escapeHtml(card.category)}</span><span class="tag lp">${escapeHtml(card.lp || "Personal")}</span></div><h3>${escapeHtml(card.title)}</h3><div class="detail-section"><div class="section-label">QUESTION</div><p class="practice-question" style="font-size:19px;margin:0;color:var(--ink)">${escapeHtml(card.question)}</p>${speechBlockMarkup("detail-question", "質問を英語で聞く", card.questionJa, questionAudioKey)}</div>${card.answer ? `<div class="detail-section"><div class="section-label">ENGLISH ANSWER</div>${keyPhraseLegendMarkup}<p>${highlightEnglish(card.answer)}</p>${speechBlockMarkup("detail-answer", "模範回答を英語で聞く", card.answerJa, answerAudioKey)}</div>` : ""}${starMarkup(card) ? `<div class="detail-section"><div class="section-label">STAR NOTES</div>${starMarkup(card)}</div>` : ""}${card.followUps?.length ? `<div class="detail-section"><div class="section-label">FOLLOW-UP QUESTIONS</div><ul class="followup-list">${card.followUps.map((question) => `<li>${escapeHtml(question)}</li>`).join("")}</ul></div>` : ""}<button class="primary-button" id="detail-record-button"><span class="button-icon">●</span>このカードで録音する</button>`;
     const detailCard = document.getElementById("detail-card");
     bindSpeechBlock(detailCard.querySelector('[data-speech-block="detail-question"]'), card.question, questionAudioKey);
     bindSpeechBlock(detailCard.querySelector('[data-speech-block="detail-answer"]'), card.answer, answerAudioKey);
@@ -843,7 +848,7 @@
   window.addEventListener("beforeinstallprompt", (event) => { event.preventDefault(); installPrompt = event; document.getElementById("install-button").hidden = false; });
   document.getElementById("install-button").addEventListener("click", async () => { if (!installPrompt) return; installPrompt.prompt(); await installPrompt.userChoice; installPrompt = null; document.getElementById("install-button").hidden = true; });
   applyFontSize(readFontSize());
-  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=static8").catch(() => {});
+  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=static9").catch(() => {});
   if ("speechSynthesis" in window) { window.speechSynthesis.addEventListener("voiceschanged", refreshVoiceOptions); refreshVoiceOptions(); }
   renderStats();
   renderLibrary();
