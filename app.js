@@ -64,9 +64,10 @@
   const getCard = (id) => getCards().find((card) => card.id === id);
   const getCardContent = (card) => ({ ...card, ...(window.TRANSLATIONS?.[card.id] || {}) });
   const escapeHtml = (value = "") => String(value).replace(/[&<>'"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" }[char]));
-  const keyPhraseTerms = ["Google Workspace Marketplace", "Google Apps Script", "Power Query", "As a result", "I took responsibility", "I was responsible for", "The experience taught me", "The key lesson was", "I changed the plan", "I worked with", "I decided that", "I identified", "I concluded", "I created", "I developed", "I designed", "I implemented", "I organized", "I negotiated", "I automated", "I eliminated", "I reduced", "I reviewed", "I completed", "I decided", "I found that", "My task was", "The challenge was", "SharePoint", "Azure", "Python", "RPA", "VBA", "LLM", "AI"].sort((a, b) => b.length - a.length);
+  const keyPhraseTerms = ["Google Workspace Marketplace", "Google Apps Script", "Power Query", "As a result", "I took responsibility", "I was responsible for", "The experience taught me", "The key lesson was", "I changed the plan", "I worked with", "I decided that", "I identified", "I concluded", "I created", "I developed", "I designed", "I implemented", "I organized", "I negotiated", "I automated", "I eliminated", "I reduced", "I reviewed", "I completed", "I decided", "I found that", "My task was", "The challenge was"].sort((a, b) => b.length - a.length);
+  const keyTechTerms = ["SharePoint", "Azure", "Python", "RPA", "VBA", "LLM", "AI"];
   const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const keyPhrasePattern = new RegExp(`(${keyPhraseTerms.map(escapeRegExp).join("|")}|\\b\\d+(?:,\\d{3})*(?:\\.\\d+)?(?:%| million yen| yen| styles| units| stores| hours| days| weeks| months| years| points| tsubo)\\b)`, "gi");
+  const keyPhrasePattern = new RegExp(`(${keyPhraseTerms.map(escapeRegExp).join("|")}|\\b(?:${keyTechTerms.map(escapeRegExp).join("|")})\\b|\\b\\d+(?:,\\d{3})*(?:\\.\\d+)?(?:%| million yen| yen| styles| units| stores| hours| days| weeks| months| years| points| tsubo)\\b)`, "gi");
   const highlightEnglish = (value = "") => escapeHtml(value).replace(keyPhrasePattern, '<strong class="key-phrase">$1</strong>');
   const keyPhraseLegendMarkup = '<p class="key-phrase-legend"><span>●</span> 赤太字は、面接で組み立ての軸にする重要フレーズです。</p>';
   const showToast = (message) => {
@@ -848,7 +849,7 @@
   window.addEventListener("beforeinstallprompt", (event) => { event.preventDefault(); installPrompt = event; document.getElementById("install-button").hidden = false; });
   document.getElementById("install-button").addEventListener("click", async () => { if (!installPrompt) return; installPrompt.prompt(); await installPrompt.userChoice; installPrompt = null; document.getElementById("install-button").hidden = true; });
   applyFontSize(readFontSize());
-  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=static9").catch(() => {});
+  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=static10").catch(() => {});
   if ("speechSynthesis" in window) { window.speechSynthesis.addEventListener("voiceschanged", refreshVoiceOptions); refreshVoiceOptions(); }
   renderStats();
   renderLibrary();
