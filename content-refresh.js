@@ -12,12 +12,10 @@
       result: "信頼性を支える基盤で経験を生かし、グローバルな高基準の環境でさらに成長しながらお客様へ確実な成果を届けたいという志望動機です。",
       answer: `In July 2026, I attended a job fair in Osaka. At first, I was interested in learning how Amazon operates large-scale logistics facilities. At the fair, I also learned about an opportunity in data centers. I knew AWS, but I had imagined data centers as highly automated facilities where systems simply run around the clock.
 After speaking with a representative, I learned that reliable operations are also sustained by people who solve customer issues and carry out disciplined daily maintenance. That changed my view. I immediately felt that my experience in frontline operations, logistics, and turning improvements into practical systems could be valuable there.
-I am especially drawn to data center logistics because it supports the foundation that enables millions of customers to use services reliably. Throughout my career, I have worked in warehouse operations, inventory optimization, international logistics, and process automation. I would like to apply and further develop the experience, knowledge, and hands-on problem-solving ability I have built in a global operation with high standards.
 By contributing to AWS, I want to keep challenging myself at a new level while delivering reliable results for customers.`,
-      keyPhrases: ["reliable operations are also sustained by people who solve customer issues and carry out disciplined daily maintenance", "turning improvements into practical systems", "supports the foundation that enables millions of customers to use services reliably", "hands-on problem-solving ability", "keep challenging myself at a new level while delivering reliable results for customers"],
+      keyPhrases: ["reliable operations are also sustained by people who solve customer issues and carry out disciplined daily maintenance", "turning improvements into practical systems", "keep challenging myself at a new level while delivering reliable results for customers"],
       answerJa: `2026年7月に大阪の合同企業説明会へ参加しました。最初はAmazonの大規模な物流施設がどのように運営されているのかに関心があり、話を聞いてみたいと考えていました。その場でデータセンターの募集があることも知りました。AWSは知っていましたが、データセンターは高度に自動化され、24時間システムが稼働する無人に近い施設というイメージを持っていました。
 担当者から、実際には人が顧客課題の解決や確実な日常メンテナンスを担い、信頼性の高い運営を支えていると伺いました。その話を聞き、これまでの現場運営の経験や、改善を実行に移す力を生かせるのではないかと強く感じ、挑戦したいと思いました。
-特にデータセンター・ロジスティクスは、多くのお客様がサービスを安定して利用できる基盤を直接支える仕事だと考えています。私はこれまで、倉庫運営、在庫最適化、国際物流、業務自動化に取り組んできました。培ってきた経験・知識・現場での問題解決力を、グローバルで高い基準が求められるオペレーションの中で発揮し、さらに高めたいと考えています。
 AWSに貢献しながら自らも新たな高みへ挑戦し、お客様に確実な成果を届け続けたいです。`
     },
     "cost-rpa": {
