@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-21T21:47:25.834Z",
+  "generatedAt": "2026-08-21T23:47:57.417Z",
   "entries": {
     "intro-question-female": {
       "input": "Tell me about yourself and your professional background.",
@@ -160,126 +160,126 @@
       "provider": "openai",
       "voice": "cedar"
     },
-    "why-aws-answer-v14-female": {
+    "why-aws-answer-v13-female": {
       "input": "In July 2026, I attended a job fair in Osaka. At first, I was interested in learning how Amazon operates large-scale logistics facilities. At the fair, I also learned about an opportunity in data centers. I knew AWS, but I had imagined data centers as highly automated facilities where systems simply run around the clock.\nAfter speaking with a representative, I learned that reliable operations are also sustained by people who solve customer issues and carry out disciplined daily maintenance. That changed my view. I immediately felt that my experience in frontline operations, logistics, and turning improvements into practical systems could be valuable there.\nBy contributing to AWS, I want to keep challenging myself at a new level while delivering reliable results for customers.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
       "voice": "marin"
     },
-    "why-aws-answer-sentence-0-v14-female": {
+    "why-aws-answer-sentence-0-v13-female": {
       "input": "In July 2026, I attended a job fair in Osaka.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
       "voice": "marin"
     },
-    "why-aws-answer-sentence-1-v14-female": {
+    "why-aws-answer-sentence-1-v13-female": {
       "input": "At first, I was interested in learning how Amazon operates large-scale logistics facilities.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
       "voice": "marin"
     },
-    "why-aws-answer-sentence-2-v14-female": {
+    "why-aws-answer-sentence-2-v13-female": {
       "input": "At the fair, I also learned about an opportunity in data centers.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
       "voice": "marin"
     },
-    "why-aws-answer-sentence-3-v14-female": {
+    "why-aws-answer-sentence-3-v13-female": {
       "input": "I knew AWS, but I had imagined data centers as highly automated facilities where systems simply run around the clock.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
       "voice": "marin"
     },
-    "why-aws-answer-sentence-4-v14-female": {
+    "why-aws-answer-sentence-4-v13-female": {
       "input": "After speaking with a representative, I learned that reliable operations are also sustained by people who solve customer issues and carry out disciplined daily maintenance.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
       "voice": "marin"
     },
-    "why-aws-answer-sentence-5-v14-female": {
+    "why-aws-answer-sentence-5-v13-female": {
       "input": "That changed my view.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
       "voice": "marin"
     },
-    "why-aws-answer-sentence-6-v14-female": {
+    "why-aws-answer-sentence-6-v13-female": {
       "input": "I immediately felt that my experience in frontline operations, logistics, and turning improvements into practical systems could be valuable there.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
       "voice": "marin"
     },
-    "why-aws-answer-sentence-7-v14-female": {
+    "why-aws-answer-sentence-7-v13-female": {
       "input": "By contributing to AWS, I want to keep challenging myself at a new level while delivering reliable results for customers.",
       "language": "en",
       "speaker": "female",
       "provider": "openai",
       "voice": "marin"
     },
-    "why-aws-answer-v14-male": {
+    "why-aws-answer-v13-male": {
       "input": "In July 2026, I attended a job fair in Osaka. At first, I was interested in learning how Amazon operates large-scale logistics facilities. At the fair, I also learned about an opportunity in data centers. I knew AWS, but I had imagined data centers as highly automated facilities where systems simply run around the clock.\nAfter speaking with a representative, I learned that reliable operations are also sustained by people who solve customer issues and carry out disciplined daily maintenance. That changed my view. I immediately felt that my experience in frontline operations, logistics, and turning improvements into practical systems could be valuable there.\nBy contributing to AWS, I want to keep challenging myself at a new level while delivering reliable results for customers.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
       "voice": "cedar"
     },
-    "why-aws-answer-sentence-0-v14-male": {
+    "why-aws-answer-sentence-0-v13-male": {
       "input": "In July 2026, I attended a job fair in Osaka.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
       "voice": "cedar"
     },
-    "why-aws-answer-sentence-1-v14-male": {
+    "why-aws-answer-sentence-1-v13-male": {
       "input": "At first, I was interested in learning how Amazon operates large-scale logistics facilities.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
       "voice": "cedar"
     },
-    "why-aws-answer-sentence-2-v14-male": {
+    "why-aws-answer-sentence-2-v13-male": {
       "input": "At the fair, I also learned about an opportunity in data centers.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
       "voice": "cedar"
     },
-    "why-aws-answer-sentence-3-v14-male": {
+    "why-aws-answer-sentence-3-v13-male": {
       "input": "I knew AWS, but I had imagined data centers as highly automated facilities where systems simply run around the clock.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
       "voice": "cedar"
     },
-    "why-aws-answer-sentence-4-v14-male": {
+    "why-aws-answer-sentence-4-v13-male": {
       "input": "After speaking with a representative, I learned that reliable operations are also sustained by people who solve customer issues and carry out disciplined daily maintenance.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
       "voice": "cedar"
     },
-    "why-aws-answer-sentence-5-v14-male": {
+    "why-aws-answer-sentence-5-v13-male": {
       "input": "That changed my view.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
       "voice": "cedar"
     },
-    "why-aws-answer-sentence-6-v14-male": {
+    "why-aws-answer-sentence-6-v13-male": {
       "input": "I immediately felt that my experience in frontline operations, logistics, and turning improvements into practical systems could be valuable there.",
       "language": "en",
       "speaker": "male",
       "provider": "openai",
       "voice": "cedar"
     },
-    "why-aws-answer-sentence-7-v14-male": {
+    "why-aws-answer-sentence-7-v13-male": {
       "input": "By contributing to AWS, I want to keep challenging myself at a new level while delivering reliable results for customers.",
       "language": "en",
       "speaker": "male",
@@ -302,7 +302,7 @@
       "voice": "cedar",
       "googleVoice": "ja-JP-Chirp3-HD-Achird"
     },
-    "why-aws-answerJa-v14-female": {
+    "why-aws-answerJa-v13-female": {
       "input": "2026年7月に大阪の合同企業説明会へ参加しました。最初はAmazonの大規模な物流施設がどのように運営されているのかに関心があり、話を聞いてみたいと考えていました。その場でデータセンターの募集があることも知りました。AWSは知っていましたが、データセンターは高度に自動化され、24時間システムが稼働する無人に近い施設というイメージを持っていました。\n担当者から、実際には人が顧客課題の解決や確実な日常メンテナンスを担い、信頼性の高い運営を支えていると伺いました。その話を聞き、これまでの現場運営の経験や、改善を実行に移す力を生かせるのではないかと強く感じ、挑戦したいと思いました。\nAWSに貢献しながら自らも新たな高みへ挑戦し、お客様に確実な成果を届け続けたいです。",
       "language": "ja",
       "speaker": "female",
@@ -310,7 +310,7 @@
       "voice": "marin",
       "googleVoice": "ja-JP-Chirp3-HD-Achernar"
     },
-    "why-aws-answerJa-v14-male": {
+    "why-aws-answerJa-v13-male": {
       "input": "2026年7月に大阪の合同企業説明会へ参加しました。最初はAmazonの大規模な物流施設がどのように運営されているのかに関心があり、話を聞いてみたいと考えていました。その場でデータセンターの募集があることも知りました。AWSは知っていましたが、データセンターは高度に自動化され、24時間システムが稼働する無人に近い施設というイメージを持っていました。\n担当者から、実際には人が顧客課題の解決や確実な日常メンテナンスを担い、信頼性の高い運営を支えていると伺いました。その話を聞き、これまでの現場運営の経験や、改善を実行に移す力を生かせるのではないかと強く感じ、挑戦したいと思いました。\nAWSに貢献しながら自らも新たな高みへ挑戦し、お客様に確実な成果を届け続けたいです。",
       "language": "ja",
       "speaker": "male",
