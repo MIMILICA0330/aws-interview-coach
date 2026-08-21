@@ -464,11 +464,11 @@
     return voice === "marin" ? "female" : "male";
   }
 
+  const REFRESHED_ANSWER_AUDIO_VERSIONS = { "why-aws": "v14", "cost-rpa": "v13", "ec-master": "v13", "jl-license": "v13", "jl-direct-import": "v13", "logistics-cost-reduction": "v13", "outlet-growth": "v13", "staff-voice": "v13", "grip-file-transfer": "v13", "ec-image-automation": "v13", "chain-order-list": "v13", "ec-description-automation": "v13" };
   function staticAudioUrl(audioKey, language) {
     if (!audioKey || !cloudTtsEndpoint()) return "";
-    const refreshedAnswerIds = new Set(["why-aws", "cost-rpa", "ec-master", "jl-license", "jl-direct-import", "logistics-cost-reduction", "outlet-growth", "staff-voice", "grip-file-transfer", "ec-image-automation", "chain-order-list", "ec-description-automation"]);
-    const isRefreshedAnswer = [...refreshedAnswerIds].some((id) => audioKey === `${id}-answer` || audioKey === `${id}-answerJa` || audioKey.startsWith(`${id}-answer-sentence-`));
-    const versionedKey = isRefreshedAnswer ? `${audioKey}-v13` : audioKey;
+    const matchedId = Object.keys(REFRESHED_ANSWER_AUDIO_VERSIONS).find((id) => audioKey === `${id}-answer` || audioKey === `${id}-answerJa` || audioKey.startsWith(`${id}-answer-sentence-`));
+    const versionedKey = matchedId ? `${audioKey}-${REFRESHED_ANSWER_AUDIO_VERSIONS[matchedId]}` : audioKey;
     return `${cloudTtsEndpoint()}/audio/${encodeURIComponent(`${versionedKey}-${staticSpeaker(language)}`)}`;
   }
 
