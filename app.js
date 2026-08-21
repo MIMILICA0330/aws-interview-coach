@@ -462,7 +462,10 @@
 
   function staticAudioUrl(audioKey, language) {
     if (!audioKey || !cloudTtsEndpoint()) return "";
-    return `${cloudTtsEndpoint()}/audio/${encodeURIComponent(`${audioKey}-${staticSpeaker(language)}`)}`;
+    const refreshedAnswerIds = new Set(["why-aws", "cost-rpa", "ec-master", "jl-license", "jl-direct-import", "logistics-cost-reduction", "outlet-growth", "staff-voice", "grip-file-transfer", "ec-image-automation", "chain-order-list", "ec-description-automation"]);
+    const isRefreshedAnswer = [...refreshedAnswerIds].some((id) => audioKey === `${id}-answer` || audioKey === `${id}-answerJa` || audioKey.startsWith(`${id}-answer-sentence-`));
+    const versionedKey = isRefreshedAnswer ? `${audioKey}-v13` : audioKey;
+    return `${cloudTtsEndpoint()}/audio/${encodeURIComponent(`${versionedKey}-${staticSpeaker(language)}`)}`;
   }
 
   function staticAudioDownloadUrls() {
@@ -854,7 +857,7 @@
   window.addEventListener("beforeinstallprompt", (event) => { event.preventDefault(); installPrompt = event; document.getElementById("install-button").hidden = false; });
   document.getElementById("install-button").addEventListener("click", async () => { if (!installPrompt) return; installPrompt.prompt(); await installPrompt.userChoice; installPrompt = null; document.getElementById("install-button").hidden = true; });
   applyFontSize(readFontSize());
-  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=static12").catch(() => {});
+  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js?v=static13").catch(() => {});
   if ("speechSynthesis" in window) { window.speechSynthesis.addEventListener("voiceschanged", refreshVoiceOptions); refreshVoiceOptions(); }
   renderStats();
   renderLibrary();
