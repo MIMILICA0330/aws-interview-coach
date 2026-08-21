@@ -1,32 +1,26 @@
 /* 公開ページへの簡易な合言葉ゲート。静的サイトのため、本格的な認証ではありません。 */
 (() => {
   const accessKey = "interview-coach-access-v1";
-  const accessCodeHash = "2d9d2cfd3e9cc2f12f1a881d810e745a3655fda825b9cef1b77c21bcdccadbf5";
-
-  async function hash(value) {
-    const bytes = new TextEncoder().encode(value);
-    const digest = await crypto.subtle.digest("SHA-256", bytes);
-    return Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, "0")).join("");
-  }
+  // iPhoneのPWAでも確実に動作するよう、複雑な暗号化処理は使いません。
+  // この画面は本格認証ではなく、誤って開かないための簡易ゲートです。
+  const accessCode = "practice-2026";
 
   function unlock() {
     document.body.classList.remove("access-pending");
     document.getElementById("access-gate")?.setAttribute("hidden", "");
   }
 
-  if (sessionStorage.getItem(accessKey) === "granted") {
-    unlock();
-    return;
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
+  function bindAccessForm() {
+    if (sessionStorage.getItem(accessKey) === "granted") {
+      unlock();
+      return;
+    }
     const form = document.getElementById("access-form");
     const input = document.getElementById("access-code");
     const error = document.getElementById("access-error");
     form?.addEventListener("submit", async (event) => {
       event.preventDefault();
-      const submittedHash = await hash(input.value);
-      if (submittedHash !== accessCodeHash) {
+      if (input.value !== accessCode) {
         error.hidden = false;
         input.select();
         return;
@@ -35,5 +29,8 @@
       unlock();
     });
     input?.focus();
-  });
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", bindAccessForm, { once: true });
+  else bindAccessForm();
 })();
