@@ -522,28 +522,25 @@
     }
   }
 
-  function playStaticAudio(url, run, preservePitch = false) {
+  // Plays one URL on a given <audio> element. Reusing the same element across a
+  // sequence (rather than a fresh `new Audio()` per clip) matters on iPhone: once an
+  // element has started playing inside the user's tap, iOS lets it keep playing new
+  // sources from later timer callbacks, but a brand-new element played from a timer
+  // (no direct tap in its call stack) gets silently blocked.
+  function playOnAudioElement(audio, url, run, preservePitch) {
     return new Promise((resolve, reject) => {
-      const audio = new Audio();
       let settled = false;
       let endWatchdog = null;
       const cleanup = (error = null) => {
         if (settled) return;
         settled = true;
         if (endWatchdog) window.clearTimeout(endWatchdog);
-        if (activeCloudAudio === audio) activeCloudAudio = null;
-        if (activeCloudAudioStop === stop) activeCloudAudioStop = null;
+        audio.onended = null;
+        audio.onerror = null;
+        audio.onplaying = null;
+        audio.onloadedmetadata = null;
         if (error) reject(error); else resolve();
       };
-      const stop = () => {
-        audio.pause();
-        audio.removeAttribute("src");
-        audio.load();
-        cleanup();
-      };
-      activeCloudAudio = audio;
-      activeCloudAudioStop = stop;
-      audio.preload = "auto";
       const selectedRate = speechSettings.rate;
       audio.defaultPlaybackRate = selectedRate;
       audio.playbackRate = selectedRate;
@@ -560,9 +557,30 @@
         endWatchdog = window.setTimeout(() => cleanup(new Error("Audio playback timed out")), Math.max(15_000, Math.min(360_000, duration + 12_000)));
       };
       audio.src = url;
-      if (run !== speechRun) return stop();
+      if (run !== speechRun) return cleanup(new Error("Cancelled"));
       // Calling play directly inside the user's tap is important on iPhone.
       audio.play().catch((error) => cleanup(error));
+    });
+  }
+
+  function playStaticAudio(url, run, preservePitch = false) {
+    const audio = new Audio();
+    audio.preload = "auto";
+    const stop = () => {
+      audio.pause();
+      audio.removeAttribute("src");
+      audio.load();
+    };
+    activeCloudAudio = audio;
+    activeCloudAudioStop = () => {
+      stop();
+      if (activeCloudAudio === audio) activeCloudAudio = null;
+      activeCloudAudioStop = null;
+    };
+    if (run !== speechRun) { stop(); return Promise.resolve(); }
+    return playOnAudioElement(audio, url, run, preservePitch).finally(() => {
+      if (activeCloudAudio === audio) activeCloudAudio = null;
+      if (activeCloudAudioStop) activeCloudAudioStop = null;
     });
   }
 
@@ -577,11 +595,29 @@
   }
 
   async function playStaticAudioSequence(urls, run) {
-    for (let index = 0; index < urls.length; index += 1) {
-      if (run !== speechRun) return;
-      await playStaticAudio(urls[index], run, true);
-      if (run !== speechRun || index === urls.length - 1) return;
-      await waitForSentencePause(run, 5000);
+    const audio = new Audio();
+    audio.preload = "auto";
+    const stop = () => {
+      audio.pause();
+      audio.removeAttribute("src");
+      audio.load();
+    };
+    activeCloudAudio = audio;
+    activeCloudAudioStop = () => {
+      stop();
+      activeCloudAudio = null;
+      activeCloudAudioStop = null;
+    };
+    try {
+      for (let index = 0; index < urls.length; index += 1) {
+        if (run !== speechRun) return;
+        await playOnAudioElement(audio, urls[index], run, true);
+        if (run !== speechRun || index === urls.length - 1) return;
+        await waitForSentencePause(run, 5000);
+      }
+    } finally {
+      if (activeCloudAudio === audio) activeCloudAudio = null;
+      if (activeCloudAudioStop) activeCloudAudioStop = null;
     }
   }
 
@@ -592,7 +628,7 @@
       const sentenceUrls = splitSpeechChunks(text, "english").map((_, index) => staticAudioUrl(`${audioKey}-sentence-${index}`, "english"));
       await playStaticAudioSequence(sentenceUrls, run);
     } else {
-      await playStaticAudio(url, run, language === "english");
+      await playStaticAudio(url, run, true);
     }
     finishSpeech(run, block);
   }
