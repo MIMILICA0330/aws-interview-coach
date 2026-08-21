@@ -11,7 +11,21 @@
     <link rel="stylesheet" href="fixes.css" />
     <title>Logistics Interview Coach</title>
   </head>
-  <body>
+  <body class="access-pending">
+    <div class="access-gate" id="access-gate">
+      <div class="access-card">
+        <div class="access-mark" aria-hidden="true">IC</div>
+        <h1>合言葉を入力</h1>
+        <p>このページは限定公開です。合言葉をお持ちの方のみご利用いただけます。</p>
+        <form id="access-form">
+          <label>合言葉
+            <input id="access-code" type="password" autocomplete="off" required />
+          </label>
+          <p class="access-error" id="access-error" hidden>合言葉が違います。もう一度お試しください。</p>
+          <button class="primary-button" type="submit">開く</button>
+        </form>
+      </div>
+    </div>
     <header class="app-header">
       <div class="brand-mark" aria-hidden="true">IC</div>
       <div><p class="eyebrow">LOGISTICS INTERVIEW COACH</p><h1>Logistics Interview Coach</h1></div>
@@ -42,6 +56,7 @@
     <nav class="bottom-nav" aria-label="メインナビゲーション"><button class="nav-item active" data-go="home-screen"><span>⌂</span><small>ホーム</small></button><button class="nav-item" data-go="library-screen"><span>▤</span><small>カード</small></button><button class="nav-item" data-go="settings-screen"><span>⚙</span><small>設定</small></button></nav>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <div class="modal-backdrop" id="recording-modal" hidden><div class="recording-modal" role="dialog" aria-modal="true" aria-labelledby="recording-title"><div class="recording-pulse"><span></span></div><p class="eyebrow">YOUR ANSWER</p><h2 id="recording-title">話してみましょう</h2><p id="recording-status">録音準備中...</p><div class="timer" id="recording-timer">00:00</div><div class="recording-actions"><button class="secondary-button" id="cancel-recording">キャンセル</button><button class="primary-button" id="stop-recording">録音を終了</button></div></div></div>
+    <script src="access.js?v=static16"></script>
     <script src="content.js?v=static16"></script><script src="translations.js?v=static16"></script><script src="content-expanded.js?v=static16"></script><script src="content-refresh.js?v=static16"></script><script src="tts-config.js?v=static16"></script><script src="app.js?v=static16"></script>
   </body>
 </html>
