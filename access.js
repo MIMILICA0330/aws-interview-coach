@@ -11,7 +11,9 @@
   }
 
   function bindAccessForm() {
-    if (sessionStorage.getItem(accessKey) === "granted") {
+    const accessFromLink = new URLSearchParams(location.search).get("access");
+    if (sessionStorage.getItem(accessKey) === "granted" || accessFromLink === accessCode) {
+      sessionStorage.setItem(accessKey, "granted");
       unlock();
       return;
     }
