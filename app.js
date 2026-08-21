@@ -73,7 +73,11 @@
   const lpKeywordTerms = ["repeatable", "reusable", "automated", "scalable", "stakeholders", "accuracy", "quality", "safety", "ownership"];
   const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const keyPhrasePattern = new RegExp(`(${[...keyPhraseTerms, ...lpPhraseTerms].sort((a, b) => b.length - a.length).map(escapeRegExp).join("|")}|\\b(?:${lpKeywordTerms.map(escapeRegExp).join("|")})\\b)`, "gi");
-  const highlightEnglish = (value = "") => escapeHtml(value).replace(keyPhrasePattern, '<strong class="key-phrase">$1</strong>');
+  const buildCardKeyPhrasePattern = (phrases) => new RegExp(`(${[...phrases].sort((a, b) => b.length - a.length).map(escapeRegExp).join("|")})`, "gi");
+  const highlightEnglish = (value = "", cardPhrases) => {
+    const pattern = cardPhrases?.length ? buildCardKeyPhrasePattern(cardPhrases) : keyPhrasePattern;
+    return escapeHtml(value).replace(pattern, '<strong class="key-phrase">$1</strong>');
+  };
   const keyPhraseLegendMarkup = '<p class="key-phrase-legend"><span>●</span> 赤太字は、英語で覚えたい表現とLPにつながる表現です。</p>';
   const showToast = (message) => {
     toast.textContent = message;
@@ -655,7 +659,7 @@
     const isDefault = window.DEFAULT_CARDS.some((item) => item.id === card.id);
     const questionAudioKey = isDefault ? `${card.id}-question` : "";
     const answerAudioKey = isDefault ? `${card.id}-answer` : "";
-    document.getElementById("practice-card").innerHTML = `<div class="question-label">${escapeHtml(card.category)} · ${escapeHtml(card.lp || "PRACTICE")}</div><h3 class="practice-question">${escapeHtml(card.question)}</h3>${speechBlockMarkup("practice-question", "質問を英語で聞く", card.questionJa, questionAudioKey)}${card.answer ? `<div class="answer-box"><h3>YOUR KEY POINTS</h3>${keyPhraseLegendMarkup}<p>${highlightEnglish(card.answer)}</p>${speechBlockMarkup("practice-answer", "模範回答を英語で聞く", card.answerJa, answerAudioKey)}</div>` : `<div class="answer-box"><h3>STARで話すメモ</h3>${starMarkup(card) || "<p>回答を自分の言葉で話してみましょう。</p>"}</div>`}`;
+    document.getElementById("practice-card").innerHTML = `<div class="question-label">${escapeHtml(card.category)} · ${escapeHtml(card.lp || "PRACTICE")}</div><h3 class="practice-question">${escapeHtml(card.question)}</h3>${speechBlockMarkup("practice-question", "質問を英語で聞く", card.questionJa, questionAudioKey)}${card.answer ? `<div class="answer-box"><h3>YOUR KEY POINTS</h3>${keyPhraseLegendMarkup}<p>${highlightEnglish(card.answer, card.keyPhrases)}</p>${speechBlockMarkup("practice-answer", "模範回答を英語で聞く", card.answerJa, answerAudioKey)}</div>` : `<div class="answer-box"><h3>STARで話すメモ</h3>${starMarkup(card) || "<p>回答を自分の言葉で話してみましょう。</p>"}</div>`}`;
     const practiceCard = document.getElementById("practice-card");
     bindSpeechBlock(practiceCard.querySelector('[data-speech-block="practice-question"]'), card.question, questionAudioKey);
     bindSpeechBlock(practiceCard.querySelector('[data-speech-block="practice-answer"]'), card.answer, answerAudioKey);
@@ -688,7 +692,7 @@
     const isDefault = window.DEFAULT_CARDS.some((item) => item.id === card.id);
     const questionAudioKey = isDefault ? `${card.id}-question` : "";
     const answerAudioKey = isDefault ? `${card.id}-answer` : "";
-    document.getElementById("detail-card").innerHTML = `<div class="card-meta"><span class="tag">${escapeHtml(card.category)}</span><span class="tag lp">${escapeHtml(card.lp || "Personal")}</span></div><h3>${escapeHtml(card.title)}</h3><div class="detail-section"><div class="section-label">QUESTION</div><p class="practice-question" style="font-size:19px;margin:0;color:var(--ink)">${escapeHtml(card.question)}</p>${speechBlockMarkup("detail-question", "質問を英語で聞く", card.questionJa, questionAudioKey)}</div>${card.answer ? `<div class="detail-section"><div class="section-label">ENGLISH ANSWER</div>${keyPhraseLegendMarkup}<p>${highlightEnglish(card.answer)}</p>${speechBlockMarkup("detail-answer", "模範回答を英語で聞く", card.answerJa, answerAudioKey)}</div>` : ""}${starMarkup(card) ? `<div class="detail-section"><div class="section-label">STAR NOTES</div>${starMarkup(card)}</div>` : ""}${card.followUps?.length ? `<div class="detail-section"><div class="section-label">FOLLOW-UP QUESTIONS</div><ul class="followup-list">${card.followUps.map((question) => `<li>${escapeHtml(question)}</li>`).join("")}</ul></div>` : ""}<button class="primary-button" id="detail-record-button"><span class="button-icon">●</span>このカードで録音する</button>`;
+    document.getElementById("detail-card").innerHTML = `<div class="card-meta"><span class="tag">${escapeHtml(card.category)}</span><span class="tag lp">${escapeHtml(card.lp || "Personal")}</span></div><h3>${escapeHtml(card.title)}</h3><div class="detail-section"><div class="section-label">QUESTION</div><p class="practice-question" style="font-size:19px;margin:0;color:var(--ink)">${escapeHtml(card.question)}</p>${speechBlockMarkup("detail-question", "質問を英語で聞く", card.questionJa, questionAudioKey)}</div>${card.answer ? `<div class="detail-section"><div class="section-label">ENGLISH ANSWER</div>${keyPhraseLegendMarkup}<p>${highlightEnglish(card.answer, card.keyPhrases)}</p>${speechBlockMarkup("detail-answer", "模範回答を英語で聞く", card.answerJa, answerAudioKey)}</div>` : ""}${starMarkup(card) ? `<div class="detail-section"><div class="section-label">STAR NOTES</div>${starMarkup(card)}</div>` : ""}${card.followUps?.length ? `<div class="detail-section"><div class="section-label">FOLLOW-UP QUESTIONS</div><ul class="followup-list">${card.followUps.map((question) => `<li>${escapeHtml(question)}</li>`).join("")}</ul></div>` : ""}<button class="primary-button" id="detail-record-button"><span class="button-icon">●</span>このカードで録音する</button>`;
     const detailCard = document.getElementById("detail-card");
     bindSpeechBlock(detailCard.querySelector('[data-speech-block="detail-question"]'), card.question, questionAudioKey);
     bindSpeechBlock(detailCard.querySelector('[data-speech-block="detail-answer"]'), card.answer, answerAudioKey);

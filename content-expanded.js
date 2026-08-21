@@ -51,6 +51,7 @@
       action: "私はコスト最適化を優先し、全商品の生産完了後に一括出荷する計画を受け入れました。しかし、結果として日本への入荷が店頭展開に対して約3週間遅くなりました。次シーズンからは、生産が完了した商品から3回に分けて輸入する方式へ変更し、コスト増は事前に輸入経費計画のバッファとして織り込みました。",
       result: "翌シーズンは正常な店頭展開に間に合い、前シーズンの遅れから約3週間改善しました。多少の輸入コスト増よりも、適切な時期に店頭展開できる価値を優先する運用へ変え、以後はコストだけでなく販売機会と顧客への提供時期を同時に評価しています。",
       answer: "In 2019, during the first season after we changed J.LINDEBERG from trading-company imports to direct import, about 80% of the polo shirts were produced in Taiwan. I had to arrange the import from the factory to Japan.\nTo minimize freight and import costs, I accepted a plan to wait until all products were completed and ship them together. That decision was efficient from a cost perspective, but the goods arrived in Japan about three weeks too late for the intended in-store launch. I had focused too narrowly on import cost and had not given enough weight to the value of being on the sales floor at the right time.\nFrom the following season, I changed the plan to divide the shipments into three waves and import products as production was completed. This increased some logistics cost, so I built an appropriate buffer into the import-expense plan in advance. The following season, the products arrived in time for the normal in-store launch, improving the schedule by about three weeks.\nThe lesson was that supply-chain decisions should not be evaluated only by freight cost. I now balance cost against sales opportunity, customer availability, and the operational impact of late delivery before finalizing an import plan.",
+      keyPhrases: ["I accepted a plan to wait until all products were completed and ship them together", "the goods arrived in Japan about three weeks too late for the intended in-store launch", "I had focused too narrowly on import cost", "not given enough weight to the value of being on the sales floor at the right time", "balance cost against sales opportunity, customer availability, and the operational impact of late delivery"],
       followUps: ["How did you decide the number of shipment waves?", "How did you balance the additional freight cost against the sales opportunity?", "What would you monitor before approving a consolidated shipment now?"]
     },
     {
@@ -64,6 +65,7 @@
       action: "香港のアジア向けディストリビューションセンターに2,000本以上の在庫があったため、私は新規生産や即時の在庫引当をせず、後で日本向けに手配すればよいと判断しました。しかし1週間後には在庫がゼロになっており、新規生産をせざるを得ませんでした。私は、共有在庫を確保済みの在庫と同じように扱ったことが誤りだったと認めました。",
       result: "顧客への300本の納品遅延はありませんでしたが、2,000本を新規生産した結果、受注後に1,700本の余剰が発生しました。200本しか通常販売できず、残り約1,500本はアウトレット販売となり粗利率を損ないました。以後は、販売時点で在庫の即時確保可否を確認し、長期確保が難しい場合は販売先にも事前説明する運用へ変えました。",
       answer: "In 2008, while I was at Samsonite Japan, I proposed a suitcase to a mail-order catalog company and won an order for 300 units for an Isetan gift catalog. The product had a minimum production quantity of 2,000 units. At that time, an Asian distribution center in Hong Kong showed more than 2,000 units in stock.\nI made the mistake of treating visible shared inventory as if it were already reserved for Japan. I did not immediately secure the inventory or start new production because I believed I could arrange the Japan allocation later. One week later, the available inventory had dropped to zero, so we had to produce a new lot of 2,000 units.\nWe fulfilled the 300-unit customer order without a delivery delay, but we then had 1,700 excess units. Only about 200 could be sold through normal channels, and roughly 1,500 units had to be sold through outlet stores, which damaged the gross margin. I took responsibility because the risk could have been avoided by confirming and securing inventory at the time of sale.\nSince then, I always verify whether stock can be allocated immediately before confirming a sale. If long-term reservation is difficult, I explain that constraint to the customer in advance.",
+      keyPhrases: ["I made the mistake of treating visible shared inventory as if it were already reserved for Japan", "the available inventory had dropped to zero", "we then had 1,700 excess units", "the risk could have been avoided by confirming and securing inventory at the time of sale", "I always verify whether stock can be allocated immediately before confirming a sale"],
       followUps: ["Why did you not reserve the inventory immediately?", "How would you communicate a stock-allocation risk to a customer?", "What inventory control would prevent this mistake today?"]
     },
     {
@@ -77,6 +79,7 @@
       action: "当時のデザイナーはすでに退職していましたが確認したところ、相手企業の商品を参考にデザインを作成していたことが分かりました。私はリーガル業務も担当していたにもかかわらず、全企画を能動的に知的財産の観点で確認する仕組みや、相談履歴を残す仕組みを作れていなかったと認識しました。顧問法律事務所と対応し、解決後は全ブランドの企画担当者へ商標権・著作権に関する定期的な情報発信を始め、個別相談の履歴を共有ファイルサーバーに残す運用を作りました。",
       result: "賠償金の支払いを含む対応を行いました。その後は、担当者の入退社があっても過去の相談と判断を参照でき、企画段階で知的財産リスクを相談・確認する習慣を強化できました。",
       answer: "In 2016, our company received a formal notice from a third party claiming that a product from one of our brands infringed its graphic trademark. The product had been sold several years earlier, and the designer involved had already left the company.\nAfter confirming the facts, I learned that the designer had used the other company’s product as a reference when creating the design. I was also responsible for legal matters at the time, and I recognized that I had not built a proactive process to review intellectual-property risks across all product plans. We had also not kept a shared record of design-related legal consultations.\nI worked with our outside counsel to resolve the matter, including a compensation payment. More importantly, I changed the process afterward. I began providing regular information to planning teams across all brands about trademark and copyright risks. I also created a shared record of individual consultations and decisions so that knowledge would remain available even when team members changed.\nThe lesson was that legal responsibility cannot depend on individual memory or on whether a particular designer is still with the company. I learned to build simple, repeatable controls before a problem occurs.",
+      keyPhrases: ["I had not built a proactive process to review intellectual-property risks across all product plans", "We had also not kept a shared record of design-related legal consultations", "legal responsibility cannot depend on individual memory", "build simple, repeatable controls before a problem occurs"],
       followUps: ["How did you balance legal control with creative freedom?", "What information did you include in the shared consultation record?", "How would you identify high-risk designs earlier now?"]
     },
     {
@@ -90,6 +93,7 @@
       action: "仮契約後、半年間は主にメールで交渉し、対面で会うのは半年に一度の展示会に限られていました。私は自社に有利な契約条件にもこだわり過ぎ、自分が相手の立ち上げ条件を十分に確認できていませんでした。最終的に相手は正式契約を見送りました。私は、複雑な海外パートナーシップでは、メール交渉だけでは信頼と相互理解を十分に作れないこと、また最初から条件を最大化するより段階的に始める選択肢も必要だと学びました。",
       result: "契約は成立しませんでしたが、2022年に台湾とタイの新たな販売代理店ビジネスを始めた際は、より小さな数値計画から段階的に開始する設計を、リーガル担当として支援しました。",
       answer: "In 2017, as the brand manager for ROSSASSEN, I exhibited at Pitti Uomo in Florence every six months. I began discussions with an Italian knitwear company about a distribution and license agreement. We reached a provisional understanding and continued negotiating.\nMy mistake was relying too heavily on email between the trade shows. We met in person only every six months, even though the partnership required detailed commercial and legal alignment. I also focused too much on securing the most favorable terms for our company and did not sufficiently confirm the conditions the partner needed in order to launch the business.\nWe continued discussions after the next exhibition, but the partner ultimately decided not to sign the final agreement. I tried to continue the negotiation by email, but it did not recover. I took this as a failure in how I built the relationship and structured the deal, not simply as the other side changing its mind.\nI learned that complex international partnerships require more face-to-face dialogue and a willingness to start with a smaller, staged plan rather than trying to optimize every contract term at the beginning. In 2022, when supporting new distributor relationships in Taiwan and Thailand, I applied that learning by helping create smaller initial plans that could expand based on results.",
+      keyPhrases: ["My mistake was relying too heavily on email between the trade shows", "did not sufficiently confirm the conditions the partner needed in order to launch the business", "a failure in how I built the relationship and structured the deal", "require more face-to-face dialogue and a willingness to start with a smaller, staged plan"],
       followUps: ["What would you have discussed face to face earlier?", "Which contract terms would you make more flexible in a phased launch?", "How did you apply this lesson to Taiwan and Thailand?"]
     }
   ];
@@ -106,6 +110,7 @@
       action: "役割で優れた成果を出す人の共通点を聞き、回答を自分の経験や入社後の行動計画に結び付けます。",
       result: "成長意欲だけでなく、入社後に何へ貢献すべきかを理解しようとする姿勢を示せます。",
       answer: "Thank you. I have a question. What would distinguish an outstanding person in this role during the first six to twelve months?\nI ask because I would like to understand what success looks like in practice and where I should focus my effort so that I can contribute quickly.",
+      keyPhrases: ["I would like to understand what success looks like in practice", "where I should focus my effort so that I can contribute quickly"],
       followUps: ["Which early achievement would matter most?", "How is feedback usually shared during the first few months?", "What would you want a new team member to learn first?"]
     },
     {
@@ -119,6 +124,7 @@
       action: "繰り返し起きる課題、制約、現在試している対策を聞き、相手の回答を深掘りします。",
       result: "現場の問題を理解し、改善を通じて貢献したいという姿勢を示せます。",
       answer: "Thank you. I have a question. What are the most difficult or recurring logistics challenges the team is working on today?\nI ask because I enjoy finding root causes and improving processes, and I would like to understand where my experience could be most useful.",
+      keyPhrases: ["I enjoy finding root causes and improving processes", "where my experience could be most useful"],
       followUps: ["What has made that challenge difficult to solve?", "Which teams are most involved?", "What would a meaningful improvement look like?"]
     },
     {
@@ -132,6 +138,7 @@
       action: "最重要KPIと、このポジションが日々の行動を通じてKPIへ与える影響を確認します。",
       result: "物流オペレーションを測定可能な成果として捉え、データに基づき貢献したい姿勢を示せます。",
       answer: "Thank you. I have a question. What operational metrics are most important for this team, such as inventory accuracy, turnaround time, safety, or quality? How does this role influence them?\nI ask because, in my past roles, I have tried to balance safety, accuracy, speed, and continuous improvement through measurable results.",
+      keyPhrases: ["balance safety, accuracy, speed, and continuous improvement through measurable results"],
       followUps: ["Which metric is hardest to improve without affecting another one?", "How often does the team review these metrics?", "What data would this role use most often?"]
     },
     {
@@ -145,6 +152,7 @@
       action: "小さな実験、品質・安全性の確認、標準化、他拠点展開の流れを聞きます。",
       result: "改善提案を個人の工夫で終わらせず、再現可能な仕組みにしたい姿勢を示せます。",
       answer: "Thank you. I have a question. When a team member identifies a process improvement opportunity, how are ideas tested and scaled within the team or across other sites?\nI ask because I have experience with process automation and would like to understand how the team turns a local improvement into a reliable standard process.",
+      keyPhrases: ["turns a local improvement into a reliable standard process"],
       followUps: ["What evidence is required before an improvement is adopted?", "Who needs to be involved in the review?", "Can you share an example of an improvement that was scaled successfully?"]
     },
     {
@@ -158,6 +166,7 @@
       action: "関係者間の情報共有、エスカレーション、意思決定の基準について質問します。",
       result: "物流業務が単独では完結しないことを理解し、他チームと信頼関係を築いて貢献したい姿勢を示せます。",
       answer: "Thank you. I have a question. How does this team work with technicians, facilities, security, and other stakeholders when priorities conflict?\nI ask because many of my past projects required balancing safety, accuracy, speed, and continuous improvement across different teams.",
+      keyPhrases: ["balancing safety, accuracy, speed, and continuous improvement across different teams"],
       followUps: ["Who makes the final decision when priorities conflict?", "How are urgent issues escalated?", "What helps teams build trust with one another?"]
     }
   ];
