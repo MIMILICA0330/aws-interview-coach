@@ -1,4 +1,4 @@
-const CACHE_NAME = "aws-interview-coach-static-v17";
+const CACHE_NAME = "aws-interview-coach-static-v18";
 const AUDIO_ORIGIN = "https://interview-coach-tts.it09016760153.workers.dev";
 const ASSETS = ["./", "./index.html", "./styles.css", "./fixes.css", "./access.js", "./content.js", "./translations.js", "./content-expanded.js", "./content-refresh.js", "./tts-config.js", "./app.js", "./audio-manifest.json", "./manifest.webmanifest", "./icon.svg"];
 self.addEventListener("install", (event) => { self.skipWaiting(); event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS))); });
