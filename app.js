@@ -623,18 +623,23 @@
   }
 
   // "why-aws-answer" was trimmed by removing 3 sentences from the middle of an
-  // 11-sentence recording. Rather than waiting on a fresh OpenAI synthesis, this
-  // reconstructs the current (shorter) text from the sentence clips that already
-  // exist for the untouched sentences, skipping the 3 that were cut (old indices
-  // 7-9). A short natural gap stands in for the single continuous recording when
-  // sentence-pause mode is off.
+  // 11-sentence recording. Rather than waiting on a fresh OpenAI synthesis, sentence
+  // -pause mode reconstructs the current (shorter) text from the sentence clips that
+  // already exist for the untouched sentences, skipping the 3 that were cut (old
+  // indices 7-9). Default (non-paused) playback deliberately does NOT use this: it
+  // would mean 8 separate requests instead of 1, and the Cloudflare Worker's
+  // per-isolate manifest cache is currently inconsistent across edge locations after
+  // today's manifest edits, so some of those individual sentence requests can 404
+  // unpredictably depending on which edge node serves them. A single request is far
+  // less exposed to that. Revisit once the manifest cache has settled (or the Worker
+  // has been redeployed) and OpenAI access is restored to regenerate v14 properly.
   const ENGLISH_SENTENCE_INDEX_OVERRIDES = { "why-aws-answer": [0, 1, 2, 3, 4, 5, 6, 10] };
 
   async function playWithStoredSpeech(text, audioKey, block, language, run) {
-    const sentenceIndexOverride = language === "english" ? ENGLISH_SENTENCE_INDEX_OVERRIDES[audioKey] : null;
+    const sentenceIndexOverride = language === "english" && speechSettings.sentencePause ? ENGLISH_SENTENCE_INDEX_OVERRIDES[audioKey] : null;
     if (sentenceIndexOverride) {
       const sentenceUrls = sentenceIndexOverride.map((index) => staticAudioUrl(`${audioKey}-sentence-${index}`, "english"));
-      await playStaticAudioSequence(sentenceUrls, run, speechSettings.sentencePause ? 5000 : 350);
+      await playStaticAudioSequence(sentenceUrls, run, 5000);
       finishSpeech(run, block);
       return;
     }
