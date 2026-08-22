@@ -479,7 +479,8 @@
       if (card.question) urls.push(staticAudioUrl(`${card.id}-question`, "english"));
       if (card.answer) urls.push(staticAudioUrl(`${card.id}-answer`, "english"));
       if (card.question) splitSpeechChunks(card.question, "english").forEach((_, index) => urls.push(staticAudioUrl(`${card.id}-question-sentence-${index}`, "english")));
-      if (card.answer) splitSpeechChunks(card.answer, "english").forEach((_, index) => urls.push(staticAudioUrl(`${card.id}-answer-sentence-${index}`, "english")));
+      const answerSentenceIndices = ENGLISH_SENTENCE_INDEX_OVERRIDES[`${card.id}-answer`] || (card.answer ? splitSpeechChunks(card.answer, "english").map((_, index) => index) : []);
+      answerSentenceIndices.forEach((index) => urls.push(staticAudioUrl(`${card.id}-answer-sentence-${index}`, "english")));
       if (card.questionJa) urls.push(staticAudioUrl(`${card.id}-questionJa`, "japanese"));
       if (card.answerJa) urls.push(staticAudioUrl(`${card.id}-answerJa`, "japanese"));
       return urls.filter(Boolean);
@@ -594,7 +595,7 @@
     });
   }
 
-  async function playStaticAudioSequence(urls, run) {
+  async function playStaticAudioSequence(urls, run, pauseMs = 5000) {
     const audio = new Audio();
     audio.preload = "auto";
     const stop = () => {
@@ -613,7 +614,7 @@
         if (run !== speechRun) return;
         await playOnAudioElement(audio, urls[index], run, true);
         if (run !== speechRun || index === urls.length - 1) return;
-        await waitForSentencePause(run, 5000);
+        await waitForSentencePause(run, pauseMs);
       }
     } finally {
       if (activeCloudAudio === audio) activeCloudAudio = null;
@@ -621,7 +622,22 @@
     }
   }
 
+  // "why-aws-answer" was trimmed by removing 3 sentences from the middle of an
+  // 11-sentence recording. Rather than waiting on a fresh OpenAI synthesis, this
+  // reconstructs the current (shorter) text from the sentence clips that already
+  // exist for the untouched sentences, skipping the 3 that were cut (old indices
+  // 7-9). A short natural gap stands in for the single continuous recording when
+  // sentence-pause mode is off.
+  const ENGLISH_SENTENCE_INDEX_OVERRIDES = { "why-aws-answer": [0, 1, 2, 3, 4, 5, 6, 10] };
+
   async function playWithStoredSpeech(text, audioKey, block, language, run) {
+    const sentenceIndexOverride = language === "english" ? ENGLISH_SENTENCE_INDEX_OVERRIDES[audioKey] : null;
+    if (sentenceIndexOverride) {
+      const sentenceUrls = sentenceIndexOverride.map((index) => staticAudioUrl(`${audioKey}-sentence-${index}`, "english"));
+      await playStaticAudioSequence(sentenceUrls, run, speechSettings.sentencePause ? 5000 : 350);
+      finishSpeech(run, block);
+      return;
+    }
     const url = staticAudioUrl(audioKey, language);
     if (!url) throw new Error("Static audio is not configured");
     if (language === "english" && speechSettings.sentencePause) {

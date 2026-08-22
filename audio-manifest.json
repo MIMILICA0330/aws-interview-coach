@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-21T23:47:57.417Z",
+  "generatedAt": "2026-08-21T23:59:29.266824+00:00",
   "entries": {
     "intro-question-female": {
       "input": "Tell me about yourself and your professional background.",
@@ -5359,6 +5359,20 @@
       "provider": "google",
       "voice": "cedar",
       "googleVoice": "ja-JP-Chirp3-HD-Achird"
+    },
+    "why-aws-answer-sentence-10-v13-female": {
+      "input": "By contributing to AWS, I want to keep challenging myself at a new level while delivering reliable results for customers.",
+      "language": "en",
+      "speaker": "female",
+      "provider": "openai",
+      "voice": "marin"
+    },
+    "why-aws-answer-sentence-10-v13-male": {
+      "input": "By contributing to AWS, I want to keep challenging myself at a new level while delivering reliable results for customers.",
+      "language": "en",
+      "speaker": "male",
+      "provider": "openai",
+      "voice": "cedar"
     }
   }
 }
